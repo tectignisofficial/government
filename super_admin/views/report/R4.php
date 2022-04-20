@@ -512,8 +512,7 @@ if(isset($_POST["filter"])){
   echo "
   <tr><td>3</td>
   <td>एकूण</td>
-  $a=array($count,$count);
-  <td>". array_sum($a) ."</td>
+  
   ";
   //$dat=$_POST['month'];
   
