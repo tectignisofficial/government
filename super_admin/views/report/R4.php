@@ -427,9 +427,9 @@ $year=$_POST['year'];
 
         
         echo "
-        <tr><td>1</td>
-        <td>Navi Mumbai</td>
-        <td>". $count."</td>
+        <tr><td class='text-center'>1</td>
+        <td class='text-center'>Navi Mumbai</td>
+        <td class='text-center'>". $count."</td>
         ";
     }
 }
@@ -469,11 +469,17 @@ if(isset($_POST["filter"])){
                 echo "</td><td class='text-center'>".$sum2."</td></tr> ";}}?>
    
 
-<?php if(isset($_POST["filter"])){
+   
+<?php 
+ $sql=mysqli_query($conn,"select id from complaint_form where monthname(date) ='$dat' and year(date)='$year' and district='navi mumbai'");
+ $count1=mysqli_num_rows($sql);            
+
+
+if(isset($_POST["filter"])){
   echo "
-  <tr><td>2</td>
-  <td>Raigarh</td>
-  <td>". $count."</td>
+  <tr><td class='text-center'>2</td>
+  <td class='text-center'>Raigarh</td>
+  <td class='text-center'>". $count1."</td>
   ";
   //$dat=$_POST['month'];
   $sum4=0;
@@ -510,10 +516,10 @@ if(isset($_POST["filter"])){
               
 <?php if(isset($_POST["filter"])){
   echo "
-  <tr><td>3</td>
-  <td>एकूण</td>
-  
-  ";
+  <tr ><td class='text-center'>3</td>
+  <td class='text-center'>एकूण</td>  ";
+  $ar=array($count,$count1);
+  echo "<td class='text-center'>".array_sum($ar)."</td> ";
   //$dat=$_POST['month'];
   
        $arr=array($sum,$sum4);
@@ -521,14 +527,14 @@ if(isset($_POST["filter"])){
 
 if(isset($_POST["filter"])){
   //$dat=$_POST['month'];
-   $arr1=array($sum2,$sum5);
+   $arr1=array($sum1,$sum5);
         echo "<td class='text-center'>-</td><td class='text-center'>".array_sum($arr1)."</td> ";}
         
         
         if(isset($_POST["filter"])){
           //$dat=$_POST['month'];
-           $arr2=array($sum3,$sum6);
-        echo "<td class='text-center'>-</td><td class='text-center'>".array_sum($arr2)."</td> ";} ?>
+           $arr2=array($sum2,$sum6);
+        echo "<td class='text-center'>-</td><td class='text-center'>".array_sum($arr2)."</td></tr> ";} ?>
               
               
                   </tbody>
