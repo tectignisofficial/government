@@ -428,17 +428,23 @@ if (mysqli_num_rows($complaints)>0){
                    <tbody>
                    <?php 
                    /*pagination*/
-                   if (!isset ($_GET['page']) ) {  
-                    $page = 1;  
-                } else {  
-                    $page = $_GET['page'];  
-                }  
-                $results_per_page = 10;  
-                $page_first_result = ($page-1) * $results_per_page;  
-                $query = "select * from criminal";  
-                $result = mysqli_query($conn, $query);  
-                $number_of_result = mysqli_num_rows($result);  
-                $number_of_page = ceil ($number_of_result / $results_per_page);  
+			if(isset($_GET['page'])){
+				$page=$_GET['page']; 				     //check pagevalue available
+				$page=mysqli_real_escape_string($con,$page);
+			}else{
+				$page=1;                                      //if not
+			}
+			$per_page=5;
+			$start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
+			
+			$no_Of_row_sql = "select COUNT(complaint_form.id as id,complaint_form.type_of_offence as type_of_offence,complaint_form.complaint_no as comp_no,complaint_form.section as section,complaint_form.police_station as police_station,complaint_form.book_no as book_no,complaint_form.date as date,complaint_form.complaint_filer_name as comp_name,
+      complaint_form.complaint_filer_address as comp_add,complaint_form.police_station as station,
+      complaint_form.district as district,criminal.criminal_name as crname,criminal.criminal_address as cradd,
+      criminal.age as crage,victim.name as vname,victim.address as vaddress,victim.caste as vcaste,victim.victim_age as vage,victim.caste_certificate as vcertificate,victim.aadhar_card as vaadhar,victim.charge_sheet as vcsheet,image.discription as discrip,
+     complaint_form.discription as discription) from criminal left join complaint_form on complaint_form.id=criminal.caseid left join victim on victim.caseid=complaint_form.id  left join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district'";
+			$query = mysqli_query($con,$no_Of_row_sql);
+			$total_row =mysqli_fetch_array($query)[0];
+			$no_of_page=ceil($total_row/$per_page);  
                    /*pagination*/
                    $dat=$_POST['month'];
                    $year=$_POST['year'];
@@ -447,7 +453,7 @@ if (mysqli_num_rows($complaints)>0){
                    complaint_form.complaint_filer_address as comp_add,complaint_form.police_station as station,
                    complaint_form.district as district,criminal.criminal_name as crname,criminal.criminal_address as cradd,
                    criminal.age as crage,victim.name as vname,victim.address as vaddress,victim.caste as vcaste,victim.victim_age as vage,victim.caste_certificate as vcertificate,victim.aadhar_card as vaadhar,victim.charge_sheet as vcsheet,image.discription as discrip,
-                  complaint_form.discription as discription from criminal left join complaint_form on complaint_form.id=criminal.caseid left join victim on victim.caseid=complaint_form.id  left join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district' LIMIT $page_first_result, $results_per_page;");
+                  complaint_form.discription as discription from criminal left join complaint_form on complaint_form.id=criminal.caseid left join victim on victim.caseid=complaint_form.id  left join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district' limit $start, $per_page");
                     $count=1;
                     $num=mysqli_num_rows($sql);
                     if($num==0){
@@ -483,8 +489,27 @@ if (mysqli_num_rows($complaints)>0){
                    <?php $count++; } ?>
                    
 
-<tr><td><?php for($page = 1; $page<= $number_of_page; $page++) {  
-    echo '<a href = "R5.php?page=' . $page . '">' . $page . ' </a>'; }?>  </td></tr>
+<tr><td><nav aria-label="Page navigation example">
+				  <ul class="pagination justify-content-center">
+					<li <?php if($page==1) echo "class='page-item disabled'";?>>
+					  <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
+					</li>
+					
+					<?php
+					for($i=1;$i<=$no_of_page;$i++):
+						?>
+						<li <?php if($page==$i){echo "class='page-item active'";} ?>>
+						<a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+						</li>	
+					<?php endfor; ?>
+					<li <?php if($page==$no_of_page) echo "class='page-item disabled'";?>>
+					  <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
+					</li>
+				  </ul>
+				</nav>
+				<?php
+				
+				?></td></tr>
                   </tbody>
                 
                  </table>
