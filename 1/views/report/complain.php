@@ -410,8 +410,8 @@ if (mysqli_num_rows($complaints)>0){
                     <td  class="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>
 		                        </a>
-                            <p title="" id="open" class="btn btn-success btn-xs delete_purchase">
-		                          <i class="fas fa-folder-open"></i>
+                            <a href="#" onclick="togglediv('item')" title="" id="open" class="btn btn-success btn-xs delete_purchase">
+		                          <i id="icon" class="fas fa-folder-open"></i>
                     </p>
                             
                           </td>
@@ -420,11 +420,15 @@ if (mysqli_num_rows($complaints)>0){
                    
 
 <script>
-  $(document).ready(function(){
-    $("#open").click(function(){
-      $(this).removeClass("fa-folder-open").addClass("fa-sticky-note");
-    })
-  })
+  function togglediv(id) {
+    var div = document.getElementById(id);
+    div.style.visibility = div.style.visibility == "hidden" ? "hidden" : "visible";
+    div.style.opacity = div.style.opacity == "0" ? "1" : "0";
+
+    var icon = document.getElementById("icon");
+    icon.classList.toggle('fa-folder-open');
+    icon.classList.toggle('fa-sticky-note');
+}
   </script>
                   </tbody>
                 
