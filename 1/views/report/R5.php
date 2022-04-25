@@ -375,7 +375,7 @@ if (mysqli_num_rows($complaints)>0){
               }else{
                 $page=1;                                      //if not
               }
-              $per_page=2;
+              $per_page=10;
               $start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
 
               $no_Of_row_sql = "select COUNT(*) from complaint_form";
@@ -500,12 +500,12 @@ if (mysqli_num_rows($complaints)>0){
 					</li>
 					
 					<?php
-					for($i=1;$i<=$no_of_page;$i++):
+					for($i=1;$i<=$no_of_page;$i++){
 						?>
 						<li <?php if($page==$i){echo "class='page-item active'";} ?>>
 						<a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
 						</li>	
-					<?php endfor; ?>
+					<?php } ?>
 					<li <?php if($page==$no_of_page) echo "class='page-item disabled'";?>>
 					  <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
 					</li>
