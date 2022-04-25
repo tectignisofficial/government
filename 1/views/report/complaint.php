@@ -413,9 +413,7 @@ if (mysqli_num_rows($complaints)>0){
                             <a href="" title="" id="open" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-folder-open"></i>
 		                        </a>
-                            <a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" id="open" class="btn btn-success btn-xs delete_purchase">
-		                          <i class="fas fa-sticky-note"></i>
-		                        </a>
+                            
                           </td>
                    </tr>
                    <?php $count++; } ?>
@@ -424,7 +422,7 @@ if (mysqli_num_rows($complaints)>0){
 <script>
   $(document).ready(function(){
     $("#open").click(function(){
-      $(this).toggleClass("fa-sticky-note");
+      $(this).removeClass("fa-folder-open").addClass("fa-sticky-note");
     })
   })
   </script>
