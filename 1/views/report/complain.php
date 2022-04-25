@@ -419,10 +419,10 @@ if (mysqli_num_rows($complaints)>0){
                         $stage2=$arr['stage_2'];
                         $stage3=$arr['stage_3'];
                       }
-                      if($stage1!=NULL){
+                      if($stage1='IS NOT NULL'){
                         echo "First Payment Done";
                       }
-                      else if($stage1==NULL){
+                      else if($stage1=='IS NULL'){
                         echo "Case Open";
                       }
                      
