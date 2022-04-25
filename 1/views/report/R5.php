@@ -437,11 +437,7 @@ if (mysqli_num_rows($complaints)>0){
 			$per_page=5;
 			$start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
 			
-			$no_Of_row_sql = "select COUNT(complaint_form.id as id,complaint_form.type_of_offence as type_of_offence,complaint_form.complaint_no as comp_no,complaint_form.section as section,complaint_form.police_station as police_station,complaint_form.book_no as book_no,complaint_form.date as date,complaint_form.complaint_filer_name as comp_name,
-      complaint_form.complaint_filer_address as comp_add,complaint_form.police_station as station,
-      complaint_form.district as district,criminal.criminal_name as crname,criminal.criminal_address as cradd,
-      criminal.age as crage,victim.name as vname,victim.address as vaddress,victim.caste as vcaste,victim.victim_age as vage,victim.caste_certificate as vcertificate,victim.aadhar_card as vaadhar,victim.charge_sheet as vcsheet,image.discription as discrip,
-     complaint_form.discription as discription) from criminal left join complaint_form on complaint_form.id=criminal.caseid left join victim on victim.caseid=complaint_form.id  left join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district'";
+			$no_Of_row_sql = "select COUNT(*) from crminal";
 			$query = mysqli_query($con,$no_Of_row_sql);
 			$total_row =mysqli_fetch_array($query)[0];
 			$no_of_page=ceil($total_row/$per_page);  
