@@ -427,8 +427,10 @@ if (mysqli_num_rows($complaints)>0){
 function myFunction(x) {
   x.classList.toggle("fa-sticky-note");  
 }
+$(document).ready(function(){
 $("#icon").click(function(){
     $("#edit").toggleClass("add");
+});
 })
   </script>
                   </tbody>
