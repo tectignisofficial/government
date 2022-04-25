@@ -504,7 +504,7 @@ if(isset($_POST['subt3'])){
                     $.ajax({
                         type: "POST",
                         url: "payment.php",
-                        data: "stage1="+stage1+"id1=+id1+"btn2"+sub2,
+                        data: "stage1="+stage1+"id1="+id1+"btn2"+sub2,
                         success: function(data){
                             $('#sec3').fadeIn().css("display","block");
                         }
