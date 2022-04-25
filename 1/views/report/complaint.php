@@ -402,12 +402,25 @@ if (mysqli_num_rows($complaints)>0){
                     
                     <td  class="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>
-		                        </a></td>
+		                        </a>
+                            <a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" id="open" class="btn btn-success btn-xs delete_purchase">
+		                          <i class="fas fa-folder-open"></i>
+		                        </a>
+                            <a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" id="open" class="btn btn-success btn-xs delete_purchase">
+		                          <i class="fas fa-sticky-note"></i>
+		                        </a>
+                          </td>
                    </tr>
                    <?php $count++; } ?>
                    
 
-
+<script>
+  $(document).ready(function(){
+    $("#open").click(function(){
+      $(this).toggle();
+    })
+  })
+  </script>
                   </tbody>
                 
                  </table>
