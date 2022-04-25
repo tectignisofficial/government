@@ -5,18 +5,20 @@ session_start();
 if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
 {
 }
-$btn=$_GET['btn'];
+$btn=$_GET['btn1'];
+$btn2=$_GET['btn2'];
 $id='';
 if($btn=="sub1"){
     $complaint_no=$_GET['name'];
     $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
     while($arr=mysqli_fetch_array($sql)){
         $id=$arr['id'];
+        echo "<script>alert('g');</script>";
         echo "<script>alert('.$id.');</script>";
     }
 }
 
-if($btn=="sub2"){
+if($btn2=="sub2"){
     $stage1=$_GET['stage1'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
 }
