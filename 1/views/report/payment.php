@@ -473,13 +473,13 @@ if(isset($_POST['subt3'])){
             $("#sec3").css("display","none");
             $("#sec4").css("display","none");
 
-            $("#sub1").submit(function(e){
+            /*$("#sub1").submit(function(e){
                 $("#sec2").css("display","block");
             });
             $("#sub1").submit(function(e){
                 $("#sec3").css("display","block");
-            })
-           /*
+            })*/
+           
             $("#sec1").submit(function(e) {
                 e.preventDefault();
                 let name = $("#complaint").val();
@@ -523,7 +523,7 @@ if(isset($_POST['subt3'])){
                         }
                     });
         });
-           */
+           
     })
     </script>
 </body>
