@@ -71,6 +71,9 @@ if (mysqli_num_rows($complaints)>0){
 .fa-sticky-note:before {
     content: "\f249";
 }
+.add{
+    display:none;
+}
 </style>
 
 </head>
@@ -407,11 +410,11 @@ if (mysqli_num_rows($complaints)>0){
                     <td><?php echo $arr["section"]; ?></td>
                     <td><?php echo $arr["type_of_offence"]; ?></td>
                     
-                    <td  class="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" class="btn btn-success btn-xs delete_purchase">
+                    <td  class="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" id="edit" class="btn btn-success btn-xs delete_purchase edit">
 		                          <i class="fas fa-edit"></i>
 		                        </a>
                             <a href="#" title="" id="open" class="btn btn-success btn-xs delete_purchase">
-		                          <i  onclick="myFunction(this)"class="fas fa-folder-open"></i>
+		                          <i  onclick="myFunction(this)"id="icon" class="fas fa-folder-open"></i>
                     </p>
                             
                           </td>
@@ -422,8 +425,11 @@ if (mysqli_num_rows($complaints)>0){
 <script>
   
 function myFunction(x) {
-  x.classList.toggle("fa-sticky-note");
+  x.classList.toggle("fa-sticky-note");  
 }
+$("#icon").click(function(){
+    $("#edit").toggleClass("add");
+})
   </script>
                   </tbody>
                 
