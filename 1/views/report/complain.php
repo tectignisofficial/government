@@ -410,9 +410,9 @@ if (mysqli_num_rows($complaints)>0){
                     <td  class="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>
 		                        </a>
-                            <a href="" title="" id="open" class="btn btn-success btn-xs delete_purchase">
+                            <p title="" id="open" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-folder-open"></i>
-		                        </a>
+                    </p>
                             
                           </td>
                    </tr>
