@@ -472,6 +472,7 @@ if(isset($_POST['subt3'])){
                 e.preventDefault();
                 let name = $("#complaint").val();
                 let sub1=$("#sub1").val();
+                alert(name);
                     $.ajax({
                         type: "POST",
                         url: "payment.php",
