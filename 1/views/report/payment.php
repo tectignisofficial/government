@@ -9,17 +9,17 @@ $btn=mysqli_real_escape_string($conn, $_GET['btn1']);
 $btn2=mysqli_real_escape_string($conn, $_GET['btn2']);
 
 $id="";
-if(isset($_POST['sub1'])){
-    $complaint_no=$_POST['complaint_no'];
+if($btn){
+    $complaint_no=$_GET['name'];
     $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
     while($arr=mysqli_fetch_array($sql)){
         $id=$arr['id'];
         echo "<script>alert('.$id.');</script>";
     }
 }
-if(isset($_POST["sub2"])){
-    $id=$_POST['id1'];
-    $stage1=$_POST['stage1'];
+if($btn2){
+    $id=$_GET['id1'];
+    $stage1=$_GET['stage1'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
     echo "<script>alert('.$id.');</script>";
 }
