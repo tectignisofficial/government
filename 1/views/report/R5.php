@@ -371,15 +371,15 @@ if (mysqli_num_rows($complaints)>0){
 <?php
               if(isset($_GET['page'])){
                 $page=$_GET['page']; 				     //check pagevalue available
-                $page=mysqli_real_escape_string($con,$page);
+                $page=mysqli_real_escape_string($conn,$page);
               }else{
                 $page=1;                                      //if not
               }
-              $per_page=2;
+              $per_page=10;
               $start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
 
               $no_Of_row_sql = "select COUNT(*) from complaint_form";
-              $query = mysqli_query($con,$no_Of_row_sql);
+              $query = mysqli_query($conn,$no_Of_row_sql);
               $total_row =mysqli_fetch_array($query)[0];
               $no_of_page=ceil($total_row/$per_page);  
              /*pagination*/
@@ -396,8 +396,6 @@ if (mysqli_num_rows($complaints)>0){
               if($num==0){
                 echo "<tr><td colspan='24' style='text-align:center;font-size:40px;vertical-align:middle;color:red;'>No RECORD FOUND</td></tr>";
               }
-              if(mysqli_num_rows($sql)>0){
-                while($arr=mysqli_fetch_array($sql)){
 ?>
     
             <div id='DivIdToPrint'>
@@ -450,16 +448,13 @@ if (mysqli_num_rows($complaints)>0){
 
            
                   </tr>
-              
-
-              
-              
                   </thead>
                    <tbody>
                    <?php 
                    /*pagination*/
 			
-                    
+                    if(mysqli_num_rows($sql)>0){
+                    while($arr=mysqli_fetch_array($sql)){
                     ?>
           
                    <tr>
