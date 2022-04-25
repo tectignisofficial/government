@@ -482,6 +482,7 @@ if(isset($_POST['subt3'])){
                         }
                         error: function(xhr, status, error) {
                         console.error(xhr);
+                        alert(xhr);
                     }
                     });
             });
