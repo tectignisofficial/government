@@ -419,7 +419,7 @@ if (mysqli_num_rows($complaints)>0){
                       else if($stage1!='' && $stage2=='' && $stage3==''){
                         echo "First Payment Done";
                       }
-                      else if($stage1!='' && $stage2!=''){
+                      else if($stage1!='' && $stage2!='' && $stage3==''){
                         echo "Second Payment Done";
                       }
                       else if($stage1!='' && $stage2!='' && $stage3!=''){
