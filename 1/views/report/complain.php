@@ -385,7 +385,7 @@ if (mysqli_num_rows($complaints)>0){
                    $dat=$_POST['month'];
                    $year=$_POST['year'];
                    $district=$_POST['district'];
-                   $sql=mysqli_query($conn,"select * from complaint_form where monthname(date) ='$dat' and year(date)='$year' and district='$district';");
+                   $sql=mysqli_query($conn,"select complaint_form.book_no as book_no, complaint_form.date as date, complaint_form.district as district, complaint_form.police_station as police_station, complaint_form.complaint_no as complaint_no, complaint_form.section as section, complaint_form.type_of_offence as type_of_offence, bank_detail.stage_1 as stage1, bank_detail.stage_2 as stage2, bank_detail.stage_3 as stage_3 from complaint_form inner join bank_detail on complaint_form.id=bank_detail.caseid where monthname(date) ='$dat' and year(date)='$year' and district='$district';");
                     $count=1;
                     $num=mysqli_num_rows($sql);
                     if($num==0){
@@ -410,22 +410,13 @@ if (mysqli_num_rows($complaints)>0){
                           </td>
                     <td>
                       <?php
-                      $stage1='';
-                      $stage11='';
-                      $stage3='';
-                      $res=mysqli_query($conn,"select stage_1 from bank_detail stage_1 = IS NULL");
-                      while($arr=mysqli_fetch_assoc()){
-                        $stage1=$arr['stage_1'];
-                      }
-                      $res=mysqli_query($conn,"select stage_1 from bank_detail stage_1 = IS NOT NULL");
-                      while($arr=mysqli_fetch_assoc()){
-                        $stage11=$arr['stage_1'];
-                      }
-                      
-                      if($stage1){
+                      $stage1=$arr["stage1"];;
+                      $stage2=$arr["stage2"];;
+                      $stage3=$arr["stage3"];;
+                      if($stage1==''){
                         echo "Case Open";
                       }
-                      else if($stage11){
+                      else if($stage1!=''){
                         echo "First Payment Done";
                       }
                       else if($stage2!=NULL){
