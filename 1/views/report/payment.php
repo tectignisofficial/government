@@ -476,43 +476,15 @@ if(isset($_POST['subt3'])){
                         type: "POST",
                         url: "payment.php",
                         data:"name="+name+"btn1"+sub1,
-                        cache:false,
                         success: function(data){
                             $('#sec2').fadeIn().css("display","block");
+                            alert("name");
                         }
-                        error: function(xhr, status, error) {
-                        console.error(xhr);
-                        alert(xhr);
-                    }
+                        
                     });
             });
 
-            $("#sec2").submit(function(e) {
-                e.preventDefault();
-                let stage1 = $("#stage1").val();
-                let sub2=$("#sub2").val();
-                    $.ajax({
-                        type: "POST",
-                        url: "payment.php",
-                        data: "stage1="+stage1+"btn2"+sub2,
-                        success: function(data){
-                            $('#sec3').fadeIn().css("display","block");
-                        }
-                    });
-            });
-
-            $("#sec3").submit(function(e) {
-                e.preventDefault();
-                var stage2 = $("#stage2").val();
-                    $.ajax({
-                        type: "POST",
-                        url: "payment.php",
-                        data: "stage2="+stage2,
-                        success: function(data){
-                            $('#sec4').fadeIn().css("display","block");
-                        }
-                    });
-        });
+           
     })
     </script>
 </body>
