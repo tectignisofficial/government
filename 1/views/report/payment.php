@@ -476,7 +476,7 @@ if(isset($_POST['subt3'])){
                         type: "POST",
                         url: "payment.php",
                         data:"name="+name+"btn1"+sub1,
-                        cache:false
+                        cache:false,
                         success: function(data){
                             $('#sec2').fadeIn().css("display","block");
                         }
