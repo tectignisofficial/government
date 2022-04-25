@@ -373,8 +373,7 @@ if (mysqli_num_rows($complaints)>0){
 					   <th class="text-center"rowspan="2">गुन्हयांचा प्रकार</th>
 					   
             <th class="text-center no">action</th>
-
-           
+            <th class="text-center no">Status</th>
                   </tr>
               
 
@@ -408,11 +407,32 @@ if (mysqli_num_rows($complaints)>0){
                     <td  class="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" id="edit" class="btn btn-success btn-xs delete_purchase edit ">
 		                          <i class="fas fa-edit"></i>
 		                        </a>
-                            <a href="#" title="" id="open" class="btn btn-success btn-xs ">
-		                          <i  onclick="myFunction(this)" id="icon" class="fas fa-folder-open"></i>
-                    </p>
-                            
                           </td>
+                    <td>
+                      <?php
+                      $stage1='';
+                      $stage2='';
+                      $stage3='';
+                      $res=mysqli_query($conn,"select stage_1,stage_2,stage_3 from bank_detail");
+                      while($arr=mysqli_fetch_assoc()){
+                        $stage1=$arr['stage_1'];
+                        $stage2=$arr['stage_2'];
+                        $stage3=$arr['stage_3'];
+                      }
+                      if($stage1==''){
+                        echo "Case Open";
+                      }
+                      else if($stage1!=''){
+                        echo "First Payment Done";
+                      }
+                      else if($stage2!=''){
+                        echo "Second Payment Done";
+                      }
+                      else if($stage3!=''){
+                        echo "Case Close";
+                      }
+                      ?>
+                    </td>
                    </tr>
                    <?php $count++; } ?>
                    
