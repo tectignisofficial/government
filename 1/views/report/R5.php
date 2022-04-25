@@ -455,6 +455,7 @@ if (mysqli_num_rows($complaints)>0){
                     if($num==0){
                       echo "<tr><td colspan='24' style='text-align:center;font-size:40px;vertical-align:middle;color:red;'>No RECORD FOUND</td></tr>";
                     }
+                    if(mysqli_num_rows($sql)>0){
                     while($arr=mysqli_fetch_array($sql)){
                     ?>
           
@@ -482,7 +483,7 @@ if (mysqli_num_rows($complaints)>0){
                     <td><?php echo $arr["discrip"]; ?></td>
                    
                    </tr>
-                   
+                   <?php $count++; } ?>
                    
 <tr><td rowspan="21"><nav aria-label="Page navigation example">
 				  <ul class="pagination justify-content-center">
@@ -502,7 +503,10 @@ if (mysqli_num_rows($complaints)>0){
 					</li>
 				  </ul>
 				</nav></td></tr>
-        <?php $count++; } ?>
+        <?php }
+				else{
+				header('location:R5.php?page=1');}
+				?>
                   </tbody>                 
            
               </table>
