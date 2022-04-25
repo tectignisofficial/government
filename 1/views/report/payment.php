@@ -18,17 +18,17 @@ if($btn=="sub1"){
 
 if($btn=="sub2"){
     $stage1=$_GET['stage1'];
-    $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id");
+    $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
 }
 
 if(isset($_POST['subt2'])){
     $stage2=$_POST['stage2'];
-    $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id");
+    $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id'");
 }
 
 if(isset($_POST['subt3'])){
     $stage3=$_POST['stage3'];
-    $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_3`='$stage3' WHERE caseid='$id");
+    $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_3`='$stage3' WHERE caseid='$id'");
 }
 
 ?>
@@ -510,7 +510,7 @@ if(isset($_POST['subt3'])){
             bsCustomFileInput.init();
         });
     </script>
-    <script>/*
+    <script>
        $("#sec2").css("display","none");
             $("#sec3").css("display","none");
             $("#sec4").css("display","none");
