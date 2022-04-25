@@ -7,7 +7,8 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 }
 $btn=mysqli_real_escape_string($conn, $_GET['btn1']);
 $btn2=mysqli_real_escape_string($conn, $_GET['btn2']);
-$id='';
+
+$id="";
 if(isset($_POST['sub1'])){
     $complaint_no=$_POST['complaint_no'];
     $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
@@ -17,7 +18,7 @@ if(isset($_POST['sub1'])){
         echo "<script>alert('.$id.');</script>";
     }
 }
-
+echo "<script>alert('.$id.');</script>";
 if(isset($_POST["sub2"])){
     $id=$id;
     $stage1=$_POST['stage1'];
