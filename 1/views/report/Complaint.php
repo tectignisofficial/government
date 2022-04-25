@@ -704,3 +704,33 @@ window.onload = function () {
 
 </body>
 </html>
+
+
+
+
+$("#sec2").submit(function(e) {
+                e.preventDefault();
+                let stage1 = $("#stage1").val();
+                let sub2=$("#sub2").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "payment.php",
+                        data: "stage1="+stage1+"btn2"+sub2,
+                        success: function(data){
+                            $('#sec3').fadeIn().css("display","block");
+                        }
+                    });
+            });
+
+            $("#sec3").submit(function(e) {
+                e.preventDefault();
+                var stage2 = $("#stage2").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "payment.php",
+                        data: "stage2="+stage2,
+                        success: function(data){
+                            $('#sec4').fadeIn().css("display","block");
+                        }
+                    });
+        });
