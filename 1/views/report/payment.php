@@ -444,9 +444,9 @@ if($btn4){
                         type: "POST",
                         url: "payment.php",
                         data:"name="+name+"btn1"+sub1,
-                        success: function(data,status){
+                        success: function(data){
                             $('#sec2').fadeIn().css("display","block");
-                            $('#id1').html(status);
+                            $('#id1').html(data);
                         }
                         
                     });
