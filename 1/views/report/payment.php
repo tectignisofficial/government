@@ -461,7 +461,8 @@ if($btn4){
                         url: "payment.php",
                         data: "stage1="+stage1+"id1="+id1+"btn2"+sub2,
                         success: function(data){
-                            $('#sec3').fadeIn().css("display","block");
+                            alert($id1);
+                            //$('#sec3').fadeIn().css("display","block");
                         }
                     });
             });
