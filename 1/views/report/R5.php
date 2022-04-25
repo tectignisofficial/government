@@ -368,7 +368,35 @@ if (mysqli_num_rows($complaints)>0){
                                 Exel               </button> 
                             </div>
                         
+<?php
+              if(isset($_GET['page'])){
+                $page=$_GET['page']; 				     //check pagevalue available
+                $page=mysqli_real_escape_string($con,$page);
+              }else{
+                $page=1;                                      //if not
+              }
+              $per_page=2;
+              $start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
 
+              $no_Of_row_sql = "select COUNT(*) from complaint_form";
+              $query = mysqli_query($con,$no_Of_row_sql);
+              $total_row =mysqli_fetch_array($query)[0];
+              $no_of_page=ceil($total_row/$per_page);  
+             /*pagination*/
+             $dat=$_POST['month'];
+             $year=$_POST['year'];
+             $district=$_POST['district'];
+             $sql=mysqli_query($conn,"select complaint_form.id as id,complaint_form.type_of_offence as type_of_offence,complaint_form.complaint_no as comp_no,complaint_form.section as section,complaint_form.police_station as police_station,complaint_form.book_no as book_no,complaint_form.date as date,complaint_form.complaint_filer_name as comp_name,
+             complaint_form.complaint_filer_address as comp_add,complaint_form.police_station as station,
+             complaint_form.district as district,criminal.criminal_name as crname,criminal.criminal_address as cradd,
+             criminal.age as crage,victim.name as vname,victim.address as vaddress,victim.caste as vcaste,victim.victim_age as vage,victim.caste_certificate as vcertificate,victim.aadhar_card as vaadhar,victim.charge_sheet as vcsheet,image.discription as discrip,
+            complaint_form.discription as discription from criminal left join complaint_form on complaint_form.id=criminal.caseid left join victim on victim.caseid=complaint_form.id  left join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district' LIMIT  $start , $per_page");
+              $count=1;
+              $num=mysqli_num_rows($sql);
+              if($num==0){
+                echo "<tr><td colspan='24' style='text-align:center;font-size:40px;vertical-align:middle;color:red;'>No RECORD FOUND</td></tr>";
+              }
+?>
     
             <div id='DivIdToPrint'>
               <div class="card-header" style="margin-top:12px" >
@@ -428,33 +456,7 @@ if (mysqli_num_rows($complaints)>0){
                    <tbody>
                    <?php 
                    /*pagination*/
-			if(isset($_GET['page'])){
-				$page=$_GET['page']; 				     //check pagevalue available
-				$page=mysqli_real_escape_string($con,$page);
-			}else{
-				$page=1;                                      //if not
-			}
-			$per_page=2;
-			$start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
 			
-			$no_Of_row_sql = "select COUNT(*) from complaint_form";
-			$query = mysqli_query($con,$no_Of_row_sql);
-			$total_row =mysqli_fetch_array($query)[0];
-			$no_of_page=ceil($total_row/$per_page);  
-                   /*pagination*/
-                   $dat=$_POST['month'];
-                   $year=$_POST['year'];
-                   $district=$_POST['district'];
-                   $sql=mysqli_query($conn,"select complaint_form.id as id,complaint_form.type_of_offence as type_of_offence,complaint_form.complaint_no as comp_no,complaint_form.section as section,complaint_form.police_station as police_station,complaint_form.book_no as book_no,complaint_form.date as date,complaint_form.complaint_filer_name as comp_name,
-                   complaint_form.complaint_filer_address as comp_add,complaint_form.police_station as station,
-                   complaint_form.district as district,criminal.criminal_name as crname,criminal.criminal_address as cradd,
-                   criminal.age as crage,victim.name as vname,victim.address as vaddress,victim.caste as vcaste,victim.victim_age as vage,victim.caste_certificate as vcertificate,victim.aadhar_card as vaadhar,victim.charge_sheet as vcsheet,image.discription as discrip,
-                  complaint_form.discription as discription from criminal left join complaint_form on complaint_form.id=criminal.caseid left join victim on victim.caseid=complaint_form.id  left join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district' LIMIT  $start , $per_page");
-                    $count=1;
-                    $num=mysqli_num_rows($sql);
-                    if($num==0){
-                      echo "<tr><td colspan='24' style='text-align:center;font-size:40px;vertical-align:middle;color:red;'>No RECORD FOUND</td></tr>";
-                    }
                     if(mysqli_num_rows($sql)>0){
                     while($arr=mysqli_fetch_array($sql)){
                     ?>
@@ -485,7 +487,13 @@ if (mysqli_num_rows($complaints)>0){
                    </tr>
                    <?php $count++; } ?>
                    
-<tr><td rowspan="21"><nav aria-label="Page navigation example">
+                  </tbody>                 
+           
+              </table>
+              
+              </div>
+              </div>
+              <nav aria-label="Page navigation example">
 				  <ul class="pagination justify-content-center">
 					<li <?php if($page==1) echo "class='page-item disabled'";?>>
 					  <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
@@ -502,17 +510,11 @@ if (mysqli_num_rows($complaints)>0){
 					  <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
 					</li>
 				  </ul>
-				</nav></td></tr>
+				</nav>
         <?php }
 				else{
 				header('location:R5.php?page=1');}
 				?>
-                  </tbody>                 
-           
-              </table>
-              
-              </div>
-              </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
