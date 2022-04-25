@@ -474,10 +474,10 @@ if(isset($_POST['subt3'])){
             $("#sec3").css("display","none");
             $("#sec4").css("display","none");
 
-            $("#sub1").click(function(){
+            $("#sub1").submit(function(e){
                 $("#sec2").css("display","block");
             });
-            $("#sub1").click(function(){
+            $("#sub1").submit(function(e){
                 $("#sec3").css("display","block");
             })
            /*
