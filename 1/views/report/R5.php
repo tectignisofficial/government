@@ -447,7 +447,7 @@ if (mysqli_num_rows($complaints)>0){
                    complaint_form.complaint_filer_address as comp_add,complaint_form.police_station as station,
                    complaint_form.district as district,criminal.criminal_name as crname,criminal.criminal_address as cradd,
                    criminal.age as crage,victim.name as vname,victim.address as vaddress,victim.caste as vcaste,victim.victim_age as vage,victim.caste_certificate as vcertificate,victim.aadhar_card as vaadhar,victim.charge_sheet as vcsheet,image.discription as discrip,
-                  complaint_form.discription as discription from criminal left join complaint_form on complaint_form.id=criminal.caseid left join victim on victim.caseid=complaint_form.id  left join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district' LIMIT . $page_first_result . ',' . $results_per_page;");
+                  complaint_form.discription as discription from criminal left join complaint_form on complaint_form.id=criminal.caseid left join victim on victim.caseid=complaint_form.id  left join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district' LIMIT $page_first_result, $results_per_page;");
                     $count=1;
                     $num=mysqli_num_rows($sql);
                     if($num==0){
