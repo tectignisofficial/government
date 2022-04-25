@@ -411,19 +411,21 @@ if (mysqli_num_rows($complaints)>0){
                     <td>
                       <?php
                       $stage1='';
-                      $stage2='';
+                      $stage11='';
                       $stage3='';
-                      $res=mysqli_query($conn,"select stage_1,stage_2,stage_3 from bank_detail");
+                      $res=mysqli_query($conn,"select stage_1 from bank_detail stage_1 = IS NULL");
                       while($arr=mysqli_fetch_assoc()){
                         $stage1=$arr['stage_1'];
-                        $stage2=$arr['stage_2'];
-                        $stage3=$arr['stage_3'];
+                      }
+                      $res=mysqli_query($conn,"select stage_1 from bank_detail stage_1 = IS NOT NULL");
+                      while($arr=mysqli_fetch_assoc()){
+                        $stage11=$arr['stage_1'];
                       }
                       
-                      if($stage1='IS NULL'){
+                      if($stage1){
                         echo "Case Open";
                       }
-                      else if($stage1='IS NOT NULL'){
+                      else if($stage11){
                         echo "First Payment Done";
                       }
                       else if($stage2!=NULL){
