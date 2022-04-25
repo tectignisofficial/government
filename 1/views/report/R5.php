@@ -433,7 +433,7 @@ if (mysqli_num_rows($complaints)>0){
                   $per_page=2;
                   $start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
     
-                  $no_Of_row_sql = "select COUNT(*) from complaint_form";
+                  $no_Of_row_sql = "select COUNT(*) from criminal";
                   $query = mysqli_query($conn,$no_Of_row_sql);
                   $total_row =mysqli_fetch_array($query)[0];
                   $no_of_page=ceil($total_row/$per_page);  
