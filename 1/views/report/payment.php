@@ -339,7 +339,7 @@ if(isset($_POST['subt3'])){
                                                 <label for="exampleदिनांक">Stage 1</label>
                                                 <input type="text" required class="form-control" name="stage1"
                                                     id="stage1" placeholder="">
-                                                <input type="hidden" name="id1" id="stage1" >
+                                                <input type="hidden" name="id1" value="<?php echo $id ?>" id="stage1" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -373,7 +373,7 @@ if(isset($_POST['subt3'])){
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Stage 2</label>
                                                 <input type="text" required class="form-control" name="stage2" id="stage2" placeholder="">
-                                                <input type="hidden" name="id2" id="id2" >
+                                                <input type="hidden" value="<?php echo $id ?>" name="id2" id="id2" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -407,7 +407,7 @@ if(isset($_POST['subt3'])){
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Stage 3</label>
                                                 <input type="text" required class="form-control" name="stage3" id="stage3" placeholder="">
-                                                <input type="hidden" name="id3" id="id3" >
+                                                <input type="hidden" value="<?php echo $id ?>" name="id3" id="id3" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
