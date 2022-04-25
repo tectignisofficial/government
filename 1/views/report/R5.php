@@ -489,7 +489,11 @@ if (mysqli_num_rows($complaints)>0){
                    <?php $count++; } ?>
                    
 
-<tr><td><nav aria-label="Page navigation example">
+
+                  </tbody>                 
+           
+              </table>
+              <nav aria-label="Page navigation example">
 				  <ul class="pagination justify-content-center">
 					<li <?php if($page==1) echo "class='page-item disabled'";?>>
 					  <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
@@ -507,15 +511,6 @@ if (mysqli_num_rows($complaints)>0){
 					</li>
 				  </ul>
 				</nav>
-				<?php
-				
-				?></td></tr>
-                  </tbody>
-                
-                 </table>
-                 
-           
-              </table>
               </div>
               </div>
               <!-- /.card-body -->
