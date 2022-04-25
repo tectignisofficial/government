@@ -5,8 +5,8 @@ session_start();
 if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
 {
 }
-$btn=$_GET['btn1'];
-$btn2=$_GET['btn2'];
+$btn=mysqli_real_escape_string($conn, $_GET['btn1']);
+$btn2=mysqli_real_escape_string($conn, $_GET['btn2']);
 $id='';
 if($btn=="sub1"){
     $complaint_no=$_GET['name'];
@@ -344,7 +344,7 @@ if(isset($_POST['subt3'])){
                             <div class="card card-primary"> 
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="post"  enctype="multipart/form-data">
+                                <form method="post">
                                     <div class="card-body">
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
@@ -378,7 +378,7 @@ if(isset($_POST['subt3'])){
                             <div class="card card-primary"> 
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="post"  enctype="multipart/form-data">
+                                <form method="post">
                                     <div class="card-body">
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
@@ -412,7 +412,7 @@ if(isset($_POST['subt3'])){
                             <div class="card card-primary"> 
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="post"  enctype="multipart/form-data">
+                                <form method="post">
                                     <div class="card-body">
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
@@ -446,7 +446,7 @@ if(isset($_POST['subt3'])){
                             <div class="card card-primary"> 
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="post"  enctype="multipart/form-data">
+                                <form method="post">
                                     <div class="card-body">
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
@@ -513,6 +513,7 @@ if(isset($_POST['subt3'])){
         });
     </script>
     <script>
+        $(document).ready(function(){
        $("#sec2").css("display","none");
             $("#sec3").css("display","none");
             $("#sec4").css("display","none");
@@ -524,10 +525,15 @@ if(isset($_POST['subt3'])){
                     $.ajax({
                         type: "POST",
                         url: "payment.php",
-                        data: "name="+name+"btn1"+sub1,
+                        data:{name:name,
+                        btn1:sub1},
+                        cache:false
                         success: function(data){
                             $('#sec2').fadeIn().css("display","block");
                         }
+                        error: function(xhr, status, error) {
+                        console.error(xhr);
+                    }
                     });
             });
 
@@ -556,7 +562,8 @@ if(isset($_POST['subt3'])){
                             $('#sec4').fadeIn().css("display","block");
                         }
                     });
-        })
+        });
+    })
     </script>
 </body>
 
