@@ -17,13 +17,13 @@ if(isset($_POST['sub1'])){
         echo "<script>alert('.$id.');</script>";
     }
 }
-echo "<script>alert('.$id.');</script>";
 if(isset($_POST["sub2"])){
     $id=$_POST['id1'];
     $stage1=$_POST['stage1'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
     echo "<script>alert('.$id.');</script>";
 }
+echo "<script>alert('$id');</script>";
 
 if(isset($_POST['subt2'])){
     $id=$_POST['id2'];
