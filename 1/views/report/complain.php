@@ -420,7 +420,7 @@ if (mysqli_num_rows($complaints)>0){
                         $stage3=$arr['stage_3'];
                       }
                       
-                      if($stage1=='IS NULL'){
+                      if($stage1='IS NULL'){
                         echo "Case Open";
                       }
                       else if($stage1='IS NOT NULL'){
