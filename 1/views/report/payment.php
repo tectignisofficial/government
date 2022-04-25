@@ -9,20 +9,21 @@ $btn=mysqli_real_escape_string($conn, $_GET['btn1']);
 $btn2=mysqli_real_escape_string($conn, $_GET['btn2']);
 
 $id="";
-if($btn){
-    $complaint_no=$_POST['name'];
+if(isset($_POST['sub1'])){
+    $complaint_no=$_POST['complaint_no'];
     $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
     while($arr=mysqli_fetch_array($sql)){
         $id=$arr['id'];
         echo "<script>alert('.$id.');</script>";
     }
 }
-if($btn2){
-    $id=mysqli_real_escape_string($conn,$_GET['id1']);
-    $stage1=mysqli_real_escape_string($conn,$_GET['stage1']);
+if(isset($_POST["sub2"])){
+    $id=$_POST['id1'];
+    $stage1=$_POST['stage1'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
     echo "<script>alert('.$id.');</script>";
 }
+echo "<script>alert('$id');</script>";
 
 if(isset($_POST['subt2'])){
     $id=$_POST['id2'];
@@ -472,7 +473,14 @@ if(isset($_POST['subt3'])){
        $("#sec2").css("display","none");
             $("#sec3").css("display","none");
             $("#sec4").css("display","none");
-           
+
+            $("#sub1").click(function(){
+                $("#sec2").css("display","block");
+            });
+            $("#sub1").click(function(){
+                $("#sec3").css("display","block");
+            })
+           /*
             $("#sec1").submit(function(e) {
                 e.preventDefault();
                 let name = $("#complaint").val();
@@ -493,11 +501,11 @@ if(isset($_POST['subt3'])){
                 e.preventDefault();
                 let stage1 = $("#stage1").val();
                 let sub2=$("#sub2").val();
-                let id1=$("#id1").val();
+                let sub2=$("#id1").val();
                     $.ajax({
                         type: "POST",
                         url: "payment.php",
-                        data: "stage1="+stage1+"id1="+id1+"btn2"+sub2,
+                        data: "stage1="+stage1+"id1=+id1+"btn2"+sub2,
                         success: function(data){
                             $('#sec3').fadeIn().css("display","block");
                         }
@@ -516,7 +524,7 @@ if(isset($_POST['subt3'])){
                         }
                     });
         });
-           
+           */
     })
     </script>
 </body>
