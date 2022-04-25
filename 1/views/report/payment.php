@@ -422,7 +422,64 @@ if($btn4){
                                  
     </div>
     </div>
-                           
+    <script>
+            
+            $("#sec2").css("display","none");
+            $("#sec3").css("display","none");
+            $("#sec4").css("display","none");
+
+            /*$("#sub1").submit(function(e){
+                $("#sec2").css("display","block");
+            });
+            $("#sub1").submit(function(e){
+                $("#sec3").css("display","block");
+            })*/
+           
+            $("#sec1").submit(function(e) {
+                e.preventDefault();
+                let name = $("#complaint").val();
+                let sub1=$("#sub1").val();
+                alert(name);
+                    $.ajax({
+                        type: "POST",
+                        url: "payment.php",
+                        data:"name="+name+"btn1"+sub1,
+                        success: function(data){
+                            $('#sec2').fadeIn().css("display","block");
+                        }
+                        
+                    });
+            });
+
+            $("#sec2").submit(function(e) {
+                e.preventDefault();
+                let stage1 = $("#stage1").val();
+                let sub2=$("#sub2").val();
+                let id1=$("#id1").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "payment.php",
+                        data: "stage1="+stage1+"id1="+id1+"btn2"+sub2,
+                        success: function(data){
+                            $('#sec3').fadeIn().css("display","block");
+                        }
+                    });
+            });
+
+            $("#sec3").submit(function(e) {
+                e.preventDefault();
+                var stage2 = $("#stage2").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "payment.php",
+                        data: "stage2="+stage2,
+                        success: function(data){
+                            $('#sec4').fadeIn().css("display","block");
+                        }
+                    });
+        });
+           
+    </script>                     
 			</section>
                         </div>
                         <!--/.col (left) -->
@@ -466,64 +523,7 @@ if($btn4){
             bsCustomFileInput.init();
         });
     </script>
-    <script>
-            
-            $("#sec2").css("display","none");
-            $("#sec3").css("display","none");
-            $("#sec4").css("display","none");
-
-            /*$("#sub1").submit(function(e){
-                $("#sec2").css("display","block");
-            });
-            $("#sub1").submit(function(e){
-                $("#sec3").css("display","block");
-            })*/
-           
-            $("#sec1").submit(function(e) {
-                e.preventDefault();
-                let name = $("#complaint").val();
-                let sub1=$("#sub1").val();
-                alert(name);
-                    $.ajax({
-                        type: "POST",
-                        url: "payment.php",
-                        data:"name="+name+"btn1"+sub1,
-                        success: function(data){
-                            $('#sec2').fadeIn().css("display","block");
-                        }
-                        
-                    });
-            });
-
-            $("#sec2").submit(function(e) {
-                e.preventDefault();
-                let stage1 = $("#stage1").val();
-                let sub2=$("#sub2").val();
-                let sub2=$("#id1").val();
-                    $.ajax({
-                        type: "POST",
-                        url: "payment.php",
-                        data: "stage1="+stage1+"id1="+id1+"btn2"+sub2,
-                        success: function(data){
-                            $('#sec3').fadeIn().css("display","block");
-                        }
-                    });
-            });
-
-            $("#sec3").submit(function(e) {
-                e.preventDefault();
-                var stage2 = $("#stage2").val();
-                    $.ajax({
-                        type: "POST",
-                        url: "payment.php",
-                        data: "stage2="+stage2,
-                        success: function(data){
-                            $('#sec4').fadeIn().css("display","block");
-                        }
-                    });
-        });
-           
-    </script>
+    
 </body>
 
 </html>
