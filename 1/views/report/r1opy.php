@@ -288,12 +288,11 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                 
 
            
-             <h2 class=" text-center fs-1 fw-bold ">प्रपत्र - १.</h2>
+             <!--<h2 class=" text-center fs-1 fw-bold ">प्रपत्र - १.</h2>-->
                 <br>
                 <h5 class=" text-center ">- पीहित व्यक्तीचा बँक खात्याचा तपशीलत</h5>
 
-                  <br>
-                <p class=" text-center fw-bolder"> माहे ऑगस्ट , २०२१ मध्ये घडलेल्या गुन्हयांची माहिती</p>
+                <!--<p class=" text-center fw-bolder"> माहे ऑगस्ट , २०२१ मध्ये घडलेल्या गुन्हयांची माहिती</p>-->
 
 
             

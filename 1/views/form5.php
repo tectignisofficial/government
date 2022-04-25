@@ -348,7 +348,7 @@ else{
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">IFSC Code </label>
-                                                <input type="number" required class="form-control" name="ifsc_code"
+                                                <input type="text" required class="form-control" name="ifsc_code"
                                                     id="exampleदिनांक" placeholder="">
                                             </div>
                                          

@@ -372,8 +372,7 @@ if (mysqli_num_rows($complaints)>0){
     
             <div id='DivIdToPrint'>
               <div class="card-header" style="margin-top:12px" >
-                <h2 class=" text-center fs-1 fw-bold ">विषय क्रमांक - ४.</h2>
-                <br>
+                <!--<h2 class=" text-center fs-1 fw-bold ">विषय क्रमांक - ४.</h2>-->
                 <h5 class=" text-center ">दाखल झालेल्या गुन्हयांप्रमाणे सहाय्य देण्यासाठी / मंजुरीसाठी गुन्हेनिहाय अप्राप्त कागदपत्रांची माहिती माहे ( <?php $dat=$_POST['month']; echo $dat; ?> &   <?php $year=$_POST['year']; echo $year;  ?>), अखेर. </h5>
 
                   <br>
