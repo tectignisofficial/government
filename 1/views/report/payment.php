@@ -8,8 +8,8 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 $btn=mysqli_real_escape_string($conn, $_GET['btn1']);
 $btn2=mysqli_real_escape_string($conn, $_GET['btn2']);
 $id='';
-if($btn=="sub1"){
-    $complaint_no=$_GET['name'];
+if(isset($_POST['sub1'])){
+    $complaint_no=$_POST['complaint_no'];
     $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
     while($arr=mysqli_fetch_array($sql)){
         $id=$arr['id'];
@@ -18,8 +18,8 @@ if($btn=="sub1"){
     }
 }
 
-if($btn2=="sub2"){
-    $stage1=$_GET['stage1'];
+if(isset($_POST["sub2"])){
+    $stage1=$_POST['stage1'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
 }
 
@@ -462,7 +462,7 @@ if(isset($_POST['subt3'])){
             bsCustomFileInput.init();
         });
     </script>
-    <script>
+    <script>/*
         $(document).ready(function(){
        $("#sec2").css("display","none");
             $("#sec3").css("display","none");
