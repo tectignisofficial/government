@@ -14,25 +14,25 @@ if(isset($_POST['sub1'])){
     $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
     while($arr=mysqli_fetch_array($sql)){
         $id=$arr['id'];
-        echo "<script>alert('g');</script>";
         echo "<script>alert('.$id.');</script>";
     }
 }
 echo "<script>alert('.$id.');</script>";
 if(isset($_POST["sub2"])){
-    $id=$id;
+    $id=$_POST['id1'];
     $stage1=$_POST['stage1'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
-    echo "<script>alert('.$stage1.');</script>";
     echo "<script>alert('.$id.');</script>";
 }
 
 if(isset($_POST['subt2'])){
+    $id=$_POST['id2'];
     $stage2=$_POST['stage2'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id'");
 }
 
 if(isset($_POST['subt3'])){
+    $id=$_POST['id3'];
     $stage3=$_POST['stage3'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_3`='$stage3' WHERE caseid='$id'");
 }
@@ -339,6 +339,7 @@ if(isset($_POST['subt3'])){
                                                 <label for="exampleदिनांक">Stage 1</label>
                                                 <input type="text" required class="form-control" name="stage1"
                                                     id="stage1" placeholder="">
+                                                <input type="hidden" name="id1" id="stage1" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -371,8 +372,8 @@ if(isset($_POST['subt3'])){
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Stage 2</label>
-                                                <input type="text" required class="form-control" name="stage2"
-                                                    id="stage2" placeholder="">
+                                                <input type="text" required class="form-control" name="stage2" id="stage2" placeholder="">
+                                                <input type="hidden" name="id2" id="id2" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -405,8 +406,8 @@ if(isset($_POST['subt3'])){
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Stage 3</label>
-                                                <input type="text" required class="form-control" name="stage3"
-                                                    id="stage3" placeholder="">
+                                                <input type="text" required class="form-control" name="stage3" id="stage3" placeholder="">
+                                                <input type="hidden" name="id3" id="id3" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
