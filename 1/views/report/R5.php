@@ -482,14 +482,9 @@ if (mysqli_num_rows($complaints)>0){
                     <td><?php echo $arr["discrip"]; ?></td>
                    
                    </tr>
-                   <?php $count++; } ?>
                    
-
-
-                  </tbody>                 
-           
-              </table>
-              <nav aria-label="Page navigation example">
+                   
+<tr><td rowspan="21"><nav aria-label="Page navigation example">
 				  <ul class="pagination justify-content-center">
 					<li <?php if($page==1) echo "class='page-item disabled'";?>>
 					  <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
@@ -506,7 +501,12 @@ if (mysqli_num_rows($complaints)>0){
 					  <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
 					</li>
 				  </ul>
-				</nav>
+				</nav></td></tr>
+        <?php $count++; } ?>
+                  </tbody>                 
+           
+              </table>
+              
               </div>
               </div>
               <!-- /.card-body -->
