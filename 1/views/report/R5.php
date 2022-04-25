@@ -484,7 +484,7 @@ if (mysqli_num_rows($complaints)>0){
                    
 
 <tr><td><?php for($page = 1; $page<= $number_of_page; $page++) {  
-    echo '<a href = "index2.php?page=' . $page . '">' . $page . ' </a>';?>  </td></tr>
+    echo '<a href = "R5.php?page=' . $page . '">' . $page . ' </a>'; }?>  </td></tr>
                   </tbody>
                 
                  </table>
