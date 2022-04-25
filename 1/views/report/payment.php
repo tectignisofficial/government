@@ -9,17 +9,17 @@ $btn=mysqli_real_escape_string($conn, $_GET['btn1']);
 $btn2=mysqli_real_escape_string($conn, $_GET['btn2']);
 
 $id="";
-if(isset($_POST['sub1'])){
-    $complaint_no=$_POST['complaint_no'];
+if($btn){
+    $complaint_no=$_POST['name'];
     $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
     while($arr=mysqli_fetch_array($sql)){
         $id=$arr['id'];
         echo "<script>alert('.$id.');</script>";
     }
 }
-if(isset($_POST["sub2"])){
-    $id=$_POST['id1'];
-    $stage1=$_POST['stage1'];
+if($btn2){
+    $id=$_GET['id1'];
+    $stage1=$_GET['stage1'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
     echo "<script>alert('.$id.');</script>";
 }
@@ -339,7 +339,7 @@ if(isset($_POST['subt3'])){
                                                 <label for="exampleदिनांक">Stage 1</label>
                                                 <input type="text" required class="form-control" name="stage1"
                                                     id="stage1" placeholder="">
-                                                <input type="hidden" name="id1" value="<?php echo $id ?>" id="stage1" >
+                                                <input type="hidden" name="id1" value="<?php echo $id ?>" id="id1" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -467,8 +467,9 @@ if(isset($_POST['subt3'])){
             bsCustomFileInput.init();
         });
     </script>
-    <script>/*
+    <script>
         $(document).ready(function(){
+            
        $("#sec2").css("display","none");
             $("#sec3").css("display","none");
             $("#sec4").css("display","none");
@@ -484,12 +485,38 @@ if(isset($_POST['subt3'])){
                         data:"name="+name+"btn1"+sub1,
                         success: function(data){
                             $('#sec2').fadeIn().css("display","block");
-                            alert(data);
                         }
                         
                     });
             });
 
+            $("#sec2").submit(function(e) {
+                e.preventDefault();
+                let stage1 = $("#stage1").val();
+                let sub2=$("#sub2").val();
+                let id1=$("#id1").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "payment.php",
+                        data: "stage1="+stage1+"id1="+id1+"btn2"+sub2,
+                        success: function(data){
+                            $('#sec3').fadeIn().css("display","block");
+                        }
+                    });
+            });
+
+            $("#sec3").submit(function(e) {
+                e.preventDefault();
+                var stage2 = $("#stage2").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "payment.php",
+                        data: "stage2="+stage2,
+                        success: function(data){
+                            $('#sec4').fadeIn().css("display","block");
+                        }
+                    });
+        });
            
     })
     </script>
