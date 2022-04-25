@@ -62,57 +62,7 @@ if(isset($_POST['subt3'])){
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 
-    <script>
-        var stateObject = {
-            "रायगड": {
-                "अलिबाग": ["Thiruvananthapuram", "Palakkad"],
-                "पनवेल": ["North Goa", "South Goa"],
-                "मुरुड": ["North Goa", "South Goa"],
-                "पेण": ["Thiruvananthapuram", "Palakkad"],
-                "उरण": ["North Goa", "South Goa"],
-                "कर्जत": ["North Goa", "South Goa"],
-                "खालापूर": ["Thiruvananthapuram", "Palakkad"],
-                "माणगाव": ["North Goa", "South Goa"],
-                "माणगाव": ["North Goa", "South Goa"],
-                "रोहा": ["Thiruvananthapuram", "Palakkad"],
-                "तळा": ["North Goa", "South Goa"],
-                "महड": ["North Goa", "South Goa"],
-                "म्हसळा": ["Thiruvananthapuram", "Palakkad"],
-                "श्रीवर्धन": ["North Goa", "South Goa"],
-                "पोलादपूर": ["North Goa", "South Goa"],
-
-            },
-            "नवी मुंबई": {
-                "South Australia": ["Dunstan", "Mitchell"],
-                "Victoria": ["Altona", "Euroa"]
-            },
-        }
-        window.onload = function () {
-            var district = document.getElementById("district"),
-                taluka = document.getElementById("taluka"),
-                police = document.getElementById("police");
-            for (var dis in stateObject) {
-                district.options[district.options.length] = new Option(dis, dis);
-            }
-            district.onchange = function () {
-                taluka.length = 1; // remove all options bar first
-                police.length = 1; // remove all options bar first
-                if (this.selectedIndex < 1) return; // done
-                for (var talu in stateObject[this.value]) {
-                    taluka.options[taluka.options.length] = new Option(talu, talu);
-                }
-            }
-            district.onchange(); // reset in case page is reloaded
-            taluka.onchange = function () {
-                police.length = 1; // remove all options bar first
-                if (this.selectedIndex < 1) return; // done
-                var pol = stateObject[district.value][this.value];
-                for (var i = 0; i < pol.length; i++) {
-                    police.options[police.options.length] = new Option(pol[i], pol[i]);
-                }
-            }
-        }
-    </script>
+    
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -525,8 +475,7 @@ if(isset($_POST['subt3'])){
                     $.ajax({
                         type: "POST",
                         url: "payment.php",
-                        data:{name:name,
-                        btn1:sub1},
+                        data:"name="+name+"btn1"+sub1,
                         cache:false
                         success: function(data){
                             $('#sec2').fadeIn().css("display","block");
