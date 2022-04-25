@@ -434,7 +434,7 @@ if (mysqli_num_rows($complaints)>0){
 			}else{
 				$page=1;                                      //if not
 			}
-			$per_page=5;
+			$per_page=2;
 			$start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
 			
 			$no_Of_row_sql = "select COUNT(*) from criminal";
