@@ -478,7 +478,7 @@ if(isset($_POST['subt3'])){
                         data:"name="+name+"btn1"+sub1,
                         success: function(data){
                             $('#sec2').fadeIn().css("display","block");
-                            alert("name");
+                            alert(data);
                         }
                         
                     });
