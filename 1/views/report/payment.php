@@ -24,13 +24,13 @@ if($btn2){
     echo "<script>alert('.$id.');</script>";
 }
 
-if(isset($_POST['subt2'])){
+if($btn3){
     $id=$_POST['id2'];
     $stage2=$_POST['stage2'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id'");
 }
 
-if(isset($_POST['subt3'])){
+if($btn4){
     $id=$_POST['id3'];
     $stage3=$_POST['stage3'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_3`='$stage3' WHERE caseid='$id'");
