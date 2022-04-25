@@ -467,7 +467,6 @@ if($btn4){
         });
     </script>
     <script>
-        $(document).ready(function(){
             
        $("#sec2").css("display","none");
             $("#sec3").css("display","none");
@@ -524,7 +523,6 @@ if($btn4){
                     });
         });
            
-    })
     </script>
 </body>
 
