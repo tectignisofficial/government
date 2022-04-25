@@ -18,8 +18,8 @@ if($btn){
     }
 }
 if($btn2){
-    $id=$_GET['id1'];
-    $stage1=$_GET['stage1'];
+    $id=mysqli_real_escape_string($conn,$_GET['id1']);
+    $stage1=mysqli_real_escape_string($conn,$_GET['stage1']);
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
     echo "<script>alert('.$id.');</script>";
 }
