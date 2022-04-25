@@ -468,7 +468,7 @@ if($btn4){
     </script>
     <script>
             
-       $("#sec2").css("display","none");
+            $("#sec2").css("display","none");
             $("#sec3").css("display","none");
             $("#sec4").css("display","none");
 
