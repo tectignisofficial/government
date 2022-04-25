@@ -510,7 +510,7 @@ if(isset($_POST['subt3'])){
             bsCustomFileInput.init();
         });
     </script>
-    <script>
+    <script>/*
        $("#sec2").css("display","none");
             $("#sec3").css("display","none");
             $("#sec4").css("display","none");
