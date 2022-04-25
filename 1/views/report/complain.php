@@ -421,6 +421,7 @@ if (mysqli_num_rows($complaints)>0){
                       }
                       if($stage1=='Null'){
                         echo "Case Open";
+                        echo "<script>alert('".$stage1."');</script>";
                       }
                       else if($stage1!='Null'){
                         echo "First Payment Done";
