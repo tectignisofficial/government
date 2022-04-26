@@ -429,7 +429,7 @@ if (mysqli_num_rows($complaints)>0){
                    <tbody>
                    <?php 
                    /*pagination*/
-                   if(isset($_GET['page'])){
+                  /* if(isset($_GET['page'])){
                     $page=$_GET['page']; 				     //check pagevalue available
                     $page=mysqli_real_escape_string($conn,$page);
                   }else{
@@ -534,7 +534,7 @@ if (mysqli_num_rows($complaints)>0){
                      /* Setting pagination or enabling */
                      pagination: true,
                      /* Rows per page kept for display */
-                     perPage:3,
+                     perPage:2,
                      globalSearch:true
                      });
                                 
