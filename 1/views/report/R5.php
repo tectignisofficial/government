@@ -33,9 +33,12 @@ if (mysqli_num_rows($complaints)>0){
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <!---->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-  
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+  <link href=
+"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+         rel="stylesheet">
+         <script  src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -385,7 +388,7 @@ if (mysqli_num_rows($complaints)>0){
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-10" >
-              <table id="tbl table_id" class="table display  table-hover table-bordered"  >
+              <table id="tbl mytableID" class="table table-hover sampleTable table-bordered"  >
                 <thead>
                   <tr>
                     <th class="text-center"rowspan="2">अ. क्र.</th>
@@ -523,11 +526,20 @@ if (mysqli_num_rows($complaints)>0){
     </section>
     <!-- /.content -->
   </div>
-  <script>
-    window.$ = window.jquery = require('./node_modules/jquery');
-window.dt = require('./node_modules/datatables.net')();
-window.$('#table_id').DataTable();
-  </script>
+  <script >
+              $(document).ready(function() {
+                  $(".sampleTable").fancyTable({
+                    /* Column number for initial sorting*/
+                     sortColumn:0,
+                     /* Setting pagination or enabling */
+                     pagination: true,
+                     /* Rows per page kept for display */
+                     perPage:3,
+                     globalSearch:true
+                     });
+                                
+              });
+          </script>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
