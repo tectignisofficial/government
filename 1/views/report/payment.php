@@ -350,7 +350,7 @@ if(isset($_POST['subt3'])){
                                                 <input type="hidden" name="id1" value="<?php echo $id ?>" id="id1" >
                                                 <?php $sql=mysqli_query($conn,"select stage_1 from bank_detail where caseid='$id'");
                                                 $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="hidden" value="<?php echo $arr['stage_1'] ?>" name="id2" id="vv1" >
+                                                <input type="text" value="<?php echo $arr['stage_1'] ?>" name="id2" id="vv1" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -387,7 +387,7 @@ if(isset($_POST['subt3'])){
                                                 <input type="hidden" value="<?php echo $id ?>" name="id2" id="id2" >
                                                 <?php $sql=mysqli_query($conn,"select stage_2 from bank_detail where caseid='$id'");
                                                 $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="hidden" value="<?php echo $arr['stage_2'] ?>" name="id2" id="vv2" >
+                                                <input type="text" value="<?php echo $arr['stage_2'] ?>" name="id2" id="vv2" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -424,7 +424,7 @@ if(isset($_POST['subt3'])){
                                                 <input type="hidden" value="<?php echo $id ?>" name="id3" id="id3" >
                                                 <?php $sql=mysqli_query($conn,"select stage_3 from bank_detail where caseid='$id'");
                                                 $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="hidden" value="<?php echo $arr['stage_3'] ?>" name="id2" id="vv3" >
+                                                <input type="text" value="<?php echo $arr['stage_3'] ?>" name="id2" id="vv3" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -468,27 +468,30 @@ if(isset($_POST['subt3'])){
                 $("#sec2").css("display","block");
             }
 
-            if(sub2 != ""){
+            if(sub2 == ""){
 //alert("hello");
                 $("#sec3").css("display"," none");
             }else{
                 //alert("hell");
+                $("#stage1").css("display","none");
                 $("#sec3").css("display","block");
             }
 
-            if(sub3 != ""){
+            if(sub3 == ""){
 //alert("hello");
                 $("#sec4").css("display"," none");
             }else{
                 //alert("hell");
+                $("#stage2").css("display","none");
                 $("#sec4").css("display","block");
             }
 
-            if(sub4 != ""){
+            if(sub4 == ""){
 //alert("hello");
                 $("#sec4").css("display"," none");
             }else{
                 //alert("hell");
+                $("#stage3").css("display","none");
                 $("#sec4").css("display","block");
             }
 
