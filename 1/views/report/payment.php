@@ -18,6 +18,7 @@ if(isset($_POST['sub1'])){
     }
 }
 if(isset($_POST['sub2'])){
+    $id=$_POST['id1'];
     $stage1=$_POST['stage1'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
     echo "<script>alert('.$id.');</script>";
@@ -90,7 +91,7 @@ if($btn4){
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="fas fa-user-tie"></i>
@@ -345,7 +346,7 @@ if($btn4){
                                                 <label for="exampleदिनांक">Stage 1</label>
                                                 <input type="text" required class="form-control" name="stage1"
                                                     id="stage1" placeholder="">
-                                                <input type="hidden" name="id1" value="<?php //echo $arr['id']; ?>" id="id1" >
+                                                <input type="hidden" name="id1" value="<?php echo $id ?>" id="id1" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
