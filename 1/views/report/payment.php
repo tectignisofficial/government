@@ -431,7 +431,18 @@ if(isset($_POST['subt3'])){
                                  
     </div>
     </div>
-    <script>
+    
+			</section>
+                        </div>
+                        <!--/.col (left) -->
+                        <!-- right column -->
+
+                        <!--/.col (right) -->
+                    </div>
+                    <!-- /.row -->
+                
+          
+                    <script>
         $(document).ready(function(){
             $("#sec2").css("visibility","hidden");
             $("#sec3").css("visibility","hidden");
@@ -513,17 +524,6 @@ if(isset($_POST['subt3'])){
         });*/
            
     </script>                     
-			</section>
-                        </div>
-                        <!--/.col (left) -->
-                        <!-- right column -->
-
-                        <!--/.col (right) -->
-                    </div>
-                    <!-- /.row -->
-                
-          
-   
         <!-- /.content-wrapper -->
         <footer class="main-footer">
             <strong>Copyright &copy; 2022</strong>
