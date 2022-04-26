@@ -409,8 +409,9 @@ if(isset($_POST['submit'])){
 }
 					  $bank_detail = mysqli_query($conn,"select bank_detail.account_holder_name as account_holder_name,bank_detail.account_no as account_no,bank_detail.bank_name as bank_name,bank_detail.branch_name as branch_name,bank_detail.ifsc_code as ifsc_code,bank_detail.stage_1 as stage_1,bank_detail.stage_2 as stage_2,bank_detail.stage_3 as stage_3,complaint_form.book_no as book_no,complaint_form.date as date,complaint_form.district as district,complaint_form.police_station as police_station,complaint_form.complaint_no as complaint_no,complaint_form.complaint_filer_name as complain_name,complaint_form.complaint_filer_address as complain_address,image.discription as discription,victim.name as vname from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid inner join image on complaint_form.id=image.caseid left join victim on victim.caseid=complaint_form.id LIMIT  $start , $per_page");
 					 
-											$i=1;
+										
                       if(mysqli_num_rows($sql)>0){
+                        $i=1;
 											while($row = mysqli_fetch_array($bank_detail)) {
 											?> 
 					  
@@ -436,7 +437,7 @@ if(isset($_POST['submit'])){
                  
                   </tr>
 					   <?php
-										
+											$i++;
 											}
 											?>
                  
@@ -462,7 +463,7 @@ if(isset($_POST['submit'])){
 					</li>
 				  </ul>
 				</nav>
-        <?php 	$i++;}
+        <?php }
 				else{
 				header('location:R5.php?page=1');}
 				?>
