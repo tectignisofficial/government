@@ -249,7 +249,7 @@ echo mysqli_query($conn);
             <li class="nav-item">
 
               <a href="#" class="nav-link ">
-                <i class="nav-icon fas	fa-book"></i>
+                <i class=" nav-icon fas fa-landmark "></i>
                 <p>
                   बँक
                   <i class="right fas fa-angle-left"></i>
@@ -259,7 +259,7 @@ echo mysqli_query($conn);
               <ul class="nav nav-treeview">
                 <li class="nav-item">
               <a href="report/r1opy.php" class="nav-link">
-              <i class=" nav-icon fas fa-landmark"></i> 
+              <i class="nav-icon fas	fa-book"></i> 
                 <p>
                 बँक माहिती
                 </p>
@@ -268,7 +268,7 @@ echo mysqli_query($conn);
             </li>
             <li class="nav-item">
               <a href="report/payment.php" class="nav-link">
-              <i class=" nav-icon fas fa-landmark"></i> 
+              <i class=" nav-icon fa fa-paypal"></i> 
                 <p>
                payment
                 </p>
