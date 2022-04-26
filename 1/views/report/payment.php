@@ -437,8 +437,8 @@ if(isset($_POST['subt3'])){
             $("#sec3").css("visibility","hidden");
             $("#sec4").css("visibility","hidden");
 
-            let sub=$("#sub1").val();
-            let sub2=$("#sub2").val();
+            let sub=$("#sub1").value();
+            let sub2=$("#sub2").value();
 
             if(sub!=''){
                 $("#sec2").css("visibility"," visible");
