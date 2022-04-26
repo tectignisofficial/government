@@ -9,11 +9,17 @@ $btn=mysqli_real_escape_string($conn, $_GET['btn1']);
 $btn2=mysqli_real_escape_string($conn, $_GET['btn2']);
 
 $id="";
+$stage1="";
+$stage2="";
+$stage3="";
 if(isset($_POST['sub1'])){
     $complaint_no=$_POST['complaint_no'];
-    $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
+    $sql=mysqli_query($conn,"select complaint_form.id as id,complaint_form.complaint_no as no, bank_detail.stage_1 as stage1, bank_detail.stage_2 as stage2, bank_detail.stage_3 as stage_3 from complaint_form inner join bank_detail on complaint_form.id=bank_detail.caseid where complaint_form.complaint_no='$complaint_no'");
     while($arr=mysqli_fetch_array($sql)){
         $id=$arr['id'];
+        $stage1=$arr['stage1'];
+        $stage2=$arr['stage2'];
+        $stage3=$arr['stage_3'];
     }
 }
 if(isset($_POST['sub2'])){
@@ -336,10 +342,8 @@ if(isset($_POST['subt3'])){
                                                 <input type="text" required class="form-control" name="stage1"
                                                     id="stage1" placeholder="">
                                                 <input type="hidden" name="id1" value="<?php echo $id ?>" id="id1" >
-                                                <?php $sql=mysqli_query($conn,"select stage_1 from bank_detail where caseid='$id'");
-                                                while($arr=mysqli_fetch_array($sql)){ ?>
-                                                <input type="text" value="<?php echo $arr['stage_1'] ?>" name="id2" id="vv1" style="border: hidden;text-align:center" readonly>
-                                                <?php } ?>
+                                                
+                                                <input type="text" value="<?php echo $stage1 ?>" name="id2" id="vv1" style="border: hidden;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -374,9 +378,8 @@ if(isset($_POST['subt3'])){
                                                 <label for="exampleदिनांक">Stage 2</label>
                                                 <input type="text" required class="form-control" name="stage2" id="stage2" placeholder="">
                                                 <input type="hidden" value="<?php echo $id ?>" name="id2" id="id2" >
-                                                <?php $sql=mysqli_query($conn,"select stage_2 from bank_detail where caseid='$id'");
-                                                $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="text" value="<?php echo $arr['stage_2'] ?>" name="id2" id="vv2" style="border: hidden;text-align:center" readonly>
+                                               
+                                                <input type="text" value="<?php echo $stage2 ?>" name="id2" id="vv2" style="border: hidden;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -411,9 +414,8 @@ if(isset($_POST['subt3'])){
                                                 <label for="exampleदिनांक">Stage 3</label>
                                                 <input type="text" required class="form-control" name="stage3" id="stage3" placeholder="">
                                                 <input type="hidden" value="<?php echo $id ?>" name="id3" id="id3" >
-                                                <?php $sql=mysqli_query($conn,"select stage_3 from bank_detail where caseid='$id'");
-                                                $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="text" value="<?php echo $arr['stage_3'] ?>" name="id2" id="vv3" style="border: hidden;text-align:center" readonly>
+                                                
+                                                <input type="text" value="<?php echo $stage3 ?>" name="id2" id="vv3" style="border: hidden;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
