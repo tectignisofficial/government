@@ -39,6 +39,7 @@ if (mysqli_num_rows($complaints)>0){
          <script  src=
 "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery.fancytable/dist/fancyTable.min.js"></script>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -528,17 +529,13 @@ if (mysqli_num_rows($complaints)>0){
   </div>
   <script >
               $(document).ready(function() {
-                  $(".sampleTable").fancyTable({
-                    /* Column number for initial sorting*/
-                     sortColumn:0,
-                     /* Setting pagination or enabling */
-                     pagination: true,
-                     /* Rows per page kept for display */
-                     perPage:2,
-                     globalSearch:true
-                     });
-                                
-              });
+		$(".sampleTable").fancyTable({
+			sortColumn:0,
+			pagination: true,
+			perPage:10,
+			globalSearch:true
+		});		
+	});
           </script>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
