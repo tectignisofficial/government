@@ -530,7 +530,7 @@ if (mysqli_num_rows($complaints)>0){
   <script >
             $(document).ready (function () {  
     $('#data').after ('<div id="nav"></div>');  
-    var rowsShown = 5;  
+    var rowsShown = 2;  
     var rowsTotal = $('#data tbody tr').length;  
     var numPages = rowsTotal/rowsShown;  
     for (i = 0;i < numPages;i++) {  
