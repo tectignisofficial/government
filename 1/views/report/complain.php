@@ -441,13 +441,7 @@ if (mysqli_num_rows($complaints)>0){
               </div>
               <!-- /.card-body -->
                     </div>
-                    <script>
-  $("#closeCase").val();
-  if($("#closeCase").val()=="Case Close"){
-    $(".no").css("visibility","hidden");
-  }
-  });
-</script>
+                   
             </div>
             <!-- /.card -->
           </div>
@@ -509,7 +503,13 @@ if (mysqli_num_rows($complaints)>0){
 
 }
 </script>
-
+<script>
+  $("#closeCase").val();
+  if($("#closeCase").val()=="Case Close"){
+    $(".no").css("visibility","hidden");
+  }
+  });
+</script>
 <script>
   $(function () {
     $("#example1").DataTable({
