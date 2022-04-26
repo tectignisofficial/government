@@ -468,7 +468,7 @@ if(isset($_POST['subt3'])){
                 $("#sec2").css("display","block");
             }
 
-            if(sub2 == ""){
+            if(sub2 != ""){
 //alert("hello");
                 $("#sec3").css("display"," none");
             }else{
@@ -476,7 +476,7 @@ if(isset($_POST['subt3'])){
                 $("#sec3").css("display","block");
             }
 
-            if(sub3 == ""){
+            if(sub3 != ""){
 //alert("hello");
                 $("#sec4").css("display"," none");
             }else{
@@ -484,7 +484,7 @@ if(isset($_POST['subt3'])){
                 $("#sec4").css("display","block");
             }
 
-            if(sub4 == ""){
+            if(sub4 != ""){
 //alert("hello");
                 $("#sec4").css("display"," none");
             }else{
