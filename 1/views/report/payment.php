@@ -22,7 +22,7 @@ if(isset($_POST['sub2'])){
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
 }
 
-if(isset($_POST['subt2'])){
+if(isset($_POST['sub3'])){
     $id=$_POST['id2'];
     $stage2=$_POST['stage2'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id'");
@@ -318,16 +318,6 @@ if(isset($_POST['subt3'])){
     </div>
     </div>
 			</section>
-
-            <?php
-            /*if(isset($_POST['sub1'])){
-                $complaint_no=$_POST['complaint_no'];
-                $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
-                $arr=mysqli_fetch_array($sql);
-                   
-                
-            }*/
-            ?>
 			
 			<section class="content" id="sec2">
                 <div class="container-fluid">
@@ -347,8 +337,9 @@ if(isset($_POST['subt3'])){
                                                     id="stage1" placeholder="">
                                                 <input type="hidden" name="id1" value="<?php echo $id ?>" id="id1" >
                                                 <?php $sql=mysqli_query($conn,"select stage_1 from bank_detail where caseid='$id'");
-                                                $arr=mysqli_fetch_array($sql) ?>
+                                                while($arr=mysqli_fetch_array($sql)){ ?>
                                                 <input type="text" value="<?php echo $arr['stage_1'] ?>" name="id2" id="vv1" style="border: hidden;text-align:center" readonly>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -389,7 +380,7 @@ if(isset($_POST['subt3'])){
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
-                                            <button type="submit" id="sub3" name="subt2" class="btn btn-primary"> Submit
+                                            <button type="submit" id="" name="sub3" class="btn btn-primary"> Submit
                                             </button>
                                         </div>
                                     </div>  
