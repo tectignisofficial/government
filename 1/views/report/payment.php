@@ -321,9 +321,13 @@ if($btn4){
 			</section>
 
             <?php
-            $complaint_no=$_POST['complaint_no'];
-            $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
-            $row=mysqli_fetch_array($sql);
+            if(isset($_POST['sub1'])){
+                $complaint_no=$_POST['complaint_no'];
+                $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
+                $arr=mysqli_fetch_array($sql);
+                    $id=$arr['id'];
+                
+            }
             ?>
 			
 			<section class="content" id="sec2">
