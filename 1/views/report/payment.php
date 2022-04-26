@@ -443,7 +443,7 @@ if($btn4){
                     $.ajax({
                         type: "POST",
                         url: "payment.php",
-                        data:"name="+name+"btn1"+sub1,
+                        data:"name="+name+"btn1="+sub1,
                         success: function(data){
                             $('#sec2').fadeIn().css("display","block");
                             $('#id1').html(data);
@@ -460,7 +460,7 @@ if($btn4){
                     $.ajax({
                         type: "POST",
                         url: "payment.php",
-                        data: "stage1="+stage1+"id1="+id1+"btn2"+sub2,
+                        data: "stage1="+stage1+"id1="+id1+"btn2="+sub2,
                         success: function(data){
                             alert($id1);
                             //$('#sec3').fadeIn().css("display","block");
