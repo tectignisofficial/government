@@ -40,6 +40,11 @@ if(isset($_POST['subt3'])){
     $id=$_POST['id3'];
     $stage3=$_POST['stage3'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_3`='$stage3' WHERE caseid='$id'");
+    if($sql==1){
+        echo "<script>alert('Case Close');</script>";
+        header("location:payment.php");
+    }
+   
 }
 ?>
 
