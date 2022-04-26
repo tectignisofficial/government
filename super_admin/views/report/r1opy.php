@@ -436,7 +436,7 @@ if(isset($_POST['submit'])){
                  
                   </tr>
 					   <?php
-											$i++;
+										
 											}
 											?>
                  
@@ -462,7 +462,7 @@ if(isset($_POST['submit'])){
 					</li>
 				  </ul>
 				</nav>
-        <?php }
+        <?php 	$i++;}
 				else{
 				header('location:R5.php?page=1');}
 				?>
