@@ -378,9 +378,9 @@ if(isset($_POST['subt3'])){
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Stage 2</label>
-                                                <input type="text" required class="form-control" name="stage2" id="stage2" placeholder="">
-                                                
-                                                <input type="hidden" name="id2" value="<?php echo $id ?>" id="id2" >
+                                                <input type="text" required class="form-control" name="stage2" 
+                                                id="stage2" placeholder="">
+                                                <input type="text" name="id2" value="<?php echo $id ?>" id="id2" >
                                                 <input type="text" value="<?php echo $stage2 ?>" name="id2" id="vv2" style="border: hidden;text-align:center" readonly>
                                             </div>
                                         </div>
