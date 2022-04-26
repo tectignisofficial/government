@@ -303,6 +303,7 @@ if(isset($_POST['subt3'])){
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Complaint No</label>
                                                 <input type="text" required class="form-control" name="complaint_no" id="complaint" placeholder="" required>
+                                                <span id="sub1"><?php echo $id ?></span>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -431,6 +432,27 @@ if(isset($_POST['subt3'])){
     </div>
     </div>
     <script>
+        $(document).ready(function(){
+            $("#sec2").css("display","none");
+            $("#sec3").css("display","none");
+            $("#sec4").css("display","none");
+
+            let sub=$("#sub1").val();
+            let sub2=$("#sub2").val();
+
+            if(sub!=''){
+                $("#sec2").css("display","block");
+            }else{
+                $("#sec2").css("display","none");
+            }
+            if(sub2!=''){
+                $("#sec3").css("display","block");
+            }else{
+                $("#sec3").css("display","none");
+            }
+
+            
+        })
           /*  
             $("#sec2").css("display","none");
             $("#sec3").css("display","none");
@@ -457,7 +479,7 @@ if(isset($_POST['subt3'])){
                             $('#id1').html(status);
                         }
                         
-                    });
+                    }); 
             });
 
             $("#sec2").submit(function(e) {
