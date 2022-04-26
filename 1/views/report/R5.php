@@ -447,13 +447,13 @@ if (mysqli_num_rows($complaints)>0){
                  complaint_form.complaint_filer_address as comp_add,complaint_form.police_station as station,
                  complaint_form.district as district,criminal.criminal_name as crname,criminal.criminal_address as cradd,
                  criminal.age as crage,victim.name as vname,victim.address as vaddress,victim.caste as vcaste,victim.victim_age as vage,victim.caste_certificate as vcertificate,victim.aadhar_card as vaadhar,victim.charge_sheet as vcsheet,image.discription as discrip,
-                complaint_form.discription as discription from criminal inner join complaint_form on complaint_form.id=criminal.caseid inner join victim on victim.caseid=complaint_form.id  inner join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district' LIMIT  $start , $per_page");
+                complaint_form.discription as discription from criminal inner join complaint_form on complaint_form.id=criminal.caseid inner join victim on victim.caseid=complaint_form.id  inner join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district' ");
                   $count=1;
                   $num=mysqli_num_rows($sql);
                   if($num==0){
                     echo "<tr><td colspan='24' style='text-align:center;font-size:40px;vertical-align:middle;color:red;'>No RECORD FOUND</td></tr>";
                   }
-                    if(mysqli_num_rows($sql)>0){
+                   // if(mysqli_num_rows($sql)>0){
                     while($arr=mysqli_fetch_array($sql)){
                     ?>
           
@@ -489,27 +489,27 @@ if (mysqli_num_rows($complaints)>0){
               
               </div>
               </div>
-              <nav aria-label="Page navigation example">
+             <!-- <nav aria-label="Page navigation example">
 				  <ul class="pagination justify-content-center">
-					<li <?php if($page==1) echo "class='page-item disabled'";?>>
-					  <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
+					<li <?php// if($page==1) echo "class='page-item disabled'";?>>
+					  <a class="page-link" href="?page=<?php //echo $page-1; ?>">Previous</a>
 					</li>
 					
 					<?php
-					for($i=1;$i<=$no_of_page;$i++){
+					//for($i=1;$i<=$no_of_page;$i++){
 						?>
-						<li <?php if($page==$i){echo "class='page-item active'";} ?>>
-						<a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+						<li <?php //if($page==$i){echo "class='page-item active'";} ?>>
+						<a class="page-link" href="?page=<?php //echo $i; ?>"><?php //echo $i; ?></a>
 						</li>	
-					<?php } ?>
-					<li <?php if($page==$no_of_page) echo "class='page-item disabled'";?>>
-					  <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
+					<?php //} ?>
+					<li <?php //if($page==$no_of_page) echo "class='page-item disabled'";?>>
+					  <a class="page-link" href="?page=<?php //echo $page+1; ?>">Next</a>
 					</li>
 				  </ul>
-				</nav>
-        <?php }
-				else{
-				header('location:R5.php?page=1');}
+				</nav>-->
+        <?php //}
+				//else{
+			//	header('location:R5.php?page=1');}
 				?>
               <!-- /.card-body -->
             </div>
