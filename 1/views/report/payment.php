@@ -473,13 +473,7 @@ if(isset($_POST['subt3'])){
                 $("#sec4").css("display","block");
             }
 
-            if(sub4 == ""){
-                $("#sec4").css("display"," none");
-            }else{
-                $("#stage3").css("display","none");
-                $("#sec4").css("display","block");
-                
-            }
+            
 
             
         })
