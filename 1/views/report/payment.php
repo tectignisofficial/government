@@ -350,7 +350,7 @@ if(isset($_POST['subt3'])){
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
-                                            <button type="submit" name="sub2" id="sub2" class="btn btn-primary"> Submit
+                                            <button type="button" name="sub2" id="sub2" class="btn btn-primary"> Submit
                                             </button>
                                         </div>
                                     </div>  
