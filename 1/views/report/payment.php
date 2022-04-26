@@ -444,9 +444,7 @@ if(isset($_POST['subt3'])){
           
                     <script>
         $(document).ready(function(){
-            $("#sec2").css("visibility","hidden");
-            $("#sec3").css("visibility","hidden");
-            $("#sec4").css("visibility","hidden");
+            
 
             let sub=$("#vvv").val();
             //let sub2=$("#sub2").val();
