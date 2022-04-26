@@ -433,22 +433,23 @@ if(isset($_POST['subt3'])){
     </div>
     <script>
         $(document).ready(function(){
-            $("#sec2").css("display","none");
-            $("#sec3").css("display","none");
-            $("#sec4").css("display","none");
+            $("#sec2").css("visibility","hidden");
+            $("#sec3").css("visibility","hidden");
+            $("#sec4").css("visibility","hidden");
 
             let sub=$("#sub1").val();
             let sub2=$("#sub2").val();
 
             if(sub!=''){
-                $("#sec2").css("display","block");
+                $("#sec2").css("visibility"," visible");
             }else{
-                $("#sec2").css("display","none");
+                $("#sec2").css("visibility","hidden");
             }
+
             if(sub2!=''){
-                $("#sec3").css("display","block");
+                $("#sec3").css("visibility"," visible");
             }else{
-                $("#sec3").css("display","none");
+                $("#sec3").css("visibility","hidden");
             }
 
             
