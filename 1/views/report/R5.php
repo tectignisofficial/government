@@ -33,13 +33,8 @@ if (mysqli_num_rows($complaints)>0){
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <!---->
-  <link href=
-"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
-         rel="stylesheet">
-         <script  src=
-"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery.fancytable/dist/fancyTable.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"> </script>  
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"> </script>  
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -490,7 +485,7 @@ if (mysqli_num_rows($complaints)>0){
                   </tbody>                 
            
               </table>
-              
+              <ul id="pagination-demo" class="pagination-sm">  
               </div>
               </div>
              <!-- <nav aria-label="Page navigation example">
@@ -515,7 +510,7 @@ if (mysqli_num_rows($complaints)>0){
 				//else{
 			//	header('location:R5.php?page=1');}
 				?>
-              <!-- /.card-body -->
+              <div id="page-content" class="page-content"> Page 1</div> <!-- /.card-body -->
             </div>
             <!-- /.card -->
           </div>
@@ -528,27 +523,17 @@ if (mysqli_num_rows($complaints)>0){
     <!-- /.content -->
   </div>
   <script >
-            $(document).ready (function () {  
-    $('#data').after ('<div id="nav"></div>');  
-    var rowsShown = 2;  
-    var rowsTotal = $('#data tbody tr').length;  
-    var numPages = rowsTotal/rowsShown;  
-    for (i = 0;i < numPages;i++) {  
-        var pageNum = i + 1;  
-        $('#nav').append ('<a href="#" rel="'+i+'">'+pageNum+'</a> ');  
-    }  
-    $('#data tbody tr').hide();  
-    $('#data tbody tr').slice (0, rowsShown).show();  
-    $('#nav a:first').addClass('active');  
-    $('#nav a').bind('click', function() {  
-    $('#nav a').removeClass('active');  
-   $(this).addClass('active');  
-        var currPage = $(this).attr('rel');  
-        var startItem = currPage * rowsShown;  
-        var endItem = startItem + rowsShown;  
-        $('#data tbody tr').css('opacity','0.0').hide().slice(startItem, endItem).  
-        css('display','table-row').animate({opacity:1}, 300);  
-    });  
+           $(function () {  
+$("#pagination-demo").twbsPagination({  
+  totalPages: 16,  
+  visiblePages: 2,  
+  next: "Next",  
+  prev: "Prev",  
+  onPageClick: function (event, page) {  
+    //fetch content and render here  
+    $("#page-content").text ("Page? + page) + ?content here";  
+  }  
+});  
 });  
           </script>
   <!-- /.content-wrapper -->
