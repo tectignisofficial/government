@@ -356,15 +356,7 @@ if(isset($_POST['subt3'])){
     </div>
                          
 			</section>
-			<?php
-            if(isset($_POST['sub3'])){
-                $id1=$_POST['id2'];
-                $stage2=$_POST['stage2'];
-                $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id1'");
-                echo "<script>alert('$id1');</script>";
-            }
-            
-            ?>
+			
 			<section class="content" id="sec3">
                 <div class="container-fluid">
                     <div class="row">
@@ -374,7 +366,7 @@ if(isset($_POST['subt3'])){
                             <div class="card card-primary"> 
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="post">
+                                <form method="post" action="pay.php">
                                     <div class="card-body">
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
