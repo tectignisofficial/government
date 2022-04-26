@@ -1,17 +1,11 @@
-$("#sec1").submit(function(e) {
-                e.preventDefault();
-                let names = $("#complaint").val();
-                let sub1=$("#sub1").val();
-                alert(name);
-                    $.ajax({
-                        type: "POST",
-                        url: "pay.php",
-                        data:{name : names,
-                        sub1 : btn1},
-                        success: function(data,status){
-                            $('#sec2').fadeIn().css("display","block");
-                            readrecord();
-                        }
-                        
-                    });
-            });
+<?php
+include("../../include.php");
+if(isset($_POST['sub3'])){
+    $id1=$_POST['id2'];
+    $stage2=$_POST['stage2'];
+    $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id1'");
+    echo "<script>alert('$id1');</script>";
+}
+
+
+?>
