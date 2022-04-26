@@ -32,6 +32,7 @@ if(isset($_POST['sub3'])){
     $id=$_POST['id2'];
     $stage2=$_POST['stage2'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id'");
+    echo "<script>alert('Stage 2 Updated Successfully');</script>";
 }
 
 if(isset($_POST['subt3'])){
