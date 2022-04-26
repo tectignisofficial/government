@@ -303,7 +303,7 @@ if(isset($_POST['subt3'])){
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Complaint No</label>
                                                 <input type="text" required class="form-control" name="complaint_no" id="complaint" placeholder="" required>
-                                                <input type="hidden" name="" value="<?php echo $id ?>" id="vv1" >
+                                                <input type="hidden" name="" value="<?php echo $id ?>" id="vvv" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -348,6 +348,9 @@ if(isset($_POST['subt3'])){
                                                 <input type="text" required class="form-control" name="stage1"
                                                     id="stage1" placeholder="">
                                                 <input type="hidden" name="id1" value="<?php echo $id ?>" id="id1" >
+                                                <?php $sql=mysqli_query($conn,"select stage_1 from bank_detail where caseid='$id'");
+                                                $arr=mysqli_fetch_array($sql) ?>
+                                                <input type="hidden" value="<?php echo $arr['stage_1'] ?>" name="id2" id="vv1" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -382,9 +385,9 @@ if(isset($_POST['subt3'])){
                                                 <label for="exampleदिनांक">Stage 2</label>
                                                 <input type="text" required class="form-control" name="stage2" id="stage2" placeholder="">
                                                 <input type="hidden" value="<?php echo $id ?>" name="id2" id="id2" >
-                                                <?php $sql=mysqli_query($conn,"select stage_1 from bank_detail where caseid='$id'");
+                                                <?php $sql=mysqli_query($conn,"select stage_2 from bank_detail where caseid='$id'");
                                                 $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="hidden" value="<?php echo $arr['stage_1'] ?>" name="id2" id="id2" >
+                                                <input type="hidden" value="<?php echo $arr['stage_2'] ?>" name="id2" id="vv2" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -419,6 +422,9 @@ if(isset($_POST['subt3'])){
                                                 <label for="exampleदिनांक">Stage 3</label>
                                                 <input type="text" required class="form-control" name="stage3" id="stage3" placeholder="">
                                                 <input type="hidden" value="<?php echo $id ?>" name="id3" id="id3" >
+                                                <?php $sql=mysqli_query($conn,"select stage_3 from bank_detail where caseid='$id'");
+                                                $arr=mysqli_fetch_array($sql) ?>
+                                                <input type="hidden" value="<?php echo $arr['stage_3'] ?>" name="id2" id="vv3" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -451,12 +457,14 @@ if(isset($_POST['subt3'])){
 
             let sub=$("#vvv").val();
             let sub2=$("#vv1").val();
+            let sub3=$("#vv2").val();
+            let sub4=$("#vv3").val();
 
             if(sub == ""){
 //alert("hello");
                 $("#sec2").css("display"," none");
             }else{
-                alert("hell");
+                //alert("hell");
                 $("#sec2").css("display","block");
             }
 
@@ -466,6 +474,22 @@ if(isset($_POST['subt3'])){
             }else{
                 //alert("hell");
                 $("#sec3").css("display","block");
+            }
+
+            if(sub3 == ""){
+//alert("hello");
+                $("#sec4").css("display"," none");
+            }else{
+                //alert("hell");
+                $("#sec4").css("display","block");
+            }
+
+            if(sub4 == ""){
+//alert("hello");
+                $("#sec4").css("display"," none");
+            }else{
+                //alert("hell");
+                $("#sec4").css("display","block");
             }
 
             
