@@ -14,14 +14,12 @@ if(isset($_POST['sub1'])){
     $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
     while($arr=mysqli_fetch_array($sql)){
         $id=$arr['id'];
-        echo "<script>alert('.$id.');</script>";
     }
 }
 if(isset($_POST['sub2'])){
     $id=$_POST['id1'];
     $stage1=$_POST['stage1'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
-    echo "<script>alert('.$id.');</script>";
 }
 
 if(isset($_POST['subt2'])){
