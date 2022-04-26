@@ -366,7 +366,7 @@ if(isset($_GET['page'])){
 }else{
   $page=1;                                      //if not
 }
-$per_page=2;
+$per_page=10;
 $start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
 
 $no_Of_row_sql = "select COUNT(*) from bank_detail";

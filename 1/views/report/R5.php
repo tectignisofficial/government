@@ -32,7 +32,10 @@ if (mysqli_num_rows($complaints)>0){
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
-
+  <!---->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+  
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -382,7 +385,7 @@ if (mysqli_num_rows($complaints)>0){
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-10" >
-              <table id="tbl" class="table  table-hover table-bordered">
+              <table id="tbl table_id" class="table display  table-hover table-bordered"  >
                 <thead>
                   <tr>
                     <th class="text-center"rowspan="2">अ. क्र.</th>
@@ -520,6 +523,11 @@ if (mysqli_num_rows($complaints)>0){
     </section>
     <!-- /.content -->
   </div>
+  <script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+  </script>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
