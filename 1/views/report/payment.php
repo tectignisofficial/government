@@ -451,44 +451,113 @@ if(isset($_POST['subt3'])){
                     <!-- /.row -->
                 
           
-    <script>
+                    <script>
         $(document).ready(function(){
             
+
             let sub=$("#vvv").val();
             let sub2=$("#vv1").val();
             let sub3=$("#vv2").val();
             let sub4=$("#vv3").val();
 
             if(sub == ""){
+//alert("hello");
                 $("#sec2").css("display"," none");
             }else{
+                //alert("hell");
                 $("#sec2").css("display","block");
             }
 
             if(sub2 == ""){
+//alert("hello");
                 $("#sec3").css("display"," none");
             }else{
+                //alert("hell");
                 $("#stage1").css("display","none");
-                $("#sec3").css("background-color": "#eee", "display": "block");
+                $("#sec3").css("display","block");
+                $(this).css("background-color": "#eee", "display": "block");
             }
 
             if(sub3 == ""){
+//alert("hello");
                 $("#sec4").css("display"," none");
             }else{
+                //alert("hell");
                 $("#stage2").css("display","none");
-                $("#sec4").css("background-color": "#eee", "display": "block");
+                $("#sec4").css("display","block");
+                $(this).css("background-color": "#eee", "display": "block");
             }
 
             if(sub4 == ""){
+//alert("hello");
                 $("#sec4").css("display"," none");
             }else{
+                //alert("hell");
                 $("#stage3").css("display","none");
-                $("#sec4").css("background-color": "#eee", "display": "block");
+                $("#sec4").css("display","block");
+                $(this).css("background-color": "#eee", "display": "block");
             }
 
             
         })
-         
+          /*  
+            $("#sec2").css("display","none");
+            $("#sec3").css("display","none");
+            $("#sec4").css("display","none");
+
+            /*$("#sub1").submit(function(e){
+                $("#sec2").css("display","block");
+            });
+            $("#sub1").submit(function(e){
+                $("#sec3").css("display","block");
+            })*/
+           
+          /*  $("#sec1").submit(function(e) {
+                e.preventDefault();
+                let name = $("#complaint").val();
+                let sub1=$("#sub1").val();
+                alert(name);
+                    $.ajax({
+                        type: "POST",
+                        url: "payment.php",
+                        data:"name="+name+"btn1="+sub1,
+                        success: function(data,status){
+                            $('#sec2').fadeIn().css("display","block");
+                            $('#id1').html(status);
+                        }
+                        
+                    }); 
+            });
+
+            $("#sec2").submit(function(e) {
+                e.preventDefault();
+                let stage1 = $("#stage1").val();
+                let sub2=$("#sub2").val();
+                let id1 = $("#complaint").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "payment.php",
+                        data: "stage1="+stage1+"id1="+id1+"btn2="+sub2,
+                        success: function(data){
+                            //alert($id1);
+                            //$('#sec3').fadeIn().css("display","block");
+                        }
+                    });
+            });
+
+            $("#sec3").submit(function(e) {
+                e.preventDefault();
+                var stage2 = $("#stage2").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "payment.php",
+                        data: "stage2="+stage2,
+                        success: function(data){
+                            $('#sec4').fadeIn().css("display","block");
+                        }
+                    });
+        });*/
+           
     </script>                     
         <!-- /.content-wrapper -->
         <footer class="main-footer">
