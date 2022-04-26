@@ -303,7 +303,7 @@ if(isset($_POST['subt3'])){
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Complaint No</label>
                                                 <input type="text" required class="form-control" name="complaint_no" id="complaint" placeholder="" required>
-                                                <span id="vvv"><?php echo $id ?></span>
+                                                <input type="hidden" name="id1" value="<?php echo $id ?>" id="vvv" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
