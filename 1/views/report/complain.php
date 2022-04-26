@@ -404,7 +404,7 @@ if (mysqli_num_rows($complaints)>0){
                     <td><?php echo $arr["section"]; ?></td>
                     <td><?php echo $arr["type_of_offence"]; ?></td>
                     
-                    <td  class="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" id="edit" class="btn btn-success btn-xs delete_purchase edit ">
+                    <td  class="no" id="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" id="edit" class="btn btn-success btn-xs delete_purchase edit ">
 		                          <i class="fas fa-edit"></i>
 		                        </a>
                           </td>
@@ -433,7 +433,7 @@ if (mysqli_num_rows($complaints)>0){
 <script>
   $("#closeCase").val();
   if($("#closeCase").val()=="Case Close"){
-    $(".no").css("display","none");
+    $(".no").css("visibility","hidden");
   }
   });
 </script>
