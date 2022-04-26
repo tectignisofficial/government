@@ -303,7 +303,7 @@ if(isset($_POST['subt3'])){
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Complaint No</label>
                                                 <input type="text" required class="form-control" name="complaint_no" id="complaint" placeholder="" required>
-                                                <span id="sub1"><?php echo $id ?></span>
+                                                <span id="vvv"><?php echo $id ?></span>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -448,8 +448,8 @@ if(isset($_POST['subt3'])){
             $("#sec3").css("visibility","hidden");
             $("#sec4").css("visibility","hidden");
 
-            let sub=$("#sub1").val();
-            let sub2=$("#sub2").val();
+            let sub=$("#vvv").val();
+            //let sub2=$("#sub2").val();
 
             if(sub!=''){
                 $("#sec2").css("visibility"," visible");
@@ -457,11 +457,11 @@ if(isset($_POST['subt3'])){
                 $("#sec2").css("visibility","hidden");
             }
 
-            if(sub2!=''){
+            /*if(sub2!=''){
                 $("#sec3").css("visibility"," visible");
             }else{
                 $("#sec3").css("visibility","hidden");
-            }
+            }*/
 
             
         })
