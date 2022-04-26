@@ -452,8 +452,10 @@ if(isset($_POST['subt3'])){
             //let sub2=$("#sub2").val();
 
             if(sub != ""){
-                $("#sec2").css("visibility"," visible");
+alert("hello");
+                //$("#sec2").css("visibility"," visible");
             }else{
+                alert("hell");
                 $("#sec2").css("visibility","hidden");
             }
 
