@@ -380,8 +380,8 @@ if(isset($_POST['subt3'])){
                                                 <label for="exampleदिनांक">Stage 2</label>
                                                 <input type="text" required class="form-control" name="stage2" 
                                                 id="stage2" placeholder="">
-                                                <input type="text" name="check_id" value="<?php echo $id ?>" id="id2" >
-                                                <input type="text" value="<?php echo $stage2 ?>" name="id2" id="vv2" style="border: hidden;text-align:center" readonly>
+                                                <input type="hidden" name="check_id" value="<?php echo $id ?>" >
+                                                <input type="text" value="<?php echo $stage2 ?>" name="id2" id="check_id" style="border: hidden;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -450,7 +450,7 @@ if(isset($_POST['subt3'])){
 
             let sub=$("#vvv").val();
             let sub2=$("#vv1").val();
-            let sub3=$("#vv2").val();
+            let sub3=$("#check_id").val();
             let sub4=$("#vv3").val();
 
             if(sub == ""){
