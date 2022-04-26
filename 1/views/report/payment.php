@@ -350,7 +350,7 @@ if(isset($_POST['subt3'])){
                                                 <input type="hidden" name="id1" value="<?php echo $id ?>" id="id1" >
                                                 <?php $sql=mysqli_query($conn,"select stage_1 from bank_detail where caseid='$id'");
                                                 $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="text" value="<?php echo $arr['stage_1'] ?>" name="id2" id="vv1" style="border: hidden;" >
+                                                <input type="text" value="<?php echo $arr['stage_1'] ?>" name="id2" id="vv1" style="border: hidden;background:#ffe6e6;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -387,7 +387,7 @@ if(isset($_POST['subt3'])){
                                                 <input type="hidden" value="<?php echo $id ?>" name="id2" id="id2" >
                                                 <?php $sql=mysqli_query($conn,"select stage_2 from bank_detail where caseid='$id'");
                                                 $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="text" value="<?php echo $arr['stage_2'] ?>" name="id2" id="vv2" style="border: hidden;" >
+                                                <input type="text" value="<?php echo $arr['stage_2'] ?>" name="id2" id="vv2" style="border: hidden;background:#ffe6e6;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -424,7 +424,7 @@ if(isset($_POST['subt3'])){
                                                 <input type="hidden" value="<?php echo $id ?>" name="id3" id="id3" >
                                                 <?php $sql=mysqli_query($conn,"select stage_3 from bank_detail where caseid='$id'");
                                                 $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="text" value="<?php echo $arr['stage_3'] ?>" name="id2" id="vv3" style="border: hidden;">
+                                                <input type="text" value="<?php echo $arr['stage_3'] ?>" name="id2" id="vv3" style="border: hidden;background:#ffe6e6;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -461,36 +461,28 @@ if(isset($_POST['subt3'])){
             let sub4=$("#vv3").val();
 
             if(sub == ""){
-//alert("hello");
                 $("#sec2").css("display"," none");
             }else{
-                //alert("hell");
                 $("#sec2").css("display","block");
             }
 
             if(sub2 == ""){
-//alert("hello");
                 $("#sec3").css("display"," none");
             }else{
-                //alert("hell");
                 $("#stage1").css("display","none");
                 $("#sec3").css("display","block");
             }
 
             if(sub3 == ""){
-//alert("hello");
                 $("#sec4").css("display"," none");
             }else{
-                //alert("hell");
                 $("#stage2").css("display","none");
                 $("#sec4").css("display","block");
             }
 
             if(sub4 == ""){
-//alert("hello");
                 $("#sec4").css("display"," none");
             }else{
-                //alert("hell");
                 $("#stage3").css("display","none");
                 $("#sec4").css("display","block");
                 
@@ -498,64 +490,7 @@ if(isset($_POST['subt3'])){
 
             
         })
-          /*  
-            $("#sec2").css("display","none");
-            $("#sec3").css("display","none");
-            $("#sec4").css("display","none");
-
-            /*$("#sub1").submit(function(e){
-                $("#sec2").css("display","block");
-            });
-            $("#sub1").submit(function(e){
-                $("#sec3").css("display","block");
-            })*/
-           
-          /*  $("#sec1").submit(function(e) {
-                e.preventDefault();
-                let name = $("#complaint").val();
-                let sub1=$("#sub1").val();
-                alert(name);
-                    $.ajax({
-                        type: "POST",
-                        url: "payment.php",
-                        data:"name="+name+"btn1="+sub1,
-                        success: function(data,status){
-                            $('#sec2').fadeIn().css("display","block");
-                            $('#id1').html(status);
-                        }
-                        
-                    }); 
-            });
-
-            $("#sec2").submit(function(e) {
-                e.preventDefault();
-                let stage1 = $("#stage1").val();
-                let sub2=$("#sub2").val();
-                let id1 = $("#complaint").val();
-                    $.ajax({
-                        type: "POST",
-                        url: "payment.php",
-                        data: "stage1="+stage1+"id1="+id1+"btn2="+sub2,
-                        success: function(data){
-                            //alert($id1);
-                            //$('#sec3').fadeIn().css("display","block");
-                        }
-                    });
-            });
-
-            $("#sec3").submit(function(e) {
-                e.preventDefault();
-                var stage2 = $("#stage2").val();
-                    $.ajax({
-                        type: "POST",
-                        url: "payment.php",
-                        data: "stage2="+stage2,
-                        success: function(data){
-                            $('#sec4').fadeIn().css("display","block");
-                        }
-                    });
-        });*/
-           
+         
     </script>                     
         <!-- /.content-wrapper -->
         <footer class="main-footer">
