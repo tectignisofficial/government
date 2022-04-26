@@ -28,20 +28,11 @@ if(isset($_POST['sub2'])){
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
 }
 
-else if(isset($_POST['sub3'])){
-    $id1=$_POST['id2'];
-    $stage2=$_POST['stage2'];
-    $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id1'");
-    echo "<script>alert('$id1');</script>";
-}
 
-else if(isset($_POST['subt3'])){
+if(isset($_POST['subt3'])){
     $id=$_POST['id3'];
     $stage3=$_POST['stage3'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_3`='$stage3' WHERE caseid='$id'");
-}
-else{
-    echo "<script>alert('Please fill all the fields');</script>";
 }
 ?>
 
@@ -365,7 +356,15 @@ else{
     </div>
                          
 			</section>
-			
+			<?php
+            if(isset($_POST['sub3'])){
+                $id1=$_POST['id2'];
+                $stage2=$_POST['stage2'];
+                $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id1'");
+                echo "<script>alert('$id1');</script>";
+            }
+            
+            ?>
 			<section class="content" id="sec3">
                 <div class="container-fluid">
                     <div class="row">
