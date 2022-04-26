@@ -408,7 +408,7 @@ if (mysqli_num_rows($complaints)>0){
 		                          <i class="fas fa-edit"></i>
 		                        </a>
                           </td>
-                    <td>
+                    <td id="closeCase">
                       <?php
                       $stage1=$arr["stage1"];;
                       $stage2=$arr["stage2"];;
@@ -430,7 +430,13 @@ if (mysqli_num_rows($complaints)>0){
                    </tr>
                    <?php $count++; } ?>
                    
-
+<script>
+  $("#closeCase").val();
+  if($("#closeCase").val()=="Case Close"){
+    $(".no").css("display","none");
+  }
+  });
+</script>
 <script>
   
 function myFunction(x) {
