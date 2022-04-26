@@ -257,7 +257,7 @@ $district='';
               </ul>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
                   अहवाल
@@ -292,11 +292,10 @@ $district='';
                 </li>
               </ul>
             </li>
-
             <li class="nav-item">
 
               <a href="#" class="nav-link ">
-                <i class="nav-icon fas fa-th"></i>
+                <i class=" nav-icon fas fa-landmark "></i>
                 <p>
                   बँक
                   <i class="right fas fa-angle-left"></i>
@@ -306,7 +305,7 @@ $district='';
               <ul class="nav nav-treeview">
                 <li class="nav-item">
               <a href="report/r1opy.php" class="nav-link">
-              <i class=" nav-icon fas fa-landmark"></i> 
+              <i class="far fa-circle nav-icon"></i> 
                 <p>
                 बँक माहिती
                 </p>
@@ -315,7 +314,7 @@ $district='';
             </li>
             <li class="nav-item">
               <a href="report/payment.php" class="nav-link">
-              <i class=" nav-icon fas fa-landmark"></i> 
+              <i class=" far fa-circle nav-icon"></i> 
                 <p>
                payment
                 </p>
