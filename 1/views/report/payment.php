@@ -325,7 +325,7 @@ if($btn4){
                 $complaint_no=$_POST['complaint_no'];
                 $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
                 $arr=mysqli_fetch_array($sql);
-                    $id=$arr['id'];
+                   
                 
             }
             ?>
@@ -346,7 +346,7 @@ if($btn4){
                                                 <label for="exampleदिनांक">Stage 1</label>
                                                 <input type="text" required class="form-control" name="stage1"
                                                     id="stage1" placeholder="">
-                                                <input type="hidden" name="id1" value="<?php echo $row['id']; ?>" id="id1" >
+                                                <input type="hidden" name="id1" value="<?php echo $arr['id']; ?>" id="id1" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
