@@ -430,24 +430,8 @@ if (mysqli_num_rows($complaints)>0){
                    </tr>
                    <?php $count++; } ?>
                    
-<script>
-  $("#closeCase").val();
-  if($("#closeCase").val()=="Case Close"){
-    $(".no").css("visibility","hidden");
-  }
-  });
-</script>
-<script>
-  
-function myFunction(x) {
-  x.classList.toggle("fa-sticky-note");  
-}
-$(document).ready(function(){
-$("#icon").click(function(){
-    $("#edit").toggleClass("add");
-});
-})
-  </script>
+
+
                   </tbody>
                 
                  </table>
@@ -457,6 +441,13 @@ $("#icon").click(function(){
               </div>
               <!-- /.card-body -->
                     </div>
+                    <script>
+  $("#closeCase").val();
+  if($("#closeCase").val()=="Case Close"){
+    $(".no").css("visibility","hidden");
+  }
+  });
+</script>
             </div>
             <!-- /.card -->
           </div>
