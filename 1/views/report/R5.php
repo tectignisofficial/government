@@ -525,7 +525,7 @@ if (mysqli_num_rows($complaints)>0){
   <script >
            $(function () {  
 $("#pagination-demo").twbsPagination({  
-  totalPages: 16,  
+  totalPages: 2,  
   visiblePages: 2,  
   next: "Next",  
   prev: "Prev",  
