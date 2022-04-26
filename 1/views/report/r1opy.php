@@ -426,7 +426,7 @@ if(isset($_POST['submit'])){
                   
               </table>
 
-              <nav aria-label="Page navigation example">
+              <nav aria-label="Page navigation example" class="mt-4">
 				  <ul class="pagination justify-content-center">
 					<li <?php if($page==1) echo "class='page-item disabled'";?>>
 					  <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>

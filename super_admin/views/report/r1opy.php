@@ -358,6 +358,23 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
               
               
                   </thead>
+                  <?php
+                  /*pagination*/
+if(isset($_GET['page'])){
+  $page=$_GET['page']; 				     //check pagevalue available
+  $page=mysqli_real_escape_string($conn,$page);
+}else{
+  $page=1;                                      //if not
+}
+$per_page=2;
+$start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
+
+$no_Of_row_sql = "select COUNT(*) from bank_detail";
+$query = mysqli_query($conn,$no_Of_row_sql);
+$total_row =mysqli_fetch_array($query)[0];
+$no_of_page=ceil($total_row/$per_page);  
+/*pagination*/
+                  ?>
                   <tbody>
 <?php
 if(isset($_POST['submit'])){
@@ -390,9 +407,10 @@ if(isset($_POST['submit'])){
          
   
 }
-					  $bank_detail = mysqli_query($conn,"select bank_detail.account_holder_name as account_holder_name,bank_detail.account_no as account_no,bank_detail.bank_name as bank_name,bank_detail.branch_name as branch_name,bank_detail.ifsc_code as ifsc_code,bank_detail.stage_1 as stage_1,bank_detail.stage_2 as stage_2,bank_detail.stage_3 as stage_3,complaint_form.book_no as book_no,complaint_form.date as date,complaint_form.district as district,complaint_form.police_station as police_station,complaint_form.complaint_no as complaint_no,complaint_form.complaint_filer_name as complain_name,complaint_form.complaint_filer_address as complain_address,image.discription as discription,victim.name as vname from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid inner join image on complaint_form.id=image.caseid left join victim on victim.caseid=complaint_form.id");
+					  $bank_detail = mysqli_query($conn,"select bank_detail.account_holder_name as account_holder_name,bank_detail.account_no as account_no,bank_detail.bank_name as bank_name,bank_detail.branch_name as branch_name,bank_detail.ifsc_code as ifsc_code,bank_detail.stage_1 as stage_1,bank_detail.stage_2 as stage_2,bank_detail.stage_3 as stage_3,complaint_form.book_no as book_no,complaint_form.date as date,complaint_form.district as district,complaint_form.police_station as police_station,complaint_form.complaint_no as complaint_no,complaint_form.complaint_filer_name as complain_name,complaint_form.complaint_filer_address as complain_address,image.discription as discription,victim.name as vname from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid inner join image on complaint_form.id=image.caseid left join victim on victim.caseid=complaint_form.id LIMIT  $start , $per_page");
 					 
 											$i=1;
+                      if(mysqli_num_rows($sql)>0){
 											while($row = mysqli_fetch_array($bank_detail)) {
 											?> 
 					  
@@ -426,7 +444,28 @@ if(isset($_POST['submit'])){
            
               </table>
 
-
+              <nav aria-label="Page navigation example" class="mt-4">
+				  <ul class="pagination justify-content-center">
+					<li <?php if($page==1) echo "class='page-item disabled'";?>>
+					  <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
+					</li>
+					
+					<?php
+					for($i=1;$i<=$no_of_page;$i++){
+						?>
+						<li <?php if($page==$i){echo "class='page-item active'";} ?>>
+						<a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+						</li>	
+					<?php } ?>
+					<li <?php if($page==$no_of_page) echo "class='page-item disabled'";?>>
+					  <a class="page-link" href="?page=<?php echo $page+1; ?>">Next</a>
+					</li>
+				  </ul>
+				</nav>
+        <?php }
+				else{
+				header('location:R5.php?page=1');}
+				?>
 
                
               </div>
