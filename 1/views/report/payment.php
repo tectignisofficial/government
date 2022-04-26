@@ -9,22 +9,21 @@ $btn=mysqli_real_escape_string($conn, $_GET['btn1']);
 $btn2=mysqli_real_escape_string($conn, $_GET['btn2']);
 
 $id="";
-if($btn){
-    $complaint_no=$_GET['name'];
+if(isset($_POST['sub1'])){
+    $complaint_no=$_POST['complaint_no'];
     $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
     while($arr=mysqli_fetch_array($sql)){
         $id=$arr['id'];
         echo "<script>alert('.$id.');</script>";
     }
 }
-if($btn2){
-    $id=$_GET['id1'];
-    $stage1=$_GET['stage1'];
+if(isset($_POST['sub2'])){
+    $stage1=$_POST['stage1'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_1`='$stage1' WHERE caseid='$id'");
     echo "<script>alert('.$id.');</script>";
 }
 
-if($btn3){
+if(isset($_POST['sub3'])){
     $id=$_POST['id2'];
     $stage2=$_POST['stage2'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id'");
@@ -35,7 +34,6 @@ if($btn4){
     $stage3=$_POST['stage3'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_3`='$stage3' WHERE caseid='$id'");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +90,7 @@ if($btn4){
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="fas fa-user-tie"></i>
@@ -321,13 +320,13 @@ if($btn4){
 			</section>
 
             <?php
-            if(isset($_POST['sub1'])){
+            /*if(isset($_POST['sub1'])){
                 $complaint_no=$_POST['complaint_no'];
                 $sql=mysqli_query($conn,"select id from complaint_form where complaint_no='$complaint_no'");
                 $arr=mysqli_fetch_array($sql);
                    
                 
-            }
+            }*/
             ?>
 			
 			<section class="content" id="sec2">
@@ -346,7 +345,7 @@ if($btn4){
                                                 <label for="exampleदिनांक">Stage 1</label>
                                                 <input type="text" required class="form-control" name="stage1"
                                                     id="stage1" placeholder="">
-                                                <input type="hidden" name="id1" value="<?php echo $arr['id']; ?>" id="id1" >
+                                                <input type="hidden" name="id1" value="<?php //echo $arr['id']; ?>" id="id1" >
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -431,7 +430,7 @@ if($btn4){
     </div>
     </div>
     <script>
-            
+          /*  
             $("#sec2").css("display","none");
             $("#sec3").css("display","none");
             $("#sec4").css("display","none");
@@ -443,7 +442,7 @@ if($btn4){
                 $("#sec3").css("display","block");
             })*/
            
-            $("#sec1").submit(function(e) {
+          /*  $("#sec1").submit(function(e) {
                 e.preventDefault();
                 let name = $("#complaint").val();
                 let sub1=$("#sub1").val();
@@ -487,7 +486,7 @@ if($btn4){
                             $('#sec4').fadeIn().css("display","block");
                         }
                     });
-        });
+        });*/
            
     </script>                     
 			</section>
