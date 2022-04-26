@@ -107,65 +107,9 @@ echo mysqli_query($conn);
 
       }
     })
-   /* var stateObject = {
-      "raigarh": {
-        "अलिबाग": ["Thiruvananthapuram", "Palakkad"],
-        "पनवेल": ["North Goa", "South Goa"],
-        "मुरुड": ["North Goa", "South Goa"],
-        "पेण": ["Thiruvananthapuram", "Palakkad"],
-        "उरण": ["North Goa", "South Goa"],
-        "कर्जत": ["North Goa", "South Goa"],
-        "खालापूर": ["Thiruvananthapuram", "Palakkad"],
-        "माणगाव": ["North Goa", "South Goa"],
-        "माणगाव": ["North Goa", "South Goa"],
-        "रोहा": ["Thiruvananthapuram", "Palakkad"],
-        "तळा": ["North Goa", "South Goa"],
-        "महड": ["North Goa", "South Goa"],
-        "म्हसळा": ["Thiruvananthapuram", "Palakkad"],
-        "श्रीवर्धन": ["North Goa", "South Goa"],
-        "पोलादपूर": ["North Goa", "South Goa"],
-
-      }
-    }
-    window.onload = function () {
-      var district = document.getElementById("district"),
-        police = document.getElementById("police");
-      for (var dis in stateObject) {
-        district.options[district.options.length] = new Option(dis, dis);
-      }
-      district.onchange = function () {
-        taluka.length = 1; // remove all options bar first
-        police.length = 1; // remove all options bar first
-        if (this.selectedIndex < 1) return; // done
-        for (var talu in stateObject[this.value]) {
-          taluka.options[taluka.options.length] = new Option(talu, talu);
-        }
-      }
-      district.onchange(); // reset in case page is reloaded
-      taluka.onchange = function () {
-        police.length = 1; // remove all options bar first
-        if (this.selectedIndex < 1) return; // done
-        var pol = stateObject[district.value][this.value];
-        for (var i = 0; i < pol.length; i++) {
-          police.options[police.options.length] = new Option(pol[i], pol[i]);
-        }
-      }
-    }*/
-  </script>
-
-<script>
-/*function getdistrict(val) {
-  $.ajax({
-  type: "POST",
-  url: "get_form2.php",
-  data:'catid='+val,
-  success: function(data){
-    $("#district").html(data);
-  }
   
-  });
-  }*/
   </script>
+
 
 </head>
 
@@ -305,7 +249,7 @@ echo mysqli_query($conn);
             <li class="nav-item">
 
               <a href="#" class="nav-link ">
-                <i class="nav-icon fas fa-th"></i>
+              <i class="fa-solid fa-piggy-bank"></i>
                 <p>
                   बँक
                   <i class="right fas fa-angle-left"></i>
