@@ -29,7 +29,7 @@ if(isset($_POST['sub2'])){
 }
 
 if(isset($_POST['sub3'])){
-    $id1=$_POST['id2'];
+    $id1=$_POST['check_id'];
     $stage2=$_POST['stage2'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id1'");
     echo "<script>alert('$id1');</script>";
@@ -380,7 +380,7 @@ if(isset($_POST['subt3'])){
                                                 <label for="exampleदिनांक">Stage 2</label>
                                                 <input type="text" required class="form-control" name="stage2" 
                                                 id="stage2" placeholder="">
-                                                <input type="text" name="id2" value="<?php echo $id ?>" id="id2" >
+                                                <input type="text" name="check_id" value="<?php echo $id ?>" id="id2" >
                                                 <input type="text" value="<?php echo $stage2 ?>" name="id2" id="vv2" style="border: hidden;text-align:center" readonly>
                                             </div>
                                         </div>
