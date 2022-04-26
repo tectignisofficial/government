@@ -24,13 +24,13 @@ if(isset($_POST['sub2'])){
     echo "<script>alert('.$id.');</script>";
 }
 
-if(isset($_POST['sub3'])){
+if(isset($_POST['subt2'])){
     $id=$_POST['id2'];
     $stage2=$_POST['stage2'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id'");
 }
 
-if($btn4){
+if(isset($_POST['subt3'])){
     $id=$_POST['id3'];
     $stage3=$_POST['stage3'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_3`='$stage3' WHERE caseid='$id'");
@@ -384,7 +384,7 @@ if($btn4){
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
-                                            <button type="submit" id="sub3" name="subt2" class="btn btn-primary"> Submit
+                                            <button type="button" id="sub3" name="subt2" class="btn btn-primary"> Submit
                                             </button>
                                         </div>
                                     </div>  
