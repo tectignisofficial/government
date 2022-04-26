@@ -423,7 +423,10 @@ if(isset($_POST['submit'])){
 											?>
                   
                   </tbody>
-                  <nav aria-label="Page navigation example">
+                  
+              </table>
+
+              <nav aria-label="Page navigation example">
 				  <ul class="pagination justify-content-center">
 					<li <?php if($page==1) echo "class='page-item disabled'";?>>
 					  <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
@@ -445,9 +448,6 @@ if(isset($_POST['submit'])){
 				else{
 				header('location:R5.php?page=1');}
 				?>
-              </table>
-
-
 
                
               </div>
