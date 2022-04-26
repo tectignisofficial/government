@@ -337,10 +337,8 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
               
               
                   </thead>
-                  <tbody>
-<?php
-
-/*pagination*/
+                  <?php
+                  /*pagination*/
 if(isset($_GET['page'])){
   $page=$_GET['page']; 				     //check pagevalue available
   $page=mysqli_real_escape_string($conn,$page);
@@ -355,6 +353,11 @@ $query = mysqli_query($conn,$no_Of_row_sql);
 $total_row =mysqli_fetch_array($query)[0];
 $no_of_page=ceil($total_row/$per_page);  
 /*pagination*/
+                  ?>
+                  <tbody>
+<?php
+
+
 
 if(isset($_POST['submit'])){
   $search=$_POST['search'];
