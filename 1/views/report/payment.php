@@ -350,7 +350,7 @@ if(isset($_POST['subt3'])){
                                                 <input type="hidden" name="id1" value="<?php echo $id ?>" id="id1" >
                                                 <?php $sql=mysqli_query($conn,"select stage_1 from bank_detail where caseid='$id'");
                                                 $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="text" value="<?php echo $arr['stage_1'] ?>" name="id2" id="vv1" style="border: hidden;background:#ffe6e6;text-align:center" readonly>
+                                                <input type="text" value="<?php echo $arr['stage_1'] ?>" name="id2" id="vv1" style="border: hidden;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -387,7 +387,7 @@ if(isset($_POST['subt3'])){
                                                 <input type="hidden" value="<?php echo $id ?>" name="id2" id="id2" >
                                                 <?php $sql=mysqli_query($conn,"select stage_2 from bank_detail where caseid='$id'");
                                                 $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="text" value="<?php echo $arr['stage_2'] ?>" name="id2" id="vv2" style="border: hidden;background:#ffe6e6;text-align:center" readonly>
+                                                <input type="text" value="<?php echo $arr['stage_2'] ?>" name="id2" id="vv2" style="border: hidden;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -424,7 +424,7 @@ if(isset($_POST['subt3'])){
                                                 <input type="hidden" value="<?php echo $id ?>" name="id3" id="id3" >
                                                 <?php $sql=mysqli_query($conn,"select stage_3 from bank_detail where caseid='$id'");
                                                 $arr=mysqli_fetch_array($sql) ?>
-                                                <input type="text" value="<?php echo $arr['stage_3'] ?>" name="id2" id="vv3" style="border: hidden;background:#ffe6e6;text-align:center" readonly>
+                                                <input type="text" value="<?php echo $arr['stage_3'] ?>" name="id2" id="vv3" style="border: hidden;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
