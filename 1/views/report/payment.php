@@ -464,7 +464,7 @@ if($btn4){
                 e.preventDefault();
                 let stage1 = $("#stage1").val();
                 let sub2=$("#sub2").val();
-                let id1=$("#id1").val();
+                let id1 = $("#complaint").val();
                     $.ajax({
                         type: "POST",
                         url: "payment.php",
