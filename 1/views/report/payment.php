@@ -244,7 +244,8 @@ if(isset($_POST['subt3'])){
               </a>
            
             </li>
-                
+            </ul>
+            </li> 
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
               <i class=" nav-icon fas fa-user-tie"></i> 
