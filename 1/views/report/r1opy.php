@@ -223,7 +223,8 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
               </a>
            
             </li>
-                
+            </ul>
+            </li>
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
               <i class=" nav-icon fas fa-user-tie"></i> 
