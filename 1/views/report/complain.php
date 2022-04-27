@@ -21,7 +21,7 @@ if (mysqli_num_rows($complaints)>0){
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>अहवाल | R5</title>
+  <title>अहवाल | Complain</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -73,9 +73,11 @@ if (mysqli_num_rows($complaints)>0){
 
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
+<div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    </div>
   <!-- Navbar -->
-   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+ <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -85,12 +87,7 @@ if (mysqli_num_rows($complaints)>0){
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <!-- Navbar Search -->
-
-
-        <!-- Messages Dropdown Menu -->
-
-        <!-- Notifications Dropdown Menu -->
+    
 
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -105,7 +102,6 @@ if (mysqli_num_rows($complaints)>0){
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="../index.php" class="brand-link">
@@ -173,7 +169,7 @@ if (mysqli_num_rows($complaints)>0){
               </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link active">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
                   अहवाल
@@ -201,23 +197,48 @@ if (mysqli_num_rows($complaints)>0){
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="R5.php" class="nav-link active">
+                  <a href="R5.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>अहवाल ५</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="complain.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Complain</p>
                   </a>
                 </li>
               </ul>
             </li>
 
             <li class="nav-item">
+              <a href="#" class="nav-link ">
+                <i class=" nav-icon fas fa-landmark "></i>
+                <p>
+                  बँक
+                  <i class="right fas fa-angle-left"></i>
+                  <!-- <span class="right badge badge-danger">New</span> -->
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
               <a href="r1opy.php" class="nav-link">
-              <i class=" nav-icon fas fa-landmark"></i> 
+              <i class="far fa-circle nav-icon"></i> 
                 <p>
                 बँक माहिती
                 </p>
               </a>
+            </li>
+            <li class="nav-item">
+              <a href="payment.php" class="nav-link">
+              <i class=" far fa-circle nav-icon"></i> 
+                <p>
+               payment
+                </p>
+              </a>
            
             </li>
+                
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
               <i class=" nav-icon fas fa-user-tie"></i> 
@@ -236,6 +257,7 @@ if (mysqli_num_rows($complaints)>0){
       <!-- /.sidebar -->
     </aside>
 
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -248,7 +270,7 @@ if (mysqli_num_rows($complaints)>0){
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/government-master/index.html">Home</a></li>
-              <li class="breadcrumb-item active">R4</li>
+              <li class="breadcrumb-item active">Complain</li>
             </ol>
           </div>
         </div>

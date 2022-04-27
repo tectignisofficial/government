@@ -299,6 +299,12 @@ $id=intval($_GET['id']);
                     <p>अहवाल ५</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="report/complain.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Complain</p>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="nav-item">

@@ -27,7 +27,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>अहवाल | R1</title>
+  <title>अहवाल | Bank Detail</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -187,18 +187,43 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                     <p>अहवाल ५</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="complain.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Complain</p>
+                  </a>
+                </li>
               </ul>
             </li>
 
             <li class="nav-item">
-              <a href="r1opy.php" class="nav-link active">
-              <i class=" nav-icon fas fa-landmark"></i> 
+              <a href="#" class="nav-link ">
+                <i class=" nav-icon fas fa-landmark "></i>
+                <p>
+                  बँक
+                  <i class="right fas fa-angle-left"></i>
+                  <!-- <span class="right badge badge-danger">New</span> -->
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+              <a href="r1opy.php" class="nav-link">
+              <i class="far fa-circle nav-icon"></i> 
                 <p>
                 बँक माहिती
                 </p>
               </a>
+            </li>
+            <li class="nav-item">
+              <a href="payment.php" class="nav-link">
+              <i class=" far fa-circle nav-icon"></i> 
+                <p>
+               payment
+                </p>
+              </a>
            
             </li>
+                
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
               <i class=" nav-icon fas fa-user-tie"></i> 
@@ -230,7 +255,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/government-master/index.html">Home</a></li>
-              <li class="breadcrumb-item active">R1</li>
+              <li class="breadcrumb-item active">Bank Detail</li>
             </ol>
           </div>
         </div>
