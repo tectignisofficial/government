@@ -214,6 +214,12 @@ if (mysqli_num_rows($complaints)>0){
                     <p>अहवाल ५</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="complain.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Complain</p>
+                  </a>
+                </li>
               </ul>
             </li>
 
