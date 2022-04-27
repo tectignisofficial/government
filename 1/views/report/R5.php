@@ -505,7 +505,7 @@ if (mysqli_num_rows($complaints)>0){
                   </tbody>                 
            
               </table>
-              <ul id="pagination-demo" class="pagination-sm">  
+              
               </div>
               </div>
              <!-- <nav aria-label="Page navigation example">
@@ -530,7 +530,7 @@ if (mysqli_num_rows($complaints)>0){
 				//else{
 			//	header('location:R5.php?page=1');}
 				?>
-              <div id="page-content" class="page-content"> Page 1</div> <!-- /.card-body -->
+             
             </div>
             <!-- /.card -->
           </div>
