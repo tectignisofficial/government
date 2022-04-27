@@ -210,10 +210,16 @@ if (mysqli_num_rows($complaints)>0){
                     <p>अहवाल ४</p>
                   </a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item ">
                   <a href="R5.php" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
                     <p>अहवाल ५</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="complain.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Complain</p>
                   </a>
                 </li>
               </ul>
@@ -240,13 +246,35 @@ if (mysqli_num_rows($complaints)>0){
               </ul>
             </li>
             <li class="nav-item">
-              <a href="r1opy.php" class="nav-link">
-              <i class=" nav-icon fas fa-landmark"></i> 
-                <p>
-                बँक माहिती
-                </p>
-              </a>
-           
+            <a href="#" class="nav-link ">
+              <i class=" nav-icon fas fa-landmark "></i>
+              <p>
+                बँक
+                <i class="right fas fa-angle-left"></i>
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+            <a href="r1opy.php" class="nav-link">
+            <i class="far fa-circle nav-icon"></i> 
+              <p>
+              बँक माहिती
+              </p>
+            </a>
+
+            </li>
+            <li class="nav-item">
+            <a href="payment.php" class="nav-link">
+            <i class=" far fa-circle nav-icon"></i> 
+              <p>
+            payment
+              </p>
+            </a>
+
+            </li>
+              
+            </ul>
             </li>
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
@@ -277,7 +305,7 @@ if (mysqli_num_rows($complaints)>0){
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/government-master/index.html">Home</a></li>
-              <li class="breadcrumb-item active">R4</li>
+              <li class="breadcrumb-item active">R5</li>
             </ol>
           </div>
         </div>

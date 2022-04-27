@@ -218,7 +218,7 @@ if(isset($_POST['subt3'])){
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link ">
+              <a href="#" class="nav-link active">
                 <i class=" nav-icon fas fa-landmark "></i>
                 <p>
                   बँक
@@ -228,7 +228,7 @@ if(isset($_POST['subt3'])){
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-              <a href="r1opy.php" class="nav-link">
+              <a href="r1opy.php" class="nav-link ">
               <i class="far fa-circle nav-icon"></i> 
                 <p>
                 बँक माहिती
@@ -236,7 +236,7 @@ if(isset($_POST['subt3'])){
               </a>
             </li>
             <li class="nav-item">
-              <a href="payment.php" class="nav-link">
+              <a href="payment.php" class="nav-link active">
               <i class=" far fa-circle nav-icon"></i> 
                 <p>
                payment

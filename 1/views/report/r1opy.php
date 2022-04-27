@@ -197,7 +197,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link ">
+              <a href="#" class="nav-link active">
                 <i class=" nav-icon fas fa-landmark "></i>
                 <p>
                   बँक
@@ -207,7 +207,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-              <a href="r1opy.php" class="nav-link">
+              <a href="r1opy.php" class="nav-link active">
               <i class="far fa-circle nav-icon"></i> 
                 <p>
                 बँक माहिती
