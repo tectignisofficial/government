@@ -270,7 +270,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="report/complaint.php" class="nav-link">
+                  <a href="report/Complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Complaint</p>
                   </a>

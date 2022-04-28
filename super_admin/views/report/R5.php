@@ -217,7 +217,7 @@ if (mysqli_num_rows($complaints)>0){
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="complaint.php" class="nav-link">
+                  <a href="Complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Complaint</p>
                   </a>
