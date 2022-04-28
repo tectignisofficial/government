@@ -316,7 +316,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
             <div class="container my-2">
                             <div class="card-tools text-center">
                          
-                              <button type="button" class="btn btn-tool" onclick="window.print();" id="print" style="background-color: lightgray;">
+                              <button type="button" class="btn btn-tool" onclick='printDiv();' id="print" style="background-color: lightgray;">
                                 <i class="fas fa-print"></i>
                                 Print                    </button>
                               <button type="button" class="btn btn-tool" id="pdf" style="background-color: lightgray;">
@@ -330,7 +330,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                                 Exel               </button> 
                             </div>
                             </div>
-            <div class="card print-container" id="ToPrint">
+            <div class="card print-container" id="DivIdToPrint">
               <div class="card-header">
                 
 
@@ -473,7 +473,7 @@ if(isset($_POST['submit'])){
            
               </table>
 
-              <nav aria-label="Page navigation example" class="mt-4">
+              <nav aria-label="Page navigation example" class="mt-4 page">
 				  <ul class="pagination justify-content-center">
 					<li <?php if($page==1) echo "class='page-item disabled'";?>>
 					  <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
@@ -543,6 +543,18 @@ if(isset($_POST['submit'])){
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- Page specific script -->
+<script type="text/javascript">
+  function printDiv() 
+{
+  var divToPrint=document.getElementById('DivIdToPrint');
+  var newWin=window.open();
+  newWin.document.open();
+  newWin.document.write('<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px;}.page{display:none}</style></head><html><body style="text-align:center" onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+  newWin.document.close();
+  setTimeout(function(){newWin.close();},10);
+
+}
+</script>
 <script>
   $(function () {
     $("#example1").DataTable({
