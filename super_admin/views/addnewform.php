@@ -245,9 +245,9 @@ $id=intval($_GET['id']);
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="report/complain.php" class="nav-link">
+                  <a href="report/complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Complain</p>
+                    <p>Complaint</p>
                   </a>
                 </li>
               </ul>
@@ -296,7 +296,7 @@ $id=intval($_GET['id']);
             <a href="report/payment.php" class="nav-link">
             <i class=" far fa-circle nav-icon"></i> 
               <p>
-            payment
+              पेमेंट
               </p>
             </a>
 
@@ -306,7 +306,7 @@ $id=intval($_GET['id']);
             </li>
             <li class="nav-item">
               <a href="../logout.php" class="nav-link">
-              <i class=" nav-icon fas fa-user-tie"></i> 
+              <i class=" nav-icon fas fa-sign-out-alt"></i> 
                 <p>
                      बाहेर पडा  
                 </p>

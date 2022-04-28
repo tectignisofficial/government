@@ -213,9 +213,9 @@ if(isset($_POST['subt3'])){
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="complain.php" class="nav-link">
+                  <a href="complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Complain</p>
+                    <p>Complaint</p>
                   </a>
                 </li>
               </ul>
@@ -264,7 +264,7 @@ if(isset($_POST['subt3'])){
             <a href="payment.php" class="nav-link active">
             <i class=" far fa-circle nav-icon"></i> 
               <p>
-            payment
+              पेमेंट
               </p>
             </a>
 
@@ -274,7 +274,7 @@ if(isset($_POST['subt3'])){
             </li>
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
-              <i class=" nav-icon fas fa-user-tie"></i> 
+              <i class=" nav-icon fas fa-sign-out-alt"></i> 
                 <p>
                      बाहेर पडा  
                 </p>
