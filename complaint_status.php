@@ -1,3 +1,12 @@
+<?php
+// Create connection
+$conn = mysqli_connect("localhost", "u188140722_government","Admin@123", "u188140722_government");
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,11 +59,13 @@
         <nav>
     <ul style="float:left">
         <li class="search-box">
-           <input type="text" class="search-input" placeholder="Search..">
+          <form method="post">
+           <input type="text" class="search-input" name="search" placeholder="Search..">
      
-           <button class="search-button">
-             <i class="far fa-search"></i>
+           <button class="search-button" type="submit" name="submi_t">
+             <i class="far fa-search"></i>submit
            </button>
+</form>
           </li>
     </ul>      
 
@@ -250,27 +261,49 @@ ul{
                     <th scope="col">पैसे भरल्याची स्थिती</th>
                   </tr>
                 </thead>
+                <?php 
+                if(isset($_POST['submi_t'])){
+                $search=$_POST['search'];
+                $sql=mysqli_query($conn,"select complaint_form.complaint_no as no,complaint_form.book_no as book_no, complaint_form.date as date,bank_detail.stage_1 as stage1, bank_detail.stage_2 as stage2, bank_detail.stage_3 as stage3 from complaint_form inner join bank_detail on complaint_form.id=bank_detail.caseid where complaint_form.complaint_no like '%$search%'");
+                $row=mysqli_fetch_array($sql);
+                ?>
                 <tbody>
                   <tr>
                    
-                    <td>१५७२२</td>
-                    <td>१२/१०/२०२२</td>
-                    <td>@</td>
+                    <td><?php $row['book_no'] ?></td>
+                    
                   </tr>
                   <tr>
                    
-                    <td>२१२२१</td>
-                    <td>५/७/२०२२</td>
-                    <td>@</td>
+                    <td><?php $row['date'] ?></td>
+                    
                   </tr>
                   <tr>
                    
-                    <td>१५७२२</td>
-                    <td>१२/१०/२०२२</td>
-                    <td>@</td>
+                    <td>
+                    <?php
+                      $stage1=$row["stage1"];;
+                      $stage2=$row["stage2"];;
+                      $stage3=$row["stage3"];;
+                      if($stage1==''){
+                        echo "Case Open";
+                      }
+                      else if($stage1!='' && $stage2=='' && $stage3==''){
+                        echo "First Payment Done";
+                      }
+                      else if($stage1!='' && $stage2!='' && $stage3==''){
+                        echo "Second Payment Done";
+                      }
+                      else if($stage1!='' && $stage2!='' && $stage3!=''){
+                        echo "Case Close";
+                      }
+                      ?>
+                    </td>
+                   
                   </tr>
                 
                 </tbody>
+                <?php } ?>
               </table>
           </div>
       </li>
