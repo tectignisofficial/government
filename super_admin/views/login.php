@@ -83,7 +83,7 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
           </div>
           <!-- /.col -->
           <div>
-            <a href="../index.html" class="btn btn-primary btn-block mt-3" > Back to website</a>
+            <a href="../index.html" class="btn btn-success btn-block mt-3" > Back to website</a>
             <!-- <button type="submit" class="btn btn-primary btn-block">Sign In</button> -->
           </div>
           <!-- /.col -->
