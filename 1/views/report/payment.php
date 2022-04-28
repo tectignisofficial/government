@@ -426,9 +426,7 @@ if(isset($_POST['subt3'])){
     </div>
     
 			</section>
-</div>
       <!-- /.content-wrapper -->
-    idebar -->
        <!-- ./wrapper -->
                         </div>
                         <!--/.col (left) -->
