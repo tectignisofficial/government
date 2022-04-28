@@ -211,7 +211,7 @@ if(isset($_POST['subt3'])){
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="Complaint.php" class="nav-link">
+                  <a href="complain.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Complaint</p>
                   </a>
@@ -219,26 +219,7 @@ if(isset($_POST['subt3'])){
               </ul>
             </li>
 
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i>
-                <p>
-                  वापरकर्ता                                                                                                                                                                                                                                
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="../viewwebuser.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p> संकेतस्थल वापरकर्ता
-
-                    </p>
-                  </a>
-                </li>
-                
-              </ul>
-            </li>
+           
             <li class="nav-item">
             <a href="#" class="nav-link active">
               <i class=" nav-icon fas fa-landmark "></i>
