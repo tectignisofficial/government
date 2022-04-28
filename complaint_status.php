@@ -229,7 +229,13 @@ if (!$conn) {
  
 
     </style>
-
+<script>
+  $('.search-input').focus(function(){
+  $(this).parent().addClass('focus');
+}).blur(function(){
+  $(this).parent().removeClass('focus');
+})
+</script>
 	  <style>
 	  .row.heading h2 {
     color: #fff;
