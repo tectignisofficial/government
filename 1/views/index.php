@@ -437,7 +437,7 @@
                 <div class="inner">
                
                 <?php
-                  $query=mysqli_query($conn,"select stage_1 from bank_detail  where  district='$district' ");
+                  $query=mysqli_query($conn,"select complaint_form.district as district,bank_detail.stage_1 as stage1 from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid  where  district='$district' AND stage_1 IS NOT NULL");
                   $count8=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count8 ?></h3>
