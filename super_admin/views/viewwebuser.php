@@ -179,9 +179,9 @@ if($_GET['action']=='delete' && $_GET['id']){
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="report/complain.php" class="nav-link">
+                  <a href="report/complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Complain</p>
+                    <p>Complaint</p>
                   </a>
                 </li>
               </ul>
@@ -230,7 +230,7 @@ if($_GET['action']=='delete' && $_GET['id']){
             <a href="report/payment.php" class="nav-link">
             <i class=" far fa-circle nav-icon"></i> 
               <p>
-            payment
+              पेमेंट
               </p>
             </a>
 
@@ -240,7 +240,7 @@ if($_GET['action']=='delete' && $_GET['id']){
             </li>
             <li class="nav-item">
               <a href="../logout.php" class="nav-link">
-              <i class=" nav-icon fas fa-user-tie"></i> 
+              <i class=" nav-icon fas fa-sign-out-alt"></i> 
                 <p>
                      बाहेर पडा  
                 </p>
@@ -363,14 +363,12 @@ if($_GET['action']=='delete' && $_GET['id']){
       </div>
       <!-- /.content-wrapper -->
       <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-          <p>
-            Developed by
-            Tectignis It Solutions
-          </p>
-        </div>
-        <strong>Copyright &copy; 2022 </strong> All rights reserved.
-      </footer>
+      <strong>Copyright &copy; <?php echo date('Y'); ?></strong>
+      All rights reserved.
+      <div class="float-right d-none d-sm-inline-block">
+        Designd by Tectignis It Solutions</b>
+      </div>
+    </footer>
 
       <!-- Control Sidebar -->
       <aside class="control-sidebar control-sidebar-dark">

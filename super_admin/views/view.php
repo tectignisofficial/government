@@ -236,9 +236,9 @@ police.options[police.options.length] = new Option(pol[i], pol[i]);
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="report/complain.php" class="nav-link">
+                  <a href="report/complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Complain</p>
+                    <p>Complaint</p>
                   </a>
                 </li>
               </ul>
@@ -296,7 +296,7 @@ police.options[police.options.length] = new Option(pol[i], pol[i]);
             </li>
             <li class="nav-item">
               <a href="../logout.php" class="nav-link">
-              <i class=" nav-icon fas fa-user-tie"></i> 
+              <i class=" nav-icon fas fa-sign-out-alt"></i> 
                 <p>
                      बाहेर पडा  
                 </p>
@@ -376,7 +376,7 @@ police.options[police.options.length] = new Option(pol[i], pol[i]);
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-      <strong>Copyright &copy; 2022</strong>
+      <strong>Copyright &copy; <?php echo date('Y'); ?></strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
         Designd by Tectignis It Solutions</b>
