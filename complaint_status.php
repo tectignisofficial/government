@@ -59,11 +59,13 @@ if (!$conn) {
         <nav>
     <ul style="float:left">
         <li class="search-box">
-          <form method="post">
+          <form method="post" class="search-form">
            <input type="text" class="search-input" name="search" placeholder="Search..">
      
-           <button class="search-button" type="submit" name="submi_t">
-             <i class="far fa-search"></i>submit
+           <button class="search-button" type="submit" name="submi_t" class="search-button">
+           <svg class="submit-button">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+    </svg>
            </button>
 </form>
           </li>
@@ -91,36 +93,140 @@ if (!$conn) {
 
     <style>
        
-.search-box{
-  width: 100%;
+       .search-form {
   position: relative;
-  display: flex;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  background: #fff;
+  transition: all 0.3s ease;
 
+  &.focus {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  }
 }
-.search-input{
-  width: 100%;
-  border: 4px solid #111d5e;
-  border-radius:10px 0 0 10px ;
-  border-right: none;
-  outline: none;
-  font-size: 20px;
-  color: tomato;
+
+.search-input {
+  position: absolute;
+  top: 10px;
+  left: 38px;
+  font-size: 14px;
   background: none;
-}
-.search-button{
- text-align: center;
-height: 51px;
-width: 40px;
-outline: none;
-cursor: pointer;
-border: 4px solid #111d5e;
- border-radius: 0 10px 10px 0 ;
-border-left: none;
-background: none;
-font-size: 20px;
-border-left: 4px solid #111d5e;
+  color: #5a6674;
+  width: 195px;
+  height: 20px;
+  border: none;
+  appearance: none;
+  outline: none;
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
 }
 
+.search-button {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  outline: none!important;
+  cursor: pointer;
+  
+  & svg {
+    width: 20px;
+    height: 20px;
+    fill: #5a6674;
+  }
+}
+
+.search-option {
+  position: absolute;
+  text-align: right;
+  top: 10px;
+  right: 15px;
+
+  div {
+    position: relative;
+    display: inline-block;
+    margin: 0 1px;
+    cursor: pointer;
+    
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.01;
+      cursor: pointer;
+    }
+    
+    span {
+      position: absolute;
+      display: block;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      background: #929AA3;
+      color: #fff;
+      font-size: 9px;
+      letter-spacing: 1px;
+      line-height: 1;
+      text-transform: uppercase;
+      padding: 4px 7px;
+      border-radius: 12px;
+      top: -18px;
+      transition: all .2s ease-in-out;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: 4px solid #929AA3;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        transition: all .2s ease-in-out;
+      }
+    }
+    
+    &:hover span {
+      opacity: 1;
+      top: -21px;
+    }
+    
+    label {
+      display: block;
+      cursor: pointer;
+    }
+    
+    svg {
+      height: 20px;
+      width: 20px;
+      fill: #5a6674;
+      opacity: 0.6;
+      transition: all .2s ease-in-out;
+      pointer-events: none;
+    }
+    
+    &:hover svg {
+      opacity: 1;
+    }
+    
+    input:checked + label svg {
+      fill: $color;
+      opacity: .9;
+    }
+ 
 
     </style>
 
