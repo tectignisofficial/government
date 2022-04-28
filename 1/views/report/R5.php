@@ -451,19 +451,7 @@ if (mysqli_num_rows($complaints)>0){
                    <tbody>
                    <?php 
                    /*pagination*/
-                  /* if(isset($_GET['page'])){
-                    $page=$_GET['page']; 				     //check pagevalue available
-                    $page=mysqli_real_escape_string($conn,$page);
-                  }else{
-                    $page=1;                                      //if not
-                  }
-                  $per_page=2;
-                  $start=($page-1)*$per_page;                  //fromwhich row no data fetch like 1-5 then 5-10
-    
-                  $no_Of_row_sql = "select COUNT(*) from criminal";
-                  $query = mysqli_query($conn,$no_Of_row_sql);
-                  $total_row =mysqli_fetch_array($query)[0];
-                  $no_of_page=ceil($total_row/$per_page);  
+                  
                  /*pagination*/
                  $dat=$_POST['month'];
                  $year=$_POST['year'];
@@ -478,7 +466,6 @@ if (mysqli_num_rows($complaints)>0){
                   if($num==0){
                     echo "<tr><td colspan='24' style='text-align:center;font-size:40px;vertical-align:middle;color:red;'>No RECORD FOUND</td></tr>";
                   }
-                   // if(mysqli_num_rows($sql)>0){
                     while($arr=mysqli_fetch_array($sql)){
                     ?>
           
@@ -514,28 +501,7 @@ if (mysqli_num_rows($complaints)>0){
               
               </div>
               </div>
-             <!-- <nav aria-label="Page navigation example">
-				  <ul class="pagination justify-content-center">
-					<li <?php// if($page==1) echo "class='page-item disabled'";?>>
-					  <a class="page-link" href="?page=<?php //echo $page-1; ?>">Previous</a>
-					</li>
-					
-					<?php
-					//for($i=1;$i<=$no_of_page;$i++){
-						?>
-						<li <?php //if($page==$i){echo "class='page-item active'";} ?>>
-						<a class="page-link" href="?page=<?php //echo $i; ?>"><?php //echo $i; ?></a>
-						</li>	
-					<?php //} ?>
-					<li <?php //if($page==$no_of_page) echo "class='page-item disabled'";?>>
-					  <a class="page-link" href="?page=<?php //echo $page+1; ?>">Next</a>
-					</li>
-				  </ul>
-				</nav>-->
-        <?php //}
-				//else{
-			//	header('location:R5.php?page=1');}
-				?>
+           
              
             </div>
             <!-- /.card -->
@@ -548,28 +514,15 @@ if (mysqli_num_rows($complaints)>0){
     </section>
     <!-- /.content -->
   </div>
-  <script >
-           $(function () {  
-$("#pagination-demo").twbsPagination({  
-  totalPages: 2,  
-  visiblePages: 2,  
-  next: "Next",  
-  prev: "Prev",  
-  onPageClick: function (event, page) {  
-    //fetch content and render here  
-    $("#page-content").text ("Page? + page) + ?content here";  
-  }  
-});  
-});  
-          </script>
+  
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.1.0
-    </div>
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
-
+      <strong>Copyright &copy; <?php echo date('Y'); ?></strong>
+      All rights reserved.
+      <div class="float-right d-none d-sm-inline-block">
+        Designd by Tectignis It Solutions</b>
+      </div>
+    </footer>
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
