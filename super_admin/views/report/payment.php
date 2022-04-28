@@ -498,7 +498,12 @@ if(isset($_POST['subt3'])){
                 $("#sec4").css("display","block");
             }
 
-            
+            if(vv3!=""){
+                $("#stage3").css("display","none");
+            }else{
+                $("#stage3").css("display","block");
+            }
+
 
             
         })
