@@ -430,7 +430,7 @@ if(isset($_POST['subt3'])){
                                                 <input type="text" required class="form-control" name="stage3" id="stage3" placeholder="">
                                                 <input type="hidden" value="<?php echo $id ?>" name="id3" id="id3" >
                                                 
-                                                <input type="text" value="<?php echo $stage3 ?>" name="id2" id="vv3" style="border: hidden;text-align:center" readonly>
+                                                <input type="text" value="<?php echo $stage3 ?>" name="stage_check" id="vv3" style="border: hidden;text-align:center" readonly>
                                             </div>
                                         </div>
                                         <div style="text-align: end;">
@@ -498,7 +498,11 @@ if(isset($_POST['subt3'])){
                 $("#sec4").css("display","block");
             }
 
-            
+            if(stage_check!=""){
+              $("#stage3").css("display","none");
+            }else{
+              $("#sec5").css("display","block");
+            }
 
             
         })
