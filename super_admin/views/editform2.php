@@ -17,10 +17,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
    $criminal_name='';
    $criminal_address='';
    $age='';
-   $category_and_caste='';
-   $caste_certificate='';
-   $aadhaar_card='';
-   $charge_sheet='';
+  
    if(isset($_GET['id'])){
      $eid=intval($_GET['id']);
      $sql=mysqli_query($conn,"select * from criminal where id='$eid'");
@@ -30,10 +27,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
   $criminal_name= $arr['criminal_name'];
    $criminal_address=$arr['criminal_address'];  
    $age=$arr['age'] ; 
-   $category_and_caste=$arr['category_and_caste'] ; 
-   $caste_certificate=$arr['caste_certificate'];
-   $aadhaar_card=$arr['aadhaar_card'];
-   $charge_sheet=$arr['charge_sheet'];
+  
   }
    }
 
@@ -43,13 +37,10 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
    $caseid=$_POST['caseid'];
    $criminal_name=$_POST['criminal_name'];
    $criminal_address=$_POST['criminal_address'];
-   $category_and_caste=$_POST['category_and_caste'];  
    $criminal_age=$_POST['criminal_age'];
-   $caste_certificate=$_POST['caste_certificate']; 
-   $aadhaar_card=$_POST['aadhaar_card'];
-   $charge_sheet=$_POST['charge_sheet'];
    
-   $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name',criminal_address='$criminal_address',age='$criminal_age',category_and_caste='$category_and_caste',caste_certificate='$caste_certificate',aadhaar_card='$aadhaar_card',charge_sheet='$charge_sheet' where id='$id'");
+   
+   $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name',criminal_address='$criminal_address',age='$criminal_age' where id='$id'");
   
   if($sql==1)
   {
@@ -420,11 +411,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                                         
 
                                         <div class="d-flex form-group " style="margin-left: -12px;">
-                                            <div class="form-group col-6">
-                                                <label for="Exampleप्रवर्ग आणि जात ">आरोपीचा प्रवर्ग आणि जात</label>
-                                                <input type="Textbox" required class="form-control"
-                                                name="category_and_caste" value="<?php echo $category_and_caste ?>" id="Exampleप्रवर्ग आणि जात fff3" placeholder="">
-                                            </div>
+                                            
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">आरोपीचा वय</label>
                                                 <input type="number" required class="form-control"
@@ -433,50 +420,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 
                                         </div> 
 
-                                        <div class="form-group d-flex " style="margin-left: -12px;">
-                                            <div class="form-group col-2">
-                                                <label for="Exampleउप विभागा चे नाव">जातीचा दाखला </label>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" required type="radio"
-                                                        id="customRadio1" value="होय" <?php if($caste_certificate=='होय') {?> <?php echo "checked";?> <?php }?>  name="caste_certificate">
-                                                    <label for="customRadio1" class="custom-control-label">होय </label>
-                                                </div>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" type="radio" id="customRadio2"
-                                                        value="नाही" <?php if($caste_certificate=='नाही') {?> <?php echo "checked";?> <?php }?> name="caste_certificate">
-                                                    <label for="customRadio2" class="custom-control-label">नाही </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-2">
-                                                <label for="Exampleउप विभागा चे नाव">आधार कार्ड </label>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" required type="radio"
-                                                        id="customRadio3" value="होय"  <?php if($aadhaar_card=='होय') {?> <?php echo "checked";?> <?php }?> name="aadhaar_card">
-                                                    <label for="customRadio3" class="custom-control-label">होय</label>
-                                                </div>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" <?php if($aadhaar_card=='नाही') {?> <?php echo "checked";?> <?php }?> type="radio" id="customRadio4"
-                                                        value="नाही" name="aadhaar_card">
-                                                    <label for="customRadio4" class="custom-control-label">नाही </label>
-                                                </div>
-                                            </div>
-                                
-                                            <div class="form-group col-2">
-                                                <label for="Exampleगुन्हा नं.">चार्ज शीट </label>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" required type="radio"
-                                                        id="customRadio7" value="होय" <?php if($charge_sheet=='होय') {?> <?php echo "checked";?> <?php }?> name="charge_sheet">
-                                                    <label for="customRadio7" class="custom-control-label">होय</label>
-                                                </div>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" required type="radio"
-                                                        id="customRadio8" value="नाही" <?php if($charge_sheet=='नाही') {?> <?php echo "checked";?> <?php }?> name="charge_sheet">
-                                                    <label for="customRadio8" class="custom-control-label">नाही </label>
-                                                </div>
-                                            </div>
-                                    
-                                        </div>
-
+                                      
                                         
 
                                         <!-- /.card-body -->
@@ -500,12 +444,9 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                     <tr>
                       <th>अनुक्रमांक</th>
                       <th>criminal_name</th>
-                      <th>criminal_name</th>
+                      
                       <th>criminal_address</th>
-                      <th>category and caste</th>
-                      <th>caste_certificate</th>
-                      <th>aadhar_card</th>
-                      <th>charge_sheet</th>
+                      <th>criminal_age</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -521,10 +462,8 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                       <td><?php echo $arr['caseid'];?></td>
                       <td><?php echo $arr['criminal_name'];?></td>
                       <td><?php echo $arr['criminal_address'];?></td>
-                      <td><?php echo $arr['category_and_caste'];?></td>
-                      <td><?php echo $arr['caste_certificate'];?></td>
-                      <td><?php echo $arr['aadhaar_card'];?></td>
-                      <td><?php echo $arr['charge_sheet'];?></td>
+                      <td><?php echo $arr['age'];?></td>
+                      
                       <td><a href="editform2.php?action=edit&id=<?php echo $arr['id']; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>
 		                        </a></td>
