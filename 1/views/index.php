@@ -438,9 +438,9 @@
                
                 <?php
                   $query=mysqli_query($conn,"select stage_1 from bank_detail IS NOT NULL where  district='$district'");
-                  $count6=mysqli_num_rows($query);
+                  $count8=mysqli_num_rows($query);
                   ?>
-                  <h3><?php echo $count6 ?></h3>
+                  <h3><?php echo $count8 ?></h3>
 
                   <p>अर्थसहयय्य रक्कम निधी टप्पय पनहलय</p>
                 </div>
