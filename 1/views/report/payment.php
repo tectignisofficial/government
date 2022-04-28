@@ -422,7 +422,11 @@ if(isset($_POST['subt3'])){
     </div>
                                  
     </div>
-    <footer class="main-footer">
+    
+    </div>
+    
+			</section>
+      <footer class="main-footer">
       <strong>Copyright &copy; <?php echo date('Y'); ?></strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
@@ -434,9 +438,6 @@ if(isset($_POST['subt3'])){
             <!-- Control sidebar content goes here -->
         </aside>
         <!-- /.control-sidebar -->
-    </div>
-    
-			</section>
                         </div>
                         <!--/.col (left) -->
                         <!-- right column -->
