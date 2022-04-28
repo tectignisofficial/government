@@ -64,20 +64,29 @@ if (mysqli_num_rows($complaints)>0){
 
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<style>
-  
-.add{
-    display:none;
-}
-</style>
 
+<style>
+  @media print{
+    body *{
+      visibility:hidden;
+    }
+    .print-container, .print-container *{
+      visibility:visible;
+      
+    }
+     .print-card{
+      display:none;
+    }
+    .action-noe{
+        display:none;
+    }
+      }
+</style>
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-    </div>
+<div class="wrapper">
   <!-- Navbar -->
- <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -87,7 +96,12 @@ if (mysqli_num_rows($complaints)>0){
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-    
+        <!-- Navbar Search -->
+
+
+        <!-- Messages Dropdown Menu -->
+
+        <!-- Notifications Dropdown Menu -->
 
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -102,6 +116,7 @@ if (mysqli_num_rows($complaints)>0){
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
+  
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="../index.php" class="brand-link">
@@ -257,12 +272,10 @@ if (mysqli_num_rows($complaints)>0){
       </div>
       <!-- /.sidebar -->
     </aside>
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <section class="content-header  print-card">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -286,7 +299,7 @@ if (mysqli_num_rows($complaints)>0){
               <div class="container my-2">
 
         
-            <div class="card">
+            <div class="card  print-card">
              <div class="container my-4">
                <div class="row">
                  <div class="col-md-12">
@@ -354,7 +367,6 @@ if (mysqli_num_rows($complaints)>0){
                 </div>
               </div>
                       </form>
-       
             </div>
      
 
@@ -367,19 +379,38 @@ if (mysqli_num_rows($complaints)>0){
              </div>
 
    <div class=" card" id="">
+                     <div class="card-tools text-center" style="margin-top:12px">
+                         
+                              <button type="button" class="btn btn-tool"  id='btn'
+                               onclick='printDiv();' style=" background-color: #145a8b;
+    color: white;">
+                                <i class="fas fa-print"></i>
+                                Print                    </button>
+                              <button type="button" class="btn btn-tool" id="pdf" style="background-color: #b70000 ; color:white;">
+                                <i class="fas fa-file-pdf"></i>
+                                PDF                    </button>
+                               
+                              <button type="button" class="btn btn-tool" id="excel" onclick="export_data()" style="    background-color: #137601;
+    color: white;">
+      
+                                <i class="fas fa-table"></i>
+                                Exel               </button> 
+                            </div>
                         
 
     
-            <div id='DivIdToPrint'>
+             <div  id='DivIdToPrint'>
               <div class="card-header" style="margin-top:12px" >
                 <h2 class=" text-center fs-1 fw-bold ">विषय क्रमांक - ४.</h2>
                 <br>
                 <h5 class=" text-center ">विविध कारणांनी अर्थसहाय्यासाठी प्रलंबित असलेली प्रकरणांचा तपशील / तक्त यापुढील </h5>
 
                   <br>
+                 
                 <p class=" text-center "> तक्त यापुढील पृष्ठांमधीलअनुक्रमांकाप्रमाणे </p>
-                <p class=" text-center fw-bolder"> माहे&nbsp;  <?php $dat=$_POST['month']; echo $dat;  $year=$_POST['year']; echo $year;  ?>  , अखेर  </p>
+                <p class=" text-center fw-bolder"> माहे <?php $dat=$_POST['month']; echo $dat;  $year=$_POST['year']; echo $year;  ?>  अखेर  </p>
 
+            
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-10" >
@@ -462,9 +493,8 @@ if (mysqli_num_rows($complaints)>0){
            
               </table>
               </div>
+              </div>
               <!-- /.card-body -->
-                    </div>
-                   
             </div>
             <!-- /.card -->
           </div>
@@ -521,18 +551,11 @@ if (mysqli_num_rows($complaints)>0){
   var divToPrint=document.getElementById('DivIdToPrint');
   var newWin=window.open();
   newWin.document.open();
-  newWin.document.write('<head><style>.no{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style></head><html><body style="text-align:center" onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+  newWin.document.write('<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style></head><html><body style="text-align:center" onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
   newWin.document.close();
   setTimeout(function(){newWin.close();},10);
 
 }
-</script>
-<script>
-  $("#closeCase").val();
-  if($("#closeCase").val()=="Case Close"){
-    $(".no").css("visibility","hidden");
-  }
-  });
 </script>
 <script>
   $(function () {
@@ -741,6 +764,23 @@ window.onload = function () {
   // DropzoneJS Demo Code End
 </script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" ></script><script src="jquery-table2excel-master/src/jquery.table2excel.js"></script>
+
+<script>
+
+    function export_data(){
+     //alert('f');
+     let table=document.getElementById("tbl");
+      let fb=XLSX.utils.table_to_book(table,{sheet:'sheet1'});
+      XLSX.write(fb,{
+        bookType:'xlsx',
+        type:'base64'
+      });
+      XLSX.writeFile(fb, 'report5.xlsx');
+       
+}
+
+    </script>
 
 <script>
     document.getElementById("submit").addEventListener("click", function(){
@@ -750,6 +790,7 @@ window.onload = function () {
   });
 
 </script>
+
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script src="year-select.js"></script>
 <script>$('.yearselect').yearselect({
@@ -757,9 +798,6 @@ window.onload = function () {
 });
 </script>
 
+
 </body>
 </html>
-
-
-
-
