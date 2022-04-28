@@ -373,6 +373,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                                     <div class="card-body">
                                     <div class="col-12" style="text-align:center;">
                                         <ul id="progressbar" style="display:flex"  ;>
+                                        <li class="active" id="account"><strong>नोंदणी</strong></li>
                                             <li  class="active" id="personal"><strong>आरोपीची माहिती</strong></li>
                                             
                                             <li id="payment"><strong>पिडीत व्यक्तीची माहिती</strong></li>
