@@ -57,23 +57,21 @@ if (!$conn) {
     <div class="container">
       <div class="header clearfix">
         <nav>
-          <ul style="float:left">
-          <li>
-        <div id="cover">
-  <form method="get" action="">
-    <div class="tb">
-      <div class="td"><input type="text" placeholder="Search" name="search" required></div>
-      <div class="td" id="s-cover">
-        <button type="submit" name="submi_t">
-          <div id="s-circle"></div>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </form>
-</div>  
-</li>
-</ul>
+    <ul style="float:left" >
+        <li class="search-box">
+          <form method="post" class="search-form">
+           <input type="text" class="search-input" name="search" placeholder="Search..">
+     
+           <button class="search-button" type="submit" name="submi_t" class="search-button">
+           <svg class="submit-button">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+    </svg>
+           </button>
+</form>
+          </li>
+    </ul>      
+
+
 
           <ul class="nav nav-pills float-right">
             <li class="nav-item">
@@ -95,141 +93,141 @@ if (!$conn) {
 
     <style>
        
-       .tb {
-  display: table;
-  width: 100%;
+       .search-form {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 40px;
+  border-radius: 40px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transform: translate(-50%, -50%);
+  background: #fff;
+  transition: all 0.3s ease;
+
+  &.focus {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  }
 }
 
-.td {
-  display: table-cell;
-  vertical-align: middle;
+.search-input {
+  position: absolute;
+  top: 10px;
+  left: 38px;
+  font-size: 14px;
+  background: none;
+  color: #5a6674;
+  width: 195px;
+  height: 20px;
+  border: none;
+  appearance: none;
+  outline: none;
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
 }
 
-input,
-button {
-  color: #fff;
-  font-family: Nunito;
+.search-button {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  height: 20px;
+  width: 20px;
   padding: 0;
   margin: 0;
-  border: 0;
-  background-color: transparent;
-}
-
-#cover {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  width: 550px;
-  padding: 35px;
-  margin: -83px auto 0 auto;
-  background-color: #ff7575;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
-  transform: scale(0.6);
-}
-
-form {
-  height: 96px;
-}
-
-input[type="text"] {
-  width: 100%;
-  height: 96px;
-  font-size: 60px;
-  line-height: 1;
-}
-
-input[type="text"]::placeholder {
-  color: #e16868;
-}
-
-#s-cover {
-  width: 1px;
-  padding-left: 35px;
-}
-
-button {
-  position: relative;
-  display: block;
-  width: 84px;
-  height: 96px;
+  border: none;
+  background: none;
+  outline: none!important;
   cursor: pointer;
+  
+  & svg {
+    width: 20px;
+    height: 20px;
+    fill: #5a6674;
+  }
 }
 
-#s-circle {
-  position: relative;
-  top: -8px;
-  left: 0;
-  width: 43px;
-  height: 43px;
-  margin-top: 0;
-  border-width: 15px;
-  border: 15px solid #fff;
-  background-color: transparent;
-  border-radius: 50%;
-  transition: 0.5s ease all;
-}
-
-button span {
+.search-option {
   position: absolute;
-  top: 68px;
-  left: 43px;
-  display: block;
-  width: 45px;
-  height: 15px;
-  background-color: transparent;
-  border-radius: 10px;
-  transform: rotateZ(52deg);
-  transition: 0.5s ease all;
-}
+  text-align: right;
+  top: 10px;
+  right: 15px;
 
-button span:before,
-button span:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 45px;
-  height: 15px;
-  background-color: #fff;
-  border-radius: 10px;
-  transform: rotateZ(0);
-  transition: 0.5s ease all;
-}
+  div {
+    position: relative;
+    display: inline-block;
+    margin: 0 1px;
+    cursor: pointer;
+    
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.01;
+      cursor: pointer;
+    }
+    
+    span {
+      position: absolute;
+      display: block;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      background: #929AA3;
+      color: #fff;
+      font-size: 9px;
+      letter-spacing: 1px;
+      line-height: 1;
+      text-transform: uppercase;
+      padding: 4px 7px;
+      border-radius: 12px;
+      top: -18px;
+      transition: all .2s ease-in-out;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top: 4px solid #929AA3;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        transition: all .2s ease-in-out;
+      }
+    }
+    
+    &:hover span {
+      opacity: 1;
+      top: -21px;
+    }
+    
+    label {
+      display: block;
+      cursor: pointer;
+    }
+    
+    svg {
+      height: 20px;
+      width: 20px;
+      fill: #5a6674;
+      opacity: 0.6;
+      transition: all .2s ease-in-out;
+      pointer-events: none;
+    }
+    
+    &:hover svg {
+      opacity: 1;
+    }
+    
+    input:checked + label svg {
+      fill: $color;
+      opacity: .9;
+    }
+ 
 
-#s-cover:hover #s-circle {
-  top: -1px;
-  width: 67px;
-  height: 15px;
-  border-width: 0;
-  background-color: #fff;
-  border-radius: 20px;
-}
-
-#s-cover:hover span {
-  top: 50%;
-  left: 56px;
-  width: 25px;
-  margin-top: -9px;
-  transform: rotateZ(0);
-}
-
-#s-cover:hover button span:before {
-  bottom: 11px;
-  transform: rotateZ(52deg);
-}
-
-#s-cover:hover button span:after {
-  bottom: -11px;
-  transform: rotateZ(-52deg);
-}
-#s-cover:hover button span:before,
-#s-cover:hover button span:after {
-  right: -6px;
-  width: 40px;
-  background-color: #fff;
-}
     </style>
 <script>
   $('.search-input').focus(function(){
