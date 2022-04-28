@@ -437,7 +437,7 @@
                 <div class="inner">
                
                 <?php
-                  $query=mysqli_query($conn,"select stage_1 from bank_detail  where  district='$district' and stage_1 IS NOT NULL");
+                  $query=mysqli_query($conn,"select stage_1 from bank_detail  where  district='$district' ");
                   $count8=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count8 ?></h3>
