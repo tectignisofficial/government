@@ -338,12 +338,12 @@ document.getElementById("citySelect").selectedIndex = 0;
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>सरकारी प्रपत्र</h1>
+              <h1>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहित</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a></li>
-                                            <li  class="active" id="account"><strong>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहित</strong></li>
+                                            <li  class="active" id="account"><strong>सरकारी प्रपत्र</strong></li>
                 <li class="breadcrumb-item active"></li>
               </ol>
             </div>

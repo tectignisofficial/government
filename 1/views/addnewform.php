@@ -365,12 +365,12 @@ $id=intval($_GET['id']);
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>सरकारी प्रपत्र</h1>
+                            <h1>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहित</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a></li>
-                                <li class="breadcrumb-item active">अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहित</li>
+                                <li class="breadcrumb-item active">सरकारी प्रपत्र</li>
                             </ol>
                         </div>
                     </div>
