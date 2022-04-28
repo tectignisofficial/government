@@ -436,7 +436,11 @@
               <div class="small-box" style="background-color:#1C542D; color:white;">
                 <div class="inner">
                
-                  <h3>22</h3>
+                <?php
+                  $query=mysqli_query($conn,"select stage_1 from bank_detail IS NOT NULL where  district='$district'");
+                  $count6=mysqli_num_rows($query);
+                  ?>
+                  <h3><?php echo $count6 ?></h3>
 
                   <p>अर्थसहयय्य रक्कम निधी टप्पय पनहलय</p>
                 </div>
@@ -505,7 +509,9 @@
     </footer>
 
     <!-- Control Sidebar -->
-    
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
     <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
