@@ -271,15 +271,7 @@ ul{
                   <tr>
                    
                     <td><?php $row['book_no'] ?></td>
-                    
-                  </tr>
-                  <tr>
-                   
                     <td><?php $row['date'] ?></td>
-                    
-                  </tr>
-                  <tr>
-                   
                     <td>
                     <?php
                       $stage1=$row["stage1"];;
