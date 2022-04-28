@@ -452,7 +452,7 @@ if(isset($_POST['submit'])){
                   
               </table>
 
-              <nav aria-label="Page navigation example" class="mt-4">
+              <nav aria-label="Page navigation example" class="mt-4 page">
 				  <ul class="pagination justify-content-center">
 					<li <?php if($page==1) echo "class='page-item disabled'";?>>
 					  <a class="page-link" href="?page=<?php echo $page-1; ?>">Previous</a>
@@ -528,7 +528,7 @@ if(isset($_POST['submit'])){
   var divToPrint=document.getElementById('DivIdToPrint');
   var newWin=window.open();
   newWin.document.open();
-  newWin.document.write('<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style></head><html><body style="text-align:center" onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+  newWin.document.write('<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px;}.page{display:none}</style></head><html><body style="text-align:center" onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
   newWin.document.close();
   setTimeout(function(){newWin.close();},10);
 
