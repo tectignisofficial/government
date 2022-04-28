@@ -426,6 +426,7 @@ if(isset($_POST['subt3'])){
     </div>
     
 			</section>
+</div>
       <!-- /.content-wrapper -->
       <footer class="main-footer">
       <strong>Copyright &copy; <?php echo date('Y'); ?></strong>
