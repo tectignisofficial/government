@@ -334,7 +334,8 @@ else{
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a></li>
-                                <li class="breadcrumb-item active">सरकारी प्रपत्र</li>
+                                            <li  class="active" id="account"><strong>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहित</strong></li>
+                                <li class="breadcrumb-item active"></li>
                             </ol>
                         </div>
                     </div>

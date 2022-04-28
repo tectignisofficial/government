@@ -350,7 +350,8 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a></li>
-                                <li class="breadcrumb-item active">सरकारी प्रपत्र</li>
+                                <li class="breadcrumb-item active">                                            <li  class="active" id="account"><strong>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहित</strong></li>
+</li>
                             </ol>
                         </div>
                     </div>
@@ -372,7 +373,6 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                                     <div class="card-body">
                                     <div class="col-12" style="text-align:center;">
                                         <ul id="progressbar" style="display:flex"  ;>
-                                            <li  class="active" id="account"><strong>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहित</strong></li>
                                             <li  class="active" id="personal"><strong>आरोपीची माहिती</strong></li>
                                             
                                             <li id="payment"><strong>पिडीत व्यक्तीची माहिती</strong></li>
