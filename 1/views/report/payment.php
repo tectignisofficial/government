@@ -32,8 +32,6 @@ if(isset($_POST['sub3'])){
     $id1=$_POST['check_id'];
     $stage2=$_POST['stage2'];
     $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `stage_2`='$stage2' WHERE caseid='$id1'");
-    echo "<script>alert('$id1');</script>";
-    echo "<script>alert('$stage2');</script>";
 }
 
 if(isset($_POST['subt3'])){
@@ -79,11 +77,9 @@ if(isset($_POST['subt3'])){
 </head>
 
 <body class="hold-transition sidebar-mini">
-<div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-    </div>
+<div class="wrapper">
   <!-- Navbar -->
- <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -93,7 +89,12 @@ if(isset($_POST['subt3'])){
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-    
+        <!-- Navbar Search -->
+
+
+        <!-- Messages Dropdown Menu -->
+
+        <!-- Notifications Dropdown Menu -->
 
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -108,6 +109,7 @@ if(isset($_POST['subt3'])){
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
+  
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="../index.php" class="brand-link">
@@ -124,7 +126,7 @@ if(isset($_POST['subt3'])){
             <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>-->
           <div class="info">
-            <a href="#" class="d-block" style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $district; ?></a>
+            <a href="#" class="d-block" style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $role; ?></a>
           </div>
         </div>
 
@@ -175,7 +177,7 @@ if(isset($_POST['subt3'])){
               </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link ">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
                   अहवाल
@@ -202,14 +204,14 @@ if(isset($_POST['subt3'])){
                     <p>अहवाल ४</p>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ">
                   <a href="R5.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>अहवाल ५</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="complain.php" class="nav-link">
+                  <a href="Complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Complaint</p>
                   </a>
@@ -218,34 +220,56 @@ if(isset($_POST['subt3'])){
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link active">
-                <i class=" nav-icon fas fa-landmark "></i>
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
-                  बँक
+                  वापरकर्ता                                                                                                                                                                                                                                
                   <i class="right fas fa-angle-left"></i>
-                  <!-- <span class="right badge badge-danger">New</span> -->
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-              <a href="r1opy.php" class="nav-link ">
-              <i class="far fa-circle nav-icon"></i> 
-                <p>
-                बँक माहिती
-                </p>
-              </a>
+                  <a href="../viewwebuser.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p> संकेतस्थल वापरकर्ता
+
+                    </p>
+                  </a>
+                </li>
+                
+              </ul>
             </li>
             <li class="nav-item">
-              <a href="payment.php" class="nav-link active">
-              <i class=" far fa-circle nav-icon"></i> 
-                <p>
-                पेमेंट
-                </p>
-              </a>
-           
+            <a href="#" class="nav-link active">
+              <i class=" nav-icon fas fa-landmark "></i>
+              <p>
+                बँक
+                <i class="right fas fa-angle-left"></i>
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+            <a href="r1opy.php" class="nav-link">
+            <i class="far fa-circle nav-icon"></i> 
+              <p>
+              बँक माहिती
+              </p>
+            </a>
+
             </li>
+            <li class="nav-item">
+            <a href="payment.php" class="nav-link active">
+            <i class=" far fa-circle nav-icon"></i> 
+              <p>
+              पेमेंट
+              </p>
+            </a>
+
+            </li>
+              
             </ul>
-            </li> 
+            </li>
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
               <i class=" nav-icon fas fa-sign-out-alt"></i> 
@@ -263,7 +287,6 @@ if(isset($_POST['subt3'])){
       </div>
       <!-- /.sidebar -->
     </aside>
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -422,15 +445,14 @@ if(isset($_POST['subt3'])){
     </div>
                                  
     </div>
-    
     </div>
     
 			</section>
-      <!-- /.content-wrapper -->
-       <!-- ./wrapper -->
                         </div>
                         <!--/.col (left) -->
                         <!-- right column -->
+
+                        <!--/.col (right) -->
                         <footer class="main-footer">
       <strong>Copyright &copy; <?php echo date('Y'); ?></strong>
       All rights reserved.
@@ -438,12 +460,11 @@ if(isset($_POST['subt3'])){
         Designd by Tectignis It Solutions</b>
       </div>
     </footer>
+
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
         </aside>
-        <!-- /.control-s
-                        <!--/.col (right) -->
                     </div>
                     <!-- /.row -->
                 
@@ -483,7 +504,10 @@ if(isset($_POST['subt3'])){
         })
          
     </script>                     
-       
+        <!-- /.content-wrapper -->
+        
+        <!-- /.control-sidebar -->
+       <!-- ./wrapper -->
 
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
