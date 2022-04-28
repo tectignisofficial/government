@@ -21,7 +21,7 @@ if (mysqli_num_rows($complaints)>0){
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>अहवाल | Complain</title>
+  <title>अहवाल | Complaint</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -205,7 +205,7 @@ if (mysqli_num_rows($complaints)>0){
                 <li class="nav-item">
                   <a href="complain.php" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Complain</p>
+                    <p>Complaint</p>
                   </a>
                 </li>
               </ul>
@@ -233,7 +233,7 @@ if (mysqli_num_rows($complaints)>0){
               <a href="payment.php" class="nav-link">
               <i class=" far fa-circle nav-icon"></i> 
                 <p>
-               payment
+                पेमेंट
                 </p>
               </a>
            
@@ -242,7 +242,7 @@ if (mysqli_num_rows($complaints)>0){
             </li>
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
-              <i class=" nav-icon fas fa-user-tie"></i> 
+              <i class=" nav-icon fas fa-sign-out-alt"></i> 
                 <p>
                      बाहेर पडा  
                 </p>
@@ -271,7 +271,7 @@ if (mysqli_num_rows($complaints)>0){
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/government-master/index.html">Home</a></li>
-              <li class="breadcrumb-item active">Complain</li>
+              <li class="breadcrumb-item active">Complaint</li>
             </ol>
           </div>
         </div>
