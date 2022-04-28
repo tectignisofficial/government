@@ -294,7 +294,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
             <div class="container my-2">
                             <div class="card-tools text-center">
                          
-                              <button type="button" class="btn btn-tool" id="print" onclick='printDiv();' style="background-color: lightgray;">
+                              <button type="button" class="btn btn-tool" id="print" onclick='window.print();' style="background-color: lightgray;">
                                 <i class="fas fa-print"></i>
                                 Print                    </button>
                               <button type="button" class="btn btn-tool" id="pdf" style="background-color: lightgray;">
@@ -309,7 +309,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                             </div>
                             </div>
                             
-            <div class="card print-container" id="DivIdToPrint">
+            <div class="card print-container" id="ToPrint">
               <div class="card-header">
                 
 
@@ -522,18 +522,6 @@ if(isset($_POST['submit'])){
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- Page specific script -->
-<script type="text/javascript">
-  function printDiv() 
-{
-  var divToPrint=document.getElementById('DivIdToPrint');
-  var newWin=window.open();
-  newWin.document.open();
-  newWin.document.write('<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style></head><html><body style="text-align:center" onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
-  newWin.document.close();
-  setTimeout(function(){newWin.close();},10);
-
-}
-</script>
 <script>
   $(function () {
     $("#example1").DataTable({
