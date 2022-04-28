@@ -57,6 +57,8 @@ if (!$conn) {
     <div class="container">
       <div class="header clearfix">
         <nav>
+          <ul style="float:left">
+          <li>
         <div id="cover">
   <form method="get" action="">
     <div class="tb">
@@ -70,8 +72,8 @@ if (!$conn) {
     </div>
   </form>
 </div>  
-
-
+</li>
+</ul>
 
           <ul class="nav nav-pills float-right">
             <li class="nav-item">
