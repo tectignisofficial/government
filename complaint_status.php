@@ -94,7 +94,7 @@ if (!$conn) {
   display: flex;
 }
 .table{
-  margin-top:30px;
+  margin-top:40px;
 }
 .searchTerm {
   width: 100%;
@@ -127,7 +127,7 @@ if (!$conn) {
 .wrap{
   width: 30%;
   position: absolute;
-  top: 60%;
+  top: 54%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
