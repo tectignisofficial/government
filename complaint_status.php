@@ -85,7 +85,7 @@ if (!$conn) {
 
     <style>
        .heading{
-         font-size:30px;
+         font-size:40px;
          word-spacing:0.3px;
          letter-spacing:1px;
          color:black;
@@ -96,7 +96,7 @@ if (!$conn) {
   display: flex;
 }
 .table{
-  margin-top:20%;
+  margin-top:25%;
 }
 .searchTerm {
   width: 100%;
