@@ -58,8 +58,14 @@ if (!$conn) {
       <div class="header clearfix">
         <nav>
     <ul style="float:left">
-        <li>
-          Complaint Status
+        <li class="search-box">
+          <form method="post" class="search-form">
+           <input type="text" class="search-input" name="search" placeholder="Search..">
+     
+           <button class="search-button" type="submit" name="submi_t">
+             <i class="far fa-search"></i>submit
+           </button>
+</form>
           </li>
     </ul>      
 
@@ -205,7 +211,6 @@ ul{
    padding:6px 0;
    text-transform:uppercase;
 }
-
 .our-webcoderskull .cnt-block h3 a{
   text-decoration:none;
 	color:#2a2a2a;
@@ -247,18 +252,6 @@ ul{
       <li class="">
           <div class="cnt-block equal-hight" style="height: 349px;">
          
-            <div style="float:left">
-              <div class="search-box">
-                <form method="post" class="search-form">
-                <input type="text" class="search-input" name="search" placeholder="Search..">
-          
-                <button class="search-button" type="submit" name="submi_t">
-                  <i class="far fa-search"></i>submit
-                </button>
-                </form>
-              </div>
-            </div>      
-
             <table class="table table-striped">
                 <thead>
                   <tr>
