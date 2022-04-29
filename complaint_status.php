@@ -129,7 +129,7 @@ if (!$conn) {
 .wrap{
   width: 30%;
   position: absolute;
-  top: 51.8%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
