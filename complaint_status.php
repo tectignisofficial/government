@@ -267,27 +267,33 @@ ul{
 </form>
 </div>
 </div>      
-
-            <table class="table table-striped">
-                <thead>
-                  <tr>
-                   
-                    <th scope="col">नोंद वही क्र.</th>
-                    <th scope="col">दिनांक</th>
-                    <th scope="col">पैसे भरल्याची स्थिती</th>
-                  </tr>
-                </thead>
-                <?php 
+<?php 
                 if(isset($_POST['submi_t'])){
                 $search=$_POST['search'];
                 $sql=mysqli_query($conn,"select complaint_form.complaint_no as no,complaint_form.book_no as bookno, complaint_form.date as dat,bank_detail.stage_1 as stage1, bank_detail.stage_2 as stage2, bank_detail.stage_3 as stage3 from complaint_form inner join bank_detail on complaint_form.id=bank_detail.caseid where complaint_form.complaint_no like '%$search%'");
                 $row=mysqli_fetch_array($sql)
                 ?>
+            <table class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th scope="col">नोंद वही क्र.</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">दिनांक</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">पैसे भरल्याची स्थिती</th>
+                  </tr>
+                </thead>
+                
                 <tbody>
                   <tr>
-                   
                     <td><?php echo $row['bookno'] ?></td>
+                </tr>
+                <tr>
                     <td><?php echo $row['dat'] ?></td>
+                </tr>
+                <tr>
                     <td>
                     <?php
                       $stage1=$row["stage1"];;
@@ -311,8 +317,8 @@ ul{
                   </tr>
                 
                 </tbody>
-                <?php } ?>
               </table>
+              <?php } ?>
           </div>
       </li>
 
