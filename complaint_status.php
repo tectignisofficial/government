@@ -85,37 +85,47 @@ if (!$conn) {
 
     <style>
        
-.search-box{
+       .search {
   width: 100%;
   position: relative;
   display: flex;
-
 }
-.search-input{
+
+.searchTerm {
   width: 100%;
-  border: 4px solid #111d5e;
-  border-radius:10px 0 0 10px ;
+  border: 3px solid #00B4CC;
   border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
   outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
   font-size: 20px;
-  color: tomato;
-  background: none;
-}
-.search-button{
- text-align: center;
-height: 51px;
-width: 40px;
-outline: none;
-cursor: pointer;
-border: 4px solid #111d5e;
- border-radius: 0 10px 10px 0 ;
-border-left: none;
-background: none;
-font-size: 20px;
-border-left: 4px solid #111d5e;
 }
 
-
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
     </style>
 
 	  <style>
@@ -247,12 +257,12 @@ ul{
           <div class="cnt-block equal-hight" style="height: 349px;">
          
           <div style="float:left">
-        <div class="search-box">
-          <form method="post" class="search-form">
-           <input type="text" class="search-input" name="search" placeholder="Search..">
+        <div  class="wrap">
+          <form method="post" class="search">
+           <input type="text" class="searchTerm" name="search" placeholder="Search..">
      
-           <button class="search-button" type="submit" name="submi_t">
-             <i class="far fa-search"></i>submit
+           <button class="searchButton" type="submit" name="submi_t">
+             <i class="bi bi-search"></i>submit
            </button>
 </form>
 </div>
