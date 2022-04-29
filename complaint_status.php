@@ -73,7 +73,7 @@ if (!$conn) {
               <a class="nav-link active" href="#">Complaint Status <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="http://government.tectignis.in/raigad/views/login.php">Admin Login</a>
+              <a class="nav-link" href="change.html">Admin Login</a>
             </li>
           </ul>
         </nav>
@@ -283,15 +283,15 @@ ul{
             <table class="table table-striped ">
                 <thead>
                   <tr>
-                    <th scope="col">नोंद वही क्र.</th><hr>
+                    <th scope="col">नोंद वही क्र.</th>
                     <td><?php echo $row['bookno'] ?></td>
                   </tr>
                   <tr>
-                    <th scope="col">दिनांक</th><hr>
+                    <th scope="col">दिनांक</th>
                     <td><?php echo $row['dat'] ?></td>
                   </tr>
                   <tr>
-                    <th scope="col">पैसे भरल्याची स्थिती</th><hr>
+                    <th scope="col">पैसे भरल्याची स्थिती</th>
                     <td>
                     <?php
                       $stage1=$row["stage1"];;
