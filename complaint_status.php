@@ -283,15 +283,15 @@ ul{
             <table class="table table-striped ">
                 <thead>
                   <tr>
-                    <th scope="col">नोंद वही क्र.</th>
+                    <th scope="col">नोंद वही क्र.</th><hr>
                     <td><?php echo $row['bookno'] ?></td>
                   </tr>
                   <tr>
-                    <th scope="col">दिनांक</th>
+                    <th scope="col">दिनांक</th><hr>
                     <td><?php echo $row['dat'] ?></td>
                   </tr>
                   <tr>
-                    <th scope="col">पैसे भरल्याची स्थिती</th>
+                    <th scope="col">पैसे भरल्याची स्थिती</th><hr>
                     <td>
                     <?php
                       $stage1=$row["stage1"];;
