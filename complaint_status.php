@@ -96,7 +96,7 @@ if (!$conn) {
   display: flex;
 }
 .table{
-  margin-top:40px;
+  margin-top:20%;
 }
 .searchTerm {
   width: 100%;
