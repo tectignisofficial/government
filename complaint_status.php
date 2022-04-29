@@ -87,6 +87,8 @@ if (!$conn) {
        .heading{
          font-size:30px;
          word-spacing:0.3px;
+         letter-spacing:1px;
+         color:black;
        }
 .search {
   width: 100%;
@@ -127,7 +129,7 @@ if (!$conn) {
 .wrap{
   width: 30%;
   position: absolute;
-  top: 54%;
+  top: 51%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
