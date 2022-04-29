@@ -85,15 +85,17 @@ if (!$conn) {
 
     <style>
        .heading{
-         font-size:20px;
+         font-size:30px;
          word-spacing:0.3px;
        }
-       .search {
+.search {
   width: 100%;
   position: relative;
   display: flex;
 }
-
+.table{
+  margin-top:20px;
+}
 .searchTerm {
   width: 100%;
   border: 3px solid #00B4CC;
@@ -265,7 +267,7 @@ ul{
            <input type="text" class="searchTerm" name="search" placeholder="Search..">
      
            <button class="searchButton" type="submit" name="submi_t">
-             <i class="bi bi-search"></i>submit
+             <i class="bi bi-search"></i>
            </button>
 </form>
 </div>
@@ -276,7 +278,7 @@ ul{
                 $sql=mysqli_query($conn,"select complaint_form.complaint_no as no,complaint_form.book_no as bookno, complaint_form.date as dat,bank_detail.stage_1 as stage1, bank_detail.stage_2 as stage2, bank_detail.stage_3 as stage3 from complaint_form inner join bank_detail on complaint_form.id=bank_detail.caseid where complaint_form.complaint_no like '%$search%'");
                 $row=mysqli_fetch_array($sql)
                 ?>
-            <table class="table table-striped mt-4">
+            <table class="table table-striped ">
                 <thead>
                   <tr>
                     <th scope="col">नोंद वही क्र.</th>
