@@ -205,6 +205,7 @@ ul{
    padding:6px 0;
    text-transform:uppercase;
 }
+
 .our-webcoderskull .cnt-block h3 a{
   text-decoration:none;
 	color:#2a2a2a;
