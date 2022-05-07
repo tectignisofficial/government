@@ -395,32 +395,32 @@ echo mysqli_query($conn);
                         <select id="police" required name="police_station" class="form-control">
                         <option value="<?php echo $police_station?>"><?php echo $police_station?></option>
                           <option value="" selected>पर्याय निवडा</option>
-                          <option value="thane" selected>माथेरान</option>
-                          <option value="thane" selected>कर्जत</option>
-                          <option value="thane" selected>नेरळ</option>
-                          <option value="thane" selected>खोपोली</option>
-                          <option value="thane" selected>खालापूर</option>
-                          <option value="thane" selected>रसायनी</option>
-                          <option value="thane" selected>पेण</option>
-                          <option value="thane" selected>वडखळ</option>
-                          <option value="thane" selected>पोयनाड</option>
-                          <option value="thane" selected>मांडवा</option>
-                          <option value="thane" selected>रेवदंडा</option>
-                          <option value="thane" selected>अलिबाग</option>
-                          <option value="thane" selected>पाली</option>
-                          <option value="thane" selected>पोलादपूर</option>
-                          <option value="thane" selected>महाड एम आय डी सी</option>
-                          <option value="thane" selected>महाड तालुका</option>
-                          <option value="thane" selected>महाड शहर</option>
-                          <option value="thane" selected>श्रीवर्धन</option>
-                          <option value="thane" selected>दिघी सागरी</option>
-                          <option value="thane" selected>म्हसळा</option>
-                          <option value="thane" selected>माणगाव</option>
-                          <option value="thane" selected>गोरेगाव</option>
-                          <option value="thane" selected>तळा</option>
-                          <option value="thane" selected>रोहा</option>
-                          <option value="thane" selected>नागोठणे</option>
-                          <option value="thane" selected>मुरुड</option>
+                          <option value="माथेरान" selected>माथेरान</option>
+                          <option value="कर्जत" selected>कर्जत</option>
+                          <option value="नेरळ" selected>नेरळ</option>
+                          <option value="खोपोली" selected>खोपोली</option>
+                          <option value="खालापूर" selected>खालापूर</option>
+                          <option value="रसायनी" selected>रसायनी</option>
+                          <option value="पेण" selected>पेण</option>
+                          <option value="वडखळ" selected>वडखळ</option>
+                          <option value="पोयनाड" selected>पोयनाड</option>
+                          <option value="मांडवा" selected>मांडवा</option>
+                          <option value="रेवदंडा" selected>रेवदंडा</option>
+                          <option value="अलिबाग" selected>अलिबाग</option>
+                          <option value="पाली" selected>पाली</option>
+                          <option value="पोलादपूर" selected>पोलादपूर</option>
+                          <option value="महाड एम आय डी सी" selected>महाड एम आय डी सी</option>
+                          <option value="महाड तालुका" selected>महाड तालुका</option>
+                          <option value="महाड शहर" selected>महाड शहर</option>
+                          <option value="श्रीवर्धन" selected>श्रीवर्धन</option>
+                          <option value="दिघी सागरी" selected>दिघी सागरी</option>
+                          <option value="म्हसळा" selected>म्हसळा</option>
+                          <option value="माणगाव" selected>माणगाव</option>
+                          <option value="गोरेगाव" selected>गोरेगाव</option>
+                          <option value="तळा" selected>तळा</option>
+                          <option value="रोहा" selected>रोहा</option>
+                          <option value="नागोठणे" selected>नागोठणे</option>
+                          <option value="मुरुड" selected>मुरुड</option>
                         </select>
                       </div>
 
@@ -430,12 +430,12 @@ echo mysqli_query($conn);
                         <select id="police" required name="police_station"  class="form-control">
                         <option value="<?php echo $police_station?>"><?php echo $police_station?></option>
                           <option value="" selected>पर्याय निवडा</option>
-                          <option value="thane" selected>खारघर</option>
-                          <option value="thane" selected>कळंबोली</option>
-                          <option value="thane" selected>खांदेश्वर</option>
-                          <option value="thane" selected>पनवेल शहर</option>
-                          <option value="thane" selected>पनवेल तालुका</option>
-                          <option value="thane" selected>कामोठे</option>
+                          <option value="खारघर" selected>खारघर</option>
+                          <option value="कळंबोली" selected>कळंबोली</option>
+                          <option value="खांदेश्वर" selected>खांदेश्वर</option>
+                          <option value="पनवेल शहर" selected>पनवेल शहर</option>
+                          <option value="पनवेल तालुका" selected>पनवेल तालुका</option>
+                          <option value="कामोठे" selected>कामोठे</option>
                         </select>
                       </div>
                     </div>

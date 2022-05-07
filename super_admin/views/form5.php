@@ -410,7 +410,7 @@ else{
 
                                             <button type="submit" name="su_bmit" onclick="return confirm('Update Successfully')" class="btn btn-primary">नमूद करा
                                             </button>
-                                            <a href="form4.php?id=<?php echo $id;?>" class="btn btn-primary">मागे जा</a>
+                                            <a href="form4.php?eid=<?php echo $id;?>" class="btn btn-primary">मागे जा</a>
                                         </div>
                                     </div>          
                                 </form>
