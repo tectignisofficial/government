@@ -28,6 +28,7 @@ $id=$_GET['id'];
 if(isset($_POST['subm_it'])){
     $file=$_FILES['files']['name'];    
     $discription=$_POST['discription'];
+    $id=$_GET['id'];
     $filedet=$_FILES['files']['tmp_name'];
     $loc="file/".$file;
     move_uploaded_file($filedet,$loc);
