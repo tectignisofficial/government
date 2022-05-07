@@ -32,14 +32,14 @@ if(isset($_POST['subm_it'])){
     $filedet=$_FILES['files']['tmp_name'];
     $loc="file/".$file;
     move_uploaded_file($filedet,$loc);
-    if(isset($_GET['id'])){
-      $sql=mysqli_query($conn,"update image set discription='$discription' where caseid='$eid'");
+    if(isset($_GET['eid'])){
+      $sql=mysqli_query($conn,"update image set discription='$discription' where caseid='$id'");
     }
     else{
       $sql=mysqli_query($conn,"insert into image (caseid,image,discription) values('$id','$file','$discription')");
     }
     if($sql==1){
-      echo "<script>alert('$eid');</script>";
+      echo "<script>alert('$id');</script>";
         //header("location:form5.php?id=".$id);
     }else{
         mysqli_error($conn);
