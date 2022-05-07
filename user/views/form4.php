@@ -39,8 +39,7 @@ if(isset($_POST['subm_it'])){
       $sql=mysqli_query($conn,"insert into image (caseid,image,discription) values('$id','$file','$discription')");
     }
     if($sql==1){
-      echo "<script>alert('$id');</script>";
-        //header("location:form5.php?id=".$id);
+        header("location:form5.php?id=".$id);
     }else{
         mysqli_error($conn);
     }
