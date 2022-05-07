@@ -64,7 +64,7 @@ $district='';
   }
     if($sql==1)
     {
-     header("Location:fo.php?id=".$id) ;
+     //header("Location:fo.php?id=".$id) ;
     }
     else {
     echo 'error';
