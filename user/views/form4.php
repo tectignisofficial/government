@@ -21,6 +21,7 @@ $district='';
         while($arr=mysqli_fetch_array($sql)){
         $image=$arr['image'];
         $discription=$arr['discription'];
+        $payStatus=$arr['payStatus'];
         }
       
 
@@ -28,15 +29,16 @@ $id=$_GET['id'];
 if(isset($_POST['subm_it'])){
     $file=$_FILES['files']['name'];    
     $discription=$_POST['discription'];
+    $payStatus=$_POST['payStatus'];
     $id=$_GET['id'];
     $filedet=$_FILES['files']['tmp_name'];
     $loc="file/".$file;
     move_uploaded_file($filedet,$loc);
     if(isset($_GET['eid'])){
-      $sql=mysqli_query($conn,"update image set discription='$discription' where caseid='$id'");
+      $sql=mysqli_query($conn,"update image set discription='$discription',status='$payStatus' where caseid='$id'");
     }
     else{
-      $sql=mysqli_query($conn,"insert into image (caseid,image,discription) values('$id','$file','$discription')");
+      $sql=mysqli_query($conn,"insert into image (caseid,image,discription,status) values('$id','$file','$discription','$payStatus')");
     }
     if($sql==1){
         header("location:form5.php?id=".$id);
@@ -371,17 +373,18 @@ if(isset($_POST['subm_it'])){
 
                     
                       <div class="d-flex form-group " style="margin-left: -12px;">
-                    <div class="form-group col-6">
+                    <div class="form-group col-8">
                       <label for="Exampleवघकिय  पुष्टी-३१ अहवाल">FIR</label><br>
                       <label for="myfile">फाईल निवडा:</label>
                       <input type="file" name="files" multiple  value="<?php echo $image; ?> "/>
                     </div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-4">
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <label class="input-group-text" for="gender3">Status</label>
                       </div>
-                      <select class="custom-select" id="gender3">
+                      <select class="custom-select" id="gender3" name="payStatus">
+                        <option value="<?php echo $payStatus; ?>"><?php echo $payStatus; ?></option>
                         <option value="stage 1" selected>stage 1 payment</option>
                         <option value="stage 2">stage 2 payment</option>
                         <option value="stage 3">stage 3 payment</option>
