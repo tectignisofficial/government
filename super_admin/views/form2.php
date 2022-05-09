@@ -62,7 +62,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
   }
     if($sql==1)
     {
-     header("Location:fo.php?id=".$id) ;
+     //header("Location:fo.php?id=".$id) ;
     }
     else {
     echo 'error';
