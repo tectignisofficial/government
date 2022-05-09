@@ -244,7 +244,7 @@ if (mysqli_num_rows($complaints)>0){
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item"> 
               <a href="payment.php" class="nav-link">
               <i class=" far fa-circle nav-icon"></i> 
                 <p>
@@ -252,7 +252,7 @@ if (mysqli_num_rows($complaints)>0){
                 </p>
               </a>
            
-            </li>
+            </li>-->
             </ul>
             </li>
             <li class="nav-item">

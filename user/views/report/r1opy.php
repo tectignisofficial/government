@@ -214,7 +214,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item"> 
               <a href="payment.php" class="nav-link">
               <i class=" far fa-circle nav-icon"></i> 
                 <p>
@@ -222,7 +222,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                 </p>
               </a>
            
-            </li>
+            </li>-->
             </ul>
             </li>
             <li class="nav-item">
@@ -340,7 +340,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 					   <th class="text-center"rowspan="2">गुन्हयांचा प्रकार</th>-->
                        <th class="text-center"colspan="1">पीहित </th>
 					   <th class="text-center"colspan="5">बँक माहिती</th>
-					   <th class="text-center"colspan="3">Payment Status</th>
+					   <!-- <th class="text-center"colspan="3">Payment Status</th> -->
 					  <th class="text-center"rowspan="2">शेरा</th>
                   </tr>
                   <tr>
@@ -350,9 +350,9 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 					  <th class="text-center">Bank Name</th>
 					  <th class="text-center">Branch Name</th>
 					  <th class="text-center">IFSC Code</th>
-					  <th class="text-center">Stage1</th>
+					  <!-- <th class="text-center">Stage1</th> 
 					  <th class="text-center">Stage2</th>
-					  <th class="text-center">Stage3</th>
+					  <th class="text-center">Stage3</th>-->
                     
 					  
 
@@ -402,9 +402,9 @@ if(isset($_POST['submit'])){
                     <td class="text-center"><?php echo $row['bank_name'];?></td>
                     <td class="text-center"><?php echo $row['branch_name'];?></td>
                     <td class="text-center"><?php echo $row['ifsc_code'];?></td>
-                    <td class="text-center"><?php echo $row['stage_1'];?></td>
-                    <td class="text-center"><?php echo $row['stage_2'];?></td>
-                    <td class="text-center"><?php echo $row['stage_3'];?></td>
+                    <!-- <td class="text-center"><?php //echo $row['stage_1'];?></td> 
+                    <td class="text-center"><?php //echo $row['stage_2'];?></td>
+                    <td class="text-center"><?php //echo $row['stage_3'];?></td>-->
                     <td class="text-center"><?php echo $row['discription'];?></td>
 						  
             

@@ -287,7 +287,7 @@ if(isset($_POST['subm_it'])){
               </a>
            
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="report/payment.php" class="nav-link">
               <i class=" far fa-circle nav-icon"></i> 
                 <p>
@@ -295,7 +295,7 @@ if(isset($_POST['subm_it'])){
                 </p>
               </a>
            
-            </li>
+            </li> -->
                 
               </ul>
             </li>
@@ -371,12 +371,23 @@ if(isset($_POST['subm_it'])){
                                         </div>
 
                     
-
+                      <div class="d-flex form-group " style="margin-left: -12px;">
                     <div class="form-group">
                       <label for="Exampleवघकिय  पुष्टी-३१ अहवाल">FIR</label><br>
                       <label for="myfile">फाईल निवडा:</label>
                       <input type="file" name="files" multiple  value="<?php echo $image; ?> "/>
                     </div>
+                    <div class="col-md-4 m-b-3">
+                      <select class="mdb-select md-form colorful-select dropdown-primary">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                        <option value="5">Option 5</option>
+                      </select>
+                      <label class="mdb-main-label">Blue select</label>
+                    </div>
+      </div>
 
                     <div class="form-group">
                       <label for="Exampleशेरा">शेरा</label>
@@ -398,21 +409,11 @@ if(isset($_POST['subm_it'])){
                             </div>
                             <!-- /.card -->
 
-                            <!-- general form elements -->
-
-                            <!-- /.card -->
-
-                            <!-- Input addon -->
-
-                            <!-- /.card -->
-                            <!-- Horizontal Form -->
-
-                            <!-- /.card -->
+                           
 
                         </div>
                         <!--/.col (left) -->
-                        <!-- right column -->
-
+                       
                         <!--/.col (right) -->
                     </div>
                     <!-- /.row -->

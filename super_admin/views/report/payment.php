@@ -258,7 +258,7 @@ if(isset($_POST['subt3'])){
             </a>
 
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item"> 
             <a href="payment.php" class="nav-link active">
             <i class=" far fa-circle nav-icon"></i> 
               <p>
@@ -266,7 +266,7 @@ if(isset($_POST['subt3'])){
               </p>
             </a>
 
-            </li>
+            </li>-->
               
             </ul>
             </li>

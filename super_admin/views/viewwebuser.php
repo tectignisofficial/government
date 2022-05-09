@@ -226,7 +226,7 @@ if($_GET['action']=='delete' && $_GET['id']){
             </a>
 
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item"> 
             <a href="report/payment.php" class="nav-link">
             <i class=" far fa-circle nav-icon"></i> 
               <p>
@@ -234,7 +234,7 @@ if($_GET['action']=='delete' && $_GET['id']){
               </p>
             </a>
 
-            </li>
+            </li>-->
               
             </ul>
             </li>

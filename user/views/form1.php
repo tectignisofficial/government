@@ -272,7 +272,7 @@ echo mysqli_query($conn);
               </a>
            
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item"> 
               <a href="report/payment.php" class="nav-link">
               <i class=" far fa-circle nav-icon"></i> 
                 <p>
@@ -280,7 +280,7 @@ echo mysqli_query($conn);
                 </p>
               </a>
            
-            </li>
+            </li>-->
                 
               </ul>
             </li>

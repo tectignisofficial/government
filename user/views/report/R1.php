@@ -239,7 +239,7 @@ $role='';
                 </p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item"> 
               <a href="payment.php" class="nav-link">
               <i class=" far fa-circle nav-icon"></i> 
                 <p>
@@ -247,7 +247,7 @@ $role='';
                 </p>
               </a>
            
-            </li>
+            </li>-->
                 
               </ul>
             </li>
