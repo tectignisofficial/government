@@ -425,9 +425,9 @@ if (mysqli_num_rows($complaints)>0){
 					   <th class="text-center"rowspan="2">गुन्हा न.</th>
 					   <th class="text-center"rowspan="2">लावलेली कलमे </th>
 					   <th class="text-center"rowspan="2">गुन्हयांचा प्रकार</th>
-					   
+					   <th class="text-center no">Status</th>
             <th class="text-center no">action</th>
-            <th class="text-center no">Status</th>
+            
                   </tr>
               
 
@@ -439,7 +439,7 @@ if (mysqli_num_rows($complaints)>0){
                    $dat=$_POST['month'];
                    $year=$_POST['year'];
                    $district=$_POST['district'];
-                   $sql=mysqli_query($conn,"select complaint_form.id as id,complaint_form.book_no as book_no, complaint_form.date as date, complaint_form.district as district, complaint_form.police_station as police_station, complaint_form.complaint_no as complaint_no, complaint_form.section as section, complaint_form.type_of_offence as type_of_offence,image.caseid as cid,image.status as status, bank_detail.stage_1 as stage1, bank_detail.stage_2 as stage2, bank_detail.stage_3 as stage3 from complaint_form inner join bank_detail on complaint_form.id=bank_detail.caseid inner join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district';");
+                   $sql=mysqli_query($conn,"select complaint_form.id as id,complaint_form.book_no as book_no, complaint_form.date as date, complaint_form.district as district, complaint_form.police_station as police_station, complaint_form.complaint_no as complaint_no, complaint_form.section as section, complaint_form.type_of_offence as type_of_offence,image.caseid as cid,image.status as status from complaint_form inner join image on image.caseid=complaint_form.id where monthname(date) ='$dat' and year(date)='$year' and district='$district';");
                     $count=1;
                     $num=mysqli_num_rows($sql);
                     if($num==0){
