@@ -17,7 +17,8 @@ $district='';
 if(isset($_POST['subm_it']) && ($_GET['eid'])){
     $eid=$_GET['eid'];
     $discription=$_POST['discription'];
-    $sql=mysqli_query($conn,"update image set discription='$discription' where caseid='$eid'");
+    $payStatus=$_POST['payStatus'];
+    $sql=mysqli_query($conn,"update image set discription='$discription',status='$payStatus' where caseid='$eid'");
     if($sql==1){
         header("location:editform5.php?id=".$eid);
     }else{
@@ -355,9 +356,25 @@ if(isset($_POST['subm_it']) && ($_GET['eid'])){
                       $sql=mysqli_query($conn,"select * from image where caseid='$eid'");
                       while($arr=mysqli_fetch_array($sql)){
                     ?>
+                    <div class="d-flex form-group " style="margin-left: -12px;">
                     <div class="form-group">
                       <img src="file/<?php echo $arr['image'];?>" width="200" height="200" >
                     </div>
+                    <div class="form-group col-4">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="gender3">Status</label>
+                      </div>
+                      <select class="custom-select" id="gender3" name="payStatus">
+                        <option value="<?php echo $arr['status']; ?>"><?php echo $payStatus; ?></option>
+                        <option value="stage 1" selected>stage 1 payment</option>
+                        <option value="stage 2">stage 2 payment</option>
+                        <option value="stage 3">stage 3 payment</option>
+                        <option value="stage 3">Case close</option>
+                      </select>
+                    </div>
+                      </div>
+                                </div>
 
                     <div class="form-group">
                       <label for="Exampleशेरा">शेरा</label>
