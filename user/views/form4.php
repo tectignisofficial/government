@@ -78,7 +78,9 @@ if(isset($_POST['subm_it'])){
 
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-
+<head>
+  
+</head>
     <script>
         var stateObject = {
             "रायगड": {
@@ -381,15 +383,18 @@ if(isset($_POST['subm_it'])){
                       <label for="myfile">फाईल निवडा:</label>
                       <input type="file" name="files" multiple  value="<?php echo $image; ?> "/>
                     </div>
-                    <div class="col-md-4 m-b-3">
-                      <select class="mdb-select md-form colorful-select dropdown-primary">
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                        <option value="4">Option 4</option>
-                        <option value="5">Option 5</option>
-                      </select>
-                      <label class="mdb-main-label">Blue select</label>
+                    <div class="col-8 col-md-4">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="gender3">Gender</label>
+          </div>
+          <select class="custom-select" id="gender3">
+            <option selected>Choose...</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+          </select>
+        </div>
+        
                     </div>
       </div>
 
