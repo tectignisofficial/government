@@ -57,11 +57,6 @@ if(isset($_POST['subm_it'])){
     <title>Atrocity Raigad | Governnment Form </title>
     <link rel="shortcut icon" type="image/png" href="../dist/img/government.png" />
 
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/compiled-4.20.0.min.css">
-
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
@@ -78,9 +73,7 @@ if(isset($_POST['subm_it'])){
 
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-<head>
-  
-</head>
+
     <script>
         var stateObject = {
             "रायगड": {
@@ -378,25 +371,25 @@ if(isset($_POST['subm_it'])){
 
                     
                       <div class="d-flex form-group " style="margin-left: -12px;">
-                    <div class="form-group">
+                    <div class="form-group col-6">
                       <label for="Exampleवघकिय  पुष्टी-३१ अहवाल">FIR</label><br>
                       <label for="myfile">फाईल निवडा:</label>
                       <input type="file" name="files" multiple  value="<?php echo $image; ?> "/>
                     </div>
-                    <div class="col-8 col-md-4">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="gender3">Gender</label>
-          </div>
-          <select class="custom-select" id="gender3">
-            <option selected>Choose...</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
-          </select>
-        </div>
-        
+                    <div class="form-group col-6">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="gender3">Gender</label>
+                      </div>
+                      <select class="custom-select" id="gender3">
+                        <option selected>Choose...</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                      </select>
                     </div>
-      </div>
+                    
+                                </div>
+                  </div>
 
                     <div class="form-group">
                       <label for="Exampleशेरा">शेरा</label>
