@@ -40,7 +40,7 @@ $district='';
     }
         }
 
-        if(isset($_POST['sub_mit']))  
+        if(isset($_POST['sub_mit']) && ($_GET['id']))  
         {  
          $id=$_POST['id'];
          $caseid=$_POST['caseid'];
