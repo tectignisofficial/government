@@ -367,7 +367,7 @@ if(isset($_POST['subm_it']) && ($_GET['eid'])){
                       </div>
                       <select class="custom-select" id="gender3" name="payStatus">
                         <option value="<?php  $arr['status']; ?>"<?php if($arr['status'] ) { echo "selected='selected'"; }?>><?php echo $arr['status']; ?></option>
-                        <option value="stage 1" selected>stage 1 payment</option>
+                        <option value="stage 1" >stage 1 payment</option>
                         <option value="stage 2">stage 2 payment</option>
                         <option value="stage 3">stage 3 payment</option>
                         <option value="case completed">Case Completed</option>

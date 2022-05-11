@@ -406,7 +406,7 @@ echo mysqli_query($conn);
                       </div>
                       <div class="form-group col-6" id="raigarh" >
                         <label for="Exampleपोलीस ठाणे">पोलीस ठाणे</label>
-                        <input type="Dropdown" value="<?php echo $police_station ?>" class="form-control " id="Exampleपोलीस ठाणे" placeholder="">
+                        <input type="Dropdown" value="<?php echo $police_station ?>" class="form-control " id="Exampleपोलीस ठाणे" placeholder="" readonly>
                         
                       </div>
 

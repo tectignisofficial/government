@@ -327,7 +327,7 @@ if(isset($_POST['subm_it']) && ($_GET['eid'])){
                     ?>
                      <div class="d-flex form-group " style="margin-left: -12px;">
                     <div class="form-group">
-                      <img src="file/<?php echo $arr['image'];?>" width="200" height="200" >
+                      <img src="file/<?php echo $arr['image']; ?>" width="200" height="200" >
                     </div>
                     <div class="form-group col-4">
                     <div class="input-group mb-3">
@@ -336,7 +336,7 @@ if(isset($_POST['subm_it']) && ($_GET['eid'])){
                       </div>
                       <select class="custom-select" id="gender3" name="payStatus">
                         <option value="<?php  $arr['status']; ?>"<?php if($arr['status'] ) { echo "selected='selected'"; }?>><?php echo $arr['status']; ?></option>
-                        <option value="stage 1" selected>stage 1 payment</option>
+                        <option value="stage 1" >stage 1 payment</option>
                         <option value="stage 2">stage 2 payment</option>
                         <option value="stage 3">stage 3 payment</option>
                         <option value="stage 3">Case close</option>
