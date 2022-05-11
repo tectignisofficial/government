@@ -67,31 +67,7 @@ $district='';
         }
 
 
-$id=$_GET['id'];
-if(isset($_POST['sub_mit']))  
-  {  
-   $victim_name=$_POST['victim_name']; //
-   $victim_address=$_POST['victim_address'];// 
-   $caste_certificate=$_POST['caste_certificate'];// 
-   $aadhaar_card=$_POST['aadhaar_card'];//
-   $bank_info=$_POST['bank_info'];//
-   $charge_sheet=$_POST['charge_sheet'];//
-   $victim_age=$_POST['victim_age'];
-   $category_and_caste=$_POST['category_and_caste'];
 
-   $in_ch=mysqli_query($conn,"insert into victim(caseid,charge_sheet,bank_detail,aadhar_card,caste,caste_certificate,victim_age,name,address)
-	values ('$id','$charge_sheet','$bank_info','$aadhaar_card','','$caste_certificate','$victim_age','$victim_name','$victim_address')");  
-	if($in_ch==1) 
-  {   
-      //echo"<script>alert('hrllo')</script>";
-    //header("Location: views/form4.php?id=".$id);	
-  }
-  else  
-	{  
-	 echo 'error'; 
-	}  
-
-  }
 
 ?>
 
