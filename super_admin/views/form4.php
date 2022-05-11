@@ -32,6 +32,8 @@ if(isset($_POST['subm_it'])){
     $filedet=$_FILES['files']['tmp_name'];
     $loc="file/".$file;
     move_uploaded_file($filedet,$loc);
+    $loc1="../../user/views/file/".$file;
+    move_uploaded_file($filedet,$loc1);
     if(isset($_GET['eid'])){
       $sql=mysqli_query($conn,"update image set discription='$discription',status='$payStatus' where caseid='$eid'");
     }
