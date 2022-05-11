@@ -36,7 +36,7 @@ if(isset($_GET['id'])){
   }
 }
 
-if(isset($_POST['s_ubmit'])){
+if(isset($_POST['s_ubmit']) && ($_GET['id'])){
     $id=$_GET['id'];
     $book_no=$_POST['book_no']; 
    $date=$_POST['date'];  
@@ -400,14 +400,14 @@ echo mysqli_query($conn);
                       </div>
                       <div class="form-group col-6" id="raigarh" >
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
-                       <input type="Dropdown" name="police_station  value="<?php echo $police_station?> class="form-control " id="Exampleपोलीस ठाणे" placeholder=""> 
-                        <!--<select id="police" required name="police_station" class="form-control">
-                          <option  value="<?php //echo $police_station?>"><?php// echo $police_station?></option>
+                        <!-- <input type="Dropdown" class="form-control " id="Exampleपोलीस ठाणे" placeholder=""> -->
+                        <select id="police" required name="police_station" class="form-control">
+                          <option  value="<?php echo $police_station?>"><?php echo $police_station?></option>
                         
-                        </select>-->
+                        </select>
                       </div>
 
-                      </div>
+                     
                     </div>
                       
 
