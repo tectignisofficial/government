@@ -438,7 +438,7 @@ echo mysqli_query($conn);
                         <!-- <input type="Dropdown" class="form-control " id="Exampleपोलीस ठाणे" placeholder=""> -->
                         <select id="police" required name="police_station"  class="form-control">
                         <option value="<?php echo $police_station?>"><?php echo $police_station?></option>
-                          <option value="" selected>पर्याय निवडा</option>
+                          <option value="">पर्याय निवडा</option>
                           <option value="खारघर" >खारघर</option>
                           <option value="कळंबोली" >कळंबोली</option>
                           <option value="खांदेश्वर" >खांदेश्वर</option>
