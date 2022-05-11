@@ -489,6 +489,24 @@
 
               </div>
             </div>
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box" style="background-color:#EFA94A; color:white;">
+                <div class="inner">
+                
+                <?php
+                  $query=mysqli_query($conn,"select complaint_form.district as district,bank_detail.stage_3 as stage1 from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid  where  district='$district' AND stage_3 IS NOT NULL");
+                  $count10=mysqli_num_rows($query);
+                  ?>
+                  <h3><?php echo $count10 ?></h3>
+                  <p>अर्थसहयय्य रक्कम निधी टप्पय निसरय</p>
+                </div>
+                <div class="icon">
+               
+                </div>
+
+              </div>
+            </div>
           </div>
            </div>
           <!-- /.row -->     
