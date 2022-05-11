@@ -14,7 +14,8 @@ $role='';
        }
 
 
-
+       $id='';
+       $caseid='';
         $victim_name='';
         $victim_address='';
         $caste_certificate='';
@@ -52,7 +53,7 @@ $role='';
          $aadhaar_card=$_POST['aadhaar_card'];
          $charge_sheet=$_POST['charge_sheet'];
          
-         $sql= mysqli_query($conn,"update victim set name='$victim_name',address='$victim_address',victim_age=' $victim_age',caste='$category_and_caste',caste_certificate=' $caste_certificate',aadhar_card='$aadhaar_card',charge_sheet='$charge_sheet' where id='$id'");
+         $sql= mysqli_query($conn,"UPDATE `victim` SET `caseid`='$caseid',`charge_sheet`='$charge_sheet',`aadhar_card`='$aadhaar_card',`caste_certificate`='$caste_certificate',`caste`='$category_and_caste',`victim_age`='$victim_age',`name`='$victim_name',`address`='$victim_address' where id='$id'");
         
         if($sql==1)
         {
@@ -65,32 +66,6 @@ $role='';
           
         }
 
-
-$id=$_GET['id'];
-if(isset($_POST['sub_mit']))  
-  {  
-   $victim_name=$_POST['victim_name']; //
-   $victim_address=$_POST['victim_address'];// 
-   $caste_certificate=$_POST['caste_certificate'];// 
-   $aadhaar_card=$_POST['aadhaar_card'];//
-   $bank_info=$_POST['bank_info'];//
-   $charge_sheet=$_POST['charge_sheet'];//
-   $victim_age=$_POST['victim_age'];
-   $category_and_caste=$_POST['category_and_caste'];
-
-   $in_ch=mysqli_query($conn,"insert into victim(caseid,charge_sheet,bank_detail,aadhar_card,caste,caste_certificate,victim_age,name,address)
-	values ('$id','$charge_sheet','$bank_info','$aadhaar_card','','$caste_certificate','$victim_age','$victim_name','$victim_address')");  
-	if($in_ch==1) 
-  {   
-      //echo"<script>alert('hrllo')</script>";
-    //header("Location: views/form4.php?id=".$id);	
-  }
-  else  
-	{  
-	 echo 'error'; 
-	}  
-
-  }
 
 ?>
 
