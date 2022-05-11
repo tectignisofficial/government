@@ -499,7 +499,7 @@
                   $count11=mysqli_num_rows($query2);
                   ?>
                   <h3><?php echo $count11 ?></h3>
-                  <p>अर्थसहयय्य रक्कम निधी टप्पय निसरय</p>
+                  <p>अर्थ सहाय्य रक्कम निधी परिपूर्ण</p>
                 </div>
                 <div class="icon">
                

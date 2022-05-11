@@ -496,7 +496,7 @@
             </div>
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box " style="background-color:#EFA94A; color:white;">
+              <div class="small-box " style="background-color:#0D7AA6; color:white;">
                 <div class="inner">
                 
                 <?php
@@ -504,7 +504,7 @@
                   $count10=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count10 ?></h3>
-                  <p>अर्थसहयय्य रक्कम निधी टप्पय निसरय  </p>
+                  <p>अर्थ सहाय्य रक्कम निधी परिपूर्ण  </p>
                 </div>
                 <div class="icon">
                
