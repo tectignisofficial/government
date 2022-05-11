@@ -105,51 +105,7 @@ echo mysqli_query($conn);
 
       }
     })
-    /*var stateObject = {
-      "रायगड": {
-        "अलिबाग": ["Thiruvananthapuram", "Palakkad"],
-        "पनवेल": ["North Goa", "South Goa"],
-        "मुरुड": ["North Goa", "South Goa"],
-        "पेण": ["Thiruvananthapuram", "Palakkad"],
-        "उरण": ["North Goa", "South Goa"],
-        "कर्जत": ["North Goa", "South Goa"],
-        "खालापूर": ["Thiruvananthapuram", "Palakkad"],
-        "माणगाव": ["North Goa", "South Goa"],
-        "माणगाव": ["North Goa", "South Goa"],
-        "रोहा": ["Thiruvananthapuram", "Palakkad"],
-        "तळा": ["North Goa", "South Goa"],
-        "महड": ["North Goa", "South Goa"],
-        "म्हसळा": ["Thiruvananthapuram", "Palakkad"],
-        "श्रीवर्धन": ["North Goa", "South Goa"],
-        "पोलादपूर": ["North Goa", "South Goa"],
-
-      }
-    }
-    window.onload = function () {
-      var district = document.getElementById("district"),
-        taluka = document.getElementById("taluka"),
-        police = document.getElementById("police");
-      for (var dis in stateObject) {
-        district.options[district.options.length] = new Option(dis, dis);
-      }
-      district.onchange = function () {
-        taluka.length = 1; // remove all options bar first
-        police.length = 1; // remove all options bar first
-        if (this.selectedIndex < 1) return; // done
-        for (var talu in stateObject[this.value]) {
-          taluka.options[taluka.options.length] = new Option(talu, talu);
-        }
-      }
-      district.onchange(); // reset in case page is reloaded
-      taluka.onchange = function () {
-        police.length = 1; // remove all options bar first
-        if (this.selectedIndex < 1) return; // done
-        var pol = stateObject[district.value][this.value];
-        for (var i = 0; i < pol.length; i++) {
-          police.options[police.options.length] = new Option(pol[i], pol[i]);
-        }
-      }
-    }*/
+   
   </script>
 
 <script>
@@ -446,8 +402,8 @@ echo mysqli_query($conn);
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
                         <!-- <input type="Dropdown" class="form-control " id="Exampleपोलीस ठाणे" placeholder=""> -->
                         <select id="police" required name="police_station" class="form-control">
-                          <option value="<?php echo $police_station?>"><?php echo $police_station?></option>
-                          <option value="" selected>पर्याय निवडा</option>
+                          <option  value="<?php echo $police_station?>"><?php echo $police_station?></option>
+                          <option value="">पर्याय निवडा</option>
                           <option value="माथेरान" >माथेरान</option>
                           <option value="कर्जत" >कर्जत</option>
                           <option value="नेरळ" >नेरळ</option>
