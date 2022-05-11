@@ -491,7 +491,7 @@
             </div>
             <div class="col-lg-3 col-6">
               <!-- small box -->
-              <div class="small-box" style="background-color:#EFA94A; color:white;">
+              <div class="small-box" style="background-color:#0D7AA6; color:white;">
                 <div class="inner">
                 
                 <?php
