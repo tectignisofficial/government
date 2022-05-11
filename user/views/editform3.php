@@ -39,7 +39,7 @@ $district='';
     }
         }
 
-        if(isset($_POST['id']))  
+        if(isset($_POST['sub_mit']))  
         {  
          $id=$_POST['id'];
          $caseid=$_POST['caseid'];
@@ -52,7 +52,7 @@ $district='';
          $charge_sheet=$_POST['charge_sheet'];
          
          
-         $sql= mysqli_query($conn,"UPDATE `victim` SET `caseid`='$caseid',`charge_sheet`='$charge_sheet',`aadhar_card`='$aadhaar_card',`caste_certificate`='$caste_certificate',`caste`='$category_and_caste',`victim_age`='$victim_age',`name`='$victim_name',`address`='$victim_address' where id='$id");
+         $sql= mysqli_query($conn,"UPDATE `victim` SET `caseid`='$caseid',`charge_sheet`='$charge_sheet',`aadhar_card`='$aadhaar_card',`caste_certificate`='$caste_certificate',`caste`='$category_and_caste',`victim_age`='$victim_age',`name`='$victim_name',`address`='$victim_address' where id='$id'");
         
         if($sql==1)
         {
@@ -393,7 +393,7 @@ if(isset($_POST['sub_mit']))
                            
                                 <!-- /.card-header -->
                                 <!-- form start  action="../api.php"-->
-                                <form method="post" enctype="multipart/form-data">
+                                <form method="post" >
                                     <div class="card-body">
                                     <div class="col-12" style="text-align:center;">
                       <ul id="progressbar" style="display:flex"  ;>
