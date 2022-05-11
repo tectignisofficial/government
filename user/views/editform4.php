@@ -364,13 +364,13 @@ if(isset($_POST['subm_it']) && ($_GET['eid'])){
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <label class="input-group-text" for="gender3">Status</label>
-                      </div><?php if($row['course'] == 'BSIT' ) { echo "selected='selected'"; }?>
+                      </div>
                       <select class="custom-select" id="gender3" name="payStatus">
                         <option value="<?php  $arr['status']; ?>"<?php if($arr['status'] ) { echo "selected='selected'"; }?>><?php echo $arr['status']; ?></option>
                         <option value="stage 1" selected>stage 1 payment</option>
                         <option value="stage 2">stage 2 payment</option>
                         <option value="stage 3">stage 3 payment</option>
-                        <option value="stage 3">Case close</option>
+                        <option value="case completed">Case Completed</option>
                       </select>
                     </div>
                       </div>
