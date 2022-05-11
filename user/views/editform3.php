@@ -51,7 +51,8 @@ $district='';
          $aadhaar_card=$_POST['aadhaar_card'];
          $charge_sheet=$_POST['charge_sheet'];
          
-         $sql= mysqli_query($conn,"update victim set name='$victim_name',address='$victim_address',victim_age=' $victim_age',caste='$category_and_caste',caste_certificate=' $caste_certificate',aadhar_card='$aadhaar_card',charge_sheet='$charge_sheet' where id='$id'");
+         
+         $sql= mysqli_query($conn,"UPDATE `victim` SET `caseid`='$caseid',`charge_sheet`='$charge_sheet',`aadhar_card`='$aadhaar_card',`caste_certificate`='$caste_certificate',`caste`='$category_and_caste',`victim_age`='$victim_age',`name`='$victim_name',`address`='$victim_address' where id='$id");
         
         if($sql==1)
         {
