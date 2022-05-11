@@ -381,10 +381,7 @@ echo mysqli_query($conn);
                     <div class="d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="Exampleउप विभागा चे नाव">जिल्हा</label>
-                        <!-- <input type="Dropdown" class="form-control" id="Exampleउप विभागा चे नाव" placeholder=""> -->
-                        
-                       <!-- <select id="district" required name="district" class="form-control" >
-                        <option value="" selected>पर्याय निवडा District</option>-->
+                       
                         <?php 
                         $email=$_SESSION['use'];
                         $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
@@ -400,7 +397,7 @@ echo mysqli_query($conn);
                       </div>
                       <div class="form-group col-6" id="raigarh" >
                         <label for="Exampleपोलीस ठाणे">पोलीस ठाणे</label>
-                        <input type="Dropdown" class="form-control " id="Exampleपोलीस ठाणे" placeholder=""> 
+                        <input type="Dropdown" class="form-control " value="<?php echo  $police_station ?>" id="Exampleपोलीस ठाणे" placeholder="" readonly> 
                         
                       </div>
 
