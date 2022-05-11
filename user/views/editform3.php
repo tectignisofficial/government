@@ -13,7 +13,8 @@ $district='';
         while($res=mysqli_fetch_array($sql)){
           $district=$res['district'];
         }
-
+        $id='';
+        $caseid='';
         $victim_name='';
         $victim_address='';
         $caste_certificate='';
