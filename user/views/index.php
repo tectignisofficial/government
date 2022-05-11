@@ -437,7 +437,7 @@
                 <div class="inner">
                
                 <?php
-                  $query=mysqli_query($conn,"select complaint_form.district as district,bank_detail.stage_1 as stage1 from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid  where  district='$district' AND stage_1 IS NOT NULL");
+                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND status='stage 1'");
                   $count8=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count8 ?></h3>
@@ -457,7 +457,7 @@
                 <div class="inner">
                 
                 <?php
-                  $query=mysqli_query($conn,"select complaint_form.district as district,bank_detail.stage_2 as stage1 from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid  where  district='$district' AND stage_2 IS NOT NULL");
+                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND status='stage 2'");
                   $count9=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count9 ?></h3>
