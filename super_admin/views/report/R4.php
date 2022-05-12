@@ -465,7 +465,7 @@ $year=$_POST['year'];
 if(isset($_POST["filter"])){
   //$dat=$_POST['month'];
   $sum=0;
-  $sql=mysqli_query($conn,"select complaint_form.complaint_no as id from complaint_form inner join victim on complaint_form.id=victim.caseid where victim.caste_certificate='होय' and victim.aadhar_card='होय' and victim.charge_sheet='होय' and monthname(date) ='$dat' and year(date)='$year' and district='navi mumbai' group by id");
+  $sql=mysqli_query($conn,"select complaint_form.complaint_no as id from complaint_form inner join victim on complaint_form.id=victim.caseid where victim.caste_certificate='होय' and victim.aadhar_card='होय' and victim.charge_sheet='होय' and monthname(complaint_form.date) ='$dat' and year(complaint_form.date)='$year' and district='navi mumbai' group by id");
        echo " <td class='text-center'>";
 			while($row = mysqli_fetch_array($sql)) {
         echo "<span>".$row['id'].",</span>";
@@ -476,7 +476,7 @@ if(isset($_POST["filter"])){
 if(isset($_POST["filter"])){
   //$dat=$_POST['month'];
   $sum1=0;
-  $sql=mysqli_query($conn,"select complaint_no from victim inner join complaint_form on complaint_form.id=victim.caseid where monthname(date) ='$dat' and district='navi mumbai' and charge_sheet='नाही'");
+  $sql=mysqli_query($conn,"select complaint_no from victim inner join complaint_form on complaint_form.id=victim.caseid where monthname(complaint_form.date) ='$dat' and year(complaint_form.date)='$year' and district='navi mumbai' and charge_sheet='नाही'");
        echo " <td class='text-center'>";
 			while($row = mysqli_fetch_array($sql)) {
         echo "<span>".$row['complaint_no'].",</span>";
@@ -488,7 +488,7 @@ if(isset($_POST["filter"])){
         if(isset($_POST["filter"])){
           //$dat=$_POST['month'];
           $sum2=0;
-          $sql=mysqli_query($conn,"select complaint_no from victim inner join complaint_form on complaint_form.id=victim.caseid where monthname(date) ='$dat' and district='navi mumbai' and caste_certificate='नाही'");
+          $sql=mysqli_query($conn,"select complaint_no from victim inner join complaint_form on complaint_form.id=victim.caseid where monthname(complaint_form.date) ='$dat' and year(complaint_form.date)='$year' and district='navi mumbai' and caste_certificate='नाही'");
                echo " <td class='text-center'>";
               while($row = mysqli_fetch_array($sql)) {
                 echo "<span>".$row['complaint_no'].",</span>";
@@ -499,7 +499,7 @@ if(isset($_POST["filter"])){
 
    
 <?php 
- $sql=mysqli_query($conn,"select id from complaint_form where monthname(date) ='$dat' and year(date)='$year' and district='navi mumbai'");
+ $sql=mysqli_query($conn,"select id from complaint_form where monthname(complaint_form.date) ='$dat' and year(complaint_form.date)='$year' and district='navi mumbai'");
  $count1=mysqli_num_rows($sql);            
 
 
@@ -511,7 +511,7 @@ if(isset($_POST["filter"])){
   ";
   //$dat=$_POST['month'];
   $sum4=0;
-  $sql=mysqli_query($conn,"select complaint_form.complaint_no as id from complaint_form inner join victim on complaint_form.id=victim.caseid where victim.caste_certificate='होय' and victim.aadhar_card='होय' and victim.charge_sheet='होय' and monthname(date) ='$dat' and year(date)='$year' and district='raigarh' group by id");
+  $sql=mysqli_query($conn,"select complaint_form.complaint_no as id from complaint_form inner join victim on complaint_form.id=victim.caseid where victim.caste_certificate='होय' and victim.aadhar_card='होय' and victim.charge_sheet='होय' and monthname(complaint_form.date) ='$dat' and year(complaint_form.date)='$year' and district='raigarh' group by id");
        echo " <td class='text-center'>";
 			while($row = mysqli_fetch_array($sql)) {
         echo "<span>".$row['id'].",</span>";
@@ -522,7 +522,7 @@ if(isset($_POST["filter"])){
 if(isset($_POST["filter"])){
   //$dat=$_POST['month'];
   $sum5=0;
-  $sql=mysqli_query($conn,"select complaint_no from victim inner join complaint_form on complaint_form.id=victim.caseid where monthname(date) ='$dat' and district='raigarh' and charge_sheet='नाही'");
+  $sql=mysqli_query($conn,"select complaint_no from victim inner join complaint_form on complaint_form.id=victim.caseid where monthname(complaint_form.date) ='$dat' and year(complaint_form.date)='$year' and district='raigarh' and charge_sheet='नाही'");
        echo " <td class='text-center'>";
 			while($row = mysqli_fetch_array($sql)) {
         echo "<span>".$row['complaint_no'].",</span>";
@@ -534,7 +534,7 @@ if(isset($_POST["filter"])){
         if(isset($_POST["filter"])){
           //$dat=$_POST['month'];
           $sum6=0;
-          $sql=mysqli_query($conn,"select complaint_no from victim inner join complaint_form on complaint_form.id=victim.caseid where monthname(date) ='$dat' and district='raigarh' and caste_certificate='नाही'");
+          $sql=mysqli_query($conn,"select complaint_no from victim inner join complaint_form on complaint_form.id=victim.caseid where monthname(complaint_form.date) ='$dat' and year(complaint_form.date)='$year' and district='raigarh' and caste_certificate='नाही'");
                echo " <td class='text-center'>";
               while($row = mysqli_fetch_array($sql)) {
                 echo "<span>".$row['complaint_no'].",</span>";
