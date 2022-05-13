@@ -275,7 +275,7 @@
             <div class="col-sm-6">
               <form method="post" id="myForm">
             <div class="form-group">
-            <input type="text" class="form-control" id="submitBtn" value="<?php echo date("Y"); ?>" name="datepicker" id="datepicker" />
+            <input type="text" class="form-control" id="submitBtn" name="datepicker" id="datepicker" />
            </div>
       </form>
 
@@ -285,6 +285,7 @@
     format: "yyyy",
     viewMode: "years", 
     minViewMode: "years",
+    selected:'2022',
     autoclose:true //to close picker once year is selected
 });
 $(document).ready(function(){
