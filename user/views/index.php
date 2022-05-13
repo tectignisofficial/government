@@ -597,7 +597,7 @@
   <script src="../dist/js/pages/dashboard.js"></script>
   
   <script src="//code.jquery.com/jquery.min.js"></script>
-<script src="../year-select.js"></script>
+<script src="report/year-select.js"></script>
 <script>$('.yearselect').yearselect({
   selected: 2016
 });
