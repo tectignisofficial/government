@@ -253,7 +253,7 @@
       </div>
       <!-- /.sidebar -->
     </aside>
-
+    
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -262,7 +262,13 @@
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1 class="m-0">गुन्ह्यां चे प्रकयरपृष्ठ</h1>
-            </div><!-- /.col -->
+            </div>
+            <div class="col-sm-6">
+            <div class="form-group">
+                        <selec class="yearselect form-control"  id="year" name="year" value="2016"></select>
+                      </div>
+            </div>
+            <!-- /.col -->
            <!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -577,6 +583,11 @@
   <script src="../dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="../dist/js/pages/dashboard.js"></script>
+  <script src="../year-select.js"></script>
+  <script>$('.yearselect').yearselect({
+  selected: 2016
+  });
+  </script>
 </body>
 
 </html>
