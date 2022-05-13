@@ -48,13 +48,8 @@
   <!-- summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
 
-  <link href="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
 
 </head>
 
@@ -274,26 +269,12 @@
             </div>
             <div class="col-sm-6">
               <form method="post" id="myForm">
-            <div class="form-group">
-            <input type="text" class="form-control" id="submitBtn" name="datepicker" id="datepicker" />
-           </div>
+              <div class="form-group">
+                        <input class="yearselect form-control"  id="year" name="year" value="2016">
+                      </div>
       </form>
-
             </div>
-            <script>
-              $("#datepicker").datepicker({
-    format: "yyyy",
-    viewMode: "years", 
-    minViewMode: "years",
-    selected:'2022',
-    autoclose:true //to close picker once year is selected
-});
-$(document).ready(function(){
-    $("#submitBtn").onkeydown(function(){        
-        $("#myForm").submit(); // Submit the form
-    });
-});
-            </script>
+            
             <!-- /.col -->
            <!-- /.col -->
           </div><!-- /.row -->
