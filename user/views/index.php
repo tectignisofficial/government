@@ -583,8 +583,9 @@
   <script src="../dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="../dist/js/pages/dashboard.js"></script>
+  
   <script src="//code.jquery.com/jquery.min.js"></script>
-  <script src="../year-select.js"></script>
+  <script src="year-select.js"></script>
   <script>$('.yearselect').yearselect({
   selected: 2016
   });
