@@ -295,8 +295,8 @@
                   if(isset($_POST['datepicker'])){
                     $date = $_POST['datepicker'];
                   $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='$date' and type_of_offence='शिवीगाळ,'");
-                }
-                $count1=mysqli_num_rows($query);
+               
+                $count1=mysqli_num_rows($query); }
                   ?>
                   <h3><?php echo $count1 ?></h3>
 
