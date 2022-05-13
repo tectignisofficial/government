@@ -275,7 +275,7 @@
             <div class="col-sm-6">
               <form method="post">
             <div class="form-group">
-            <input type="text" class="form-control" value="<?php date('Y'); ?>" name="datepicker" id="datepicker" />
+            <input type="text" class="form-control" value="<?php echo date("Y"); ?>" name="datepicker" id="datepicker" />
            </div>
       </form>
 
