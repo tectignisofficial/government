@@ -270,7 +270,7 @@
             <div class="col-sm-6">
               <form method="post" id="myForm">
               <div class="form-group">
-                        <input name="startYear" id="startYear" class="date-picker-year" name="year" value="2016">
+                        <input class="yearselect form-control"  id="year" name="year" value="2016">
                       </div>
       </form>
             </div>
