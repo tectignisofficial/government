@@ -270,7 +270,7 @@
             <div class="col-sm-6">
               <form method="post" id="myForm">
               <div class="form-group">
-                        <input class="yearselect form-control"  id="year" name="year" value="2016">
+                        <input name="startYear" id="startYear" class="date-picker-year" name="year" value="2016">
                       </div>
       </form>
             </div>
@@ -597,7 +597,7 @@
   <script src="../dist/js/pages/dashboard.js"></script>
   
   <script src="//code.jquery.com/jquery.min.js"></script>
-<script src="year-select.js"></script>
+<script src="../year-select.js"></script>
 <script>$('.yearselect').yearselect({
   selected: 2016
 });
