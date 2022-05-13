@@ -270,7 +270,7 @@
             <div class="col-sm-6">
               <form method="post" id="myForm">
               <div class="form-group">
-                        <input class="yearselect form-control"  id="year" name="year" value="2016">
+                        <input class="yearselect form-control"  id="year" name="year" value="2022">
                       </div>
       </form>
             </div>
@@ -293,8 +293,11 @@
                 <div class="inner">
                 <?php
                     $date = $_POST['datepicker'];
-                    if($date=='value'){
+                    if($date){
                       $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='$date' and type_of_offence='शिवीगाळ,'");
+                      $count1=mysqli_num_rows($query); 
+                    }else{
+                      $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='2022' and type_of_offence='शिवीगाळ,'");
                       $count1=mysqli_num_rows($query); 
                     }
                   
@@ -605,7 +608,7 @@
         });
 
 $('.yearselect').yearselect({
-  selected: 2016
+  selected: 2022
 });
 </script>
 </body>
