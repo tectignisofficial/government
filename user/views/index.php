@@ -288,7 +288,7 @@
     autoclose:true //to close picker once year is selected
 });
 $(document).ready(function(){
-    $("#submitBtn").click(function(){        
+    $("#submitBtn").onkeydown(function(){        
         $("#myForm").submit(); // Submit the form
     });
 });
