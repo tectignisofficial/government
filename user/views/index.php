@@ -275,7 +275,7 @@
             <div class="col-sm-6">
             <div class="form-group">
             <select class="yearselect form-select" name="year" ></select>
-            <input type="text" class="form-control" name="datepicker" id="datepicker" />
+            <select type="text" class="form-select" name="datepicker" id="datepicker" /></select>
                       </div>
 
             </div>
