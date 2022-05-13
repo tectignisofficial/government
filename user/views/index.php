@@ -266,8 +266,18 @@
             <div class="col-sm-6">
             <div class="form-group">
             <select class="yearselect form-select" name="year" ></select>
+            <input type="text" class="form-control" name="datepicker" id="datepicker" />
                       </div>
+
             </div>
+            <script>
+              $("#datepicker").datepicker({
+    format: "yyyy",
+    viewMode: "years", 
+    minViewMode: "years",
+    autoclose:true //to close picker once year is selected
+});
+            </script>
             <!-- /.col -->
            <!-- /.col -->
           </div><!-- /.row -->
@@ -585,7 +595,7 @@
   <script src="../dist/js/pages/dashboard.js"></script>
   
   <script src="//code.jquery.com/jquery.min.js"></script>
-  <script src="year-select.js"></script>
+  <script src="../year-select.js"></script>
   <script>$('.yearselect').yearselect({
   selected: 2016
   });
