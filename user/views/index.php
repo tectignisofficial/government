@@ -608,7 +608,7 @@
         });
 
 $('.yearselect').yearselect({
-  selected: 2022
+  selected: 2022;
 });
 </script>
 </body>
