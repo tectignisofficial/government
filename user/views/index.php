@@ -313,9 +313,9 @@ $(document).ready(function(){
                   if(isset($_POST['datepicker'])){
                     $date = $_POST['datepicker'];
                     if($date){
-                      $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='2022' and type_of_offence='शिवीगाळ,'");
-                    }else{
-                  $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='$date' and type_of_offence='शिवीगाळ,'");}
+                      $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='$date' and type_of_offence='शिवीगाळ,'");
+                    }else{$query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='2022' and type_of_offence='शिवीगाळ,'");
+                  }
                   $count1=mysqli_num_rows($query);
                 }
                   ?>
