@@ -273,9 +273,9 @@
               <h1 class="m-0">गुन्ह्यां चे प्रकयरपृष्ठ</h1>
             </div>
             <div class="col-sm-6">
-              <form method="post">
+              <form method="post" id="myForm">
             <div class="form-group">
-            <input type="text" class="form-control" value="<?php echo date("Y"); ?>" name="datepicker" id="datepicker" />
+            <input type="text" class="form-control" id="submitBtn" value="<?php echo date("Y"); ?>" name="datepicker" id="datepicker" />
            </div>
       </form>
 
@@ -286,6 +286,11 @@
     viewMode: "years", 
     minViewMode: "years",
     autoclose:true //to close picker once year is selected
+});
+$(document).ready(function(){
+    $("#submitBtn").click(function(){        
+        $("#myForm").submit(); // Submit the form
+    });
 });
             </script>
             <!-- /.col -->
