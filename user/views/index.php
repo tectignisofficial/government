@@ -273,10 +273,11 @@
               <h1 class="m-0">गुन्ह्यां चे प्रकयरपृष्ठ</h1>
             </div>
             <div class="col-sm-6">
+              <form method="post">
             <div class="form-group">
-            <select class="yearselect form-select" name="year" ></select>
-            <select type="text" class="form-select" name="datepicker" id="datepicker" /></select>
-                      </div>
+            <input type="text" class="form-control" value="<?php date('Y'); ?>" name="datepicker" id="datepicker" />
+           </div>
+      </form>
 
             </div>
             <script>
@@ -304,8 +305,11 @@
               <div class="small-box bg-info">
                 <div class="inner">
                 <?php
-                  $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and type_of_offence='शिवीगाळ,'");
+                  if(isset($_POST['datepicker'])){
+                    $date = $_POST['datepicker'];
+                  $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='$date' and type_of_offence='शिवीगाळ,'");
                   $count1=mysqli_num_rows($query);
+                }
                   ?>
                   <h3><?php echo $count1 ?></h3>
 
