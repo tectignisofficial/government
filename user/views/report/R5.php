@@ -427,6 +427,7 @@ if (mysqli_num_rows($complaints)>0){
 					   <th class="text-center"colspan="3">आरोपीची माहिती</th>
 					   <th class="text-center"colspan="7">पिडीत व्यक्तीची माहिती</th>
 					  <th class="text-center"rowspan="2">शेरा</th>
+            <th class="text-center no">Status</th>
                   </tr>
                   <tr>
 <!--                    <th class="text-center" colspan="2">&nbsp;</th>-->
@@ -443,7 +444,7 @@ if (mysqli_num_rows($complaints)>0){
 					  <th class="text-center">जातीचा दाखला</th>
 					  <th class="text-center">आधार कार्ड</th>
 					  <th class="text-center">चार्ज शिट</th>
-            <th class="text-center no">Status</th>
+            
            
 
            
