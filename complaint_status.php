@@ -309,9 +309,8 @@ ul{
                       else if($stage1!='' && $stage2!='' && $stage3!=''){
                         echo "Case Close";
                       }*/
-                      
-                      echo $row['status']
                       ?>
+                      <?php echo $row['status'] ?>
                     </td>
                    
                   </tr>
