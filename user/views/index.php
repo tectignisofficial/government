@@ -568,9 +568,9 @@
                 <?php
                 $date = $_POST['year'];
                 if($date){
-                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND year(complaint_form.date)='$date' and status='case completed'");
+                  $query2=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND year(complaint_form.date)='$date' and status='case completed'");
                 }else{
-                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND year(complaint_form.date)='$currentDate' and status='case completed'");
+                  $query2=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND year(complaint_form.date)='$currentDate' and status='case completed'");
                 }
                   $count11=mysqli_num_rows($query2);
                   ?>
