@@ -293,10 +293,11 @@
                 <div class="inner">
                 <?php
                     $date = $_POST['year'];
+                    $currentDate=date('Y');
                     if($date){
                       $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='$date' and type_of_offence='शिवीगाळ,'");
                     }else{
-                      $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='2022' and type_of_offence='शिवीगाळ,'");
+                      $query=mysqli_query($conn,"select * from complaint_form where  district='$district' and year(date)='$currentDate' and type_of_offence='शिवीगाळ,'");
                     }
                     $count1=mysqli_num_rows($query); 
                   ?>
@@ -489,7 +490,7 @@
                 if($date){
                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND year(complaint_form.date)='$date' and status='stage 1'");
                 }else{
-                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND year(complaint_form.date)='$date' and status='stage 1'");
+                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND year(complaint_form.date)='2022' and status='stage 1'");
                 }
                   $count8=mysqli_num_rows($query);
                   ?>
@@ -564,6 +565,7 @@
                 }else{
                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND year(complaint_form.date)='$date' and status='case completed'");
                 }
+                  $query2=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND status='case completed'");
                   $count11=mysqli_num_rows($query2);
                   ?>
                   <h3><?php echo $count11 ?></h3>
