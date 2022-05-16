@@ -443,6 +443,7 @@ if (mysqli_num_rows($complaints)>0){
 					  <th class="text-center">जातीचा दाखला</th>
 					  <th class="text-center">आधार कार्ड</th>
 					  <th class="text-center">चार्ज शिट</th>
+            <th class="text-center no">Status</th>
            
 
            
@@ -459,7 +460,7 @@ if (mysqli_num_rows($complaints)>0){
                  $sql=mysqli_query($conn,"select complaint_form.id as id,complaint_form.type_of_offence as type_of_offence,complaint_form.complaint_no as comp_no,complaint_form.section as section,complaint_form.police_station as police_station,complaint_form.book_no as book_no,complaint_form.date as date,complaint_form.complaint_filer_name as comp_name,
                  complaint_form.complaint_filer_address as comp_add,complaint_form.police_station as station,
                  complaint_form.district as district,criminal.criminal_name as crname,criminal.criminal_address as cradd,
-                 criminal.age as crage,victim.name as vname,victim.address as vaddress,victim.caste as vcaste,victim.victim_age as vage,victim.caste_certificate as vcertificate,victim.aadhar_card as vaadhar,victim.charge_sheet as vcsheet,image.discription as discrip,
+                 criminal.age as crage,victim.name as vname,victim.address as vaddress,victim.caste as vcaste,victim.victim_age as vage,victim.caste_certificate as vcertificate,victim.aadhar_card as vaadhar,victim.charge_sheet as vcsheet,image.discription as discrip,image.status as status
                 complaint_form.discription as discription from criminal inner join complaint_form on complaint_form.id=criminal.caseid inner join victim on victim.caseid=complaint_form.id  inner join image on image.caseid=complaint_form.id where monthname(complaint_form.date) ='$dat' and year(complaint_form.date)='$year' and district='$district' ");
                   $count=1;
                   $num=mysqli_num_rows($sql);
@@ -491,6 +492,7 @@ if (mysqli_num_rows($complaints)>0){
                     <td><?php echo $arr["vaadhar"]; ?></td>
                     <td><?php echo $arr["vcsheet"]; ?></td>
                     <td><?php echo $arr["discrip"]; ?></td>
+                    <td><?php echo $arr["status"]; ?></td>
                    
                    </tr>
                    <?php $count++; } ?>

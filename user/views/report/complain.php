@@ -379,7 +379,7 @@ if (mysqli_num_rows($complaints)>0){
              </div>
 
    <div class=" card" id="">
-                     <div class="card-tools text-center" style="margin-top:12px">
+                    <!-- <div class="card-tools text-center" style="margin-top:12px">
                          
                               <button type="button" class="btn btn-tool"  id='btn'
                                onclick='printDiv();' style=" background-color: #145a8b;
@@ -395,7 +395,7 @@ if (mysqli_num_rows($complaints)>0){
       
                                 <i class="fas fa-table"></i>
                                 Exel               </button> 
-                            </div>
+                            </div>-->
                         
 
     
@@ -425,7 +425,6 @@ if (mysqli_num_rows($complaints)>0){
 					   <th class="text-center"rowspan="2">गुन्हा न.</th>
 					   <th class="text-center"rowspan="2">लावलेली कलमे </th>
 					   <th class="text-center"rowspan="2">गुन्हयांचा प्रकार</th>
-					   <th class="text-center no">Status</th>
             <th class="text-center no">action</th>
             
                   </tr>
@@ -457,7 +456,6 @@ if (mysqli_num_rows($complaints)>0){
                     <td><?php echo $arr["complaint_no"]; ?></td>
                     <td><?php echo $arr["section"]; ?></td>
                     <td><?php echo $arr["type_of_offence"]; ?></td>
-                    <td><?php echo $arr["status"]; ?></td>
                     
                     <td  class="no" id="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" id="edit" class="btn btn-success btn-xs delete_purchase edit ">
 		                          <i class="fas fa-edit"></i>
