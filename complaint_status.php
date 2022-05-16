@@ -277,7 +277,7 @@ ul{
 <?php 
                 if(isset($_POST['submi_t'])){
                 $search=$_POST['search'];
-                $sql=mysqli_query($conn,"select complaint_form.complaint_no as no,complaint_form.book_no as bookno, complaint_form.date as dat,bank_detail.stage_1 as stage1, bank_detail.stage_2 as stage2, bank_detail.stage_3 as stage3 from complaint_form inner join bank_detail on complaint_form.id=bank_detail.caseid where complaint_form.complaint_no like '%$search%'");
+                $sql=mysqli_query($conn,"select complaint_form.complaint_no as no,complaint_form.book_no as bookno, complaint_form.date as dat,image.caseid as cid,image.status as status from complaint_form inner join image on image.caseid=complaint_form.id where complaint_form.complaint_no like '%$search%'");
                 $row=mysqli_fetch_array($sql)
                 ?>
             <table class="table table-striped ">
@@ -293,7 +293,7 @@ ul{
                   <tr>
                     <th scope="col">पैसे भरल्याची स्थिती</th>
                     <td>
-                    <?php
+                    <?php/*
                       $stage1=$row["stage1"];;
                       $stage2=$row["stage2"];;
                       $stage3=$row["stage3"];;
@@ -308,7 +308,9 @@ ul{
                       }
                       else if($stage1!='' && $stage2!='' && $stage3!=''){
                         echo "Case Close";
-                      }
+                      }*/
+                      
+                      echo $row['status']
                       ?>
                     </td>
                    

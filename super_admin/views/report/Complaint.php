@@ -500,7 +500,6 @@ if (mysqli_num_rows($complaints)>0){
                     <td><?php echo $arr["complaint_no"]; ?></td>
                     <td><?php echo $arr["section"]; ?></td>
                     <td><?php echo $arr["type_of_offence"]; ?></td>
-                    <td><?php echo $arr["status"]; ?></td>
                     <td><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>
 		                        </a></td>
