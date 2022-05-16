@@ -269,6 +269,13 @@
             <div class="col-sm-6">
               <h1 class="m-0">गुन्ह्यां चे प्रकयरपृष्ठृष्ठ</h1>
             </div><!-- /.col -->
+            <div class="col-sm-6">
+              <form method="post" id="myForm">
+              <div class="form-group">
+                        <input class="yearselect form-control"  id="year" name="year" value="2022">
+                      </div>
+               </form>
+            </div>
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
       </div>
@@ -284,7 +291,13 @@
               <div class="small-box bg-info">
                 <div class="inner">
                 <?php
-                  $query=mysqli_query($conn,"select * from complaint_form where type_of_offence='शिवीगाळ,'");
+                $date = $_POST['year'];
+                $currentDate=date('Y');
+                if($date){
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='शिवीगाळ,'");
+                }else{
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='शिवीगाळ,'");
+                }
                   $count1=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count1 ?></h3>
@@ -303,7 +316,11 @@
               <div class="small-box bg-success">
                 <div class="inner">
                 <?php
-                  $query=mysqli_query($conn,"select * from complaint_form where  type_of_offence='मारहाण,'");
+                if($date){
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='मारहाण,'");
+                }else{
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='मारहाण,'");
+                }
                   $count2=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count2 ?></h3>
@@ -322,7 +339,11 @@
               <div class="small-box bg-warning">
                 <div class="inner">
                 <?php
-                  $query=mysqli_query($conn,"select * from complaint_form where  type_of_offence='जाळपोळ,'");
+                if($date){
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='जाळपोळ,'");
+                }else{
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='जाळपोळ,'");
+                }
                   $count3=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count3 ?></h3>
@@ -340,7 +361,11 @@
               <div class="small-box bg-danger">
                 <div class="inner">
                 <?php
-                  $query=mysqli_query($conn,"select * from complaint_form where type_of_offence='खुन,'");
+                if($date){
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='खुन,'");
+                }else{
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='खुन,'");
+                }
                   $count=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count ?></h3>
@@ -367,7 +392,11 @@
               <div class="small-box" style="background-color:#a632a8; color:white;">
                 <div class="inner">
                 <?php
-                  $query=mysqli_query($conn,"select * from complaint_form where type_of_offence='बलात्कार,'");
+                 if($date){
+                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='बलात्कार,'");
+                 }else{
+                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='बलात्कार,'");
+                 }
                   $count4=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count4 ?></h3>
@@ -386,7 +415,11 @@
               <div class="small-box "  style="background-color:#025669; color:white;">
                 <div class="inner">
                 <?php
-                  $query=mysqli_query($conn,"select * from complaint_form where  type_of_offence='विनयभंग,'");
+                if($date){
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='विनयभंग,'");
+                }else{
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='विनयभंग,'");
+                }
                   $count5=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count5 ?></h3>
@@ -405,7 +438,11 @@
               <div class="small-box "style="background-color:#FF7514; color:white;">
                 <div class="inner">
                 <?php
-                  $query=mysqli_query($conn,"select * from complaint_form where type_of_offence='इतर,'");
+                if($date){
+                  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='इतर,'");
+                }else{
+                  $query=mysqli_query($conn,"select * from complaint_form where  year(date)='$currentDate' and type_of_offence='इतर,'");
+                }
                   $count6=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count6 ?></h3>
@@ -442,7 +479,11 @@
                 <div class="inner">
                
                 <?php
-                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where status='stage 1'");
+                 if($date){
+                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='stage 1'");
+                 }else{
+                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='stage 1'");
+                 }
                   $count8=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count8 ?></h3>
@@ -462,7 +503,11 @@
                 <div class="inner">
                 
                 <?php
-                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where status='stage 2'");
+                if($date){
+                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='stage 2'");
+                }else{
+                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='stage 2'");
+                }
                   $count9=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count9 ?></h3>
@@ -482,7 +527,11 @@
                 <div class="inner">
                 
                 <?php
-                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where status='stage 3'");
+                if($date){
+                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='stage 3'");
+                }else{
+                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='stage 3'");
+                }
                   $count10=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count10 ?></h3>
@@ -500,7 +549,11 @@
                 <div class="inner">
                 
                 <?php
-                  $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where status='case completed'");
+                 if($date){
+                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='case completed'");
+                 }else{
+                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='case completed'");
+                 }
                   $count10=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count10 ?></h3>
@@ -583,6 +636,20 @@
   <script src="../dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="../dist/js/pages/dashboard.js"></script>
+
+  <script src="//code.jquery.com/jquery.min.js"></script>
+<script src="report/year-select.js"></script>
+<script>
+ $(document).ready(function() {
+            $('#year').on('change', function() {
+                this.form.submit();
+            });
+        });
+
+$('.yearselect').yearselect({
+  selected: 2022
+});
+</script>
 </body>
 
 </html>
