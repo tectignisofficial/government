@@ -482,7 +482,7 @@ districtSel.options[districtSel.options.length] = new Option(district[i], distri
                         </select>
                        
                       </div>
-                      <div class="form-group col-6" id="raigarh">
+                      <div class="form-group col-6" >
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
                         <select  id="stateSel" size="1" required  name="police_station" class="form-control">
                         <option value="" disabled selected>Police Station</option>
