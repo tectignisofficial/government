@@ -95,15 +95,15 @@ echo mysqli_query($conn);
 
   <script>
     $(document).ready(function(){
-      $("#navi-mumbai").display("display","none");
-      $("#raigarh").display("display","none");
+      $("#navi-mumbai").css("display","none");
+      $("#raigarh").css("display","none");
       let $district=$("#district").val();
       if($district=='raigarh'){
-        $("#raigarh").display("display","block");
+        $("#raigarh").css("display","block");
 
       }
       if($district=='navi mumbai'){
-        $("#navi-mumbai").display("display","block");
+        $("#navi-mumbai").css("display","block");
 
       }
     })
@@ -385,12 +385,11 @@ echo mysqli_query($conn);
                           
                        <!-- </select>-->
                       </div>
-                      <div class="form-group col-6"  >
+                      <div class="form-group col-6" id="raigarh" >
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
-                        <select id="police" name="police_station"  class="form-control" required >
+                        <select id="police" name="police_station"  required >
                           <option value="">पर्याय निवडा</option>
-                          <div id="navi-mumbai">
-                          <option value="माथेरान" >माथेरान</option>
+                          <option value="माथेरान">माथेरान</option>
                           <option value="कर्जत">कर्जत</option>
                           <option value="नेरळ">नेरळ</option>
                           <option value="खोपोली">खोपोली</option>
@@ -416,25 +415,17 @@ echo mysqli_query($conn);
                           <option value="रोहा" >रोहा</option>
                           <option value="नागोठणे" >नागोठणे</option>
                           <option value="मुरुड" >मुरुड</option>
-                      </div>
+
                           <!-- ff -->
-                          <div id="raigarh">
-                          <option value="" >पर्याय निवडा</option>
-                          <option value="खारघर" >खारघर</option>
-                          <option value="कळंबोली" >कळंबोली</option>
-                          <option value="खांदेश्वर" >खांदेश्वर</option>
-                          <option value="पनवेल शहर" >पनवेल शहर</option>
-                          <option value="पनवेल तालुका" >पनवेल तालुका</option>
-                          <option value="कामोठे" >कामोठे</option>
-                      </div>
+                          
                         </select>
                       </div>
 
-                     <!-- <div class="form-group col-6" id="navi-mumbai">
+                      <div class="form-group col-6" id="navi-mumbai">
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
-                       
+                        <!-- <input type="Dropdown" class="form-control " id="Exampleपोलीस ठाणे" placeholder=""> -->
                         <select id="police" name="police_station" >
-                        <option value="<?php //echo $police_station?>"><?php// echo $police_station?></option>
+                        <option value="<?php echo $police_station?>"><?php echo $police_station?></option>
                           <option value="" >पर्याय निवडा</option>
                           <option value="खारघर" >खारघर</option>
                           <option value="कळंबोली" >कळंबोली</option>
@@ -443,7 +434,7 @@ echo mysqli_query($conn);
                           <option value="पनवेल तालुका" >पनवेल तालुका</option>
                           <option value="कामोठे" >कामोठे</option>
                         </select>
-                      </div>-->
+                      </div>
                     </div>
 
                     <div class="form-group">
