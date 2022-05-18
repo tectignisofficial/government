@@ -472,7 +472,7 @@ if(isset($_POST["filter"]) && ($_POST['district'])){
 if(isset($_POST["filter"]) && ($_POST['district'])){
   //$dat=$_POST['month'];
   $sum=0;
-  $sql=mysqli_query($conn,"select complaint_form.complaint_no as id from complaint_form inner join victim on complaint_form.id=victim.caseid where victim.caste_certificate='होय' and victim.aadhar_card='होय' and victim.charge_sheet='होय' and monthname(complaint_form.date) ='$dat' and year(complaint_form.date)='$year' and district='$district' group by id");
+  $sql=mysqli_query($conn,"select complaint_form.complaint_no as id from complaint_form inner join image on complaint_form.id=image.caseid where image.status='case completed' and monthname(complaint_form.date) ='$dat' and year(complaint_form.date)='$year' and district='$district' group by id");
        echo " <td class='text-center'>";
 			while($row = mysqli_fetch_array($sql)) {
         echo "<span>".$row['id'].",</span>";
