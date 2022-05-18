@@ -388,7 +388,7 @@ echo mysqli_query($conn);
                       <div class="form-group col-6" id="raigarh" >
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
                         <select id="police" name="police_station"  class="form-control" required >
-                          <option value="" selected>पर्याय निवडा</option>
+                          <option value="">पर्याय निवडा</option>
                           <option value="माथेरान">माथेरान</option>
                           <option value="कर्जत">कर्जत</option>
                           <option value="नेरळ">नेरळ</option>
