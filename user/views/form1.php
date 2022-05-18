@@ -95,15 +95,15 @@ echo mysqli_query($conn);
 
   <script>
     $(document).ready(function(){
-      $("#navi-mumbai").hide();
-      $("#raigarh").hide();
+      $("#navi-mumbai").display("display","none");
+      $("#raigarh").display("display","none");
       let $district=$("#district").val();
       if($district=='raigarh'){
-        $("#raigarh").show();
+        $("#raigarh").display("display","block");
 
       }
       if($district=='navi mumbai'){
-        $("#navi-mumbai").show();
+        $("#navi-mumbai").display("display","block");
 
       }
     })
