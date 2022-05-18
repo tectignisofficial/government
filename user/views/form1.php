@@ -419,6 +419,8 @@ echo mysqli_query($conn);
                       </div>
 
                      
+                    </div>
+
                     <div class="form-group">
                       <label for="Exampleलावलेली कलमे">लावलेली कलमे</label>
                       <input type="Textbox" required class="form-control" value="<?php echo  $section?>" name="section" id="Exampleलावलेली कलमे"
