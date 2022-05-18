@@ -109,7 +109,32 @@ echo mysqli_query($conn);
     })
   
   </script>
+<script>
 
+var citiesByState = {
+    "raigarh": ["अलिबाग", "पनवेल","मुरुड","पेण","उरण","कर्जत","खालापूर","माणगाव","रोहा","तळा","महड","म्हसळा","श्रीवर्धन","पोलादपूर","नेरळ","खोपोली","वडखळ","पोयनाड","मांडवा","रेवदंडा","पाली","महाड एम आय डी सी","महाड तालुका","महाड शहर","दिघी सागरी","गोरेगाव","नागोठणे","माथेरान"],
+    "navi mumbai": ["खारघर","कळंबोली","खांदेश्वर","पनवेल शहर","पनवेल तालुका","कामोठे"],
+
+}
+function makeSubmenu(value) {
+if(value.length==0) document.getElementById("citySelect").innerHTML = "<option></option>";
+else {
+var citiesOptions = "";
+for(cityId in citiesByState[value]) {
+citiesOptions+="<option value="+citiesByState[value][cityId]+">"+citiesByState[value][cityId]+"</option>";
+}
+document.getElementById("citySelect").innerHTML = citiesOptions;
+}
+}
+function displaySelected() { var country = document.getElementById("countrySelect").value;
+var city = document.getElementById("citySelect").value;
+alert(country+"\n"+city);
+}
+function resetSelection() {
+document.getElementById("countrySelect").selectedIndex = 0;
+document.getElementById("citySelect").selectedIndex = 0;
+}
+</script>
 
 </head>
 
@@ -369,14 +394,10 @@ echo mysqli_query($conn);
 
                     </div>
 
-                    <div class="d-flex form-group " style="margin-left: -12px;">
+                    <!--<div class="d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="Exampleउप विभागा चे नाव">जिल्हा</label>
-                        <!-- <input type="Dropdown" class="form-control" id="Exampleउप विभागा चे नाव" placeholder=""> -->
-                        
-                       <!-- <select id="district" required name="district" class="form-control" >
-                        <option value="" selected>पर्याय निवडा District</option>-->
-                        <?php 
+                        <?php /*
                         $email=$_SESSION['use'];
                         $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
                         
@@ -384,14 +405,13 @@ echo mysqli_query($conn);
                           ?>
                           <input class="form-control " id="district" name="district" value="<?php echo $res['district']; ?>" readonly>
                           <?php
-                        }
+                        }*/
                         ?>
                           
                        <!-- </select>-->
-                      </div>
+                      <!--</div>
                       <div class="form-group col-6" id="raigarh" >
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
-                        <!-- <input type="Dropdown" class="form-control " id="Exampleपोलीस ठाणे" placeholder=""> -->
                         <select id="police" name="police_station"  class="form-control" required>
                           <option value="" selected>पर्याय निवडा</option>
                           <option value="माथेरान">माथेरान</option>
@@ -425,7 +445,7 @@ echo mysqli_query($conn);
 
                       <div class="form-group col-6" id="navi-mumbai">
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
-                        <!-- <input type="Dropdown" class="form-control " id="Exampleपोलीस ठाणे" placeholder=""> -->
+                        <!-- <input type="Dropdown" class="form-control " id="Exampleपोलीस ठाणे" placeholder=""> 
                         <select id="police" name="police_station"  required class="form-control">
                         <option value="<?php echo $police_station?>"><?php echo $police_station?></option>
                           <option value="" >पर्याय निवडा</option>
@@ -437,7 +457,36 @@ echo mysqli_query($conn);
                           <option value="कामोठे" >कामोठे</option>
                         </select>
                       </div>
+                    </div>-->
+                    <div class="d-flex form-group " style="margin-left: -12px;">
+                      <div class="form-group col-6">
+                        <label for="Exampleउप विभागा चे नाव">जिल्हा</label>
+                        <select required name="district" class="form-control" id="countrySelect" size="1" onchange="makeSubmenu(this.value)">
+                        <?php
+                         $email=$_SESSION['use'];
+                         $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
+                         
+                         while($res=mysqli_fetch_array($sql)){
+                           ?>
+                          
+                          
+                        <option  value="<?php echo $res['district']; ?>" selected readonly> <?php echo $res['district']; ?></option>
+                        <?php
+                         }
+                        ?>
+                        </select>
+                       
+                      </div>
+                      <div class="form-group col-6" id="raigarh">
+                        <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
+                        <select id="citySelect" size="1" required  name="police_station" class="form-control">
+                        <option value="" disabled selected>Police Station</option>
+                        <option></option>
+                        <option value="<?php if(isset($_GET['id'])){ echo $police_station; } ?>"><?php echo $police_station?></option>
+                        </select>
+                      </div>
                     </div>
+
 
                     <div class="form-group">
                       <label for="Exampleलावलेली कलमे">लावलेली कलमे</label>
