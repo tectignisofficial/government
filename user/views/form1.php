@@ -95,15 +95,15 @@ echo mysqli_query($conn);
 
   <script>
     $(document).ready(function(){
-      $("#navi-mumbai").css("display","none");
-      $("#raigarh").css("display","none");
+      $(".navi-mumbai").css("display","none");
+      $(".raigarh").css("display","none");
       let $district=$("#district").val();
       if($district=='raigarh'){
-        $("#raigarh").css("display","block");
+        $(".raigarh").css("display","block");
 
       }
       if($district=='navi mumbai'){
-        $("#navi-mumbai").css("display","block");
+        $(".navi-mumbai").css("display","block");
 
       }
     })
@@ -385,45 +385,45 @@ echo mysqli_query($conn);
                           
                        <!-- </select>-->
                       </div>
-                      <div class="form-group col-6" id="raigarh" >
+                      <div class="form-group col-6"  >
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
                         <select id="police" class="form-control" name="police_station"  required >
-                          <option value="">पर्याय निवडा</option>
-                          <option value="माथेरान">माथेरान</option>
-                          <option value="कर्जत">कर्जत</option>
-                          <option value="नेरळ">नेरळ</option>
-                          <option value="खोपोली">खोपोली</option>
-                          <option value="खालापूर">खालापूर</option>
-                          <option value="रसायनी">रसायनी</option>
-                          <option value="पेण">पेण</option>
-                          <option value="वडखळ" >वडखळ</option>
-                          <option value="पोयनाड" >पोयनाड</option>
-                          <option value="मांडवा" >मांडवा</option>
-                          <option value="रेवदंडा" >रेवदंडा</option>
-                          <option value="अलिबाग" >अलिबाग</option>
-                          <option value="पाली" >पाली</option>
-                          <option value="पोलादपूर" >पोलादपूर</option>
-                          <option value="महाड एम आय डी सी" >महाड एम आय डी सी</option>
-                          <option value="महाड तालुका" >महाड तालुका</option>
-                          <option value="महाड शहर" >महाड शहर</option>
-                          <option value="श्रीवर्धन" >श्रीवर्धन</option>
-                          <option value="दिघी सागरी" >दिघी सागरी</option>
-                          <option value="म्हसळा" >म्हसळा</option>
-                          <option value="माणगाव" >माणगाव</option>
-                          <option value="गोरेगाव" >गोरेगाव</option>
-                          <option value="तळा" >तळा</option>
-                          <option value="रोहा" >रोहा</option>
-                          <option value="नागोठणे" >नागोठणे</option>
-                          <option value="मुरुड" >मुरुड</option>
+                          <option value="" class="raigarh">पर्याय निवडा</option>
+                          <option value="माथेरान" class="raigarh">माथेरान</option>
+                          <option value="कर्जत" class="raigarh">कर्जत</option>
+                          <option value="नेरळ" class="raigarh">नेरळ</option>
+                          <option value="खोपोली" class="raigarh">खोपोली</option>
+                          <option value="खालापूर" class="raigarh">खालापूर</option>
+                          <option value="रसायनी" class="raigarh">रसायनी</option>
+                          <option value="पेण" class="raigarh">पेण</option>
+                          <option value="वडखळ" class="raigarh">वडखळ</option>
+                          <option value="पोयनाड" class="raigarh">पोयनाड</option>
+                          <option value="मांडवा" class="raigarh">मांडवा</option>
+                          <option value="रेवदंडा" class="raigarh">रेवदंडा</option>
+                          <option value="अलिबाग" class="raigarh">अलिबाग</option>
+                          <option value="पाली" class="raigarh">पाली</option>
+                          <option value="पोलादपूर" class="raigarh">पोलादपूर</option>
+                          <option value="महाड एम आय डी सी" class="raigarh">महाड एम आय डी सी</option>
+                          <option value="महाड तालुका" class="raigarh">महाड तालुका</option>
+                          <option value="महाड शहर" class="raigarh">महाड शहर</option>
+                          <option value="श्रीवर्धन" class="raigarh">श्रीवर्धन</option>
+                          <option value="दिघी सागरी" class="raigarh">दिघी सागरी</option>
+                          <option value="म्हसळा" class="raigarh">म्हसळा</option>
+                          <option value="माणगाव" class="raigarh">माणगाव</option>
+                          <option value="गोरेगाव" class="raigarh">गोरेगाव</option>
+                          <option value="तळा" class="raigarh">तळा</option>
+                          <option value="रोहा" class="raigarh">रोहा</option>
+                          <option value="नागोठणे" class="raigarh">नागोठणे</option>
+                          <option value="मुरुड" class="raigarh">मुरुड</option>
 
                           <!-- ff -->
-                          <option value="" id="navi-mumbai" >पर्याय निवडा</option>
-                          <option value="खारघर"  id="navi-mumbai">खारघर</option>
-                          <option value="कळंबोली"  id="navi-mumbai">कळंबोली</option>
-                          <option value="खांदेश्वर"  id="navi-mumbai">खांदेश्वर</option>
-                          <option value="पनवेल शहर"  id="navi-mumbai">पनवेल शहर</option>
-                          <option value="पनवेल तालुका"  id="navi-mumbai">पनवेल तालुका</option>
-                          <option value="कामोठे"  id="navi-mumbai">कामोठे</option>
+                          <option value="" class="navi-mumbai" >पर्याय निवडा</option>
+                          <option value="खारघर"  class="navi-mumbai">खारघर</option>
+                          <option value="कळंबोली"  class="navi-mumbai">कळंबोली</option>
+                          <option value="खांदेश्वर"  class="navi-mumbai">खांदेश्वर</option>
+                          <option value="पनवेल शहर"  class="navi-mumbai">पनवेल शहर</option>
+                          <option value="पनवेल तालुका"  class="navi-mumbai">पनवेल तालुका</option>
+                          <option value="कामोठे"  class="navi-mumbai">कामोठे</option>
                         </select>
                       </div>
 
