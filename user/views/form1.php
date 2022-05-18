@@ -388,6 +388,7 @@ echo mysqli_query($conn);
                       <div class="form-group col-6"  >
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
                         <select id="police" class="form-control" name="police_station"  required >
+                        <option value="<?php echo $police_station?>"><?php echo $police_station?></option>
                           <option value="" class="raigarh">पर्याय निवडा</option>
                           <option value="माथेरान" class="raigarh">माथेरान</option>
                           <option value="कर्जत" class="raigarh">कर्जत</option>
@@ -431,7 +432,7 @@ echo mysqli_query($conn);
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
                        
                         <select id="police" name="police_station" >
-                        <option value="<?php echo $police_station?>"><?php echo $police_station?></option>
+                        
                           <option value="" >पर्याय निवडा</option>
                           <option value="खारघर" >खारघर</option>
                           <option value="कळंबोली" >कळंबोली</option>
