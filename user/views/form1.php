@@ -417,13 +417,19 @@ echo mysqli_query($conn);
                           <option value="मुरुड" >मुरुड</option>
 
                           <!-- ff -->
-                          
+                          <option value="" id="navi-mumbai" >पर्याय निवडा</option>
+                          <option value="खारघर"  id="navi-mumbai">खारघर</option>
+                          <option value="कळंबोली"  id="navi-mumbai">कळंबोली</option>
+                          <option value="खांदेश्वर"  id="navi-mumbai">खांदेश्वर</option>
+                          <option value="पनवेल शहर"  id="navi-mumbai">पनवेल शहर</option>
+                          <option value="पनवेल तालुका"  id="navi-mumbai">पनवेल तालुका</option>
+                          <option value="कामोठे"  id="navi-mumbai">कामोठे</option>
                         </select>
                       </div>
 
-                      <div class="form-group col-6" id="navi-mumbai">
+                     <!-- <div class="form-group col-6" id="navi-mumbai">
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
-                        <!-- <input type="Dropdown" class="form-control " id="Exampleपोलीस ठाणे" placeholder=""> -->
+                       
                         <select id="police" name="police_station" >
                         <option value="<?php echo $police_station?>"><?php echo $police_station?></option>
                           <option value="" >पर्याय निवडा</option>
@@ -434,7 +440,7 @@ echo mysqli_query($conn);
                           <option value="पनवेल तालुका" >पनवेल तालुका</option>
                           <option value="कामोठे" >कामोठे</option>
                         </select>
-                      </div>
+                      </div>-->
                     </div>
 
                     <div class="form-group">
