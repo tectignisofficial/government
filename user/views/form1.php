@@ -110,32 +110,37 @@ echo mysqli_query($conn);
   
   </script>
 <script>
+var stateObject = {
+  "raigarh": ["अलिबाग", "पनवेल","मुरुड","पेण","उरण","कर्जत","खालापूर","माणगाव","रोहा","तळा","महड","म्हसळा","श्रीवर्धन","पोलादपूर","नेरळ","खोपोली","वडखळ","पोयनाड","मांडवा","रेवदंडा","पाली","महाड एम आय डी सी","महाड तालुका","महाड शहर","दिघी सागरी","गोरेगाव","नागोठणे","माथेरान"],
+        "navi mumbai": ["खारघर","कळंबोली","खांदेश्वर","पनवेल शहर","पनवेल तालुका","कामोठे"],
 
-var citiesByState = {
-    "raigarh": ["अलिबाग", "पनवेल","मुरुड","पेण","उरण","कर्जत","खालापूर","माणगाव","रोहा","तळा","महड","म्हसळा","श्रीवर्धन","पोलादपूर","नेरळ","खोपोली","वडखळ","पोयनाड","मांडवा","रेवदंडा","पाली","महाड एम आय डी सी","महाड तालुका","महाड शहर","दिघी सागरी","गोरेगाव","नागोठणे","माथेरान"],
-    "navi mumbai": ["खारघर","कळंबोली","खांदेश्वर","पनवेल शहर","पनवेल तालुका","कामोठे"],
-
 }
-function makeSubmenu(value) {
-if(value.length==0) document.getElementById("citySelect").innerHTML = "<option></option>";
-else {
-var citiesOptions = "";
-for(cityId in citiesByState[value]) {
-citiesOptions+="<option value="+citiesByState[value][cityId]+">"+citiesByState[value][cityId]+"</option>";
+window.onload = function () {
+var countySel = document.getElementById("countySel"),
+stateSel = document.getElementById("stateSel"),
+districtSel = document.getElementById("districtSel");
+for (var country in stateObject) {
+countySel.options[countySel.options.length] = new Option(country, country);
 }
-document.getElementById("citySelect").innerHTML = citiesOptions;
+countySel.onchange = function () {
+stateSel.length = 1; // remove all options bar first
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done 
+for (var state in stateObject[this.value]) {
+stateSel.options[stateSel.options.length] = new Option(state, state);
 }
 }
-function displaySelected() { var country = document.getElementById("countrySelect").value;
-var city = document.getElementById("citySelect").value;
-alert(country+"\n"+city);
+countySel.onchange(); // reset in case page is reloaded
+stateSel.onchange = function () {
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done 
+var district = stateObject[countySel.value][this.value];
+for (var i = 0; i < district.length; i++) {
+districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
 }
-function resetSelection() {
-document.getElementById("countrySelect").selectedIndex = 0;
-document.getElementById("citySelect").selectedIndex = 0;
+}
 }
 </script>
-
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -461,7 +466,7 @@ document.getElementById("citySelect").selectedIndex = 0;
                     <div class="d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="Exampleउप विभागा चे नाव">जिल्हा</label>
-                        <select required name="district" class="form-control" id="countrySelect" size="1" onchange="makeSubmenu(this.value)">
+                        <select required name="district" class="form-control" id="countySel" size="1" onchange="makeSubmenu(this.value)">
                         <?php
                          $email=$_SESSION['use'];
                          $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
@@ -479,7 +484,7 @@ document.getElementById("citySelect").selectedIndex = 0;
                       </div>
                       <div class="form-group col-6" id="raigarh">
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
-                        <select id="citySelect" size="1" required  name="police_station" class="form-control">
+                        <select  id="stateSel" size="1" required  name="police_station" class="form-control">
                         <option value="" disabled selected>Police Station</option>
                         <option></option>
                         <option value="<?php if(isset($_GET['id'])){ echo $police_station; } ?>"><?php echo $police_station?></option>
