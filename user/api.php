@@ -80,50 +80,6 @@ $formz = mysqli_query($conn,$selectquery);
 
 
 
-/*if(isset($_POST['submi_t']))  
-{  
- $book_no=$_POST['book_no']; 
- $date=$_POST['date'];  
- $complaint_no=$_POST['complaint_no'];
- $district=$_POST['district']; 
- $taluka=$_POST['taluka']; 
- $police_station=$_POST['police_station']; 
- $sub_police_station=$_POST['sub_police_station']; 
- $section=$_POST['section']; 
- $complaint_filer_name=$_POST['complaint_filer_name'];
- $complaint_filer_address=$_POST['complaint_filer_address'];
- $victim_name=$_POST['victim_name'];
- $victim_address=$_POST['victim_address'];
- $criminal_name=$_POST['criminal_name'];
- $criminal_address=$_POST['criminal_address'];
- $category_and_caste=$_POST['category_and_caste']; 
- $fir=$_POST['fir']; 
- $discription=$_POST['discription']; 
- $caste_certificate=$_POST['caste_certificate']; 
- $aadhaar_card=$_POST['aadhaar_card'];
- $bank_info=$_POST['bank_info'];
- $charge_sheet=$_POST['charge_sheet'];
- $medical_report=$_POST['medical_report'];
- $checkbox1=$_POST['crime'];  
- $chk="";  
- foreach($checkbox1 as $chk1)  
-   {  
-      $chk .= $chk1.",";  
-   }  
- $in_ch=mysqli_query($conn,"insert into complaint_form(medical_report,charge_sheet,bank_info,aadhaar_card,caste_certificate,category_and_caste,discription,fir,criminal_address,criminal_name,victim_name,complaint_filer_address,complaint_filer_name,section,sub_police_station,police_station,taluka,district,book_no,date,complaint_no,type_of_offence)
-  values ('$medical_report','$charge_sheet','$bank_info','$aadhaar_card','$caste_certificate','$category_and_caste','$discription','$fir','$criminal_address','$criminal_name','$victim_name','$complaint_filer_address','$complaint_filer_name','$section','$sub_police_station','$police_station','$taluka','$district','$book_no','$date','$complaint_no','$chk')");  
-  if($in_ch==1)  
-  {  
-    
- header("Location: views/form.php");
-  }
-}  
-    
-else  
-  {  
-    
-  } */ 
- 
 
 
 
