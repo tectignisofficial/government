@@ -443,8 +443,8 @@ echo mysqli_query($conn);
                           <option value="पनवेल तालुका" >पनवेल तालुका</option>
                           <option value="कामोठे" >कामोठे</option>
                         </select>
-                      </div>
-                    </div>-->
+                      </div>-->
+                    </div>
 
                     <div class="form-group">
                       <label for="Exampleलावलेली कलमे">लावलेली कलमे</label>
