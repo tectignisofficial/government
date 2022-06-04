@@ -350,10 +350,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 					  <th class="text-center">Bank Name</th>
 					  <th class="text-center">Branch Name</th>
 					  <th class="text-center">IFSC Code</th>
-					  <!-- <th class="text-center">Stage1</th> 
-					  <th class="text-center">Stage2</th>
-					  <th class="text-center">Stage3</th>-->
-                    
+					 
 					  
 
            
@@ -433,9 +430,7 @@ if(isset($_POST['submit'])){
                     <td class="text-center"><?php echo $row['bank_name'];?></td>
                     <td class="text-center"><?php echo $row['branch_name'];?></td>
                     <td class="text-center"><?php echo $row['ifsc_code'];?></td>
-                    <td class="text-center"><?php echo $row['stage_1'];?></td>
-                    <td class="text-center"><?php echo $row['stage_2'];?></td>
-                    <td class="text-center"><?php echo $row['stage_3'];?></td>
+                   
                     <td class="text-center"><?php echo $row['discription'];?></td>
 						  
             
