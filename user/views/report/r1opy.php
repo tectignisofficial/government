@@ -316,7 +316,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
            
              <!--<h2 class=" text-center fs-1 fw-bold ">प्रपत्र - १.</h2>-->
                 <br>
-                <h5 class=" text-center ">-पिडीत व्यक्तीचा बँक खात्याचा तपशिल</h5>
+                <h5 class=" text-center ">पिडीत व्यक्तीचा बँक खात्याचा तपशिल</h5>
 
                 <!--<p class=" text-center fw-bolder"> माहे ऑगस्ट , २०२१ मध्ये घडलेल्या गुन्हयांची माहिती</p>-->
 

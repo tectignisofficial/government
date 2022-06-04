@@ -278,7 +278,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/government-master/index.html">Home</a></li>
-              <li class="breadcrumb-item active">R1</li>
+              <li class="breadcrumb-item active">Bank Detail</li>
             </ol>
           </div>
         </div>
