@@ -337,7 +337,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
            
             <!-- <h2 class=" text-center fs-1 fw-bold ">प्रपत्र - १.</h2>-->
                 <br>
-                <h5 class=" text-center ">पीहित व्यक्तीचा बँक खात्याचा तपशीलतर्गत</h5>
+                <h5 class=" text-center ">पिडीत व्यक्तीचा बँक खात्याचा तपशिल</h5>
 
                   <br>
                 <!--<p class=" text-center fw-bolder"> माहे ऑगस्ट , २०२१ मध्ये घडलेल्या गुन्हयांची माहिती</p>-->
@@ -423,9 +423,7 @@ if(isset($_POST['submit'])){
                     <td class="text-center"><?php echo $row['bank_name'];?></td>
                     <td class="text-center"><?php echo $row['branch_name'];?></td>
                     <td class="text-center"><?php echo $row['ifsc_code'];?></td>
-                   <!-- <td class="text-center"><?php //echo $row['stage_1'];?></td>
-                    <td class="text-center"><?php// echo $row['stage_2'];?></td>
-                    <td class="text-center"><?php //echo $row['stage_3'];?></td>-->
+                  
                     <td class="text-center"><?php echo $row['discription'];?></td>
 						  
             
