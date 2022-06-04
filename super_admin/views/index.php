@@ -272,7 +272,7 @@
             <div class="col-sm-6">
               <form method="post" id="myForm">
               <div class="form-group text-right">
-                <label class="mr-4">वर्ष निवडा<label>
+                <label class="mr-4">वर्ष निवडा</label>
                         <input class="yearselect form-control"  id="year" name="year" value="2022">
                       </div>
                </form>
