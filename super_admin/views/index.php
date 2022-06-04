@@ -267,11 +267,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">गुन्ह्यां चे प्रकयरपृष्ठृष्ठ</h1>
+              <h1 class="m-0">गुन्ह्यांचे प्रकार</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <form method="post" id="myForm">
               <div class="form-group">
+                <label>वर्ष निवडा<label>
                         <input class="yearselect form-control"  id="year" name="year" value="2022">
                       </div>
                </form>
@@ -464,7 +465,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">अर्थसहयय्य रक्कम निधी टप्प्रकयरपृष्ठ</h1>
+              <h1 class="m-0">अर्थसहयय्य रक्कम निधी टप्पे</h1>
             </div><!-- /.col -->
            <!-- /.col -->
           </div><!-- /.row -->
@@ -488,7 +489,7 @@
                   ?>
                   <h3><?php echo $count8 ?></h3>
 
-                  <p>अर्थसहयय्य रक्कम निधी टप्पय पनहलय</p>
+                  <p>अर्थसहयय्य रक्कम निधी टप्पा १</p>
                 </div>
                 <div class="icon">
               
@@ -512,7 +513,7 @@
                   ?>
                   <h3><?php echo $count9 ?></h3>
 
-                  <p>अर्थसहयय्य रक्कम निधी टप्पय दु सरय</p>
+                  <p>अर्थसहयय्य रक्कम निधी टप्पा २</p>
                 </div>
                 <div class="icon">
               
@@ -535,7 +536,7 @@
                   $count10=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count10 ?></h3>
-                  <p>अर्थसहयय्य रक्कम निधी टप्पय निसरय  </p>
+                  <p>अर्थसहयय्य रक्कम निधी टप्पा ३  </p>
                 </div>
                 <div class="icon">
                
@@ -557,7 +558,7 @@
                   $count10=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count10 ?></h3>
-                  <p>अर्थ सहाय्य रक्कम निधी परिपूर्ण  </p>
+                  <p>अर्थसहयय्य रक्कम निधी परिपूर्ण </p>
                 </div>
                 <div class="icon">
                
