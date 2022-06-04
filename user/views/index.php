@@ -270,7 +270,7 @@
             <div class="col-sm-6">
               <form method="post" id="myForm">
               <div class="form-group text-right d-flex">
-              <label class="mr-4" style="width: -webkit-fill-available;">वर्ष निवडा</label>
+              <label class="mr-4 mt-auto" style="width: -webkit-fill-available;">वर्ष निवडा</label>
                         <input class="yearselect form-control"  id="year" name="year" value="2022">
                       </div>
       </form>
