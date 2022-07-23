@@ -293,23 +293,7 @@ ul{
                   <tr>
                     <th scope="col">पैसे भरल्याची स्थिती</th>
                     <td>
-                    <?php/*
-                      $stage1=$row["stage1"];;
-                      $stage2=$row["stage2"];;
-                      $stage3=$row["stage3"];;
-                      if($stage1==''){
-                        echo "Case Open";
-                      }
-                      else if($stage1!='' && $stage2=='' && $stage3==''){
-                        echo "First Payment Done";
-                      }
-                      else if($stage1!='' && $stage2!='' && $stage3==''){
-                        echo "Second Payment Done";
-                      }
-                      else if($stage1!='' && $stage2!='' && $stage3!=''){
-                        echo "Case Close";
-                      }*/
-                      ?>
+                    
                       <?php echo $row['status'] ?>
                     </td>
                    
