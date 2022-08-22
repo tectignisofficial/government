@@ -3,8 +3,8 @@
 include_once 'include.php';
 session_start();
 if(isset($_POST["login"])){
-	$email=$_POST["email"];
-	$password=$_POST["password"];
+	$email=mysqli_real_escape_string($conn,$_POST["email"]);
+	$password=mysqli_real_escape_string($conn,$_POST["password"]);
 
 	$sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
 	if(mysqli_num_rows($sql)>0){
