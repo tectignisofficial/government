@@ -292,9 +292,9 @@
               <div class="small-box bg-info">
                 <div class="inner">
                 <?php
-                $date = $_POST['year'];
                 $currentDate=date('Y');
-                if($date){
+                if(isset($_POST['year'])){
+                  $date = $_POST['year'];
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='शिवीगाळ,'");
                 }else{
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='शिवीगाळ,'");
@@ -317,7 +317,8 @@
               <div class="small-box bg-success">
                 <div class="inner">
                 <?php
-                if($date){
+                if(isset($_POST['year'])){
+                  $date = $_POST['year'];
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='मारहाण,'");
                 }else{
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='मारहाण,'");
@@ -340,7 +341,8 @@
               <div class="small-box bg-warning">
                 <div class="inner">
                 <?php
-                if($date){
+                if(isset($_POST['year'])){
+                  $date = $_POST['year'];
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='जाळपोळ,'");
                 }else{
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='जाळपोळ,'");
@@ -362,7 +364,8 @@
               <div class="small-box bg-danger">
                 <div class="inner">
                 <?php
-                if($date){
+                if(isset($_POST['year'])){
+                  $date = $_POST['year'];
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='खुन,'");
                 }else{
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='खुन,'");
@@ -393,7 +396,8 @@
               <div class="small-box" style="background-color:#a632a8; color:white;">
                 <div class="inner">
                 <?php
-                 if($date){
+                 if(isset($_POST['year'])){
+                  $date = $_POST['year'];
                    $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='बलात्कार,'");
                  }else{
                    $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='बलात्कार,'");
@@ -416,7 +420,8 @@
               <div class="small-box "  style="background-color:#025669; color:white;">
                 <div class="inner">
                 <?php
-                if($date){
+               if(isset($_POST['year'])){
+                $date = $_POST['year'];
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='विनयभंग,'");
                 }else{
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='विनयभंग,'");
@@ -439,7 +444,8 @@
               <div class="small-box "style="background-color:#FF7514; color:white;">
                 <div class="inner">
                 <?php
-                if($date){
+                if(isset($_POST['year'])){
+                  $date = $_POST['year'];
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='इतर,'");
                 }else{
                   $query=mysqli_query($conn,"select * from complaint_form where  year(date)='$currentDate' and type_of_offence='इतर,'");
@@ -480,7 +486,8 @@
                 <div class="inner">
                
                 <?php
-                 if($date){
+                if(isset($_POST['year'])){
+                  $date = $_POST['year'];
                    $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='stage 1'");
                  }else{
                    $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='stage 1'");
@@ -504,7 +511,8 @@
                 <div class="inner">
                 
                 <?php
-                if($date){
+               if(isset($_POST['year'])){
+                $date = $_POST['year'];
                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='stage 2'");
                 }else{
                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='stage 2'");
@@ -528,7 +536,8 @@
                 <div class="inner">
                 
                 <?php
-                if($date){
+                if(isset($_POST['year'])){
+                  $date = $_POST['year'];
                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='stage 3'");
                 }else{
                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='stage 3'");
@@ -550,7 +559,8 @@
                 <div class="inner">
                 
                 <?php
-                 if($date){
+                if(isset($_POST['year'])){
+                  $date = $_POST['year'];
                    $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='case completed'");
                  }else{
                    $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='case completed'");
