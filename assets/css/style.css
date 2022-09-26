@@ -441,7 +441,7 @@ section {
 .breadcrumbs {
   padding: 15px 0;
   background-color: #f6f8fb;
-  min-height: 40px;
+  /* min-height: 40px; */
 }
 .breadcrumbs h2 {
   font-size: 24px;
@@ -1253,11 +1253,11 @@ ul {
   outline: none;
   display: block;
   float: left;
-  /* font-size: 12px; */
-  line-height: 36px;
+  font-size: 15px;
+  line-height: 30px;
   color: white;
   /*need more margin on the left of links to accomodate the numbers*/
-  padding: 0 10px 0 60px;
+  padding: 0 10px 0 30px;
   background: #666;
   background: linear-gradient(#666, #333);
   position: relative;
@@ -1298,11 +1298,11 @@ ul {
   content: "";
   position: absolute;
   top: 0;
-  right: -18px;
+  right: -14px;
   /*half of square's length*/
   /*same dimension as the line-height of .breadcrumb a */
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   /*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
 length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
 if diagonal required = 1; length = 1/1.414 = 0.707*/
