@@ -98,14 +98,14 @@ include('super_admin\include.php');
           
         </div> -->
         <div class="row justify-content-between align-items-center">
-          <div class="col-8 text-start">
+          <div class="col-lg-8 col-sm-12 text-start">
             <div class="breadcrumb flat">
               <a href="index.html" class="active">Home</a>
               <a href="complaint_status.php">Complaint Status </a>
               <a href="change.html">Admin Login</a>
             </div>
           </div>
-          <div class="col-4 text-end">
+          <div class="col-sm-12 col-lg-4 text-end">
             <button class="btn btn-sm btn-outline-secondary">Download Mobile Application</button>
           </div>
         </div>

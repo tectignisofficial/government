@@ -1165,10 +1165,8 @@ ul {
 }
 
 .our-webcoderskull {
-  background: url("../img/head-bg3.png")
-    no-repeat center top / cover;
-    background-color: #9f9f9f;
-
+  background: url("../img/head-bg3.png") no-repeat center top / cover;
+  background-color: #9f9f9f;
 }
 
 .our-webcoderskull .cnt-block {
@@ -1262,6 +1260,7 @@ ul {
   background: linear-gradient(#666, #333);
   position: relative;
 }
+
 
 /*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
 .breadcrumb a:first-child {
@@ -1422,8 +1421,15 @@ font-weight: bold;
   }
 
   .headerlogo {
-    padding-left: .5rem !important;
-    padding-right: .5rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
   }
 
+  .breadcrumb a {
+    font-size: 14px;
+    padding: 0 10px 0 25px;
+  }
+  .breadcrumb a:first-child {
+    padding-left: 20px;
+  }
 }
