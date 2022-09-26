@@ -46,7 +46,8 @@
       color: #5777ba !important;
       border-color: #5777ba !important;
     }
-    .btn-outline-secondary:hover{
+
+    .btn-outline-secondary:hover {
       color: #fff !important;
       background-color: #5777ba !important;
 
@@ -101,12 +102,12 @@
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-8 col-sm-12 text-start">
             <div class="breadcrumb flat">
-              <a href="index.html" class="active">Home</a>
+              <a href="index.php" class="active">Home</a>
               <a href="complaint_status.php">Complaint Status </a>
               <a href="change.html">Admin Login</a>
             </div>
           </div>
-          <div class="col-sm-12 col-lg-4 text-end">
+          <div class="col-sm-12 col-lg-4 downloadBtn">
             <button class="btn btn-sm btn-outline-secondary">Download Mobile Application</button>
           </div>
         </div>
@@ -122,14 +123,17 @@
 
         <!-- 1st Row -->
         <ul class="row" style="justify-content: center;">
-        <?php
+          <?php
         $sql=mysqli_query($conn,"select * from member_img where id='1'");
         while($fetchsql=mysqli_fetch_array($sql)){
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
-              <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
               <p> मुख्यमंत्री, महाराष्ट्र राज्य</p>
             </div>
           </li>
@@ -142,7 +146,9 @@
             <div class="cnt-block equal-hight" style="height: 320px;">
               <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
-              <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
               <!-- <h3><strong>मा.ना.श्री.देवेंद्र फडणवीस</strong></h3> -->
               <p>उपमुख्यमंत्री, महाराष्ट्र राज्य</p>
 
@@ -153,14 +159,17 @@
 
         <!-- 2nd Row -->
         <ul class="row">
-        <?php
+          <?php
         $sql=mysqli_query($conn,"select * from member_img where id='3'");
         while($fetchsql=mysqli_fetch_array($sql)){
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
-              <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
               <p>सामाजिक न्याय मंत्री</p>
 
             </div>
@@ -172,8 +181,11 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
-              <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
               <p>सामाजिक न्याय राज्य मंत्री</p>
 
             </div>
@@ -185,8 +197,11 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
-              <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
               <p>पालकमंत्री ,जिल्हा रायगड</p>
             </div>
           </li>
@@ -197,8 +212,11 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
-            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
               <p>अय्यर मुख्य सचिव, सामाजिक न्याय व विशेष साहाय्य विभाग </p>
 
             </div>
@@ -210,8 +228,11 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
-            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
               <p>पालक सचिव , जिल्हा रायगड</p>
 
             </div>
@@ -223,8 +244,11 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
-            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
               <p>विभागीय आयुक्त (महसूल)कोकण विभाग , मुंबई </p>
 
             </div>
@@ -236,8 +260,11 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
-            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
               <p>भा.प्र.से. आयुक्त , समाज कल्याण , महाराष्ट्र राज्य </p>
             </div>
           </li>
@@ -248,9 +275,12 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
-            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
-             <p>भा.प्र.से. जिल्हाधिकारी तथा जिल्हा दंडाधिकारी रायगड, अलिबाग</p>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
+              <p>भा.प्र.से. जिल्हाधिकारी तथा जिल्हा दंडाधिकारी रायगड, अलिबाग</p>
 
             </div>
           </li>
@@ -274,9 +304,12 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
-            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
-             <p>सहाय्यक आयुक्त, समाज कल्याण रायगड, अलिबाग</p>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
+              <p>सहाय्यक आयुक्त, समाज कल्याण रायगड, अलिबाग</p>
 
             </div>
           </li>
@@ -290,44 +323,61 @@
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-12 col-sm-12 col-lg-3">
-            <a href="1989 अॅट्रोसिटी कायदा 1992.pdf" class="btn btn-outline-secondary"><i
-                class="fa fa-download"></i>1989
-              अॅट्रोसिटी कायदा 1992</a>
-          </div>
-          <div class="col-12 col-sm-12 col-lg-3">
-            <a href="2017 09 27.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2017 09 27</a>
-          </div>
-          <div class="col-12 col-sm-12 col-lg-3">
-            <a href="2008 08 08 Atrocity samiti.pdf" class="btn btn-outline-secondary"><i
-                class="fa fa-download"></i>2008 08 08
-              Atrocity samiti</a>
-          </div>
-          <div class="col-12 col-sm-12 col-lg-3">
-            <a href="2016 12 23 Atrocity.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016 12 23
-              Atrocity</a>
+
+          <div class="col-sm-12 col-lg-6 col-md-6">
+            <div class="row my-2">
+              <div class="col-7">
+                <a href="1989 अॅट्रोसिटी कायदा 1992.pdf" class="btn btn-outline-secondary"><i
+                    class="fa fa-download"></i>1989
+                  अॅट्रोसिटी कायदा 1992</a>
+              </div>
+              <div class="col-5">
+                <a href="2017 09 27.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2017 09 27</a>
+              </div>
+            </div>
           </div>
 
-        </div>
-        <div class="row mt-4">
-          <div class="col-12 col-sm-12 col-lg-3">
-            <a href="201708011134427630.pdf" class="btn btn-outline-secondary"><i
-                class="fa fa-download"></i>201708011134427630.pdf</a>
-          </div>
-          <div class="col-12 col-sm-12 col-lg-3">
-            <a href="2016 12 23 aaa.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016 12 23</a>
-          </div>
-
-          <div class="col-12 col-sm-12 col-lg-3">
-            <a href="2016 12 28 SDO Samiti.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016 12
-              28 SDO
-              Samiti</a>
-          </div>
-          <div class="col-12 col-sm-12 col-lg-3">
-            <a href="2018 04 13 Atrocity.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2018 04 13
-              Atrocity</a>
+          <div class="col-sm-12 col-lg-6 col-md-6">
+            <div class="row my-2">
+              <div class="col-7">
+                <a href="2008 08 08 Atrocity samiti.pdf" class="btn btn-outline-secondary"><i
+                    class="fa fa-download"></i>2008 08 08
+                  Atrocity samiti</a>
+              </div>
+              <div class="col-5">
+                <a href="2016 12 23 Atrocity.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016
+                  12 23</a>
+              </div>
+            </div>
           </div>
 
+          <div class="col-sm-12 col-lg-6 col-md-6">
+            <div class="row my-2">
+              <div class="col-7">
+                <a href="201708011134427630.pdf" class="btn btn-outline-secondary"><i
+                    class="fa fa-download"></i>201708011134427630.pdf</a>
+              </div>
+              <div class="col-5">
+                <a href="2016 12 23 aaa.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016 12
+                  23</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-lg-6 col-md-6">
+            <div class="row my-2">
+              <div class="col-7">
+                <a href="2016 12 28 SDO Samiti.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016
+                  12
+                  28 SDO
+                  Samiti</a>
+              </div>
+              <div class="col-5">
+                <a href="2018 04 13 Atrocity.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2018
+                  04 13</a>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>

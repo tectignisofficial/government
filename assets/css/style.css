@@ -1415,6 +1415,10 @@ font-weight: bold;
   transform: translate(-50%, -50%);
 }
 
+.downloadBtn{
+  text-align: end;
+}
+
 @media screen and (max-width: 768px) {
   .mobileView {
     display: none !important;
@@ -1431,5 +1435,9 @@ font-weight: bold;
   }
   .breadcrumb a:first-child {
     padding-left: 20px;
+  }
+  .downloadBtn{
+    text-align: center;
+    margin-top: 1.5rem;
   }
 }

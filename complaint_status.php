@@ -96,16 +96,16 @@ if (!$conn) {
           </nav>
           
         </div> -->
-        <div class="row justify-content-between">
-          <div class="col-8 text-start">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-lg-8 col-sm-12 text-start">
             <div class="breadcrumb flat">
-              <a href="index.html">Home</a>
-              <a href="complaint_status.php"  class="active">Complaint Status </a>
+              <a href="index.php">Home</a>
+              <a href="complaint_status.php" class="active">Complaint Status </a>
               <a href="change.html">Admin Login</a>
             </div>
           </div>
-          <div class="col-4 text-end">
-            <button class="btn btn-primary">DownLoad APK</button>
+          <div class="col-sm-12 col-lg-4 downloadBtn">
+            <button class="btn btn-sm btn-outline-secondary">Download Mobile Application</button>
           </div>
         </div>
       </div>
