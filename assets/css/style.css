@@ -411,7 +411,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -785,7 +785,7 @@ section {
   position: absolute;
   right: 0;
   left: 20px;
-  color: #b1c0df;
+  color: #5777ba;
 }
 .faq .accordion-list .icon-show,
 .faq .accordion-list .icon-close {
@@ -1142,8 +1142,8 @@ ul {
 }
 
 .our-webcoderskull .cnt-block:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  border: 0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+  /* border: 0; */
 }
 
 .practice-area .inner h3 {
@@ -1177,7 +1177,7 @@ ul {
   background: #fff;
   padding: 30px 20px;
   text-align: center;
-  border: 2px solid #d5d5d5;
+  /* border: 2px solid #d5d5d5; */
   margin: 0 0 28px;
   border-radius: 10px;
 }
@@ -1360,7 +1360,7 @@ font-weight: bold;
 .flat a.active,
 .flat a:hover:after,
 .flat a.active:after {
-  background: #0d6efd;
+  background: #5777ba;
   color: #fff;
 }
 .heading {
@@ -1382,7 +1382,7 @@ font-weight: bold;
 
 .searchTerm {
   width: 100%;
-  border: 3px solid #00b4cc;
+  border: 3px solid #5777ba;
   border-right: none;
   padding: 5px;
   height: 36px;
@@ -1392,14 +1392,14 @@ font-weight: bold;
 }
 
 .searchTerm:focus {
-  color: #00b4cc;
+  color: #5777ba;
 }
 
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #00b4cc;
-  background: #00b4cc;
+  border: 1px solid #5777ba;
+  background: #5777ba;
   text-align: center;
   color: #fff;
   border-radius: 0 5px 5px 0;

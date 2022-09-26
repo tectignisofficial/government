@@ -43,7 +43,21 @@ if (!$conn) {
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+    .btn-primary {
+      background-color: #5777ba !important;
+    }
 
+    .btn-outline-secondary {
+      color: #5777ba !important;
+      border-color: #5777ba !important;
+    }
+    .btn-outline-secondary:hover{
+      color: #fff !important;
+      background-color: #5777ba !important;
+
+    }
+  </style>
 </head>
 
 <body>
@@ -62,33 +76,40 @@ if (!$conn) {
       <img src="assets/img/atrorcity-header.png" height="100" alt="">
     </a>
   </nav>
-  <section>
-    <div class="container">
-      <!-- <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills float-right">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link " href="complaint_status.php">Complaint Status <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="change.html">Admin Login</a>
-            </li>
-          </ul>
-        </nav>
-        
-      </div> -->
 
-      <div class="breadcrumb flat">
-        <a href="index.html">Home</a>
-        <a href="complaint_status.php" class="active">Complaint Status </a>
-        <a href="change.html">Admin Login</a>
-      </div>
-    </div>
-  </section>
   <main id="main">
+  <section>
+      <div class="container">
+        <!-- <div class="header clearfix">
+          <nav>
+            <ul class="nav nav-pills float-right">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="complaint_status.php">Complaint Status <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="change.html">Admin Login</a>
+              </li>
+            </ul>
+          </nav>
+          
+        </div> -->
+        <div class="row justify-content-between">
+          <div class="col-8 text-start">
+            <div class="breadcrumb flat">
+              <a href="index.html">Home</a>
+              <a href="complaint_status.php"  class="active">Complaint Status </a>
+              <a href="change.html">Admin Login</a>
+            </div>
+          </div>
+          <div class="col-4 text-end">
+            <button class="btn btn-primary">DownLoad APK</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="our-webcoderskull padding-lg">
       <div class="container">
@@ -166,7 +187,7 @@ if (!$conn) {
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>Atrocity Raigad</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span style="color:#5777ba;">Atrocity Raigad</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
