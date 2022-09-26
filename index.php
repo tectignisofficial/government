@@ -97,7 +97,7 @@ include('super_admin\include.php');
           </nav>
           
         </div> -->
-        <div class="row justify-content-between">
+        <div class="row justify-content-between align-items-center">
           <div class="col-8 text-start">
             <div class="breadcrumb flat">
               <a href="index.html" class="active">Home</a>
@@ -106,7 +106,7 @@ include('super_admin\include.php');
             </div>
           </div>
           <div class="col-4 text-end">
-            <button class="btn btn-primary">DownLoad APK</button>
+            <button class="btn btn-sm btn-outline-secondary">Download Mobile Application</button>
           </div>
         </div>
       </div>
