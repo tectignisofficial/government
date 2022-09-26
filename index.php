@@ -139,9 +139,10 @@ include('super_admin\include.php');
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets\img\Team\Devendra_Fadnavis_@Vidhan_Sabha_04-03-2021.jpg" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
-              <h3><strong>मा.ना.श्री.देवेंद्र फडणवीस</strong></h3>
+              <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <!-- <h3><strong>मा.ना.श्री.देवेंद्र फडणवीस</strong></h3> -->
               <p>उपमुख्यमंत्री, महाराष्ट्र राज्य</p>
 
             </div>
@@ -151,68 +152,108 @@ include('super_admin\include.php');
 
         <!-- 2nd Row -->
         <ul class="row">
+        <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='3'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets/img/Team/3.jpg" class="img-responsive" alt=""></figure>
-              <h3><strong>मा.ना.श्री.धनंजय मुंडे</strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
+              <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
               <p>सामाजिक न्याय मंत्री</p>
 
             </div>
           </li>
+          <?php } ?>
+          <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='4'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets/img/Team/4.jpg" class="img-responsive" alt=""></figure>
-              <h3><strong>मा.ना.श्री.विश्वजित कदम</strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
+              <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
               <p>सामाजिक न्याय राज्य मंत्री</p>
 
             </div>
           </li>
+          <?php } ?>
+          <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='5'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets/img/Team/5.jpeg" class="img-responsive" alt=""></figure>
-              <h3><strong>मा.ना.कु.आदिती तटकरे</strong></h3>
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
+              <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
               <p>पालकमंत्री ,जिल्हा रायगड</p>
             </div>
           </li>
+          <?php } ?>
+          <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='6'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets/img/Team/6.jpg" class="img-responsive" alt=""></figure>
-              <h3><strong>मा.ना.श्रीमती.जयश्री मुखर्जी</strong></h3>
+            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
+            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
               <p>अय्यर मुख्य सचिव, सामाजिक न्याय व विशेष साहाय्य विभाग </p>
 
             </div>
           </li>
+          <?php } ?>
+          <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='7'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets/img/Team/7.jpg" class="img-responsive" alt=""></figure>
-              <h3><strong>मा.ना.श्री.मनोज सौनिक</strong></h3>
+            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
+            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
               <p>पालक सचिव , जिल्हा रायगड</p>
 
             </div>
+            <?php } ?>
           </li>
+          <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='8'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets/img/Team/8.jpeg" class="img-responsive" alt=""></figure>
-              <h3><strong>मा.ना.श्री.विलास पाटील </strong></h3>
+            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
+            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
               <p>विभागीय आयुक्त (महसूल)कोकण विभाग , मुंबई </p>
 
             </div>
+            <?php } ?>
           </li>
+          <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='9'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets/img/Team/9.jpeg" class="img-responsive" alt=""></figure>
-              <h3><strong>मा.डॉ.प्रशांत नारनवरे </strong></h3>
+            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
+            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
               <p>भा.प्र.से. आयुक्त , समाज कल्याण , महाराष्ट्र राज्य </p>
             </div>
           </li>
+          <?php } ?>
+          <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='10'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets/img/Team/10.jpeg" class="img-responsive" alt=""></figure>
-              <h3><strong>मा.डॉ.महेंद्र कल्याणकर</strong></h3>
-              <p>भा.प्र.से. जिल्हाधिकारी तथा जिल्हा दंडाधिकारी रायगड, अलिबाग</p>
+            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
+            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+             <p>भा.प्र.से. जिल्हाधिकारी तथा जिल्हा दंडाधिकारी रायगड, अलिबाग</p>
 
             </div>
           </li>
+          <?php } ?>
         </ul>
 
         <!-- 3rd Row -->
@@ -226,14 +267,19 @@ include('super_admin\include.php');
 
             </div>
           </li>
+          <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='12'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets/img/Team/12.jpg" class="img-responsive" alt=""></figure>
-              <h3><strong>मा.श्री.सुनील जाधव </strong></h3>
-              <p>सामाजिक आयुक्त, समाज कल्याण रायगड, अलिबाग</p>
+            <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt=""></figure>
+            <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+             <p>सहाय्यक आयुक्त, समाज कल्याण रायगड, अलिबाग</p>
 
             </div>
           </li>
+          <?php } ?>
         </ul>
       </div>
     </section>
@@ -430,7 +476,7 @@ include('super_admin\include.php');
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/ -->
-        Designed by <a href="https://tectignis.in/">Tectignis IT Solutions</a>
+        Designed by <a href="https://tectignis.in/" target="_blank">Tectignis IT Solutions</a>
       </div>
     </div>
   </footer><!-- End Footer -->
