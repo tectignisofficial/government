@@ -7,7 +7,12 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
  header("Location:../login.php"); 
 }
 
-
+$role='';
+       $email=$_SESSION['use'];
+       $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
+       while($res=mysqli_fetch_array($sql)){
+         $role=$res['role'];
+       }
 
 ?>
 
