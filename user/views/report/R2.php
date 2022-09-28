@@ -272,7 +272,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/government-master/index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="/government-master/index.php" style="color: #869099; text-decoration:none">Home</a></li>
               <li class="breadcrumb-item active">R2</li>
             </ol>
           </div>
@@ -563,10 +563,10 @@ if(isset($_POST["filter"]) && ($_POST['district'])){
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-      <strong>Copyright &copy; <?php echo date('Y'); ?></strong>
+      <strong> &copy; <?php echo date('Y'); ?></strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
-        Designd by Tectignis It Solutions</b>
+        Designd by <a href="https://tectignis.in/" target="_blank" style="color: #869099; text-decoration:none">Tectignis It Solutions</b></a>
       </div>
     </footer>
 
