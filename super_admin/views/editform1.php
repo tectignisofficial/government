@@ -15,6 +15,7 @@ $role='';
 
         $book_no='';
         $date='';
+        $year='';
         $complaint_no='';
         $police_station='';
         $section='';
@@ -33,13 +34,15 @@ if(isset($_GET['id'])){
    $type_of_offence=explode(",", $arr['type_of_offence']);
    $complaint_filer_name=$arr['complaint_filer_name'];
    $complaint_filer_address=$arr['complaint_filer_address'];
+   $year=$arr['year'];
   }
 }
 
 if(isset($_POST['s_ubmit']) && ($_GET['id'])){
     $id=$_GET['id'];
     $book_no=$_POST['book_no']; 
-   $date=$_POST['date'];  
+   $date=$_POST['date']; 
+   $year=$_POST['year']; 
    $complaint_no=$_POST['complaint_no'];
    $district=$_POST['district']; 
    $police_station=$_POST['police_station']; 
@@ -52,7 +55,7 @@ if(isset($_POST['s_ubmit']) && ($_GET['id'])){
 	 {  
 		$chk .= $chk1.",";  
 	 }  
-     $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',complaint_filer_address='$complaint_filer_address',type_of_offence='$chk' where id='$id'");
+     $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',year='$year',complaint_filer_address='$complaint_filer_address',type_of_offence='$chk' where id='$id'");
      if($sql==1){
          header("location:editform2.php?eid=".$id);
      }
@@ -365,10 +368,17 @@ echo mysqli_query($conn);
 
                       </div>
             
+                      <div class=" d-flex form-group " style="margin-left: -12px;">
                     <div class="form-group">
                       <label for="exampleनोंद वही क्र.">नोंद वही क्र.</label>
                       <input type="Textbox" required class="form-control" value="<?php echo $book_no ?>" name="book_no" id="exampleInputनोंद वही क्र."
                         placeholder="" readonly>
+                    </div>
+                      
+                      <div class="form-group col-6">
+                        <label for="exampleदिनांक">वर्ष</label>
+                        <input required class="form-control " value="<?php echo  $year ?>" name="year" id="exampleदिनांक" placeholder="" type="number" min="1900" max="2099" step="1" >
+                      </div>
                     </div>
 
                     <div class=" d-flex form-group " style="margin-left: -12px;">
@@ -387,10 +397,6 @@ echo mysqli_query($conn);
                     <div class="d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="Exampleउप विभागा चे नाव">जिल्हा</label>
-                        <!-- <input type="Dropdown" class="form-control" id="Exampleउप विभागा चे नाव" placeholder=""> -->
-                        
-                       <!-- <select id="district" required name="district" class="form-control" >
-                        <option value="" selected>पर्याय निवडा District</option>-->
                         <?php 
                         $email=$_SESSION['use'];
                         $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;

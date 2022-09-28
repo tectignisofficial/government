@@ -75,7 +75,8 @@ $formz = mysqli_query($conn,$selectquery);
   if(isset($_POST['s_ubmit']))  
   {  
    $book_no=$_POST['book_no']; 
-   $date=$_POST['date'];  
+   $date=$_POST['date']; 
+   $year=$_POST['year']; 
    $complaint_no=$_POST['complaint_no'];
    $district=$_POST['district']; 
    $police_station=$_POST['police_station']; 
@@ -92,8 +93,8 @@ $formz = mysqli_query($conn,$selectquery);
 	 if(mysqli_num_rows($query)>0){
 	     echo "<script>alert('Complaint number already exist');window.location.href='views/form1.php'</script>";
 	 }else{
-           $in_ch=mysqli_query($conn,"insert into complaint_form(complaint_filer_address,complaint_filer_name,section,police_station,district,book_no,date,complaint_no,type_of_offence)
-        	values ('$complaint_filer_address','$complaint_filer_name','$section','$police_station','$district','$book_no','$date','$complaint_no','$chk')");  
+           $in_ch=mysqli_query($conn,"insert into complaint_form(complaint_filer_address,complaint_filer_name,section,police_station,district,book_no,date,complaint_no,type_of_offence,year)
+        	values ('$complaint_filer_address','$complaint_filer_name','$section','$police_station','$district','$book_no','$date','$complaint_no','$chk','$year')");  
         	if($in_ch==1)  
         	{  
             $last_id = mysqli_insert_id($conn);

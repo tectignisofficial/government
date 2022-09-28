@@ -17,6 +17,7 @@ $role='';
         $complaint_no='';
         $police_station='';
         $section='';
+        $year='';
         $type_of_offence='';
         $complaint_filer_name='';
         $complaint_filer_address='';
@@ -32,13 +33,15 @@ if(isset($_GET['id'])){
    $type_of_offence=explode(",", $arr['type_of_offence']);
    $complaint_filer_name=$arr['complaint_filer_name'];
    $complaint_filer_address=$arr['complaint_filer_address'];
+   $year=$arr['year'];
   }
 }
 
 if(isset($_POST['s_ubmit']) && ($_GET['id'])){
   $id=$_GET['id'];
   $book_no=$_POST['book_no']; 
- $date=$_POST['date'];  
+ $date=$_POST['date']; 
+ $year=$_POST['year']; 
  $complaint_no=$_POST['complaint_no'];
  $district=$_POST['district']; 
  $police_station=$_POST['police_station']; 
@@ -51,7 +54,7 @@ if(isset($_POST['s_ubmit']) && ($_GET['id'])){
  {  
   $chk .= $chk1.",";  
  }  
-   $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',complaint_filer_address='$complaint_filer_address',type_of_offence='$chk' where id='$id'");
+   $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',year='$year',complaint_filer_address='$complaint_filer_address',type_of_offence='$chk' where id='$id'");
    if($sql==1){
        header("location:form2.php?eid=".$id);
    }
@@ -95,8 +98,8 @@ echo mysqli_query($conn);
   <script>
 
     var citiesByState = {
-        "raigarh": ["अलिबाग", "पनवेल","मुरुड","पेण","उरण","कर्जत","खालापूर","माणगाव","रोहा","तळा","महड","म्हसळा","श्रीवर्धन","पोलादपूर","नेरळ","खोपोली","वडखळ","पोयनाड","मांडवा","रेवदंडा","पाली","महाड एम आय डी सी","महाड तालुका","महाड शहर","दिघी सागरी","गोरेगाव","नागोठणे","माथेरान"],
-        "navi mumbai": ["खारघर","कळंबोली","खांदेश्वर","पनवेल शहर","पनवेल तालुका","कामोठे"],
+        "raigarh": ["अलिबाग पोलीस ठाणे", "पनवेल पोलीस ठाणे","मुरुड पोलीस ठाणे","पेण पोलीस ठाणे","उरण पोलीस ठाणे","कर्जत पोलीस ठाणे","खालापूर पोलीस ठाणे","माणगाव पोलीस ठाणे","रोहा पोलीस ठाणे","तळा पोलीस ठाणे","महड पोलीस ठाणे","म्हसळा पोलीस ठाणे","श्रीवर्धन पोलीस ठाणे","पोलादपूर पोलीस ठाणे","नेरळ पोलीस ठाणे","खोपोली पोलीस ठाणे","वडखळ पोलीस ठाणे","पोयनाड पोलीस ठाणे","मांडवा पोलीस ठाणे","रेवदंडा पोलीस ठाणे","पाली पोलीस ठाणे","महाड एम आय डी सी पोलीस ठाणे","महाड तालुका पोलीस ठाणे","महाड शहर पोलीस ठाणे","दिघी सागरी पोलीस ठाणे","गोरेगाव पोलीस ठाणे","नागोठणे पोलीस ठाणे","माथेरान पोलीस ठाणे"],
+        "navi mumbai": ["खारघर पोलीस ठाणे","कळंबोली पोलीस ठाणे","खांदेश्वर पोलीस ठाणे","पनवेल शहर पोलीस ठाणे","पनवेल तालुका पोलीस ठाणे","कामोठे पोलीस ठाणे","तळोजा पोलीस ठाणे"],
 
 }
 function makeSubmenu(value) {
@@ -212,9 +215,7 @@ document.getElementById("citySelect").selectedIndex = 0;
                       <!-- <i class="right fas fa-angle-left"></i> -->
                     </p>
                   </a>
-
                 </li>
-                
               </ul>
             </li>
             <li class="nav-item">
@@ -378,10 +379,18 @@ document.getElementById("citySelect").selectedIndex = 0;
 
                       </div>
             
-                    <div class="form-group">
+                      <div class=" d-flex form-group " style="margin-left: -12px;">
+                    <div class="form-group col-6">
                       <label for="exampleनोंद वही क्र.">नोंद वही क्र.</label>
                       <input type="Textbox" required class="form-control" value="<?php echo $book_no?>" name="book_no" id="exampleInputनोंद वही क्र."
                         placeholder="">
+                    </div>
+                      
+                      <div class="form-group col-6">
+                        <label for="exampleदिनांक">वर्ष</label>
+                        <input required class="form-control " value="<?php echo  $year ?>" name="year" id="exampleदिनांक" placeholder="" type="number" min="1900" max="2099" step="1" >
+                      </div>
+
                     </div>
 
                     <div class=" d-flex form-group " style="margin-left: -12px;">

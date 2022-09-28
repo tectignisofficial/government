@@ -49,7 +49,11 @@
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
-
+<style>
+  input[value^="Your Value"] {
+    Your styles
+}
+</style>
 
 </head>
 

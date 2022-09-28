@@ -18,6 +18,7 @@ $district='';
         $complaint_no='';
         $police_station='';
         $section='';
+        $year='';
         $type_of_offence='';
         $complaint_filer_name='';
         $complaint_filer_address='';
@@ -33,6 +34,7 @@ if(isset($_GET['id'])){
    $type_of_offence=explode(",", $arr['type_of_offence']);
    $complaint_filer_name=$arr['complaint_filer_name'];
    $complaint_filer_address=$arr['complaint_filer_address'];
+   $year=$arr['year'];
   }
 }
 
@@ -40,6 +42,7 @@ if(isset($_POST['s_ubmit']) && ($_GET['id'])){
   $id=$_GET['id'];
   $book_no=$_POST['book_no']; 
  $date=$_POST['date'];  
+ $year=$_POST['year'];
  $complaint_no=$_POST['complaint_no'];
  $district=$_POST['district']; 
  $police_station=$_POST['police_station']; 
@@ -52,7 +55,7 @@ if(isset($_POST['s_ubmit']) && ($_GET['id'])){
  {  
   $chk .= $chk1.",";  
  }  
-   $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',complaint_filer_address='$complaint_filer_address',type_of_offence='$chk' where id='$id'");
+   $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',year='$year',complaint_filer_address='$complaint_filer_address',type_of_offence='$chk' where id='$id'");
    if($sql==1){
        header("location:form2.php?eid=".$id);
    }
@@ -348,11 +351,18 @@ echo mysqli_query($conn);
                                         </ul>
 
                       </div>
-            
-                    <div class="form-group">
+                    <div class=" d-flex form-group " style="margin-left: -12px;">
+                    <div class="form-group col-6">
                       <label for="exampleनोंद वही क्र.">नोंद वही क्र.</label>
                       <input type="Textbox" required class="form-control" value="<?php echo $book_no?>" name="book_no" id="exampleInputनोंद वही क्र."
                         placeholder="">
+                    </div>
+                      
+                      <div class="form-group col-6">
+                        <label for="exampleदिनांक">वर्ष</label>
+                        <input required class="form-control " value="<?php echo  $year ?>" name="year" id="exampleदिनांक" placeholder="" type="number" min="1900" max="2099" step="1" >
+                      </div>
+
                     </div>
 
                     <div class=" d-flex form-group " style="margin-left: -12px;">
@@ -390,58 +400,44 @@ echo mysqli_query($conn);
                         <select id="police" class="form-control" name="police_station"  required >
                         <option value="<?php echo $police_station?>"><?php echo $police_station?></option>
                           <option value="" class="raigarh">पर्याय निवडा</option>
-                          <option value="माथेरान" class="raigarh">माथेरान</option>
-                          <option value="कर्जत" class="raigarh">कर्जत</option>
-                          <option value="नेरळ" class="raigarh">नेरळ</option>
-                          <option value="खोपोली" class="raigarh">खोपोली</option>
-                          <option value="खालापूर" class="raigarh">खालापूर</option>
-                          <option value="रसायनी" class="raigarh">रसायनी</option>
-                          <option value="पेण" class="raigarh">पेण</option>
-                          <option value="वडखळ" class="raigarh">वडखळ</option>
-                          <option value="पोयनाड" class="raigarh">पोयनाड</option>
-                          <option value="मांडवा" class="raigarh">मांडवा</option>
-                          <option value="रेवदंडा" class="raigarh">रेवदंडा</option>
-                          <option value="अलिबाग" class="raigarh">अलिबाग</option>
-                          <option value="पाली" class="raigarh">पाली</option>
-                          <option value="पोलादपूर" class="raigarh">पोलादपूर</option>
-                          <option value="महाड एम आय डी सी" class="raigarh">महाड एम आय डी सी</option>
-                          <option value="महाड तालुका" class="raigarh">महाड तालुका</option>
-                          <option value="महाड शहर" class="raigarh">महाड शहर</option>
-                          <option value="श्रीवर्धन" class="raigarh">श्रीवर्धन</option>
-                          <option value="दिघी सागरी" class="raigarh">दिघी सागरी</option>
-                          <option value="म्हसळा" class="raigarh">म्हसळा</option>
-                          <option value="माणगाव" class="raigarh">माणगाव</option>
-                          <option value="गोरेगाव" class="raigarh">गोरेगाव</option>
-                          <option value="तळा" class="raigarh">तळा</option>
-                          <option value="रोहा" class="raigarh">रोहा</option>
-                          <option value="नागोठणे" class="raigarh">नागोठणे</option>
-                          <option value="मुरुड" class="raigarh">मुरुड</option>
+                          <option value="माथेरान पोलीस ठाणे" class="raigarh">माथेरान पोलीस ठाणे</option>
+                          <option value="कर्जत पोलीस ठाणे" class="raigarh">कर्जत पोलीस ठाणे</option>
+                          <option value="नेरळ पोलीस ठाणे" class="raigarh">नेरळ पोलीस ठाणे</option>
+                          <option value="खोपोली पोलीस ठाणे" class="raigarh">खोपोली पोलीस ठाणे</option>
+                          <option value="खालापूर पोलीस ठाणे" class="raigarh">खालापूर पोलीस ठाणे</option>
+                          <option value="रसायनी पोलीस ठाणे" class="raigarh">रसायनी पोलीस ठाणे</option>
+                          <option value="पेण पोलीस ठाणे" class="raigarh">पेण पोलीस ठाणे</option>
+                          <option value="वडखळ पोलीस ठाणे" class="raigarh">वडखळ पोलीस ठाणे</option>
+                          <option value="पोयनाड पोलीस ठाणे" class="raigarh">पोयनाड पोलीस ठाणे</option>
+                          <option value="मांडवा पोलीस ठाणे" class="raigarh">मांडवा पोलीस ठाणे</option>
+                          <option value="रेवदंडा पोलीस ठाणे" class="raigarh">रेवदंडा पोलीस ठाणे</option>
+                          <option value="अलिबाग पोलीस ठाणे" class="raigarh">अलिबाग पोलीस ठाणे</option>
+                          <option value="पाली पोलीस ठाणे" class="raigarh">पाली पोलीस ठाणे</option>
+                          <option value="पोलादपूर पोलीस ठाणे" class="raigarh">पोलादपूर पोलीस ठाणे</option>
+                          <option value="महाड एम आय डी सी पोलीस ठाणे" class="raigarh">महाड एम आय डी सी पोलीस ठाणे</option>
+                          <option value="महाड तालुका पोलीस ठाणे" class="raigarh">महाड तालुका पोलीस ठाणे</option>
+                          <option value="महाड शहर पोलीस ठाणे" class="raigarh">महाड शहर पोलीस ठाणे</option>
+                          <option value="श्रीवर्धन पोलीस ठाणे" class="raigarh">श्रीवर्धन पोलीस ठाणे</option>
+                          <option value="दिघी सागरी पोलीस ठाणे" class="raigarh">दिघी सागरी पोलीस ठाणे</option>
+                          <option value="म्हसळा पोलीस ठाणे" class="raigarh">म्हसळा पोलीस ठाणे</option>
+                          <option value="माणगाव पोलीस ठाणे" class="raigarh">माणगाव पोलीस ठाणे</option>
+                          <option value="गोरेगाव पोलीस ठाणे" class="raigarh">गोरेगाव पोलीस ठाणे</option>
+                          <option value="तळा पोलीस ठाणे" class="raigarh">तळा पोलीस ठाणे</option>
+                          <option value="रोहा पोलीस ठाणे" class="raigarh">रोहा पोलीस ठाणे</option>
+                          <option value="नागोठणे पोलीस ठाणे" class="raigarh">नागोठणे पोलीस ठाणे</option>
+                          <option value="मुरुड पोलीस ठाणे" class="raigarh">मुरुड पोलीस ठाणे</option>
 
                           <!-- ff -->
                           <option value="" class="navi-mumbai" >पर्याय निवडा</option>
-                          <option value="खारघर"  class="navi-mumbai">खारघर</option>
-                          <option value="कळंबोली"  class="navi-mumbai">कळंबोली</option>
-                          <option value="खांदेश्वर"  class="navi-mumbai">खांदेश्वर</option>
-                          <option value="पनवेल शहर"  class="navi-mumbai">पनवेल शहर</option>
-                          <option value="पनवेल तालुका"  class="navi-mumbai">पनवेल तालुका</option>
-                          <option value="कामोठे"  class="navi-mumbai">कामोठे</option>
+                          <option value="खारघर पोलीस ठाणे"  class="navi-mumbai">खारघर पोलीस ठाणे</option>
+                          <option value="कळंबोली पोलीस ठाणे"  class="navi-mumbai">कळंबोली पोलीस ठाणे</option>
+                          <option value="खांदेश्वर पोलीस ठाणे"  class="navi-mumbai">खांदेश्वर पोलीस ठाणे</option>
+                          <option value="पनवेल शहर पोलीस ठाणे"  class="navi-mumbai">पनवेल शहर पोलीस ठाणे</option>
+                          <option value="पनवेल तालुका पोलीस ठाणे"  class="navi-mumbai">पनवेल तालुका पोलीस ठाणे</option>
+                          <option value="कामोठे पोलीस ठाणे"  class="navi-mumbai">कामोठे पोलीस ठाणे</option>
+                          <option value="तळोजा पोलीस ठाणे"  class="navi-mumbai">तळोजा पोलीस ठाणे</option>
                         </select>
                       </div>
-
-                     <!-- <div class="form-group col-6" id="navi-mumbai">
-                        <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
-                       
-                        <select id="police" name="police_station" >
-                        
-                          <option value="" >पर्याय निवडा</option>
-                          <option value="खारघर" >खारघर</option>
-                          <option value="कळंबोली" >कळंबोली</option>
-                          <option value="खांदेश्वर" >खांदेश्वर</option>
-                          <option value="पनवेल शहर" >पनवेल शहर</option>
-                          <option value="पनवेल तालुका" >पनवेल तालुका</option>
-                          <option value="कामोठे" >कामोठे</option>
-                        </select>
-                      </div>-->
                     </div>
 
                     <div class="form-group">

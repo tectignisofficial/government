@@ -1,4 +1,5 @@
-<?php   session_start();  
+<?php  
+include '../api.php';
  include("../include.php");
  if(isset($_POST['update'])){
     $id=$_POST['idtab'];
@@ -14,19 +15,15 @@ else{
 }
  
 }
-// if(isset($_POST['update'])){
-//     $id=$_POST['id'];
-//     $name=$_POST['name'];  
 
-
-//   $sql=mysqli_query($conn,"UPDATE `member_img` SET `name`='$name' where id='$id'");
-
-//   if($sql==1){	
-//     header("location:member-img.php");
-//   	}else{
-// 		echo "<script>alert('Something went wrong');</script>";
-// 	}
-// }
+$role='';
+       $email=$_SESSION['use'];
+       $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
+       while($res=mysqli_fetch_array($sql)){
+         $role=$res['role'];
+       }
+if (mysqli_num_rows($complaints)>0){
+}
 ?>
 
 
@@ -53,10 +50,6 @@ else{
 <div class="wrapper">
 
  <!-- Preloader -->
- <!-- <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="../dist/img/government.png" alt="Atrocity" height="60" width="60">
-    </div> -->
-    
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <!-- Left navbar links -->
@@ -68,8 +61,6 @@ else{
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-  
-
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt"></i>

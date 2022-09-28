@@ -134,8 +134,14 @@ if (!$conn) {
                 if(isset($_POST['submi_t'])){
                 $search=$_POST['search'];
                 $sql=mysqli_query($conn,"select complaint_form.complaint_no as no,complaint_form.book_no as bookno, complaint_form.date as dat,image.caseid as cid,image.status as status from complaint_form inner join image on image.caseid=complaint_form.id where complaint_form.complaint_no like '%$search%'");
-                $arr=mysqli_fetch_array($sql)
+                $arr=mysqli_fetch_array($sql);
+                $num=mysqli_num_rows($sql);
+                if($num==0){
+                  echo '<div style="text-align:center;margin-top:50px">No Record Found</div>';
+                }
+                else{
                 ?>
+
               <table class="table table-striped ">
                 <thead>
                   <tr>
@@ -153,30 +159,30 @@ if (!$conn) {
                   <tr>
                     <th scope="col">पैसे भरल्याची स्थिती</th>
                     <td>
-
-                      <?php echo $arr['status'] ?>
+                      <?php $payStatus= $arr['status'];
+                      if($payStatus=='stage 1'){
+echo $payStatus.' (FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत)';
+                      }else if($payStatus=='stage 2'){
+echo $payStatus.' (FIR चौकशी दाखल)';
+                      }else if($payStatus=='stage 3'){
+echo $payStatus.' (न्यायालयाचा निर्णय)';
+                      }else if($payStatus=='case completed'){
+echo $payStatus;
+                      }
+                      ?>
+                     
                     </td>
 
                   </tr>
                 </thead>
               </table>
-              <?php } ?>
+              <?php } } ?>
             </div>
           </li>
-
-
-
-
         </ul>
-
         <!-- 2nd Row -->
-
       </div>
     </section>
-
-
-
-
     <!-- End Contact Section -->
 
   </main><!-- End #main -->
@@ -190,10 +196,6 @@ if (!$conn) {
         &copy; <strong><span style="color:#5777ba;">Atrocity Raigad</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/ -->
         Designed by <a href="https://tectignis.in/" target="_blank">Tectignis IT Solutions</a>
       </div>
     </div>
