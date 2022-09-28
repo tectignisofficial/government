@@ -327,12 +327,12 @@
           <div class="col-sm-12 col-lg-6 col-md-6">
             <div class="row my-2">
               <div class="col-7">
-                <a href="1989 अॅट्रोसिटी कायदा 1992.pdf" class="btn btn-outline-secondary"><i
+                <a href="1989 अॅट्रोसिटी कायदा 1992.pdf" target="_blank" class="btn btn-outline-secondary"><i
                     class="fa fa-download"></i>1989
                   अॅट्रोसिटी कायदा 1992</a>
               </div>
               <div class="col-5">
-                <a href="2017 09 27.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2017 09 27</a>
+                <a href="2017 09 27.pdf" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2017 09 27</a>
               </div>
             </div>
           </div>
@@ -340,12 +340,12 @@
           <div class="col-sm-12 col-lg-6 col-md-6">
             <div class="row my-2">
               <div class="col-7">
-                <a href="2008 08 08 Atrocity samiti.pdf" class="btn btn-outline-secondary"><i
+                <a href="2008 08 08 Atrocity samiti.pdf" target="_blank" class="btn btn-outline-secondary"><i
                     class="fa fa-download"></i>2008 08 08
                   Atrocity samiti</a>
               </div>
               <div class="col-5">
-                <a href="2016 12 23 Atrocity.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016
+                <a href="2016 12 23 Atrocity.pdf" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016
                   12 23</a>
               </div>
             </div>
@@ -354,11 +354,11 @@
           <div class="col-sm-12 col-lg-6 col-md-6">
             <div class="row my-2">
               <div class="col-7">
-                <a href="201708011134427630.pdf" class="btn btn-outline-secondary"><i
+                <a href="201708011134427630.pdf"  target="_blank" class="btn btn-outline-secondary"><i
                     class="fa fa-download"></i>201708011134427630.pdf</a>
               </div>
               <div class="col-5">
-                <a href="2016 12 23 aaa.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016 12
+                <a href="2016 12 23 aaa.pdf" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016 12
                   23</a>
               </div>
             </div>
@@ -367,13 +367,13 @@
           <div class="col-sm-12 col-lg-6 col-md-6">
             <div class="row my-2">
               <div class="col-7">
-                <a href="2016 12 28 SDO Samiti.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016
+                <a href="2016 12 28 SDO Samiti.pdf" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2016
                   12
                   28 SDO
                   Samiti</a>
               </div>
               <div class="col-5">
-                <a href="2018 04 13 Atrocity.pdf" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2018
+                <a href="2018 04 13 Atrocity.pdf" target="_blank" class="btn btn-outline-secondary"><i class="fa fa-download"></i>2018
                   04 13</a>
               </div>
             </div>
@@ -520,7 +520,7 @@
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span style="color:#5777ba;">Atrocity Raigad</span></strong>. All Rights Reserved
+        &copy; <strong><span style="color:#5777ba;">Atrocity Raigad</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

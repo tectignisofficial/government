@@ -187,14 +187,14 @@ if (!$conn) {
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span style="color:#5777ba;">Atrocity Raigad</span></strong>. All Rights Reserved
+        &copy; <strong><span style="color:#5777ba;">Atrocity Raigad</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/ -->
-        Designed by <a href="https://tectignis.in/">Tectignis IT Solutions</a>
+        Designed by <a href="https://tectignis.in/" target="_blank">Tectignis IT Solutions</a>
       </div>
     </div>
   </footer><!-- End Footer -->
