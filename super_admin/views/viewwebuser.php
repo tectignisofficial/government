@@ -5,12 +5,10 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
  header("Location:login.php"); 
 }
 
-
-
 if (mysqli_num_rows($webresult)>0){
 }
 
-if($_GET['action']=='delete' && $_GET['id']){
+if(isset($_GET['id'])){
   $id=$_GET['id'];
   $sql=mysqli_query($conn,"delete from webuser where id='$id'");
   }

@@ -344,7 +344,7 @@ document.getElementById("citySelect").selectedIndex = 0;
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a></li>
-                                            <li  class="active" id="account"><strong>सरकारी प्रपत्र</strong></li>
+                                            <li  class="active" id="account"><strong>/सरकारी प्रपत्र</strong></li>
                 <li class="breadcrumb-item active"></li>
               </ol>
             </div>
