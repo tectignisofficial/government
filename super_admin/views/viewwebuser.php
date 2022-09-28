@@ -267,7 +267,7 @@ if($_GET['action']=='delete' && $_GET['id']){
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">मुख्यपृष्ठ</a></li>
+                  <li class="breadcrumb-item"><a href="index.php">मुख्यपृष्ठ</a></li>
                   <li class="breadcrumb-item active">माहिती तक्ता</li>
                 </ol>
               </div>
@@ -363,10 +363,11 @@ if($_GET['action']=='delete' && $_GET['id']){
       </div>
       <!-- /.content-wrapper -->
       <footer class="main-footer">
-      <strong>Copyright &copy; <?php echo date('Y'); ?></strong>
+      <strong>&copy; <?php echo date('Y'); ?></strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
-        Designd by Tectignis It Solutions</b>
+      Designd by <a href="https://tectignis.in/" target="_blank" style="color: #869099; text-decoration:none">Tectignis It Solutions</b></a>
+
       </div>
     </footer>
 
