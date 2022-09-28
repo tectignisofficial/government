@@ -534,10 +534,10 @@ echo mysqli_query($conn);
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-      <strong>Copyright &copy; <?php echo date('Y'); ?></strong>
+      <strong> &copy; <?php echo date('Y'); ?></strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
-        Designd by Tectignis It Solutions</b>
+        Designd by <a href="https://tectignis.in/" target="_blank" style="color: #869099; text-decoration:none">Tectignis It Solutions</a>
       </div>
     </footer>
 
