@@ -5,17 +5,13 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 {
  header("Location:../login.php"); 
 }
-$role='';
-       $email=$_SESSION['use'];
-       $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
-       while($res=mysqli_fetch_array($sql)){
-         $role=$res['role'];
-       }
-/*if(isset($_GET['datasearch'])){
-  $datasearch=$_GET['datasearch'];
-  $sql=mysqli_query($conn,"select * from complaint_form where date ");
-}*/
+$district='';
+$email=$_SESSION['use'];
+$sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
 
+while($res=mysqli_fetch_array($sql)){
+  $district=$res['district'];
+}
 
 ?>
 
@@ -128,7 +124,7 @@ $role='';
             <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>-->
           <div class="info">
-            <a href="#" class="d-block" style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $role; ?></a>
+            <a href="#" class="d-block" style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $district; ?></a>
           </div>
         </div>
 
@@ -220,7 +216,7 @@ $role='';
                 </li>
               </ul>
             </li>
-
+ 
             <li class="nav-item">
               <a href="#" class="nav-link ">
                 <i class=" nav-icon fas fa-landmark "></i>

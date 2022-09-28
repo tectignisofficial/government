@@ -286,6 +286,16 @@ if (mysqli_num_rows($complaints)>0){
 
               </ul>
             </li>
+            </li>
+            <li class="nav-item">
+              <a href="../member-img.php" class="nav-link">
+              <i class="nav-icon fa fa-image"></i>
+                <p>
+                  सदस्य प्रतिमा
+                </p>
+              </a>
+           
+            </li>
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
                 <i class=" nav-icon fas fa-sign-out-alt"></i>
