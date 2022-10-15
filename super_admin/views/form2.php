@@ -440,13 +440,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                     </tr>
                     <?php $count++;
                   } ?>
-                    <tr class="expandable-body d-contents" >
-                      <td colspan="7">
-                        <p>
-                         गुन्हेगारास गुन्हा मान्य आहे.
-                        </p>
-                      </td>
-                    </tr>
+
                     
                   </tbody>
                 </table>
