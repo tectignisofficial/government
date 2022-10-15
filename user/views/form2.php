@@ -468,13 +468,7 @@ $district='';
                     </tr>
                     <?php $count++;
                   } ?>
-                    <tr class="expandable-body d-contents" >
-                      <td colspan="7">
-                        <p>
-                         गुन्हेगारास गुन्हा मान्य आहे.
-                        </p>
-                      </td>
-                    </tr>
+         
                     
                   </tbody>
                 </table>

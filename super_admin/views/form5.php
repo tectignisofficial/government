@@ -329,7 +329,7 @@ else{
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>समाप्त ऐवजी बँक तपशील</h1>
+                            <h1></h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -362,7 +362,7 @@ else{
                                             
                                             <li class="active" id="payment"><strong>पिडीत व्यक्तीची माहिती</strong></li>
                                             <li class="active" id="confirm"><strong>इतर माहिती </strong></li>
-                                            <li class="active" id="confirm"><strong>समाप्त </strong></li>
+                                            <li class="active" id="confirm"><strong>समाप्त ऐवजी बँक तपशील </strong></li>
     
                                         </ul>
 

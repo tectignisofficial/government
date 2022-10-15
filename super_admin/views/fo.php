@@ -479,13 +479,7 @@ if(isset($_POST['sub_mit']))
                     </tr>
                     <?php $count++;
                   } ?>
-                    <tr class="expandable-body">
-                      <td colspan="7">
-                        <p>
-                         गुन्हेगारास गुन्हा मान्य आहे.
-                        </p>
-                      </td>
-                    </tr>
+              
                     
                   </tbody>
                 </table>
