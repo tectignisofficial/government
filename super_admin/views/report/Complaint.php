@@ -393,7 +393,7 @@ if(isset($_POST['submit1'])){
                 <div class=" card" id="">
                   <div id='DivIdToPrint'>
                     <div class="card-header" style="margin-top:12px">
-                      <h2 class=" text-center fs-1 fw-bold ">विषय क्रमांक - ४.</h2>
+                      <h2 class=" text-center fs-1 fw-bold ">प्रलंबित प्रकरणे</h2>
                       <br>
                       <h5 class=" text-center ">दाखल झालेल्या गुन्हयांप्रमाणे सहाय्य देण्यासाठी / मंजुरीसाठी गुन्हेनिहाय
                         अप्राप्त कागदपत्रांची माहिती माहे ( <?php $dat=$_POST['month']; echo $dat; ?> &
