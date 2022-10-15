@@ -312,7 +312,7 @@ $role='';
                                             
                                             <li class="active" id="payment"><strong>पिडीत व्यक्तीची माहिती</strong></li>
                                             <li class="active" id="confirm"><strong>इतर माहिती </strong></li>
-                                            <li class="active" id="confirm"><strong>समाप्त </strong></li>
+                                            <li class="active" id="confirm"><strong>बँक तपशील</strong></li>
     
                                         </ul>
 
