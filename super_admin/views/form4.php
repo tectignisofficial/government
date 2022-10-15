@@ -20,7 +20,9 @@ $role='';
         while($arr=mysqli_fetch_array($sql)){
         $image=$arr['image'];
         $discription=$arr['discription'];
-        $payStatus=$arr['payStatus'];
+        $payStatus='';
+
+        // $payStatus=$arr['payStatus'];
         }
       
 
