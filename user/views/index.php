@@ -561,29 +561,7 @@
                 
               </div>
             </div>
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box" style="background-color:#0D7AA6; color:white;">
-                <div class="inner">
-                
-                <?php
-                if(isset($_POST['year'])){
-                  $date = $_POST['year'];
-                  $query2=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND year(complaint_form.date)='$date' and status='case completed'");
-                }else{
-                  $query2=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where  district='$district' AND year(complaint_form.date)='$currentDate' and status='case completed'");
-                }
-                  $count11=mysqli_num_rows($query2);
-                  ?>
-                  <h3><?php echo $count11 ?></h3>
-                  <p>अर्थसहयय्य रक्कम निधी परिपूर्ण</p>
-                </div>
-                <div class="icon">
-               
-                </div>
-
-              </div>
-            </div>
+          
           </div>
            </div>
           <!-- /.row -->     

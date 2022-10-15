@@ -31,7 +31,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
         if(isset($_POST['id']))  
         {  
          $id=$_POST['id'];
-         $caseid=$_POST['caseid'];
+        //  $caseid=$_POST['caseid'];
          $criminal_name=$_POST['criminal_name'];
          $criminal_address=$_POST['criminal_address'];
          $criminal_age=$_POST['criminal_age'];
@@ -430,7 +430,6 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                     while($arr=mysqli_fetch_array($sql)){
                     ?>
                     <tr >
-                      <td><?php echo $count;?></td>
                       <td><?php echo $arr['caseid'];?></td>
                       <td><?php echo $arr['criminal_name'];?></td>
                       <td><?php echo $arr['criminal_address'];?></td>

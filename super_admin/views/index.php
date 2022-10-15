@@ -21,9 +21,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Atrocity Raigad | Dashboard</title>
-  <link rel="shortcut icon" type="image/png" href="../dist/img/government.png"/>
+  <link rel="shortcut icon" type="image/png" href="../dist/img/government.png" />
 
-  
+
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -67,7 +67,7 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-  
+
 
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -86,7 +86,7 @@
       <a href="index.php" class="brand-link">
         <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light" >Atrocity Raigad</span>
+        <span class="brand-text font-weight-light">Atrocity Raigad</span>
       </a>
 
       <!-- Sidebar -->
@@ -97,7 +97,8 @@
             <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>-->
           <div class="info">
-            <a href="#" class="d-block" style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $role; ?></a>
+            <a href="#" class="d-block"
+              style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $role; ?></a>
           </div>
         </div>
 
@@ -113,14 +114,14 @@
 
             <li class="nav-item menu-open">
               <a href="index.php" class="nav-link active">
-                 <i class="nav-icon fas fa-tachometer-alt"></i> 
-               
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+
                 <p>
-                    मुख्यपृष्ठ 
+                  मुख्यपृष्ठ
                   <!-- <i class="right fas fa-angle-left"></i> -->
                 </p>
               </a>
-           
+
             </li>
 
             <li class="nav-item">
@@ -137,14 +138,14 @@
                 <li class="nav-item menu-open">
                   <a href="form1.php" class="nav-link">
                     <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
-                    <p >
-                    नोंदणी करा
+                    <p>
+                      नोंदणी करा
                       <!-- <i class="right fas fa-angle-left"></i> -->
                     </p>
                   </a>
 
                 </li>
-                
+
               </ul>
             </li>
             <li class="nav-item">
@@ -168,7 +169,7 @@
                     <p>अहवाल २</p>
                   </a>
                 </li>
-                
+
                 <li class="nav-item">
                   <a href="report/R4.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
@@ -194,7 +195,7 @@
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
-                  वापरकर्ता                                                                                                                                                                                                                                
+                  वापरकर्ता
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
@@ -207,30 +208,30 @@
                     </p>
                   </a>
                 </li>
-                
+
               </ul>
             </li>
             <li class="nav-item">
 
-            <a href="#" class="nav-link ">
-              <i class=" nav-icon fas fa-landmark "></i>
-              <p>
-                बँक
-                <i class="right fas fa-angle-left"></i>
-                <!-- <span class="right badge badge-danger">New</span> -->
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-            <a href="report/r1opy.php" class="nav-link">
-            <i class="far fa-circle nav-icon"></i> 
-              <p>
-              बँक माहिती
-              </p>
-            </a>
+              <a href="#" class="nav-link ">
+                <i class=" nav-icon fas fa-landmark "></i>
+                <p>
+                  बँक
+                  <i class="right fas fa-angle-left"></i>
+                  <!-- <span class="right badge badge-danger">New</span> -->
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="report/r1opy.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      बँक माहिती
+                    </p>
+                  </a>
 
-            </li>
-            <!-- <li class="nav-item"> 
+                </li>
+                <!-- <li class="nav-item"> 
             <a href="report/payment.php" class="nav-link">
             <i class=" far fa-circle nav-icon"></i> 
               <p>
@@ -239,26 +240,26 @@
             </a>
 
             </li>-->
-              
-            </ul>
+
+              </ul>
             </li>
             <li class="nav-item">
               <a href="member-img.php" class="nav-link">
-              <i class="nav-icon fa fa-image"></i>
+                <i class="nav-icon fa fa-image"></i>
                 <p>
                   सदस्य प्रतिमा
                 </p>
               </a>
-           
+
             </li>
             <li class="nav-item">
               <a href="../logout.php" class="nav-link">
-              <i class=" nav-icon fas fa-sign-out-alt"></i> 
+                <i class=" nav-icon fas fa-sign-out-alt"></i>
                 <p>
-                     बाहेर पडा  
+                  बाहेर पडा
                 </p>
               </a>
-           
+
             </li>
           </ul>
         </nav>
@@ -280,13 +281,16 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
               <form method="post" id="myForm">
-              <div class="form-group text-right d-flex">
-                <label class="mr-4 mt-auto" style="width: -webkit-fill-available;">वर्ष निवडा</label>
-                        <input class="yearselect form-control"  id="year" name="year" value="2022">
-                      </div>
-               </form>
+                <div class="form-group text-right d-flex">
+                  <label class="mr-4 mt-auto" style="width: -webkit-fill-available;">वर्ष निवडा</label>
+                  <input class="yearselect form-control" id="year" name="year" value="2022">
+                </div>
+              </form>
             </div>
-          </div><!-- /.row -->
+          </div>
+          
+            <H4 id="txt_name"></H4>
+         <!-- /.row -->
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
@@ -300,7 +304,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                <?php
+                  <?php
                 $currentDate=date('Y');
                 if(isset($_POST['year'])){
                   $date = $_POST['year'];
@@ -315,7 +319,7 @@
                   <p>शिवीगाळ</p>
                 </div>
                 <div class="icon">
-              
+
                 </div>
 
               </div>
@@ -325,7 +329,7 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                <?php
+                  <?php
                 if(isset($_POST['year'])){
                   $date = $_POST['year'];
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='मारहाण,'");
@@ -339,7 +343,7 @@
                   <p>मारहाण</p>
                 </div>
                 <div class="icon">
-              
+
                 </div>
 
               </div>
@@ -349,7 +353,7 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                <?php
+                  <?php
                 if(isset($_POST['year'])){
                   $date = $_POST['year'];
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='जाळपोळ,'");
@@ -362,7 +366,7 @@
                   <p>जाळपोळ</p>
                 </div>
                 <div class="icon">
-               
+
                 </div>
 
               </div>
@@ -372,7 +376,7 @@
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                <?php
+                  <?php
                 if(isset($_POST['year'])){
                   $date = $_POST['year'];
                   $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='खुन,'");
@@ -385,25 +389,20 @@
                   <p>खून</p>
                 </div>
                 <div class="icon">
-                 
+
                 </div>
 
               </div>
             </div>
             <!-- ./col -->
           </div>
-          <!-- /.row -->     
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          <!-- Main row -->
-
-           <!--row start-->
-           <div class="row">
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box" style="background-color:#a632a8; color:white;">
-                <div class="inner">
+          <!-- /.row -->
+          <!-- /.card-body -->
+          <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box" style="background-color:#a632a8; color:white;">
+              <div class="inner">
                 <?php
                  if(isset($_POST['year'])){
                   $date = $_POST['year'];
@@ -413,21 +412,21 @@
                  }
                   $count4=mysqli_num_rows($query);
                   ?>
-                  <h3><?php echo $count4 ?></h3>
+                <h3><?php echo $count4 ?></h3>
 
-                  <p>बलात्कार</p>
-                </div>
-                <div class="icon">
-              
-                </div>
+                <p>बलात्कार</p>
+              </div>
+              <div class="icon">
 
               </div>
+
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box "  style="background-color:#025669; color:white;">
-                <div class="inner">
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box " style="background-color:#025669; color:white;">
+              <div class="inner">
                 <?php
                if(isset($_POST['year'])){
                 $date = $_POST['year'];
@@ -437,21 +436,21 @@
                 }
                   $count5=mysqli_num_rows($query);
                   ?>
-                  <h3><?php echo $count5 ?></h3>
+                <h3><?php echo $count5 ?></h3>
 
-                  <p> विनयभंग</p>
-                </div>
-                <div class="icon">
-              
-                </div>
+                <p> विनयभंग</p>
+              </div>
+              <div class="icon">
 
               </div>
+
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box "style="background-color:#FF7514; color:white;">
-                <div class="inner">
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box " style="background-color:#FF7514; color:white;">
+              <div class="inner">
                 <?php
                 if(isset($_POST['year'])){
                   $date = $_POST['year'];
@@ -461,39 +460,46 @@
                 }
                   $count6=mysqli_num_rows($query);
                   ?>
-                  <h3><?php echo $count6 ?></h3>
+                <h3><?php echo $count6 ?></h3>
 
-                  <p>इतर</p>
-                </div>
-                <div class="icon">
-               
-                </div>
+                <p>इतर</p>
+              </div>
+              <div class="icon">
 
               </div>
+
             </div>
           </div>
-          <!-- /.row -->     
-              <!-- /.card-body -->
-<!--row close-->
+        </div>
+        </div>
+        <!-- /.card -->
+        <!-- Main row -->
 
-<div class="content-header" style="text-align:left">
+        <!--row start-->
+     
+        <!-- /.row -->
+        <!-- /.card-body -->
+        <!--row close-->
+
+        <div class="content-header" style="text-align:left">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">अर्थसहयय्य रक्कम निधी टप्पे</h1>
+              </div><!-- /.col -->
+              <!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+        </div>
+
+        <!--row start-->
         <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0">अर्थसहयय्य रक्कम निधी टप्पे</h1>
-            </div><!-- /.col -->
-           <!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box " style="background-color:#1C542D; color:white;">
+              <div class="inner">
 
-         <!--row start-->
-              <div class="row">
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box " style="background-color:#1C542D; color:white;">
-                <div class="inner">
-               
                 <?php
                 if(isset($_POST['year'])){
                   $date = $_POST['year'];
@@ -503,22 +509,22 @@
                  }
                   $count8=mysqli_num_rows($query);
                   ?>
-                  <h3><?php echo $count8 ?></h3>
+                <h3><?php echo $count8 ?></h3>
 
-                  <p>अर्थसहयय्य रक्कम निधी टप्पा १</p>
-                </div>
-                <div class="icon">
-              
-                </div>
+                <p>अर्थसहयय्य रक्कम निधी टप्पा १</p>
+              </div>
+              <div class="icon">
 
               </div>
+
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box " style="background-color:#7FB5B5; color:white;">
-                <div class="inner">
-                
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box " style="background-color:#7FB5B5; color:white;">
+              <div class="inner">
+
                 <?php
                if(isset($_POST['year'])){
                 $date = $_POST['year'];
@@ -528,22 +534,22 @@
                 }
                   $count9=mysqli_num_rows($query);
                   ?>
-                  <h3><?php echo $count9 ?></h3>
+                <h3><?php echo $count9 ?></h3>
 
-                  <p>अर्थसहयय्य रक्कम निधी टप्पा २</p>
-                </div>
-                <div class="icon">
-              
-                </div>
+                <p>अर्थसहयय्य रक्कम निधी टप्पा २</p>
+              </div>
+              <div class="icon">
 
               </div>
+
             </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box " style="background-color:#EFA94A; color:white;">
-                <div class="inner">
-                
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box " style="background-color:#EFA94A; color:white;">
+              <div class="inner">
+
                 <?php
                 if(isset($_POST['year'])){
                   $date = $_POST['year'];
@@ -553,71 +559,52 @@
                 }
                   $count10=mysqli_num_rows($query);
                   ?>
-                  <h3><?php echo $count10 ?></h3>
-                  <p>अर्थसहयय्य रक्कम निधी टप्पा ३  </p>
-                </div>
-                <div class="icon">
-               
-                </div>
+                <h3><?php echo $count10 ?></h3>
+                <p>अर्थसहयय्य रक्कम निधी टप्पा ३ </p>
+              </div>
+              <div class="icon">
 
               </div>
-            </div>
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box " style="background-color:#0D7AA6; color:white;">
-                <div class="inner">
-                
-                <?php
-                if(isset($_POST['year'])){
-                  $date = $_POST['year'];
-                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='case completed'");
-                 }else{
-                   $query=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='case completed'");
-                 }
-                  $count10=mysqli_num_rows($query);
-                  ?>
-                  <h3><?php echo $count10 ?></h3>
-                  <p>अर्थसहयय्य रक्कम निधी परिपूर्ण </p>
-                </div>
-                <div class="icon">
-               
-                </div>
 
-              </div>
             </div>
-           
           </div>
-          <!-- /.row -->     
-              <!-- /.card-body -->
-
-            </div>
-          
-         
-         <!--row close-->
 
 
-          <!-- /.row (main row) -->
-        </div><!-- /.container-fluid -->
-      </section>
-      <!-- /.content -->
-
-
+        </div>
+        </div>
+     
+        <!-- /.row -->
+        <!-- /.card-body -->
 
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <strong> &copy; <?php echo date('Y'); ?></strong>
-      All rights reserved.
-      <div class="float-right d-none d-sm-inline-block">
-        Designd by <a href="https://tectignis.in/" target="_blank" style="color: #869099; text-decoration:none">Tectignis It Solutions</b></a>
-      </div>
-    </footer>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+
+    <!--row close-->
+
+
+    <!-- /.row (main row) -->
+  </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+
+
+
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong> &copy; <?php echo date('Y'); ?></strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      Designd by <a href="https://tectignis.in/" target="_blank" style="color: #869099; text-decoration:none">Tectignis
+        It Solutions</b></a>
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
 
@@ -628,7 +615,6 @@
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
     $.widget.bridge('uibutton', $.ui.button)
-
   </script>
   <!-- Bootstrap 4 -->
   <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -658,18 +644,20 @@
   <script src="../dist/js/pages/dashboard.js"></script>
 
   <script src="//code.jquery.com/jquery.min.js"></script>
-<script src="report/year-select.js"></script>
-<script>
- $(document).ready(function() {
-            $('#year').on('change', function() {
-                this.form.submit();
-            });
-        });
+  <script src="report/year-select.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#year').on('change', function () {
+        this.form.submit();
+      });
+      var bla = $(this).val();
+        $('#txt_name').html(bla);
+    });
 
-$('.yearselect').yearselect({
-  selected: 2022
-});
-</script>
+    $('.yearselect').yearselect({
+      selected: 2022
+    });
+  </script>
 </body>
 
 </html>

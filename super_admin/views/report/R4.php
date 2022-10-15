@@ -430,7 +430,7 @@ $year=$_POST['year'];
                             </div>
                         <div class='print-container' id='ToPrint'>
                             <div class='card-header' style='margin-top:12px' > 
-                            <h2 class=' text-center fs-1 fw-bold '>विषय क्रमांक - ४.</h2>
+                            <h2 class=' text-center fs-1 fw-bold '>प्रपत्र ३</h2>
                             <br>
                             <h5 class=' text-center '>विविध कारणांनी अर्थसहाय्यासाठी प्रलंबित असलेली प्रकरणांचा तपशील / तक्त यापुढील </h5>
             

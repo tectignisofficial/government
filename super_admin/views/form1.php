@@ -20,7 +20,7 @@ $role='';
         $year='';
         $type_of_offence='';
         $complaint_filer_name='';
-        $complaint_filer_address='';
+        // $complaint_filer_address='';
 if(isset($_GET['id'])){
   $id=intval($_GET['id']);
   $sql=mysqli_query($conn,"select * from complaint_form where id='$id'");
@@ -32,7 +32,7 @@ if(isset($_GET['id'])){
    $section=$arr['section'];
    $type_of_offence=explode(",", $arr['type_of_offence']);
    $complaint_filer_name=$arr['complaint_filer_name'];
-   $complaint_filer_address=$arr['complaint_filer_address'];
+  //  $complaint_filer_address=$arr['complaint_filer_address'];
    $year=$arr['year'];
   }
 }
@@ -47,14 +47,14 @@ if(isset($_POST['s_ubmit']) && ($_GET['id'])){
  $police_station=$_POST['police_station']; 
  $section=$_POST['section']; 
  $complaint_filer_name=$_POST['complaint_filer_name'];
- $complaint_filer_address=$_POST['complaint_filer_address'];
+//  $complaint_filer_address=$_POST['complaint_filer_address'];
  $checkbox1=$_POST['crime'];  
  $chk="";  
  foreach($checkbox1 as $chk1)  
  {  
   $chk .= $chk1.",";  
  }  
-   $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',year='$year',complaint_filer_address='$complaint_filer_address',type_of_offence='$chk' where id='$id'");
+   $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',year='$year', type_of_offence='$chk' where id='$id'");
    if($sql==1){
        header("location:form2.php?eid=".$id);
    }
@@ -348,7 +348,7 @@ document.getElementById("citySelect").selectedIndex = 0;
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहित</h1>
+              <h1>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहिती</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -488,11 +488,11 @@ document.getElementById("citySelect").selectedIndex = 0;
                         <input type="text" required class="form-control" value="<?php echo  $complaint_filer_name ?>" name="complaint_filer_name" id="exampleदिनांक"
                           placeholder="">
                       </div>
-                      <div class="form-group col-6">
+                      <!-- <div class="form-group col-6">
                         <label for="exampleदिनांक">फिर्यादी चे पत्ता</label>
                         <input type="varchar" required class="form-control " value="<?php echo  $complaint_filer_address ?>" name="complaint_filer_address"
                           id="exampleदिनांक" placeholder="">
-                      </div>
+                      </div> -->
                     </div>
                     <!-- /.card-body -->
                            

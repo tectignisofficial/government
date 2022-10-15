@@ -16,7 +16,7 @@ $district='';
         }
 
         $criminal_name='';
-        $criminal_address='';
+        // $criminal_address='';
         $age='';
         if(isset($_GET['eid'])){
           $eid=intval($_GET['eid']);
@@ -25,20 +25,20 @@ $district='';
             $id=$arr['id'];
             $caseid=$arr['caseid'];
        $criminal_name= $arr['criminal_name'];
-        $criminal_address=$arr['criminal_address'];  
-        $age=$arr['age'] ; 
+        // $criminal_address=$arr['criminal_address'];  
+        // $age=$arr['age'] ; 
        }
         }
 
         if(isset($_POST['id']))  
         {  
          $id=$_POST['id'];
-         $caseid=$_POST['caseid'];
+        //  $caseid=$_POST['caseid'];
          $criminal_name=$_POST['criminal_name'];
-         $criminal_address=$_POST['criminal_address'];
-         $criminal_age=$_POST['criminal_age'];
+        //  $criminal_address=$_POST['criminal_address'];
+        //  $criminal_age=$_POST['criminal_age'];
          
-         $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name',criminal_address='$criminal_address',age='$criminal_age' where id='$id'");
+         $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name' where id='$id'");
         
         if($sql==1)
         {
@@ -54,13 +54,13 @@ $district='';
     if(isset($_POST['su_bmit']))  
   {  
    $criminal_name=$_POST['criminal_name'];
-   $criminal_address=$_POST['criminal_address'];
-   $criminal_age=$_POST['criminal_age'];
+  //  $criminal_address=$_POST['criminal_address'];
+  //  $criminal_age=$_POST['criminal_age'];
 
    if(isset($_GET['eid'])){
-    $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name',criminal_address='$criminal_address',age='$criminal_age' where id='$id'");
+    $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name' where id='$id'");
    }else{
-    $sql= mysqli_query($conn,"INSERT INTO criminal(`caseid`, `criminal_name`, `criminal_address`, `age`) VALUES ('$id','$criminal_name','$criminal_address','$criminal_age')");
+    $sql= mysqli_query($conn,"INSERT INTO criminal(`caseid`, `criminal_name`) VALUES ('$id','$criminal_name')");
   }
     if($sql==1)
     {
@@ -409,11 +409,11 @@ $district='';
                                                 <input type="text" required class="form-control" value="<?php echo $criminal_name ?>" name="criminal_name"
                                                     id="exampleदिनांक" placeholder="">
                                             </div>
-                                            <div class="form-group col-6">
+                                            <!-- <div class="form-group col-6">
                                                 <label for="exampleदिनांक">आरोपीचा पत्ता</label>
                                                 <input type="varchar" value="<?php echo  $criminal_address ?>" required class="form-control"
                                                     name="criminal_address" id="exampleदिनांक" placeholder="">
-                                            </div>
+                                            </div> -->
 
                                         </div>
 
@@ -421,11 +421,11 @@ $district='';
 
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             
-                                            <div class="form-group col-6">
+                                            <!-- <div class="form-group col-6">
                                                 <label for="exampleदिनांक">आरोपीचा वय</label>
                                                 <input type="number" required class="form-control" value="<?php echo $age ?>"
                                                     name="criminal_age" id="exampleदिनांक fff4" placeholder="">
-                                            </div>
+                                            </div> -->
 
                                         </div>
 
@@ -450,9 +450,7 @@ $district='';
                     <tr>
                       <th>अनुक्रमांक</th>
                       <th>criminal Name</th>
-                      <th>criminal Address</th>
-                      <th>criminal Age</th>
-                      
+                     
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -462,11 +460,8 @@ $district='';
                     while($arr=mysqli_fetch_array($sql)){
                     ?>
                     <tr >
-                      <td><?php echo $count;?></td>
                       <td><?php echo $arr['caseid'];?></td>
                       <td><?php echo $arr['criminal_name'];?></td>
-                      <td><?php echo $arr['criminal_address'];?></td>
-                      <td><?php echo $arr['age'];?></td>
                       <td><a href="form2.php?action=edit&eid=<?php echo $arr['id']; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>
 		                        </a></td>

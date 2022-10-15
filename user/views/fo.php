@@ -421,14 +421,14 @@ if(isset($_POST['sub_mit']))
                                             <div class="form-group col-2">
                                                 <label for="Exampleउप विभागा चे नाव">जातीचा दाखला </label>
                                                 <div class="custom-control custom-radio">
-                                                <input class="custom-control-input" type="radio" <?php if($_GET['eid']){if($caste_certificate=='होय') {?> <?php echo "checked";?> <?php }}?>  id="customRadio1"
+                                                <input class="custom-control-input" type="radio"  id="customRadio1"
                                                         value="होय" name="caste_certificate">
                                                     <label for="customRadio1" class="custom-control-label">होय </label>
                                                     
                                                 </div>
                                                 <div class="custom-control custom-radio">
                                                     <input class="custom-control-input" type="radio" id="customRadio2"
-                                                        value="नाही" <?php if($_GET['eid']){if($caste_certificate=='नाही') {?> <?php echo "checked";?> <?php }}?> name="caste_certificate">
+                                                        value="नाही" name="caste_certificate">
                                                     <label for="customRadio2" class="custom-control-label">नाही </label>
                                                 </div>
                                             </div>
@@ -436,12 +436,12 @@ if(isset($_POST['sub_mit']))
                                                 <label for="Exampleउप विभागा चे नाव">आधार कार्ड </label>
                                                 <div class="custom-control custom-radio">
                                                     <input class="custom-control-input" required type="radio"
-                                                        id="customRadio3" value="होय" <?php if($_GET['eid']){if($aadhaar_card=='होय') {?> <?php echo "checked";?> <?php }}?> name="aadhaar_card">
+                                                        id="customRadio3" value="होय" name="aadhaar_card">
                                                     <label for="customRadio3" class="custom-control-label">होय</label>
                                                 </div>
                                                 <div class="custom-control custom-radio">
                                                     <input class="custom-control-input" type="radio" id="customRadio4"
-                                                        value="नाही" <?php if($_GET['eid']){if($aadhaar_card=='नाही') {?> <?php echo "checked";?> <?php }}?> name="aadhaar_card">
+                                                        value="नाही" name="aadhaar_card">
                                                     <label for="customRadio4" class="custom-control-label">नाही </label>
                                                 </div>
                                             </div>
@@ -450,12 +450,12 @@ if(isset($_POST['sub_mit']))
                                                 <label for="Exampleगुन्हा नं.">चार्ज शीट </label>
                                                 <div class="custom-control custom-radio">
                                                     <input class="custom-control-input" required type="radio"
-                                                        id="customRadio7" <?php if($_GET['eid']){if($charge_sheet=='होय') {?> <?php echo "checked";?> <?php }}?> value="होय" name="charge_sheet">
+                                                        id="customRadio7" value="होय" name="charge_sheet">
                                                     <label for="customRadio7" class="custom-control-label">होय</label>
                                                 </div>
                                                 <div class="custom-control custom-radio">
                                                     <input class="custom-control-input" required type="radio"
-                                                        id="customRadio8" <?php if($_GET['eid']){if($charge_sheet=='नाही') {?> <?php echo "checked";?> <?php }}?> value="नाही" name="charge_sheet">
+                                                        id="customRadio8" value="नाही" name="charge_sheet">
                                                     <label for="customRadio8" class="custom-control-label">नाही </label>
                                                 </div>
                                             </div>
