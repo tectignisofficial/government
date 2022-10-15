@@ -446,7 +446,7 @@ $year=$_POST['year'];
                   <thead>
                   <tr>
                     <th class='text-center'>अ. क्र.</th>
-                    <th class='text-center'>जिल्याचे नाव</th>
+                    <th class='text-center'>जिल्ह्याचे नाव</th>
                     <th class='text-center' colspan='8'>गुन्हयांचे प्रकार </th>
                   </tr>
                   <tr>

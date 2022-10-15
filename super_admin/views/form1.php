@@ -255,7 +255,7 @@ document.getElementById("citySelect").selectedIndex = 0;
                 <li class="nav-item">
                   <a href="report/Complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Complaint</p>
+                    <p>प्रलंबित प्रकरणे</p>
                   </a>
                 </li>
               </ul>
@@ -348,7 +348,7 @@ document.getElementById("citySelect").selectedIndex = 0;
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहिती</h1>
+              <h1>अनुसूचित जाती/जमाती अत्याचार ग्रस्त फिर्यादीची माहिती</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
