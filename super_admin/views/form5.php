@@ -329,7 +329,7 @@ else{
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहित</h1>
+                            <h1>समाप्त ऐवजी बँक तपशील</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
