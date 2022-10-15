@@ -384,12 +384,12 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 
                                                 <!-- <th class="text-center"rowspan="2">लावलेली कलमे </th>
 					   <th class="text-center"rowspan="2">गुन्हयांचा प्रकार</th>-->
-                                                <th class="text-center" colspan="1">पीहित </th>
+                                                <th class="text-center" colspan="1"></th>
                                                 <th class="text-center" colspan="5">बँक माहिती</th>
                                                 <!--<th class="text-center"colspan="3">Payment Status</th>-->
                                             </tr>
                                             <tr>
-                                                <th class="text-center">नाव</th>
+                                                <th class="text-center">पिडीताचे नाव</th>
                                                 <th class="text-center">Name</th>
                                                 <th class="text-center">Account No.</th>
                                                 <th class="text-center">Bank Name</th>

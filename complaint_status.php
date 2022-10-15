@@ -157,7 +157,7 @@ if (!$conn) {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="col">पैसे भरल्याची स्थिती</th>
+                    <th scope="col">अनुदान रक्कमेची सद्यस्थिती</th>
                     <td>
                       <?php $payStatus= $arr['status'];
                       if($payStatus=='stage 1'){
