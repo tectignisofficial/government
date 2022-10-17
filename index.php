@@ -399,7 +399,7 @@
           <ul>
             <li data-aos="fade-up">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                data-bs-target="#accordion-list-1">या भ्रमणध्वनी ऑफ आजावली </a>
+                data-bs-target="#accordion-list-1">नोंद वही क्रं </a>
               <!--<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
               <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                 <p>
@@ -421,7 +421,17 @@
 
             <li data-aos="fade-up" data-aos-delay="200">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                data-bs-target="#accordion-list-3" class="collapsed">आरोपींची माहिती </a>
+                data-bs-target="#accordion-list-3" class="collapsed">पिडीत व्यक्तींची माहिती</a>
+              <!--<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
+              <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                <p>
+                  अर्थसाहाय्य निधी रकमेच्या टप्प्याची माहिती
+                </p>
+              </div> -->
+            </li>
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                data-bs-target="#accordion-list-3" class="collapsed">आरोपींची माहिती</a>
               <!--<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
               <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                 <p>
@@ -432,7 +442,23 @@
 
             <li data-aos="fade-up" data-aos-delay="300">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                data-bs-target="#accordion-list-4" class="collapsed">अर्थसहाय्य निधी रक्कमेच्या टप्प्यांची माहिती </a>
+
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
                 data-bs-target="#accordion-list-4" class="collapsed">पिडीत व्यक्तीच्या आर्थिक निधीची माहिती </a>
+
+            </li>
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                data-bs-target="#accordion-list-4" class="collapsed">अँप आज्ञावली द्वारे हि सर्व माहिती वरिष्ठ व अधिनस्त कार्यालय वेळोवेळी अद्यावत (Real / Time) करणे.</a>
+
+            </li>
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                data-bs-target="#accordion-list-4" class="collapsed">विविध प्रशासकीय माहिती व अहवाल एका क्लीकवर जनरेट / डाउनलोड करता येईल.</a>
 
             </li>
 
