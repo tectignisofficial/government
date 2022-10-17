@@ -390,7 +390,7 @@ if(isset($_POST['subm_it'])){
                         <option value="stage 1" selected>stage 1 payment</option>
                         <option value="stage 2">stage 2 payment</option>
                         <option value="stage 3">stage 3 payment</option>
-                        <option value="case completed">Case Completed</option>
+                        <option value="Stage 4">Stage 4</option>
                       </select>
                     </div>
                     
