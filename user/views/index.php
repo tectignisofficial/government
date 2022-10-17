@@ -479,7 +479,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">अर्थसहयय्य रक्कम निधी टप्पे</h1>
+              <h1 class="m-0">अर्थसहाय्य रक्कम निधी टप्पे</h1>
             </div><!-- /.col -->
            <!-- /.col -->
           </div><!-- /.row -->
@@ -504,7 +504,7 @@
                   ?>
                   <h3><?php echo $count8 ?></h3>
 
-                  <p>अर्थसहयय्य रक्कम निधी टप्पा १</p>
+                  <p>अर्थसहाय्य रक्कम निधी टप्पा १</p>
                 </div>
                 <div class="icon">
               
@@ -529,7 +529,7 @@
                   ?>
                   <h3><?php echo $count9 ?></h3>
 
-                  <p>अर्थसहयय्य रक्कम निधी टप्पा २</p>
+                  <p>अर्थसहाय्य रक्कम निधी टप्पा २</p>
                 </div>
                 <div class="icon">
               
@@ -553,7 +553,7 @@
                   $count10=mysqli_num_rows($query);
                   ?>
                   <h3><?php echo $count10 ?></h3>
-                  <p>अर्थसहयय्य रक्कम निधी टप्पा ३ </p>
+                  <p>अर्थसहाय्य रक्कम निधी टप्पा ३ </p>
                 </div>
                 <div class="icon">
                
