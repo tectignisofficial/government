@@ -1,25 +1,60 @@
 <?php
 include '../../include.php';
-// if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
-// {
-//  header("Location:../login.php"); 
-// }
+if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+{
+ header("Location:../login.php"); 
+}
   
-if(isset($_POST['stage1'])){
+if(isset($_POST['Stage1update'])){
 
     $Stage1=$_POST['Stage1'];
+    $sql="UPDATE `stages` SET `message`='$Stage1' where stage='stage1'";
     
-      $sql="UPDATE `stages` SET `message`='$Stage1' where stage='1' ";
-    
-      if (mysqli_query($conn, $sql)){
+    if (mysqli_query($conn, $sql)){
         header("location:grant.php");
      } else {
         echo "connection failed !";
      }
      
     }
+    if(isset($_POST['Stage2update'])){
 
+        $Stage2=$_POST['Stage2'];
+        $sql="UPDATE `stages` SET `message`='$Stage2' where stage='stage2'";
+        
+        if (mysqli_query($conn, $sql)){
+            header("location:grant.php");
+         } else {
+            echo "connection failed !";
+         }
+         
+        }
+        if(isset($_POST['Stage3update'])){
+
+            $Stage3=$_POST['Stage3'];
+            $sql="UPDATE `stages` SET `message`='$Stage3' where stage='stage3'";
+            
+            if (mysqli_query($conn, $sql)){
+                header("location:grant.php");
+             } else {
+                echo "connection failed !";
+             }
+             
+            }
+            if(isset($_POST['Stage4update'])){
+
+                $Stage4=$_POST['Stage4'];
+                $sql="UPDATE `stages` SET `message`='$Stage4' where stage='stage4'";
+                
+                if (mysqli_query($conn, $sql)){
+                    header("location:grant.php");
+                 } else {
+                    echo "connection failed !";
+                 }
+                 
+                }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -178,14 +213,14 @@ if(isset($_POST['stage1'])){
 
                         <li class="nav-item">
 
-              <a href="form1.php" class="nav-link ">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                नोंदणी करा
-                  <!-- <span class="right badge badge-danger">New</span> -->
-                </p>
-              </a>
-            </li>
+                            <a href="form1.php" class="nav-link ">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    नोंदणी करा
+                                    <!-- <span class="right badge badge-danger">New</span> -->
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-chart-pie"></i>
@@ -332,17 +367,17 @@ if(isset($_POST['stage1'])){
                         <div class="col-12">
                             <div class="container my-2">
                                 <?php  
-$sql=mysqli_query($conn,"select * from stages where stage='stage1'");
-$Stage=mysqli_fetch_array($sql);
-$sql=mysqli_query($conn,"select * from stages where stage='stage2'");
-$Stage2=mysqli_fetch_array($sql);
+                                    $sql=mysqli_query($conn,"select * from stages where stage='stage1'");
+                                    $Stage=mysqli_fetch_array($sql);
+                                    $sql=mysqli_query($conn,"select * from stages where stage='stage2'");
+                                    $Stage2=mysqli_fetch_array($sql);
 
-$sql=mysqli_query($conn,"select * from stages where stage='stage3'");
-$Stage3=mysqli_fetch_array($sql);
-$sql=mysqli_query($conn,"select * from stages where stage='stage4'");
-$Stage4=mysqli_fetch_array($sql);
+                                    $sql=mysqli_query($conn,"select * from stages where stage='stage3'");
+                                    $Stage3=mysqli_fetch_array($sql);
+                                    $sql=mysqli_query($conn,"select * from stages where stage='stage4'");
+                                    $Stage4=mysqli_fetch_array($sql);
 
-?>
+                                    ?>
                                 <div class="card">
                                     <div class="card-header">
                                         <h3 class="card-title">अनुदान</h3>
@@ -366,7 +401,7 @@ $Stage4=mysqli_fetch_array($sql);
                                                 </div>
                                                 <div class="col-2">
                                                     <button type="submit" class="btn btn-primary"
-                                                        name="Stage1">Update</button>
+                                                        name="Stage1update">Update</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -385,7 +420,7 @@ $Stage4=mysqli_fetch_array($sql);
                                                     </div>
                                                 </div>
                                                 <div class="col-2">
-                                                    <button class="btn btn-primary" name="Stage2">Update</button>
+                                                    <button class="btn btn-primary" name="Stage2update">Update</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -404,7 +439,7 @@ $Stage4=mysqli_fetch_array($sql);
                                                     </div>
                                                 </div>
                                                 <div class="col-2">
-                                                    <button class="btn btn-primary " name="Stage3">Update</button>
+                                                    <button class="btn btn-primary " name="Stage3update">Update</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -423,14 +458,14 @@ $Stage4=mysqli_fetch_array($sql);
                                                     </div>
                                                 </div>
                                                 <div class="col-2">
-                                                    <button class="btn btn-primary " name="Stage4">Update</button>
+                                                    <button class="btn btn-primary " name="Stage4update">Update</button>
                                                 </div>
                                             </div>
                                         </form>
 
                                         <!-- Stage 4 -->
 
-                                      
+
                                         <!-- Stage 5 -->
 
                                     </div>
