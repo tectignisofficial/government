@@ -346,7 +346,7 @@ if(isset($_POST['sub_mit']))
                                             
                                             <li class="active" id="payment"><strong>पिडीत व्यक्तीची माहिती</strong></li>
                                             <li id="confirm"><strong>इतर माहिती </strong></li>
-                                            <li id="confirm"><strong>समाप्त </strong></li>
+                                            <li id="confirm"><strong>बँक तपशील</strong></li>
     
                                         </ul>
 
