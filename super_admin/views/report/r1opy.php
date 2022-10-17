@@ -15,6 +15,21 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
        }
 
 
+       if(isset($_GET['delid'])){
+        $id=$_GET['delid'];
+        $sql=mysqli_query($conn,"DELETE FROM `bank_detail` WHERE id='$id'");
+      
+        if($sql)
+                  {
+                  header("location:r1opy.php");
+                  }
+                  else{
+                  echo"<script> alert('Not Deleted');</script>";    
+                  }
+      
+      }
+
+
 
 //if (mysqli_num_rows($bank_detail)){
 //}
@@ -381,6 +396,8 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                                                 <th class="text-center">Bank Name</th>
                                                 <th class="text-center">Branch Name</th>
                                                 <th class="text-center">IFSC Code</th>
+                                                <th class="text-center">Action</th>
+
                                                 <!--<th class="text-center">Stage1</th>
 					  <th class="text-center">Stage2</th>
 					  <th class="text-center">Stage3</th>-->
@@ -415,7 +432,7 @@ $no_of_page=ceil($total_row/$per_page);
                                             <?php
 if(isset($_POST['submit'])){
   $search=$_POST['search'];
-  $bank_detail = mysqli_query($conn,"select bank_detail.account_holder_name as account_holder_name,bank_detail.account_no as account_no,bank_detail.bank_name as bank_name,bank_detail.branch_name as branch_name,bank_detail.ifsc_code as ifsc_code,bank_detail.stage_1 as stage_1,bank_detail.stage_2 as stage_2,bank_detail.stage_3 as stage_3,complaint_form.book_no as book_no,complaint_form.date as date,complaint_form.district as district,complaint_form.police_station as police_station,complaint_form.complaint_no as complaint_no,complaint_form.complaint_filer_name as complain_name,complaint_form.complaint_filer_address as complain_address,image.discription as discription,victim.name as vname from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid inner join image on complaint_form.id=image.caseid inner join victim on victim.caseid=complaint_form.id where complaint_form.complaint_no like '%$search%'");
+  $bank_detail = mysqli_query($conn,"select bank_detail.account_holder_name as account_holder_name,bank_detail.account_no as account_no,bank_detail.bank_name as bank_name,bank_detail.branch_name as branch_name,bank_detail.ifsc_code as ifsc_code,bank_detail.stage_1 as stage_1,bank_detail.stage_2 as stage_2,bank_detail.stage_3 as stage_3,complaint_form.book_no as book_no,complaint_form.date as date,bank_detail.id as cid,complaint_form.district as district,complaint_form.police_station as police_station,complaint_form.complaint_no as complaint_no,complaint_form.complaint_filer_name as complain_name,complaint_form.complaint_filer_address as complain_address,image.discription as discription,victim.name as vname from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid inner join image on complaint_form.id=image.caseid inner join victim on victim.caseid=complaint_form.id where complaint_form.complaint_no like '%$search%'");
   $i=1;
 											while($row = mysqli_fetch_array($bank_detail)) {?>
                                             <tr>
@@ -431,6 +448,10 @@ if(isset($_POST['submit'])){
                                                 <td class="text-center"><?php echo $row['bank_name'];?></td>
                                                 <td class="text-center"><?php echo $row['branch_name'];?></td>
                                                 <td class="text-center"><?php echo $row['ifsc_code'];?></td>
+                                                <td><a href="r1opy.php?delid=<?php echo $row["cid"]; ?>" title=""
+                                class="btn btn-danger btn-xs delete_purchase">
+                                <i class="fas fa-trash"></i>
+                              </a></td>
 
 
 
@@ -440,7 +461,7 @@ if(isset($_POST['submit'])){
          
   
 }
-					  $bank_detail = mysqli_query($conn,"select bank_detail.account_holder_name as account_holder_name,bank_detail.account_no as account_no,bank_detail.bank_name as bank_name,bank_detail.branch_name as branch_name,bank_detail.ifsc_code as ifsc_code,bank_detail.stage_1 as stage_1,bank_detail.stage_2 as stage_2,bank_detail.stage_3 as stage_3,complaint_form.book_no as book_no,complaint_form.date as date,complaint_form.district as district,complaint_form.police_station as police_station,complaint_form.complaint_no as complaint_no,complaint_form.complaint_filer_name as complain_name,complaint_form.complaint_filer_address as complain_address,image.discription as discription,victim.name as vname from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid inner join image on complaint_form.id=image.caseid left join victim on victim.caseid=complaint_form.id LIMIT  $start , $per_page");
+					  $bank_detail = mysqli_query($conn,"select bank_detail.account_holder_name as account_holder_name,bank_detail.account_no as account_no,bank_detail.bank_name as bank_name,bank_detail.branch_name as branch_name,bank_detail.ifsc_code as ifsc_code,bank_detail.stage_1 as stage_1,bank_detail.stage_2 as stage_2,bank_detail.stage_3 as stage_3,complaint_form.book_no as book_no,bank_detail.id as cid,complaint_form.date as date,complaint_form.district as district,complaint_form.police_station as police_station,complaint_form.complaint_no as complaint_no,complaint_form.complaint_filer_name as complain_name,complaint_form.complaint_filer_address as complain_address,image.discription as discription,victim.name as vname from bank_detail inner join complaint_form on complaint_form.id=bank_detail.caseid inner join image on complaint_form.id=image.caseid left join victim on victim.caseid=complaint_form.id LIMIT  $start , $per_page");
 					 
 										
                       if(mysqli_num_rows($sql)>0){
@@ -461,6 +482,10 @@ if(isset($_POST['submit'])){
                                                 <td class="text-center"><?php echo $row['bank_name'];?></td>
                                                 <td class="text-center"><?php echo $row['branch_name'];?></td>
                                                 <td class="text-center"><?php echo $row['ifsc_code'];?></td>
+                                                <td><a href="r1opy.php?delid=<?php echo $row["cid"]; ?>" title=""
+                                class="btn btn-danger btn-xs delete_purchase">
+                                <i class="fas fa-trash"></i>
+                              </a></td>
                                                 <!--<td class="text-center"><?php //echo $row['stage_1'];?></td>
                     <td class="text-center"><?php //echo $row['stage_2'];?></td>
                     <td class="text-center"><?php //echo $row['stage_3'];?></td>-->
