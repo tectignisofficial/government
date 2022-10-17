@@ -354,12 +354,12 @@ $district='';
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Account Holder Name</label>
-                                                <input type="text" required class="form-control" value="<?php echo $arr['account_holder_name']; ?>" name="account_name"
+                                                <input type="text"  class="form-control" value="<?php echo $arr['account_holder_name']; ?>" name="account_name"
                                                     id="exampleदिनांक" placeholder="">
                                             </div>
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Account Number</label>
-                                                <input type="varchar" required class="form-control"
+                                                <input type="varchar"  class="form-control"
                                                     name="account_no" value="<?php echo $arr['account_no']; ?>" id="exampleदिनांक" placeholder="">
                                             </div>
 
@@ -367,12 +367,12 @@ $district='';
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Bank Name </label>
-                                                <input type="text" required class="form-control" value="<?php echo $arr['bank_name']; ?>" name="bank_name"
+                                                <input type="text"  class="form-control" value="<?php echo $arr['bank_name']; ?>" name="bank_name"
                                                     id="exampleदिनांक" placeholder="">
                                             </div>
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Branch Name</label>
-                                                <input type="varchar" required class="form-control"
+                                                <input type="varchar"  class="form-control"
                                                     name="branch_name" value="<?php echo $arr['branch_name']; ?>" id="exampleदिनांक" placeholder="">
                                             </div>
 
@@ -380,7 +380,7 @@ $district='';
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">IFSC Code </label>
-                                                <input type="text" required class="form-control" value="<?php echo $arr['ifsc_code']; ?>" name="ifsc_code"
+                                                <input type="text"  class="form-control" value="<?php echo $arr['ifsc_code']; ?>" name="ifsc_code"
                                                     id="exampleदिनांक" placeholder="">
                                             </div>
                                          
