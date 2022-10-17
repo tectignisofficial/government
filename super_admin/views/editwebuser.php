@@ -172,17 +172,17 @@ if(isset($_POST['websave']) && ($_GET['eid']))
                     <p>अहवाल २</p>
                   </a>
                 </li>
-                
+
                 <li class="nav-item">
                   <a href="report/R4.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>अहवाल ४</p>
+                    <p>अहवाल ३</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="report/R5.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>अहवाल ५</p>
+                    <p>अहवाल ४</p>
                   </a>
                 </li>
                 <li class="nav-item">

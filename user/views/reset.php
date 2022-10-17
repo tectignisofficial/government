@@ -40,13 +40,13 @@ session_start();
 				$q=mysqli_query($conn,"update webuser set password='$pass',verify_token='0' where email='$email'");
 				if($q){
 					
-					echo"<script>alert('password reset successfully..');window.location='index.php'</script>";
+					echo"<script>alert('Password reset successfully..');window.location='index.php'</script>";
 					
 				}
 			}
 			else{
 				
-				echo"pass and cpass doent match";
+				echo"Password and Confirm Password doent match";
 			}
 		}
 	?>

@@ -170,7 +170,7 @@ if (mysqli_num_rows($complaints)>0){
 
             <li class="nav-item">
 
-              <a href="form1.php" class="nav-link ">
+              <a href="../form1.php" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                 नोंदणी करा
@@ -203,19 +203,19 @@ if (mysqli_num_rows($complaints)>0){
                 <li class="nav-item">
                   <a href="R4.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>अहवाल ४</p>
+                    <p>अहवाल ३</p>
                   </a>
                 </li>
                 <li class="nav-item ">
                   <a href="R5.php" class="nav-link ">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>अहवाल ५</p>
+                    <p>अहवाल ४</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="Complaint.php" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Complaint</p>
+                    <p>प्रलंबित प्रकरणे</p>
                   </a>
                 </li>
               </ul>
@@ -310,7 +310,7 @@ if (mysqli_num_rows($complaints)>0){
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="/government-master/index.html">Home</a></li>
-                <li class="breadcrumb-item active">Complaint</li>
+                <li class="breadcrumb-item active">प्रलंबित प्रकरणे</li>
               </ol>
             </div>
           </div>

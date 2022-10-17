@@ -161,7 +161,7 @@ if (mysqli_num_rows($complaints)>0){
 
             <li class="nav-item">
 
-              <a href="form1.php" class="nav-link ">
+              <a href="../form1.php" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                 नोंदणी करा
@@ -177,7 +177,7 @@ if (mysqli_num_rows($complaints)>0){
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
+            <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="R1.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
@@ -192,19 +192,19 @@ if (mysqli_num_rows($complaints)>0){
                 </li>
 
                 <li class="nav-item">
-                  <a href="R4.php" class="nav-link active">
+                  <a href="R4.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>अहवाल ३</p>
+                  </a>
+                </li>
+                <li class="nav-item ">
+                  <a href="R5.php" class="nav-link ">
                     <i class="far fa-circle nav-icon"></i>
                     <p>अहवाल ४</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="R5.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>अहवाल ५</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="Complaint.php" class="nav-link">
+                  <a href="Complaint.php" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
                     <p>प्रलंबित प्रकरणे</p>
                   </a>

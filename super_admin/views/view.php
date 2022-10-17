@@ -195,28 +195,23 @@ police.options[police.options.length] = new Option(pol[i], pol[i]);
                     <p>अहवाल २</p>
                   </a>
                 </li>
+
                 <li class="nav-item">
-                  <a href="report/R3.php" class="nav-link">
+                  <a href="report/R4.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>अहवाल ३</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="report/R4.php" class="nav-link">
+                  <a href="report/R5.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>अहवाल ४</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="report/R5.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>अहवाल ५</p>
-                  </a>
-                </li>
-                <li class="nav-item">
                   <a href="report/Complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Complaint</p>
+                    <p>प्रलंबित प्रकरणे</p>
                   </a>
                 </li>
               </ul>

@@ -131,7 +131,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 
             <li class="nav-item">
 
-              <a href="form1.php" class="nav-link ">
+              <a href="../form1.php" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                 नोंदणी करा

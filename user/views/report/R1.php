@@ -152,7 +152,7 @@ while($res=mysqli_fetch_array($sql)){
 
             <li class="nav-item">
 
-              <a href="form1.php" class="nav-link ">
+              <a href="../form1.php" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                 नोंदणी करा

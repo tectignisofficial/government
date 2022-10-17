@@ -154,7 +154,7 @@ if(isset($_POST['subt3'])){
 
             <li class="nav-item">
 
-              <a href="form1.php" class="nav-link ">
+              <a href="f../orm1.php" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                 नोंदणी करा

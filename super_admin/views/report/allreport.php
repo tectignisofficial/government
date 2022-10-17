@@ -103,7 +103,7 @@
 
           <li class="nav-item">
 
-<a href="form1.php" class="nav-link ">
+<a href="../form1.php" class="nav-link ">
   <i class="nav-icon fas fa-th"></i>
   <p>
   नोंदणी करा
@@ -164,9 +164,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../pages/tables/allreport.html" class="nav-link active">
+                <a href="../../pages/tables/Complaint.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>संपूर्ण अहवाल</p>
+                  <p>प्रलंबित प्रकरणे</p>
                 </a>
               </li>
             </ul>

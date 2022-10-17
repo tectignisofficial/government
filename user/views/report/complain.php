@@ -170,7 +170,7 @@ if (mysqli_num_rows($complaints)>0){
             </li>
             <li class="nav-item">
 
-<a href="form1.php" class="nav-link ">
+<a href="../form1.php" class="nav-link ">
   <i class="nav-icon fas fa-th"></i>
   <p>
   नोंदणी करा
@@ -201,7 +201,7 @@ if (mysqli_num_rows($complaints)>0){
                 </li>
 
                 <li class="nav-item">
-                  <a href="R4.php" class="nav-link">
+                  <a href="R4.php" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
                     <p>अहवाल ४</p>
                   </a>
@@ -213,7 +213,7 @@ if (mysqli_num_rows($complaints)>0){
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="complain.php" class="nav-link active">
+                  <a href="complain.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>प्रलंबित प्रकरणे</p>
                   </a>
@@ -279,7 +279,7 @@ if (mysqli_num_rows($complaints)>0){
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="/government-master/index.php"
                     style="color: #869099; text-decoration:none">Home</a></li>
-                <li class="breadcrumb-item active">Complaint</li>
+                <li class="breadcrumb-item active">प्रलंबित प्रकरणे</li>
               </ol>
             </div>
           </div>
@@ -377,7 +377,7 @@ if(isset($_POST['submit1'])){
                 <div class=" card" id="">
                   <div id='DivIdToPrint'>
                     <div class="card-header" style="margin-top:12px">
-                      <h2 class=" text-center fs-1 fw-bold ">विषय क्रमांक - ४.</h2>
+                      <h2 class=" text-center fs-1 fw-bold ">प्रलंबित प्रकरणे</h2>
                       <br>
                       <h5 class=" text-center ">विविध कारणांनी अर्थसहाय्यासाठी प्रलंबित असलेली प्रकरणांचा तपशील / तक्त
                         यापुढील </h5>

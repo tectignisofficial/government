@@ -204,9 +204,9 @@ echo mysqli_query($conn);
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
+               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="report/R1.php" class="nav-link ">
+                  <a href="report/R1.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>अहवाल १</p>
                   </a>
@@ -217,23 +217,23 @@ echo mysqli_query($conn);
                     <p>अहवाल २</p>
                   </a>
                 </li>
-                
+
                 <li class="nav-item">
                   <a href="report/R4.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>अहवाल ३</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="report/R5.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>अहवाल ४</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="report/R5.php" class="nav-link active">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>अहवाल ५</p>
-                  </a>
-                </li>
-                <li class="nav-item">
                   <a href="report/Complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Complaint</p>
+                    <p>प्रलंबित प्रकरणे</p>
                   </a>
                 </li>
               </ul>
