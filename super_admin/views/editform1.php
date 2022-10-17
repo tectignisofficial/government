@@ -188,27 +188,13 @@ echo mysqli_query($conn);
 
             <li class="nav-item">
 
-              <a href="#" class="nav-link">
+              <a href="form1.php" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                  नोंदणी
-                  <i class="right fas fa-angle-left"></i>
+                नोंदणी करा
                   <!-- <span class="right badge badge-danger">New</span> -->
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item menu-open">
-                  <a href="form1.php" class="nav-link ">
-                    <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
-                    <p >
-                    नोंदणी करा
-                      <!-- <i class="right fas fa-angle-left"></i> -->
-                    </p>
-                  </a>
-
-                </li>
-                
-              </ul>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link active">

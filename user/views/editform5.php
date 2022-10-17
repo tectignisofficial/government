@@ -173,41 +173,15 @@ $district='';
                with font-awesome or any other icon font library -->
 
 
-            <li class="nav-item menu-open">
-              <a href="index.php" class="nav-link ">
-                 <i class="nav-icon fas fa-tachometer-alt"></i> 
-               
-                <p>
-                    मुख्यपृष्ठ 
-                  <!-- <i class="right fas fa-angle-left"></i> -->
-                </p>
-              </a>
-           
-            </li>
-
             <li class="nav-item">
 
-              <a href="#" class="nav-link  active">
+              <a href="form1.php" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                  नोंदणी
-                  <i class="right fas fa-angle-left"></i>
+                नोंदणी करा
                   <!-- <span class="right badge badge-danger">New</span> -->
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item menu-open">
-                  <a href="form1.php" class="nav-link">
-                    <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
-                    <p >
-                    नोंदणी करा
-                      <!-- <i class="right fas fa-angle-left"></i> -->
-                    </p>
-                  </a>
-
-                </li>
-                
-              </ul>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
@@ -257,7 +231,6 @@ $district='';
                 <i class=" nav-icon fas fa-landmark "></i>
                 <p>
                   बँक
-                  <i class="right fas fa-angle-left"></i>
                   <!-- <span class="right badge badge-danger">New</span> -->
                 </p>
               </a>

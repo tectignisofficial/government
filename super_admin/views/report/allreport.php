@@ -103,25 +103,15 @@
 
           <li class="nav-item">
 
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                तक्रार
-                <i class="right fas fa-angle-left"></i>
-                <!-- <span class="right badge badge-danger">New</span> -->
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item menu-open">
-                <a href=".../form1.php" class="nav-link">
-                  <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
-                  <p >
-                    तक्रार करा
-                    <!-- <i class="right fas fa-angle-left"></i> -->
-                  </p>
-                </a>
-
-              </li>
+<a href="form1.php" class="nav-link ">
+  <i class="nav-icon fas fa-th"></i>
+  <p>
+  नोंदणी करा
+    <i class="right fas fa-angle-left"></i>
+    <!-- <span class="right badge badge-danger">New</span> -->
+  </p>
+</a>
+</li>
               <li class="nav-item menu-open">
                 <a href="../..//pages/tables/R5.html" class="nav-link ">
                   <i class="nav-icon fas fa-tachometer-alt"></i> 

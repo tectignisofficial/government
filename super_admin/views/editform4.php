@@ -133,27 +133,15 @@ if(isset($_POST['subm_it']) && ($_GET['eid'])){
 
             <li class="nav-item">
 
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                  नोंदणी
-                  <i class="right fas fa-angle-left"></i>
-                  <!-- <span class="right badge badge-danger">New</span> -->
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item menu-open">
-                  <a href="form1.php" class="nav-link ">
-                    <!-- <i class="nav-icon fas fa-tachometer-alt"></i> -->
-                    <p >
-                    नोंदणी करा
-                      <!-- <i class="right fas fa-angle-left"></i> -->
-                    </p>
-                  </a>
+<a href="form1.php" class="nav-link ">
+  <i class="nav-icon fas fa-th"></i>
+  <p>
+  नोंदणी करा
 
-                </li>
-                
-              </ul>
+    <!-- <span class="right badge badge-danger">New</span> -->
+  </p>
+</a>
+</li>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link active">
@@ -192,7 +180,7 @@ if(isset($_POST['subm_it']) && ($_GET['eid'])){
                 <li class="nav-item">
                   <a href="report/Complaint.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Complaint</p>
+                    <p>प्रलंबित प्रकरणे</p>
                   </a>
                 </li>
               </ul>

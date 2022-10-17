@@ -271,7 +271,6 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     payment
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                                 </a>
                         </li>
