@@ -328,7 +328,7 @@ if(isset($_POST['subm_it'])){
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1> अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहित</h1>
+                            <h1> अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहिती</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
