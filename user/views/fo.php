@@ -480,9 +480,6 @@ if(isset($_POST['sub_mit']))
                     <tr>
                       <th>अनुक्रमांक</th>
                       <th>तक्रार नोंदणी क्र.</th>
-                      <th>गुन्हेगाराचे नाव</th>
-                      <th>पोलीस स्टेशन</th>
-                      <th>जिल्हा</th>
                       <th>age</th>
                       <th>address</th>
                       <th>name</th>
@@ -501,8 +498,6 @@ if(isset($_POST['sub_mit']))
                       <td><?php echo $arr['aadhar_card'];?></td>
                       <td><?php echo $arr['caste_certificate'];?></td>
                       <td><?php echo $arr['victim_age'];?></td>
-                      <td><?php echo $arr['address'];?></td>
-                      <td><?php echo $arr['name'];?></td>
                       <td><a href="fo.php?action=edit&eid=<?php echo $arr['id']; ?>" title=""
                           class="btn btn-success btn-xs delete_purchase">
                           <i class="fas fa-edit"></i>

@@ -153,7 +153,8 @@ if (!$conn) {
                   <tr>
                     <th scope="col">दिनांक</th>
                     <td>
-                      <?php echo $arr['dat'] ?>
+                    <?php $input=$arr['dat']; $date=strtotime($input);
+										echo date('d-m-Y',$date);?>
                     </td>
                   </tr>
                   <tr>

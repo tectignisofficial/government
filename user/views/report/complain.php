@@ -403,7 +403,7 @@ if(isset($_POST['submit1'])){
                             <th class="text-center" rowspan="2">गुन्हा न.</th>
                             <th class="text-center" rowspan="2">लावलेली कलमे </th>
                             <th class="text-center" rowspan="2">गुन्हयांचा प्रकार</th>
-                            <th class="text-center no">action</th>
+                            <!-- <th class="text-center no">action</th> -->
 
                           </tr>
 
@@ -435,11 +435,11 @@ if(isset($_POST['submit1'])){
                             <td><?php echo $arr["section"]; ?></td>
                             <td><?php echo $arr["type_of_offence"]; ?></td>
 
-                            <td class="no" id="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>"
+                            <!-- <td class="no" id="no"><a href="../editform1.php?action=edit&id=<?php echo $arr["id"]; ?>"
                                 title="" id="edit" class="btn btn-success btn-xs delete_purchase edit ">
                                 <i class="fas fa-edit"></i>
                               </a>
-                            </td>
+                            </td> -->
                             <!--<td id="closeCase">
                       <?php/*
                       $stage1=$arr["stage1"];;
