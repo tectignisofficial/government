@@ -409,7 +409,7 @@ if(isset($_POST['sub'])){
 
                   <div id='DivIdToPrint'>
                     <div class="card-header" style="margin-top:12px">
-                      <!--<h2 class=" text-center fs-1 fw-bold ">विषय क्रमांक - ४.</h2>-->
+                    <h2 class=' text-center fs-1 fw-bold '>प्रपत्र ४</h2>
                       <h5 class=" text-center ">दाखल झालेल्या गुन्हयांप्रमाणे सहाय्य देण्यासाठी / मंजुरीसाठी गुन्हेनिहाय
                         अप्राप्त कागदपत्रांची माहिती माहे ( <?php $dat=$_POST['month']; echo $dat; ?> &
                         <?php $year=$_POST['year']; echo $year;  ?>), अखेर. </h5>
@@ -433,11 +433,11 @@ if(isset($_POST['sub'])){
                             <th class="text-center" rowspan="2">गुन्हा न.</th>
                             <th class="text-center" rowspan="2">लावलेली कलमे </th>
                             <th class="text-center" rowspan="2">गुन्हयांचा प्रकार</th>
-                            <th class="text-center" colspan="2">फार्यादी </th>
+                            <th class="text-center" colspan="2">फिर्यादी</th>
                             <!--					   <th class="text-center"rowspan="2">फार्यादी चे पता</th>-->
 
                             <th class="text-center" colspan="3">आरोपीची माहिती</th>
-                            <th class="text-center" colspan="7">पिडीत व्यक्तीची माहिती</th>
+                            <th class="text-center" colspan="6">पिडीत व्यक्तीची माहिती</th>
                             <th class="text-center" rowspan="2">शेरा</th>
                             <th class="text-center no" rowspan="2">Status</th>
                           </tr>

@@ -420,7 +420,7 @@ if(isset($_POST["filter"]) && ($_POST['district'])){
 
            
                 <h5 class=' text-center fw-bolder'> माहे $dat to $to  मध्ये घडलेल्या गुन्हयांची माहिती</h5>
-             <h2 class=' text-center fs-1 fw-bold ''>प्रपत्र - १.</h2>
+             <h2 class=' text-center fs-1 fw-bold ''>प्रपत्र - २.</h2>
                 <br>
                 <h5 class=' text-center '>अनुसूचित जाती / जमाती. अत्याचार  प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण अधिनियम १९५५ अंतर्गत</h5>
 
@@ -435,7 +435,7 @@ if(isset($_POST["filter"]) && ($_POST['district'])){
                   <thead>
                   <tr>
                     <th class='text-center'>अ. क्र.</th>
-                    <th class='text-center'>जिल्याचे नाव</th>
+                    <th class='text-center'>जिल्ह्याचे नाव</th>
                     <th class='text-center' colspan='8'>गुन्हयांचे प्रकार </th>
                   </tr>
                   <tr>

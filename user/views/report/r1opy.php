@@ -338,7 +338,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 
 					  <!-- <th class="text-center"rowspan="2">लावलेली कलमे </th>
 					   <th class="text-center"rowspan="2">गुन्हयांचा प्रकार</th>-->
-                       <th class="text-center"colspan="1">पीहित </th>
+                    <th class="text-center"colspan="1">पिडीत</th>
 					   <th class="text-center"colspan="5">बँक माहिती</th>
 					   <!-- <th class="text-center"colspan="3">Payment Status</th> -->
                   </tr>
@@ -429,7 +429,7 @@ if(isset($_POST['submit'])){
                     <td class="text-center"><?php echo $row['branch_name'];?></td>
                     <td class="text-center"><?php echo $row['ifsc_code'];?></td>
                    
-                    <td class="text-center"><?php echo $row['discription'];?></td>
+                  
 						  
             
                  
