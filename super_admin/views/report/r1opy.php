@@ -28,6 +28,24 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                   }
       
       }
+      if(isset($_POST['submit'])){
+        $id=$_POST['id'];
+      $account_name=$_POST['account_name'];
+      $account_no=$_POST['account_no'];
+      $bank_name=$_POST['bank_name'];
+      $branch_name=$_POST['barnch'];
+      $ifsc_code=$_POST['ifsc'];
+      
+      
+      $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `bank_name`='$bank_name',`account_no`='$account_no',`account_holder_name`='$account_name',`branch_name`='$branch_name',`ifsc_code`='$ifsc_code' WHERE id='$id'");
+        
+        if($sql==1){
+           header("location:r1opy.php");
+        }else{
+          echo"<script> alert('Not updated');</script>";   
+        }
+      
+      }
 
 
 
@@ -78,6 +96,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
 
 <body class="hold-transition sidebar-mini ">
     <div class="wrapper">
+    
 
         <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
@@ -448,7 +467,12 @@ if(isset($_POST['submit'])){
                                                 <td class="text-center"><?php echo $row['bank_name'];?></td>
                                                 <td class="text-center"><?php echo $row['branch_name'];?></td>
                                                 <td class="text-center"><?php echo $row['ifsc_code'];?></td>
-                                                <td><a href="r1opy.php?delid=<?php echo $row["cid"]; ?>" title=""
+                                                <td> <a href="#<?php echo $row['cid'] ?>" data-id='<?php echo $row['cid']; ?>'
+                            class="btn btn-primary btn-xs edit_bank"data-toggle="modal"
+                            data-target="#editmodal">
+                                <i class="fas fa-edit"></i>
+                              </a>
+                                                    <a href="r1opy.php?delid=<?php echo $row["cid"]; ?>" title=""
                                 class="btn btn-danger btn-xs delete_purchase">
                                 <i class="fas fa-trash"></i>
                               </a></td>
@@ -482,7 +506,13 @@ if(isset($_POST['submit'])){
                                                 <td class="text-center"><?php echo $row['bank_name'];?></td>
                                                 <td class="text-center"><?php echo $row['branch_name'];?></td>
                                                 <td class="text-center"><?php echo $row['ifsc_code'];?></td>
-                                                <td><a href="r1opy.php?delid=<?php echo $row["cid"]; ?>" title=""
+                                                <td>
+                                                    <a data-id='<?php echo $row['cid']; ?>'
+                            class="btn btn-primary btn-xs edit_bank">
+                                <i class="fas fa-edit"  ></i>
+                              </a>
+                              
+                              <a href="r1opy.php?delid=<?php echo $row["cid"]; ?>" title=""
                                 class="btn btn-danger btn-xs delete_purchase">
                                 <i class="fas fa-trash"></i>
                               </a></td>
@@ -557,6 +587,29 @@ if(isset($_POST['submit'])){
             <!-- Control sidebar content goes here -->
         </aside>
         <!-- /.control-sidebar -->
+        <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Appointment List</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post">
+        <div class="modal-body update">
+
+        </div>
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" name="submit">Save changes</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
     </div>
     <!-- ./wrapper -->
 
@@ -641,6 +694,28 @@ if(isset($_POST['submit'])){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
 
 
+    <script>
+  $(document).ready(function () {
+    $('.edit_bank').click(function () {
+      let dnkk = $(this).data('id');
+
+      $.ajax({
+        url: 'bankedit.php',
+        type: 'post',
+        data: {
+          dnkk: dnkk
+        },
+        success: function (response5) {
+          $('.update').html(response5);
+          $('#editmodal').modal('show');
+        }
+      });
+    });
+
+
+  });
+</script>
+
 
     <script>
     window.onload = function() {
@@ -671,7 +746,7 @@ if(isset($_POST['submit'])){
     }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
-
+    
 
 </body>
 
