@@ -122,7 +122,7 @@ if (!$conn) {
               <div style="float:left">
                 <div class="wrap">
                   <form method="post" class="search">
-                    <input type="text" class="searchTerm" name="search" placeholder="Search..">
+                    <input type="text" x-webkit-speech class="searchTerm" name="search" placeholder="Search..">
 
                     <button class="searchButton" type="submit" name="submi_t">
                       <i class="bi bi-search"></i>
