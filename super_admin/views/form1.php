@@ -375,9 +375,9 @@ document.getElementById("citySelect").selectedIndex = 0;
                       </div>
             
                       <div class=" d-flex form-group " style="margin-left: -12px;">
-                    <div class="form-group col-6">
+                   <div class="form-group col-6">
                       <label for="exampleनोंद वही क्र.">नोंद वही क्र.</label>
-                      <input type="Textbox" required class="form-control" value="<?php echo $book_no?>" name="book_no" id="exampleInputनोंद वही क्र."
+                      <input type="Textbox" required class="form-control" va lue="<?php echo $book_no?>" name="book_no" id="exampleInputनोंद वही क्र."
                         placeholder="">
                     </div>
                       
