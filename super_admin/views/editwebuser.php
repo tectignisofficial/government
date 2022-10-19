@@ -215,22 +215,12 @@ if(isset($_POST['websave']) && ($_GET['eid']))
               </ul>
             </li>
             <li class="nav-item">
-            <a href="#" class="nav-link ">
-              <i class=" nav-icon fas fa-landmark "></i>
-              <p>
-                बँक
-                <!-- <span class="right badge badge-danger">New</span> -->
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
             <a href="report/r1opy.php" class="nav-link">
-            <i class="far fa-circle nav-icon"></i> 
-              <p>
-              बँक माहिती
-              </p>
-            </a>
-
+            <i class=" nav-icon fas fa-landmark "></i>
+                    <p>
+                      बँक माहिती
+                    </p>
+      </a>
             </li>
             <!-- <li class="nav-item"> 
             <a href="report/payment.php" class="nav-link">
@@ -242,8 +232,7 @@ if(isset($_POST['websave']) && ($_GET['eid']))
 
             </li>-->
               
-            </ul>
-            </li>
+            
             <li class="nav-item">
               <a href="../logout.php" class="nav-link">
               <i class=" nav-icon fas fa-sign-out-alt"></i> 

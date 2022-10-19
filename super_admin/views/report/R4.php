@@ -326,7 +326,7 @@ if (mysqli_num_rows($complaints)>0){
                       <div class="col-md-12">
                         <div class="card card-primary">
                           <div class="card-header">
-                            <h3 class="card-title">अखेर</h3>
+                            <h3 class="card-title"></h3>
                           </div>
                           <form method="post">
                             <div class="card-body">
@@ -348,7 +348,7 @@ if (mysqli_num_rows($complaints)>0){
                                     <option value="july">July </option>
                                     <option value="august">August </option>
                                     <option value="september">September </option>
-                                    <option value="october">October/option>
+                                    <option value="october">October</option>
                                     <option value="november">November</option>
                                     <option value="december">December</option>
                                   </select>
@@ -399,7 +399,7 @@ $year=$_POST['year'];
                               <button type='button' class='btn btn-tool'  id='btn'
                                onclick='window.print();'
                                style=' background-color: #145a8b;
-    color: white;>
+                           color: white;>
                                 <i class='fas fa-print'></i>
                                 Print                    </button>
                               <button type='button' class=btn btn-tool' id='pdf' style='background-color: #b70000 ; color:white;'>

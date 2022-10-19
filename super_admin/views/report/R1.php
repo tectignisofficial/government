@@ -228,35 +228,13 @@ $role='';
               </ul>
             </li>
             <li class="nav-item">
-            <a href="#" class="nav-link ">
-              <i class=" nav-icon fas fa-landmark "></i>
-              <p>
-                बँक
-                <!-- <span class="right badge badge-danger">New</span> -->
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
             <a href="r1opy.php" class="nav-link">
-            <i class="far fa-circle nav-icon"></i> 
+            <i class=" nav-icon fas fa-landmark "></i>
               <p>
               बँक माहिती
               </p>
             </a>
 
-            </li>
-            <!-- <li class="nav-item"> 
-            <a href="payment.php" class="nav-link">
-            <i class=" far fa-circle nav-icon"></i> 
-              <p>
-              पेमेंट
-              </p>
-            </a>
-
-            </li>-->
-              
-            </ul>
-            </li>
             </li>
             <li class="nav-item">
               <a href="../member-img.php" class="nav-link">
@@ -441,7 +419,7 @@ $year=$_POST['year'];
                     <th class='text-center'>विनयभंग</th>
                     <th class='text-center'>मारहाण</th>
                     <th class='text-center'>शिवीगाळ</th>
-                    <th class='text-center'>जाळपोळ </th>एकूण
+                    <th class='text-center'>जाळपोळ </th>
                     <th class='text-center'>इतर</th>
                     <th class='text-center'>एकूण</th>
            

@@ -130,7 +130,7 @@
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                 नोंदणी करा
-                  <i class="right fas fa-angle-left"></i>
+                  
                   <!-- <span class="right badge badge-danger">New</span> -->
                 </p>
               </a>
@@ -199,35 +199,12 @@
               </ul>
             </li>
             <li class="nav-item">
-
-              <a href="#" class="nav-link ">
-                <i class=" nav-icon fas fa-landmark "></i>
-                <p>
-                  बँक
-                  <!-- <span class="right badge badge-danger">New</span> -->
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="report/r1opy.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+            <a href="report/r1opy.php" class="nav-link">
+            <i class=" nav-icon fas fa-landmark "></i>
                     <p>
                       बँक माहिती
                     </p>
-                  </a>
-
-                </li>
-                <!-- <li class="nav-item"> 
-            <a href="report/payment.php" class="nav-link">
-            <i class=" far fa-circle nav-icon"></i> 
-              <p>
-              पेमेंट
-              </p>
-            </a>
-
-            </li>-->
-
-              </ul>
+      </a>
             </li>
             <li class="nav-item">
               <a href="member-img.php" class="nav-link">

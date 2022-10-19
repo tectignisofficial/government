@@ -170,12 +170,13 @@
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
                 </strong></h3>
-              <p>सामाजिक न्याय मंत्री</p>
+              <p>सामाजिक न्याय व जवशेष सहाय्य जवभाग
+मंत्री</p>
 
             </div>
           </li>
           <?php } ?>
-          <?php
+          <!-- <?php
         $sql=mysqli_query($conn,"select * from member_img where id='4'");
         while($fetchsql=mysqli_fetch_array($sql)){
         ?>
@@ -190,7 +191,7 @@
 
             </div>
           </li>
-          <?php } ?>
+          <?php } ?> -->
           <?php
         $sql=mysqli_query($conn,"select * from member_img where id='5'");
         while($fetchsql=mysqli_fetch_array($sql)){
@@ -206,7 +207,7 @@
             </div>
           </li>
           <?php } ?>
-          <?php
+          <!-- <?php
         $sql=mysqli_query($conn,"select * from member_img where id='6'");
         while($fetchsql=mysqli_fetch_array($sql)){
         ?>
@@ -221,8 +222,8 @@
 
             </div>
           </li>
-          <?php } ?>
-          <?php
+          <?php } ?> -->
+          <!-- <?php
         $sql=mysqli_query($conn,"select * from member_img where id='7'");
         while($fetchsql=mysqli_fetch_array($sql)){
         ?>
@@ -237,7 +238,7 @@
 
             </div>
             <?php } ?>
-          </li>
+          </li> -->
           <?php
         $sql=mysqli_query($conn,"select * from member_img where id='8'");
         while($fetchsql=mysqli_fetch_array($sql)){
@@ -270,6 +271,21 @@
           </li>
           <?php } ?>
           <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='9'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
+          <li class="col-12 col-md-6 col-lg-3">
+            <div class="cnt-block equal-hight" style="height: 320px;">
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  
+                </strong></h3>
+              <p>आयुक्त , समाज कल्याण, महाराष्ट्र राज्य</p>
+            </div>
+          </li>
+          <?php } ?>
+          <?php
         $sql=mysqli_query($conn,"select * from member_img where id='10'");
         while($fetchsql=mysqli_fetch_array($sql)){
         ?>
@@ -285,11 +301,6 @@
             </div>
           </li>
           <?php } ?>
-        </ul>
-
-        <!-- 3rd Row -->
-        <ul class="row" style="justify-content: center;">
-
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
               <figure><img src="assets/img/Team/11.jpg" class="img-responsive" alt=""></figure>
@@ -298,10 +309,10 @@
 
             </div>
           </li>
-          <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='12'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
+                <?php
+              $sql=mysqli_query($conn,"select * from member_img where id='12'");
+              while($fetchsql=mysqli_fetch_array($sql)){
+              ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
               <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
@@ -315,6 +326,12 @@
           </li>
           <?php } ?>
         </ul>
+
+        <!-- 3rd Row -->
+        <!-- <ul class="row" style="justify-content: center;">
+
+      
+        </ul> -->
       </div>
     </section>
 

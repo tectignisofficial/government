@@ -124,7 +124,6 @@ if(isset($_GET['id'])){
   <i class="nav-icon fas fa-th"></i>
   <p>
   नोंदणी करा
-    <i class="right fas fa-angle-left"></i>
     <!-- <span class="right badge badge-danger">New</span> -->
   </p>
 </a>
@@ -221,9 +220,7 @@ if(isset($_GET['id'])){
 
             </li>-->
               
-            </ul>
-            </li>
-            </li>
+           
             <li class="nav-item">
               <a href="member-img.php" class="nav-link">
               <i class="nav-icon fa fa-image"></i>
@@ -307,7 +304,7 @@ if(isset($_GET['id'])){
                           <th>नाव</th>
                           <th>ई-मेल</th>
                           <th>वापरकर्त्याची भूमिका</th>
-                          <th>District</th>
+                          <th>जिल्हा</th>
                           <th>कार्यवाही</th>
                         </tr>
                       </thead>

@@ -242,35 +242,13 @@ if (mysqli_num_rows($complaints)>0){
               </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link ">
-                <i class=" nav-icon fas fa-landmark "></i>
-                <p>
-                  बँक
-                  <!-- <span class="right badge badge-danger">New</span> -->
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="r1opy.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>
-                      बँक माहिती
-                    </p>
-                  </a>
-
-                </li>
-                <!-- <li class="nav-item">
-            <a href="payment.php" class="nav-link">
-            <i class=" far fa-circle nav-icon"></i> 
+            <a href="r1opy.php" class="nav-link">
+            <i class=" nav-icon fas fa-landmark "></i>
               <p>
-              पेमेंट
+              बँक माहिती
               </p>
             </a>
 
-            </li>-->
-
-              </ul>
-            </li>
             </li>
             <li class="nav-item">
               <a href="../member-img.php" class="nav-link">
@@ -437,7 +415,7 @@ if(isset($_POST['sub'])){
                             <!--					   <th class="text-center"rowspan="2">फार्यादी चे पता</th>-->
 
                             <th class="text-center" colspan="2">आरोपीची माहिती</th>
-                            <th class="text-center" colspan="6">पिडीत व्यक्तीची माहिती</th>
+                            <th class="text-center" colspan="7">पिडीत व्यक्तीची माहिती</th>
                             <th class="text-center" rowspan="2">शेरा</th>
                             <th class="text-center no" rowspan="2">Status</th>
                           </tr>

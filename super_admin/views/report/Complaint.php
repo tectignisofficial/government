@@ -242,35 +242,13 @@ if (mysqli_num_rows($complaints)>0){
               </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link ">
-                <i class=" nav-icon fas fa-landmark "></i>
-                <p>
-                  बँक
-                  <!-- <span class="right badge badge-danger">New</span> -->
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="r1opy.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>
-                      बँक माहिती
-                    </p>
-                  </a>
-
-                </li>
-                <!-- <li class="nav-item"> 
-            <a href="payment.php" class="nav-link">
-            <i class=" far fa-circle nav-icon"></i> 
+            <a href="r1opy.php" class="nav-link">
+            <i class=" nav-icon fas fa-landmark "></i>
               <p>
-              पेमेंट
+              बँक माहिती
               </p>
             </a>
 
-            </li>-->
-
-              </ul>
-            </li>
             </li>
             <li class="nav-item">
               <a href="../member-img.php" class="nav-link">
@@ -376,7 +354,28 @@ if (mysqli_num_rows($complaints)>0){
 if(isset($_POST['submit1'])){
 ?>
                 <div class=" card" id="">
+                <div class='card-tools text-center' style='margin-top:12px'>
+                         
+                         <button type='button' class='btn btn-tool'  id='btn'
+                          onclick='window.print();'
+                          style=' background-color: #145a8b;
+                      color: white;>
+                           <i class='fas fa-print'></i>
+                           Print                    </button>
+                         <button type='button' class=btn btn-tool' id='pdf' style='background-color: #b70000 ; color:white;'>
+                           <i class='fas fa-file-pdf'></i>
+                           PDF                    </button>
+                           
+
+                        
+                         <button type='button' class='btn btn-tool' id='excel' onclick='export_data()'  style=' background-color: #137601;
+color: white;'>
+ 
+                           <i class='fas fa-table'></i>
+                           Exel               </button> 
+                       </div>
                   <div id='DivIdToPrint'>
+
                     <div class="card-header" style="margin-top:12px">
                       <h2 class=" text-center fs-1 fw-bold ">प्रलंबित प्रकरणे</h2>
                       <br>
@@ -425,7 +424,8 @@ if(isset($_POST['submit1'])){
                           <tr>
                             <td><?php echo $count; ?></td>
                             <td><?php echo $arr["book_no"]; ?></td>
-                            <td><?php echo $arr["date"]; ?></td>
+                            <td><?php $input=$arr['date']; $date=strtotime($input);
+										echo date('d-m-Y',$date);?></td>
                             <td><?php echo $arr["district"]; ?></td>
                             <td><?php echo $arr["police_station"]; ?></td>
                             <td><?php echo $arr["complaint_no"]; ?></td>
@@ -458,7 +458,8 @@ if(isset($_POST['submit1'])){
                           <tr>
                             <td><?php echo $count1; ?></td>
                             <td><?php echo $arr["book_no"]; ?></td>
-                            <td><?php echo $arr["date"]; ?></td>
+                            <td><?php $input=$arr['date']; $date=strtotime($input);
+										echo date('d-m-Y',$date);?></td>
                             <td><?php echo $arr["district"]; ?></td>
                             <td><?php echo $arr["police_station"]; ?></td>
                             <td><?php echo $arr["complaint_no"]; ?></td>
