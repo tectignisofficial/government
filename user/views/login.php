@@ -24,6 +24,10 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
   <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">

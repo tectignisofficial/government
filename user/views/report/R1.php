@@ -77,6 +77,8 @@ while($res=mysqli_fetch_array($sql)){
     }
       }
 </style>
+<link href="../../dist/img/lo.png" rel="icon">
+  <link href="../../dist/img/lo.png" rel="apple-touch-icon">
 </head>
 <body class="hold-transition sidebar-mini ">
 <div class="wrapper">

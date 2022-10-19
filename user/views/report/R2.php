@@ -81,6 +81,8 @@ if (mysqli_num_rows($complaints)>0){
     }
       }
 </style>
+<link href="../../dist/img/lo.png" rel="icon">
+  <link href="../../dist/img/lo.png" rel="apple-touch-icon">
 </head>
 <body class="hold-transition sidebar-mini ">
 <div class="wrapper">

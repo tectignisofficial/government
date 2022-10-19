@@ -98,6 +98,10 @@ require 'PHPMailer/src/Exception.php';
   <title>Forget Password</title>
   <link rel="stylesheet" href="	https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
 <body>
 <div class="container padding-bottom-3x mb-2 mt-5">

@@ -75,6 +75,10 @@ police.options[police.options.length] = new Option(pol[i], pol[i]);
 }
 }
     </script>
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
 <?php
 include_once '../include.php';

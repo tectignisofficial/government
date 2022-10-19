@@ -5,6 +5,10 @@ session_start();
 <head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="dist/css/style.css">
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
 <body>
 	

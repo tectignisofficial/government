@@ -79,6 +79,10 @@ include("../include.php");
     }
   </script>
 
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
 
 <body class="hold-transition sidebar-mini">

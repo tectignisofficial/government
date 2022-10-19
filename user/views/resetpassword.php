@@ -54,6 +54,10 @@ body {
     cursor: pointer
 }
   </style>
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
 <body>
 <div class="d-flex justify-content-center align-items-center container">

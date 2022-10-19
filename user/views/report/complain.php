@@ -90,6 +90,8 @@ if (mysqli_num_rows($complaints)>0){
       }
     }
   </style>
+ <link href="../../dist/img/lo.png" rel="icon">
+  <link href="../../dist/img/lo.png" rel="apple-touch-icon">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -531,7 +533,11 @@ if(isset($_POST['submit1'])){
       var newWin = window.open();
       newWin.document.open();
       newWin.document.write(
-        '<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style></head><html><body style="text-align:center" onload="window.print()">' +
+        '<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style> <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
+ <link href="../dist/img/lo.png" rel="icon">
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">
+</head><html><body style="text-align:center" onload="window.print()">' +
         divToPrint.innerHTML + '</body></html>');
       newWin.document.close();
       setTimeout(function () {

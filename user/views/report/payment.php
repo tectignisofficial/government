@@ -72,8 +72,8 @@ if(isset($_POST['subt3'])){
 
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
-
-    
+    <link href="../../dist/img/lo.png" rel="icon">
+  <link href="../../dist/img/lo.png" rel="apple-touch-icon">
 </head>
 
 <body class="hold-transition sidebar-mini">
