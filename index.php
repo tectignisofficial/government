@@ -276,7 +276,7 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   
