@@ -4,7 +4,8 @@ include("../include.php");
 // if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
 // {
 //   header("location:index.php");
-// }
+// }\
+
 
 
 ?>
@@ -16,16 +17,16 @@ include("../include.php");
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Atrocity Raigad | Excel Import  </title>
+  <title>Atrocity Raigad | Excel Import </title>
   <link rel="shortcut icon" type="image/png" href="../dist/img/government.png" />
   <link rel="stylesheet" href="../dist/css/adminlte.css">
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 
 
@@ -40,33 +41,46 @@ include("../include.php");
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 
   <script>
-
     var citiesByState = {
-        "raigarh": ["अलिबाग पोलीस ठाणे", "पनवेल पोलीस ठाणे","मुरुड पोलीस ठाणे","पेण पोलीस ठाणे","उरण पोलीस ठाणे","कर्जत पोलीस ठाणे","खालापूर पोलीस ठाणे","माणगाव पोलीस ठाणे","रोहा पोलीस ठाणे","तळा पोलीस ठाणे","महड पोलीस ठाणे","म्हसळा पोलीस ठाणे","श्रीवर्धन पोलीस ठाणे","पोलादपूर पोलीस ठाणे","नेरळ पोलीस ठाणे","खोपोली पोलीस ठाणे","वडखळ पोलीस ठाणे","पोयनाड पोलीस ठाणे","मांडवा पोलीस ठाणे","रेवदंडा पोलीस ठाणे","पाली पोलीस ठाणे","महाड एम आय डी सी पोलीस ठाणे","महाड तालुका पोलीस ठाणे","महाड शहर पोलीस ठाणे","दिघी सागरी पोलीस ठाणे","गोरेगाव पोलीस ठाणे","नागोठणे पोलीस ठाणे","माथेरान पोलीस ठाणे"],
-        "navi mumbai": ["खारघर पोलीस ठाणे","कळंबोली पोलीस ठाणे","खांदेश्वर पोलीस ठाणे","पनवेल शहर पोलीस ठाणे","पनवेल तालुका पोलीस ठाणे","कामोठे पोलीस ठाणे","तळोजा पोलीस ठाणे"],
+      "raigarh": ["अलिबाग पोलीस ठाणे", "पनवेल पोलीस ठाणे", "मुरुड पोलीस ठाणे", "पेण पोलीस ठाणे", "उरण पोलीस ठाणे",
+        "कर्जत पोलीस ठाणे", "खालापूर पोलीस ठाणे", "माणगाव पोलीस ठाणे", "रोहा पोलीस ठाणे", "तळा पोलीस ठाणे",
+        "महड पोलीस ठाणे", "म्हसळा पोलीस ठाणे", "श्रीवर्धन पोलीस ठाणे", "पोलादपूर पोलीस ठाणे", "नेरळ पोलीस ठाणे",
+        "खोपोली पोलीस ठाणे", "वडखळ पोलीस ठाणे", "पोयनाड पोलीस ठाणे", "मांडवा पोलीस ठाणे", "रेवदंडा पोलीस ठाणे",
+        "पाली पोलीस ठाणे", "महाड एम आय डी सी पोलीस ठाणे", "महाड तालुका पोलीस ठाणे", "महाड शहर पोलीस ठाणे",
+        "दिघी सागरी पोलीस ठाणे", "गोरेगाव पोलीस ठाणे", "नागोठणे पोलीस ठाणे", "माथेरान पोलीस ठाणे"
+      ],
+      "navi mumbai": ["खारघर पोलीस ठाणे", "कळंबोली पोलीस ठाणे", "खांदेश्वर पोलीस ठाणे", "पनवेल शहर पोलीस ठाणे",
+        "पनवेल तालुका पोलीस ठाणे", "कामोठे पोलीस ठाणे", "तळोजा पोलीस ठाणे"
+      ],
 
-}
-function makeSubmenu(value) {
-if(value.length==0) document.getElementById("citySelect").innerHTML = "<option></option>";
-else {
-var citiesOptions = "";
-for(cityId in citiesByState[value]) {
-citiesOptions+="<option value="+citiesByState[value][cityId]+">"+citiesByState[value][cityId]+"</option>";
-}
-document.getElementById("citySelect").innerHTML = citiesOptions;
-}
-}
-function displaySelected() { var country = document.getElementById("countrySelect").value;
-var city = document.getElementById("citySelect").value;
-alert(country+"\n"+city);
-}
-function resetSelection() {
-document.getElementById("countrySelect").selectedIndex = 0;
-document.getElementById("citySelect").selectedIndex = 0;
-}
+    }
+
+    function makeSubmenu(value) {
+      if (value.length == 0) document.getElementById("citySelect").innerHTML = "<option></option>";
+      else {
+        var citiesOptions = "";
+        for (cityId in citiesByState[value]) {
+          citiesOptions += "<option value=" + citiesByState[value][cityId] + ">" + citiesByState[value][cityId] +
+            "</option>";
+        }
+        document.getElementById("citySelect").innerHTML = citiesOptions;
+      }
+    }
+
+    function displaySelected() {
+      var country = document.getElementById("countrySelect").value;
+      var city = document.getElementById("citySelect").value;
+      alert(country + "\n" + city);
+    }
+
+    function resetSelection() {
+      document.getElementById("countrySelect").selectedIndex = 0;
+      document.getElementById("citySelect").selectedIndex = 0;
+    }
   </script>
 
 </head>
+
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
@@ -91,7 +105,7 @@ document.getElementById("citySelect").selectedIndex = 0;
             <i class="fas fa-expand-arrows-alt"></i>
           </a>
         </li>
-        
+
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -103,7 +117,7 @@ document.getElementById("citySelect").selectedIndex = 0;
       <a href="index.php" class="brand-link">
         <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light" >Atrocity Raigad</span>
+        <span class="brand-text font-weight-light">Atrocity Raigad</span>
       </a>
 
       <!-- Sidebar -->
@@ -114,7 +128,8 @@ document.getElementById("citySelect").selectedIndex = 0;
             <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>-->
           <div class="info">
-            <a href="#" class="d-block" style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $role; ?></a>
+            <a href="#" class="d-block"
+              style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $role; ?></a>
           </div>
         </div>
 
@@ -130,25 +145,25 @@ document.getElementById("citySelect").selectedIndex = 0;
 
             <li class="nav-item menu-open">
               <a href="index.php" class="nav-link ">
-                 <i class="nav-icon fas fa-tachometer-alt"></i> 
-               
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+
                 <p>
-                    मुख्यपृष्ठ 
+                  मुख्यपृष्ठ
                   <!-- <i class="right fas fa-angle-left"></i> -->
                 </p>
               </a>
-           
+
             </li>
             <li class="nav-item">
 
-<a href="form1.php" class="nav-link ">
-  <i class="nav-icon fas fa-th"></i>
-  <p>
-  नोंदणी करा
-    <!-- <span class="right badge badge-danger">New</span> -->
-  </p>
-</a>
-</li>
+              <a href="form1.php" class="nav-link ">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  नोंदणी करा
+                  <!-- <span class="right badge badge-danger">New</span> -->
+                </p>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="#" class="nav-link ">
                 <i class="nav-icon fas fa-chart-pie"></i>
@@ -157,7 +172,7 @@ document.getElementById("citySelect").selectedIndex = 0;
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-               <ul class="nav nav-treeview">
+              <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="report/R1.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
@@ -196,7 +211,7 @@ document.getElementById("citySelect").selectedIndex = 0;
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
-                  वापरकर्ता                                                                                                                                                                                                                                
+                  वापरकर्ता
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
@@ -209,29 +224,29 @@ document.getElementById("citySelect").selectedIndex = 0;
                     </p>
                   </a>
                 </li>
-                
+
               </ul>
             </li>
             <li class="nav-item">
 
-            <a href="#" class="nav-link ">
-              <i class=" nav-icon fas fa-landmark "></i>
-              <p>
-                बँक
-                <!-- <span class="right badge badge-danger">New</span> -->
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-            <a href="report/r1opy.php" class="nav-link">
-            <i class="far fa-circle nav-icon"></i> 
-              <p>
-              बँक माहिती
-              </p>
-            </a>
+              <a href="#" class="nav-link ">
+                <i class=" nav-icon fas fa-landmark "></i>
+                <p>
+                  बँक
+                  <!-- <span class="right badge badge-danger">New</span> -->
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="report/r1opy.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>
+                      बँक माहिती
+                    </p>
+                  </a>
 
-            </li>
-            <!-- <li class="nav-item"> 
+                </li>
+                <!-- <li class="nav-item"> 
             <a href="report/payment.php" class="nav-link">
             <i class=" far fa-circle nav-icon"></i> 
               <p>
@@ -240,27 +255,27 @@ document.getElementById("citySelect").selectedIndex = 0;
             </a>
 
             </li>-->
-              
-            </ul>
+
+              </ul>
             </li>
             </li>
             <li class="nav-item">
               <a href="member-img.php" class="nav-link">
-              <i class="nav-icon fa fa-image"></i>
+                <i class="nav-icon fa fa-image"></i>
                 <p>
                   सदस्य प्रतिमा
                 </p>
               </a>
-           
+
             </li>
             <li class="nav-item">
               <a href="../logout.php" class="nav-link">
-              <i class=" nav-icon fas fa-sign-out-alt"></i> 
+                <i class=" nav-icon fas fa-sign-out-alt"></i>
                 <p>
-                     बाहेर पडा  
+                  बाहेर पडा
                 </p>
               </a>
-           
+
             </li>
           </ul>
         </nav>
@@ -278,12 +293,12 @@ document.getElementById("citySelect").selectedIndex = 0;
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>अनुसूचित जाती/जमाती अत्याचार ग्रस्त पीडितांची माहिती</h1>
+              <h1>Import Excel/CSV FIle</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a></li>
-                                            <li  class="active" id="account"><strong>/सरकारी प्रपत्र</strong></li>
+                <li class="active" id="account"><strong>/Import Excel/CSV</strong></li>
                 <li class="breadcrumb-item active"></li>
               </ol>
             </div>
@@ -297,35 +312,38 @@ document.getElementById("citySelect").selectedIndex = 0;
           <div class="row">
             <!-- left column -->
             <div class="col-md-12">
-              <!-- general form elements -->
-              <div class="card card-primary">
-                
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form method="post" action="report/importexcel.php" enctype="multipart/form-data">
-                
-                  <div class="card-body">
-                      
-                  <div class=" d-flex form-group " style="margin-left: -12px;">
-                    <div class="form-group col-6">
-                      <label for="exampleनोंद वही क्र.">Upload Excel</label>
-                      <input type="file" name="file" id="file" >
-                    </div>
-                    <div class="control-group">
-    							<div class="controls">
-    							<button type="submit" id="submit" name="Import" class="btn btn-primary button-loading" data-loading-text="Loading...">Upload</button>
-    							</div>
-    						</div>
-                      
-                  
-                  </div>
 
+
+              <div class="card card-white">
+                <div class="card-header">
+                  <h3 class="card-title">Excel/CSV Import</h3>
+                  <a href="download.php?url=atrocity.csv">
+                  <button type="submit" name="Import" class="btn btn-success" style="float: inline-end;">Downlaod Excel/CSV File</button>
+  </a>
+                </div>
+                <form method="post" action="report/importexcel.php" enctype="multipart/form-data">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="exampleInputFile">File input</label>
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" name="file"class="custom-file-input" id="exampleInputFile">
+                          <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <button type="submit" name="Import" class="btn btn-primary">Upload File</button>
+                  </div>
                 </form>
               </div>
-           
+              <!-- general form elements -->
+          
+
 
             </div>
-    
+
           </div>
           <!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -337,7 +355,8 @@ document.getElementById("citySelect").selectedIndex = 0;
       <strong>&copy; <?php echo date('Y'); ?></strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
-        Designd by <a href="https://tectignis.in/" target="_blank" style="color: #869099; text-decoration:none">Tectignis It Solutions</b></a>
+        Designd by <a href="https://tectignis.in/" target="_blank"
+          style="color: #869099; text-decoration:none">Tectignis It Solutions</b></a>
       </div>
     </footer>
 
@@ -360,69 +379,69 @@ document.getElementById("citySelect").selectedIndex = 0;
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
   <!-- Page specific script -->
-  
+
   <script>
-        $(document).ready(function () {
+    $(document).ready(function () {
 
-            var current_fs, next_fs, previous_fs; //fieldsets
-            var opacity;
-            var current = 1;
-            var steps = $("fieldset").length;
+      var current_fs, next_fs, previous_fs; //fieldsets
+      var opacity;
+      var current = 1;
+      var steps = $("fieldset").length;
 
-            setProgressBar(current);
+      setProgressBar(current);
 
-            $(".next").click(function () {
+      $(".next").click(function () {
 
-                current_fs = $(this).parent();
-                next_fs = $(this).parent().next();
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
 
-                //Add Class Active
-                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+        //Add Class Active
+        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
-                //show the next fieldset
-                next_fs.show();
-                //hide the current fieldset with style
-                current_fs.animate({
-                    opacity: 0
-                }, {
-                    step: function (now) {
-                        // for making fielset appear animation
-                        opacity = 1 - now;
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({
+          opacity: 0
+        }, {
+          step: function (now) {
+            // for making fielset appear animation
+            opacity = 1 - now;
 
-                        current_fs.css({
-                            'display': 'none',
-                            'position': 'relative'
-                        });
-                        next_fs.css({
-                            'opacity': opacity
-                        });
-                    },
-                    duration: 500
-                });
-                setProgressBar(++current);
+            current_fs.css({
+              'display': 'none',
+              'position': 'relative'
             });
-
-            function setProgressBar(curStep) {
-                var percent = parseFloat(100 / steps) * curStep;
-                percent = percent.toFixed();
-                $(".progress-bar")
-                    .css("width", percent + "%")
-            }
-
-            $(".submit").click(function () {
-                return false;
-            })
-
+            next_fs.css({
+              'opacity': opacity
+            });
+          },
+          duration: 500
         });
-    </script>
+        setProgressBar(++current);
+      });
 
-     <script>
-     $(function() {
-  $('#colorselector').select(function(){
-    $('#navimumbai').show();
-  });
-});
-    </script> 
+      function setProgressBar(curStep) {
+        var percent = parseFloat(100 / steps) * curStep;
+        percent = percent.toFixed();
+        $(".progress-bar")
+          .css("width", percent + "%")
+      }
+
+      $(".submit").click(function () {
+        return false;
+      })
+
+    });
+  </script>
+
+  <script>
+    $(function () {
+      $('#colorselector').select(function () {
+        $('#navimumbai').show();
+      });
+    });
+  </script>
 </body>
 
 </html>
