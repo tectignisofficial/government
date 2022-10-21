@@ -446,8 +446,6 @@ if(isset($_POST['sub_mit']))
                     <tr data-widget="expandable-table" aria-expanded="false">
                       <td><?php echo $count;?></td>
                       <td><?php echo $arr['caseid'];?></td>
-                
-                     
                       <td><?php echo $arr['address'];?></td>
                       <td><?php echo $arr['name'];?></td>
                       <td><a href="fo.php?action=edit&eid=<?php echo $arr['id']; ?>" title="" class="btn btn-success btn-xs delete_purchase">

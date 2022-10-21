@@ -88,7 +88,8 @@ $role='';
 <div class="wrapper">
 
     <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img src="../../dist/img/lo.png" alt="Atrocity Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
     </div>
   <!-- Navbar -->
  <nav class="main-header navbar navbar-expand navbar-white navbar-light">

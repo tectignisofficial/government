@@ -382,61 +382,46 @@ if(isset($_POST['sub'])){
 
 
                   <div id='DivIdToPrint'>
-                    <div class="card-header" style="margin-top:12px">
+                    <div style="margin-top:12px">
                       <!-- <h2 class=" text-center fs-1 fw-bold ">विषय क्रमांक - ४.</h2>--><h2 class=" text-center fs-1 fw-bold ">प्रपत्र ४</h2>
                       <h5 class=" text-center ">दाखल झालेल्या गुन्हयांप्रमाणे सहाय्य देण्यासाठी / मंजुरीसाठी गुन्हेनिहाय
                         अप्राप्त कागदपत्रांची माहिती माहे ( <?php $dat=$_POST['month']; echo $dat; ?> &
                         <?php $year=$_POST['year']; echo $year;  ?>), अखेर. </h5>
 
-                      <br>
-
-                      <p class=" text-center "> तक्त यापुढील पृष्ठांमधीलअनुक्रमांकाप्रमाणे </p>
-                      <p class=" text-center fw-bolder"> माहे
+                      <p class="text-center"> तक्त यापुढील पृष्ठांमधीलअनुक्रमांकाप्रमाणे </p>
+                      <p class="text-center"> माहे
                         <?php $dat=$_POST['month']; echo $dat;  $year=$_POST['year']; echo $year;  ?> अखेर </p>
-
-
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-10">
                       <table id="tbl" class="table  table-hover table-bordered">
                         <thead>
-                          <tr>
-                            <th class="text-center mb-4" colspan="26">Navi Mumbai</th>
-                          </tr>
-
-                          <tr>
-                            <th class="text-center" rowspan="2">अ. क्र.</th>
-                            <th class="text-center" rowspan="2">नोंद वही क्र.</th>
-                            <th class="text-center" rowspan="2">दिनांक </th>
-                            <th class="text-center" rowspan="2">जिल्हा </th>
-                            <th class="text-center" rowspan="2">पोलीस ठाणा </th>
-                            <th class="text-center" rowspan="2">गुन्हा न.</th>
-                            <th class="text-center" rowspan="2">लावलेली कलमे </th>
-                            <th class="text-center" rowspan="2">गुन्हयांचा प्रकार</th>
-                            <th class="text-center" colspan="1">फिर्यादी</th>
-                            <!--					   <th class="text-center"rowspan="2">फार्यादी चे पता</th>-->
-
-                            <th class="text-center" colspan="2">आरोपीची माहिती</th>
-                            <th class="text-center" colspan="7">पिडीत व्यक्तीची माहिती</th>
-                            <th class="text-center" rowspan="2">शेरा</th>
-                            <th class="text-center no" rowspan="2">Status</th>
-                          </tr>
-                          <tr>
-                            <!--                    <th class="text-center" colspan="2">&nbsp;</th>-->
-                            <th class="text-center">नाव</th>
-                            <!-- <th class="text-center">पत्ता</th> -->
-                            <th class="text-center">नाव</th>
-                            <!-- <th class="text-center">पत्ता</th> -->
-                            <th class="text-center">नाव</th>
-                            <!-- <th class="text-center">पत्ता</th> -->
-                            <th class="text-center">प्रवर्ग आणि जात</th>
-                            <th class="text-center">जातीचा दाखला</th>
-                            <th class="text-center">आधार कार्ड</th>
-                            <th class="text-center action-noe">चार्ज शिट</th>
-
-
-
-                          </tr>
+                        <tr>
+			<td colspan="17">नवी मुंबई</td>
+		</tr>
+		<tr>
+			<td rowspan="2"> अ. क्र.</td>
+			<td rowspan="2">नोंद वही क्र.</td>
+			<td rowspan="2">दिनांक </td>
+			<td rowspan="2">जिल्हा</td>
+			<td rowspan="2">पोलीस ठाणा </td>
+			<td rowspan="2">गुन्हा न.</td>
+			<td rowspan="2">लावलेली कलमे </td>
+			<td rowspan="2">गुन्हयांचा प्रकार</td>
+			<td rowspan="2">फिर्यादी नाव</td>
+			<td colspan="2">आरोपीची माहिती 	</td>
+			<td colspan="4">पिडीत व्यक्तीची माहिती</td>
+			<td rowspan="2">शेरा</td>
+			<td rowspan="2">स्टेटस</td>
+		</tr>
+		<tr>
+			<td>नाव</td>
+			<td>पत्ता</td>
+			<td>प्रवर्ग आणि जात</td>
+			<td>जातीचा दाखला</td>
+			<td>आधार कार्ड</td>
+			<td>चार्ज शिट</td>
+		</tr>
 
 
 
