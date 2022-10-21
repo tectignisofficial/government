@@ -356,24 +356,24 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                                                 <input type="text" required class="form-control" value="<?php echo $criminal_name ?>" name="criminal_name"
                                                     id="exampleदिनांक" placeholder="">
                                             </div>
-                                            <div class="form-group col-6">
+                                            <!-- <div class="form-group col-6">
                                                 <label for="exampleदिनांक">आरोपीचा पत्ता</label>
                                                 <input type="varchar" value="<?php echo  $criminal_address ?>" required class="form-control"
                                                     name="criminal_address" id="exampleदिनांक" placeholder="">
-                                            </div>
+                                            </div> -->
 
                                         </div>
 
                                         
 
-                                        <div class="d-flex form-group " style="margin-left: -12px;">
+                                        <!-- <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">आरोपीचा वय</label>
                                                 <input type="number" required class="form-control" value="<?php echo $age ?>"
                                                     name="criminal_age" id="exampleदिनांक fff4" placeholder="">
                                             </div>
 
-                                        </div>
+                                        </div> -->
 
 
                                         
@@ -396,8 +396,8 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                     <tr>
                       <th>अनुक्रमांक</th>
                       <th>criminal_name</th>
-                      <th>criminal_address</th>
-                      <th>age</th>
+                      <!-- <th>criminal_address</th>
+                      <th>age</th> -->
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -409,8 +409,8 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
                     <tr >
                       <td><?php echo $arr['caseid'];?></td>
                       <td><?php echo $arr['criminal_name'];?></td>
-                      <td><?php echo $arr['criminal_address'];?></td>
-                      <td><?php echo $arr['age'];?></td>
+                      <!-- <td><?php echo $arr['criminal_address'];?></td>
+                      <td><?php echo $arr['age'];?></td> -->
                       <td><a href="form2.php?action=edit&eid=<?php echo $arr['id']; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>
 		                        </a></td>
