@@ -4,5 +4,5 @@
   echo  "<script>alert('Logout Sucessful');
   </script>";
   session_destroy();   // function that Destroys Session 
-  header("Location: views/login.php");
+  header("Location: login.php");
 ?>

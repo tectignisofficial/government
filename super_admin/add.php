@@ -100,14 +100,14 @@ $in_ch=mysqli_query($conn,"insert into complaint_form(myfile,medical_report,char
  values ('$myfile','$medical_report','$charge_sheet','$bank_info','$aadhaar_card','$caste_certificate','$category_and_caste','$discription','$fir','$criminal_address','$criminal_name','$victim_name','$complaint_filer_address','$complaint_filer_name','$section','$sub_police_station','$police_station','$taluka','$district','$book_no','$date','$complaint_no','$chk')");  
 if($in_ch==1)  
    {  
-	header("Location: views/form.php");
+	header("Location: .php");
    }
-}  
-     
+   
 else  
    {  
      
    }  
+}
 
 
 ?> 
