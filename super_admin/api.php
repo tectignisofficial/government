@@ -13,15 +13,15 @@ if(isset($_POST["login"])){
 		$_SESSION['name']=$row['name'];
 
 		if($verify==1){
-			echo"<script>alert('Login Sucessful'),window.location='views/index.php';</script>";
+			echo"<script>alert('Login Sucessful'),window.location='index.php';</script>";
 			$_SESSION['use']=$email;
 				
 		}
 		else{
-			echo"<script>alert('Invalid Password'),window.location='views/login.php';</script>";
+			echo"<script>alert('Invalid Password'),window.location='login.php';</script>";
 		}
 	}else{
-		echo"<script>alert('Wrong email'),window.location='views/login.php';</script>";
+		echo"<script>alert('Wrong email'),window.location='login.php';</script>";
 	}
 	}
 
@@ -99,7 +99,7 @@ $formz = mysqli_query($conn,$selectquery);
         	{  
             $last_id = mysqli_insert_id($conn);
             
-            header("Location: views/form2.php?id=".$last_id);
+            header("Location: form2.php?id=".$last_id);
         	}
 	 }
 } 
