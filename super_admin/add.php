@@ -12,15 +12,15 @@ if(isset($_POST["login"])){
 		$_SESSION['name']=$row['name'];
 
 		if($verify==1){
-			echo"<script>alert('Login Sucessful'),window.location='views/index.php';</script>";
+			echo"<script>alert('Login Sucessful'),window.location='index.php';</script>";
 			$_SESSION['use']=$email;
 				
 		}
 		else{
-			echo"<script>alert('Invalid Password'),window.location='views/login.php';</script>";
+			echo"<script>alert('Invalid Password'),window.location='login.php';</script>";
 		}
 	}else{
-		echo"<script>alert('Wrong email'),window.location='views/login.php';</script>";
+		echo"<script>alert('Wrong email'),window.location='login.php';</script>";
 	}
 	}
 
@@ -37,7 +37,7 @@ if(isset($_POST['websave']))
 	
 	 $sql = "INSERT INTO webuser (name,role,email,password) VALUES ('$name','$role','$email','$secure_pass')";
 	 if (mysqli_query($conn, $sql)) {
-		header("location:views/viewwebuser.php");
+		header("location:viewwebuser.php");
 	 } else {
 		echo "Error: " . $sql . "
 " . mysqli_error($conn);
@@ -61,7 +61,7 @@ $adminresult = mysqli_query($conn,$admin);
 
 if(isset($_POST['submi_t']))  
 {  
-$target_dir = "../views/file";
+$target_dir = "../file";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

@@ -91,7 +91,7 @@ $formz = mysqli_query($conn,$selectquery);
 	 }  
 	  $query=mysqli_query($conn,"select * from complaint_form where complaint_no='$complaint_no'");
 	 if(mysqli_num_rows($query)>0){
-	     echo "<script>alert('Complaint number already exist');window.location.href='views/form1.php'</script>";
+	     echo "<script>alert('Complaint number already exist');window.location.href='form1.php'</script>";
 	 }else{
            $in_ch=mysqli_query($conn,"insert into complaint_form(complaint_filer_address,complaint_filer_name,section,police_station,district,book_no,date,complaint_no,type_of_offence,year)
         	values ('$complaint_filer_address','$complaint_filer_name','$section','$police_station','$district','$book_no','$date','$complaint_no','$chk','$year')");  
@@ -125,7 +125,7 @@ $formz = mysqli_query($conn,$selectquery);
   if($sql==1)
   {
    
-   header("Location: views/form3.php?id=".$id) ;
+   header("Location: form3.php?id=".$id) ;
   }
   else {
   echo 'error';
@@ -147,7 +147,7 @@ $formz = mysqli_query($conn,$selectquery);
    $sql= mysqli_query($conn,"UPDATE complaint_form SET  fir = '$fir', discription = '$discription' where id = $id");
    if($sql==1)
    {
-    header("Location: views/form.php");
+    header("Location:form.php");
    }
    else {
    echo 'error';
