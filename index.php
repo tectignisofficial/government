@@ -129,7 +129,7 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
@@ -144,7 +144,7 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
@@ -165,7 +165,7 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
@@ -182,7 +182,7 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
@@ -198,7 +198,7 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
@@ -213,7 +213,7 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
@@ -229,7 +229,7 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
@@ -239,13 +239,13 @@
             </div>
             <?php } ?>
           </li> -->
-          <?php
+          <!-- <?php
         $sql=mysqli_query($conn,"select * from member_img where id='8'");
         while($fetchsql=mysqli_fetch_array($sql)){
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
@@ -253,7 +253,7 @@
               <p>विभागीय आयुक्त (महसूल)कोकण विभाग , मुंबई </p>
 
             </div>
-            <?php } ?>
+            <?php } ?> -->
           </li>
           <?php
         $sql=mysqli_query($conn,"select * from member_img where id='9'");
@@ -261,7 +261,7 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
@@ -271,15 +271,15 @@
           </li>
           <?php } ?>
           <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='9'");
+        $sql=mysqli_query($conn,"select * from member_img where id='13'");
         while($fetchsql=mysqli_fetch_array($sql)){
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/" class="img-responsive"
+              <figure><img src="super_admin/views/member/" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
-                  
+              <?php echo $fetchsql['name'] ?>
                 </strong></h3>
               <p>आयुक्त , समाज कल्याण, महाराष्ट्र राज्य</p>
             </div>
@@ -291,7 +291,7 @@
         ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
@@ -315,7 +315,7 @@
               ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+              <figure><img src="super_admin/views/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
                   alt=""></figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
