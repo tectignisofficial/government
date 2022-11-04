@@ -3,7 +3,7 @@
 include_once 'include.php';
 session_start();
 
-if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
   header("location:index.php");
    }

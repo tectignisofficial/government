@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("../include.php");
-if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+include("include.php");
+if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
   header("location:index.php");
 }
@@ -73,8 +73,8 @@ echo mysqli_query($conn);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Atrocity Raigad | Governnment Form </title>
-  <link rel="shortcut icon" type="image/png" href="../dist/img/government.png" />
-  <link rel="stylesheet" href="../dist/css/adminlte.css">
+  <link rel="shortcut icon" type="image/png" href="dist/img/government.png" />
+  <link rel="stylesheet" href="dist/css/adminlte.css">
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -89,11 +89,11 @@ echo mysqli_query($conn);
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../dist/css/adminlte.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.css">
 
   <!-- Theme style -->
-  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
 
   <script>
 
@@ -122,9 +122,9 @@ document.getElementById("citySelect").selectedIndex = 0;
 }
   </script>
 
- <link href="../dist/img/lo.png" rel="icon">
+ <link href="dist/img/lo.png" rel="icon">
   <link href="./dist/img/lo.png" rel="apple-touch-icon">
- <link href="../dist/img/lo.png" rel="icon">
+ <link href="dist/img/lo.png" rel="icon">
   <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
 <body class="hold-transition sidebar-mini">
@@ -161,7 +161,7 @@ document.getElementById("citySelect").selectedIndex = 0;
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
-        <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
         <span class="brand-text font-weight-light" >Atrocity Raigad</span>
       </a>
@@ -171,7 +171,7 @@ document.getElementById("citySelect").selectedIndex = 0;
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <!--<div class="image">
-            <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>-->
           <div class="info">
             <a href="#" class="d-block" style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $role; ?></a>
@@ -300,7 +300,7 @@ document.getElementById("citySelect").selectedIndex = 0;
            
             </li>
             <li class="nav-item">
-              <a href="../logout.php" class="nav-link">
+              <a href="logout.php" class="nav-link">
               <i class=" nav-icon fas fa-sign-out-alt"></i> 
                 <p>
                      बाहेर पडा  
@@ -348,7 +348,7 @@ document.getElementById("citySelect").selectedIndex = 0;
                 
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="post" action="../api.php" enctype="multipart/form-data">
+                <form method="post" action="api.php" enctype="multipart/form-data">
                 
                   <div class="card-body">
                       <div class="col-12" style="text-align:center;">
@@ -522,15 +522,15 @@ document.getElementById("citySelect").selectedIndex = 0;
   <!-- ./wrapper -->
 
   <!-- jQuery -->
-  <script src="../plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
-  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- bs-custom-file-input -->
-  <script src="../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+  <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="../dist/js/adminlte.min.js"></script>
+  <script src="dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
-  <script src="../dist/js/demo.js"></script>
+  <script src="dist/js/demo.js"></script>
   <!-- Page specific script -->
   
   <script>

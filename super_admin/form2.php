@@ -1,9 +1,9 @@
 <?php
-//include '../api.php';
-include_once '../include.php';
+//include 'api.php';
+include_once 'include.php';
 session_start();
 
-if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
   header("location:index.php");
    }
@@ -79,7 +79,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Atrocity Raigad | Governnment Form </title>
-    <link rel="shortcut icon" type="image/png" href="../dist/img/government.png" />
+    <link rel="shortcut icon" type="image/png" href="dist/img/government.png" />
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -92,11 +92,11 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="../dist/css/adminlte.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="dist/css/adminlte.css">
 
     <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
     
    
 
@@ -105,9 +105,9 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
     </script>
 
     
- <link href="../dist/img/lo.png" rel="icon">
+ <link href="dist/img/lo.png" rel="icon">
   <link href="./dist/img/lo.png" rel="apple-touch-icon">
- <link href="../dist/img/lo.png" rel="icon">
+ <link href="dist/img/lo.png" rel="icon">
   <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
 
@@ -145,7 +145,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="index.php" class="brand-link">
-        <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
         <span class="brand-text font-weight-light" >Atrocity Raigad</span>
       </a>
@@ -155,7 +155,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <!--<div class="image">
-            <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>-->
           <div class="info">
             <a href="#" class="d-block" style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $role; ?></a>
@@ -278,7 +278,7 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
            
 
             <li class="nav-item">
-              <a href="../logout.php" class="nav-link">
+              <a href="logout.php" class="nav-link">
               <i class=" nav-icon fas fa-sign-out-alt"></i> 
                 <p>
                      बाहेर पडा  
@@ -464,15 +464,15 @@ if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Pag
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="../plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- bs-custom-file-input -->
-    <script src="../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../dist/js/adminlte.min.js"></script>
+    <script src="dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../dist/js/demo.js"></script>
+    <script src="dist/js/demo.js"></script>
     <!-- Page specific script -->
     <script>
         $(function () {

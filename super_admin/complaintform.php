@@ -388,10 +388,10 @@ $ifsc_code=$_POST['ifsc_code'];
                       <div class="form-group col-6">
                         <label for="exampleInputPassword1">अनुदान रक्कमेची सद्यस्थिती <sup style="color:red;">*</sup></label>
                         <select class="form-control select2" name="payStatus">
-                          <option value="stage1" selected="selected">रक्कमेची पहिली स्थिती</option>
-                          <option value="stage1">रक्कमेची दुसरी स्थिती</option>
-                          <option value="stage3">रक्कमेची तिसरी स्थिती</option>
-                          <option value="stage4">रक्कमेची चौथी स्थिती</option>
+                        <option value="stage 1" selected>stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत</option>
+                        <option value="stage 2">stage 2 FIR चौकशी दाखल</option>
+                        <option value="stage 3">stage 3 न्यायालयाचा ननणणय</option>
+                        <option value="Stage 4">Stage 4 Documents pending</option>
                         </select>
                       </div>
 

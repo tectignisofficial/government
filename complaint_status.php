@@ -144,6 +144,12 @@ if (!$conn) {
 
               <table class="table table-striped ">
                 <thead>
+                <tr>
+                    <th scope="col">गुन्हा नं.</th>
+                    <td>
+                      <?php echo $arr['no'] ?>
+                    </td>
+                  </tr>
                   <tr>
                     <th scope="col">नोंद वही क्र.</th>
                     <td>

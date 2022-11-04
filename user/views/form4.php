@@ -379,10 +379,10 @@ if(isset($_POST['subm_it'])){
                       </div>
                       <select class="custom-select" id="gender3" name="payStatus">
                         <option value="<?php echo $payStatus; ?>"><?php echo $payStatus; ?></option>
-                        <option value="stage 1" selected>stage 1 payment</option>
-                        <option value="stage 2">stage 2 payment</option>
-                        <option value="stage 3">stage 3 payment</option>
-                        <option value="Stage 4">Stage 4</option>
+                        <option value="stage 1" selected>stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत</option>
+                        <option value="stage 2">stage 2 FIR चौकशी दाखल</option>
+                        <option value="stage 3">stage 3 न्यायालयाचा ननणणय</option>
+                        <option value="Stage 4">Stage 4 Documents pending</option>
                       </select>
                     </div>
                     

@@ -6,7 +6,7 @@ if(isset($_POST["login"])){
 	$email=mysqli_real_escape_string($conn,$_POST["email"]);
 	$password=mysqli_real_escape_string($conn,$_POST["password"]);
 
-	$sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
+	$sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email' AND name='super admin'") ;
 	if(mysqli_num_rows($sql)>0){
 		$row=mysqli_fetch_assoc($sql); 
 		$verify=password_verify($password,$row['password']);
@@ -15,6 +15,7 @@ if(isset($_POST["login"])){
 		if($verify==1){
 			echo"<script>alert('Login Sucessful'),window.location='index.php';</script>";
 			$_SESSION['use']=$email;
+      $_SESSION['id']=$row['name'];
 				
 		}
 		else{
