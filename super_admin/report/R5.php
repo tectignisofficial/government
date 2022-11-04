@@ -399,29 +399,42 @@ if(isset($_POST['sub'])){
                         <tr>
 			<td colspan="17">नवी मुंबई</td>
 		</tr>
-		<tr>
-			<td rowspan="2"> अ. क्र.</td>
-			<td rowspan="2">नोंद वही क्र.</td>
-			<td rowspan="2">दिनांक </td>
-			<td rowspan="2">जिल्हा</td>
-			<td rowspan="2">पोलीस ठाणा </td>
-			<td rowspan="2">गुन्हा न.</td>
-			<td rowspan="2">लावलेली कलमे </td>
-			<td rowspan="2">गुन्हयांचा प्रकार</td>
-			<td rowspan="2">फिर्यादी नाव</td>
-			<td colspan="2">आरोपीची माहिती 	</td>
-			<td colspan="4">पिडीत व्यक्तीची माहिती</td>
-			<td rowspan="2">शेरा</td>
-			<td rowspan="2">स्टेटस</td>
-		</tr>
-		<tr>
-			<td>नाव</td>
-			<td>पत्ता</td>
-			<td>प्रवर्ग आणि जात</td>
-			<td>जातीचा दाखला</td>
-			<td>आधार कार्ड</td>
-			<td>चार्ज शिट</td>
-		</tr>
+    <tr>
+                            <th class="text-center" rowspan="2">अ. क्र.</th>
+                            <th class="text-center" rowspan="2">नोंद वही क्र.</th>
+                            <th class="text-center" rowspan="2">दिनांक </th>
+                            <th class="text-center" rowspan="2">जिल्हा </th>
+                            <th class="text-center" rowspan="2">पोलीस ठाणा </th>
+                            <th class="text-center" rowspan="2">गुन्हा न.</th>
+                            <th class="text-center" rowspan="2">लावलेली कलमे </th>
+                            <th class="text-center" rowspan="2">गुन्हयांचा प्रकार</th>
+                            <th class="text-center" colspan="2">फिर्यादी</th>
+                            <!--					   <th class="text-center"rowspan="2">फार्यादी चे पता</th>-->
+
+                            <th class="text-center" colspan="3">आरोपीची माहिती</th>
+                            <th class="text-center" colspan="6">पिडीत व्यक्तीची माहिती</th>
+                            <th class="text-center" rowspan="2">शेरा</th>
+                            <th class="text-center no" rowspan="2">Status</th>
+                          </tr>
+                          <tr>
+                            <!--                    <th class="text-center" colspan="2">&nbsp;</th>-->
+                            <th class="text-center">नाव</th>
+                            <th class="text-center">पत्ता</th>
+                            <th class="text-center">नाव</th>
+                            <th class="text-center">पत्ता</th>
+
+                            <th class="text-center">नाव</th>
+                            <th class="text-center">पत्ता</th>
+                            <th class="text-center">प्रवर्ग आणि जात</th>
+                            <th class="text-center">वय</th>
+                            <th class="text-center">जातीचा दाखला</th>
+                            <th class="text-center">आधार कार्ड</th>
+                            <th class="text-center">चार्ज शिट</th>
+
+
+
+
+                          </tr>
 
 
 
@@ -491,7 +504,7 @@ if(isset($_POST['sub'])){
                     ?>
 
                           <tr>
-                            <td><?php echo $count1; ?></td>
+                          <td><?php echo $count; ?></td>
                             <td><?php echo $arr["book_no"]; ?></td>
                             <td><?php echo $arr["date"]; ?></td>
                             <td><?php echo $arr["district"]; ?></td>
@@ -503,7 +516,6 @@ if(isset($_POST['sub'])){
                             <td><?php echo $arr["comp_add"]; ?></td>
                             <td><?php echo $arr["crname"]; ?></td>
                             <td><?php echo $arr["cradd"]; ?></td>
-                            <td><?php echo $arr["crage"]; ?></td>
                             <td><?php echo $arr["vname"]; ?></td>
                             <td><?php echo $arr["vaddress"]; ?></td>
                             <td><?php echo $arr["vcaste"]; ?></td>

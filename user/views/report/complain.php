@@ -1,9 +1,9 @@
 <?php
 include '../../api.php';
-if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+if(!isset($_SESSION['name'])=='Admin') // If session is not set then redirect to Login Page
 {
  header("Location:../login.php"); 
-}
+}else{
 $district='';
         $email=$_SESSION['use'];
         $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
@@ -813,3 +813,4 @@ if(isset($_POST['submit1'])){
 </body>
 
 </html>
+<?php } ?>

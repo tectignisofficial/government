@@ -2,10 +2,10 @@
 //include '../api.php';
 include("../include.php");
 session_start();
-if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+if(!isset($_SESSION['admin'])=='Admin') 
 {
-  header("location:index.php");
-}
+  header("location:login.php");
+   }else{
 $district='';
         $email=$_SESSION['use'];
         $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
@@ -456,3 +456,4 @@ if(isset($_POST['subm_it'])){
 </body>
 
 </html>
+<?php } ?>

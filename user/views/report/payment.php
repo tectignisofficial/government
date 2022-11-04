@@ -2,9 +2,9 @@
 <?php
 include("../../include.php");
 session_start();
-if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+if(!isset($_SESSION['admin'])=='Admin') // If session is not set then redirect to Login Page
 {
-}
+}else{
 $btn=mysqli_real_escape_string($conn, $_GET['btn1']);
 $btn2=mysqli_real_escape_string($conn, $_GET['btn2']);
 
@@ -500,3 +500,4 @@ if(isset($_POST['subt3'])){
 </body>
 
 </html>
+<?php } ?>

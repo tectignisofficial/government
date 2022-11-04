@@ -1,10 +1,10 @@
 <?php   session_start(); 
  include("../include.php");
 
-      if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+ if(!isset($_SESSION['admin'])=='Admin') // If session is not set then redirect to Login Page
        {
         header("Location:login.php"); 
-       }//else{
+       }else{
          
         $district='';
         $email=$_SESSION['use'];
@@ -15,6 +15,7 @@
         }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="mr">
 
@@ -68,7 +69,7 @@
     <div class="preloader flex-column justify-content-center align-items-center">
       <img class="animation__shake" src="../dist/img/government.png" alt="Atrocity" height="60" width="60">
     </div>
-
+<?php  echo $_SESSION['admin']; ?>
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <!-- Left navbar links -->
@@ -640,3 +641,4 @@ $('.yearselect').yearselect({
 </body>
 
 </html>
+<?php } ?>

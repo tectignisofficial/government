@@ -2,10 +2,10 @@
 include("../../include.php");
 session_start();
 //include '../../api.php';
-if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+if(!isset($_SESSION['admin'])=='Admin') // If session is not set then redirect to Login Page
        {
-        //header("Location:../login.php"); 
-       }//else{
+        header("Location:../login.php"); 
+       }else{
          
         $district='';
         $email=$_SESSION['use'];
@@ -588,3 +588,4 @@ window.onload = function () {
 
 </body>
 </html>
+<?php } ?>

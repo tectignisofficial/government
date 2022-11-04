@@ -1,10 +1,10 @@
 <?php
 session_start();
 include("../include.php");
-if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+if(!isset($_SESSION['admin'])=='Admin') // If session is not set then redirect to Login Page
 {
-  header("location:index.php");
-}
+  header("location:login.php");
+}else{
 $district='';
         $email=$_SESSION['use'];
         $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
@@ -562,3 +562,4 @@ echo mysqli_query($conn);
 </body>
 
 </html>
+<?php } ?>
