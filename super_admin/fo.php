@@ -3,7 +3,7 @@ include("include.php");
 session_start();
 if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
 {
-  header("location:index.php");
+  header("location:login.php");
 }
 $role='';
        $email=$_SESSION['use'];
@@ -356,8 +356,6 @@ if(isset($_POST['sub_mit']))
                                                 <input type="Textbox" required class="form-control"
                                                 name="category_and_caste" value="<?php echo  $category_and_caste;?>" id="Exampleप्रवर्ग आणि जात fff3" placeholder="">
                                             </div>
-                                           
-
 
                                         </div>
 
@@ -406,15 +404,6 @@ if(isset($_POST['sub_mit']))
                                             
                                         </div>
 
-
-                                        
-
-
-
-                                        
-
-                                        
-
                                         <!-- /.card-body -->
 
                                         <div style="text-align: end;">
@@ -448,7 +437,7 @@ if(isset($_POST['sub_mit']))
                       <td><?php echo $arr['caseid'];?></td>
                       <td><?php echo $arr['address'];?></td>
                       <td><?php echo $arr['name'];?></td>
-                      <td><a href="fo.php?action=edit&eid=<?php echo $arr['id']; ?>" title="" class="btn btn-success btn-xs delete_purchase">
+                      <td><a href="fo.php?action=edit&eid=<?php echo $arr['id']; ?>&id=<?php echo $arr['caseid']; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>
 		                        </a></td>
                       

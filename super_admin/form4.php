@@ -4,7 +4,7 @@ include("include.php");
 session_start();
 if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
-  header("location:index.php");
+  header("location:login.php");
 }
 $role='';
        $email=$_SESSION['use'];
@@ -12,7 +12,7 @@ $role='';
        while($res=mysqli_fetch_array($sql)){
          $role=$res['role'];
        }
-
+       $payStatus='';
         $image='';
         $discription='';
         $id=intval($_GET['id']);
@@ -20,7 +20,7 @@ $role='';
         while($arr=mysqli_fetch_array($sql)){
         $image=$arr['image'];
         $discription=$arr['discription'];
-        $payStatus='';
+        
 
         // $payStatus=$arr['payStatus'];
         }
@@ -34,7 +34,7 @@ if(isset($_POST['subm_it'])){
     $filedet=$_FILES['files']['tmp_name'];
     $loc="file/".$file;
     move_uploaded_file($filedet,$loc);
-    $loc1="user/views/file/".$file;
+    $loc1="file/".$file;
     move_uploaded_file($filedet,$loc1);
     if(isset($_GET['eid'])){
       $sql=mysqli_query($conn,"update image set discription='$discription',status='$payStatus' where caseid='$eid'");
@@ -387,11 +387,11 @@ if(isset($_POST['subm_it'])){
                         <label class="input-group-text" for="gender3">Status</label>
                       </div>
                       <select class="custom-select" id="gender3" name="payStatus">
-                        <option value="<?php echo $payStatus; ?>"><?php echo $payStatus; ?></option>
-                        <option value="stage 1" selected>stage 1 payment</option>
-                        <option value="stage 2">stage 2 payment</option>
-                        <option value="stage 3">stage 3 payment</option>
-                        <option value="Stage 4">Stage 4</option>
+                        <option value="<?php echo $payStatus; ?>" disabled><?php echo $payStatus; ?></option>
+                        <option value="stage 1" selected>stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत</option>
+                        <option value="stage 2">stage 2 FIR चौकशी दाखल</option>
+                        <option value="stage 3">stage 3 न्यायालयाचा ननणणय</option>
+                        <option value="Stage 4">Stage 4 Documents pending</option>
                       </select>
                     </div>
                     

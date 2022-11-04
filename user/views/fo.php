@@ -47,17 +47,14 @@ if(isset($_POST['sub_mit']))
    $caste_certificate=$_POST['caste_certificate'];// 
    $aadhaar_card=$_POST['aadhaar_card'];//
    $charge_sheet=$_POST['charge_sheet'];//
-   $victim_age=$_POST['victim_age'];
+  //  $victim_age=$_POST['victim_age'];
    $category_and_caste=$_POST['category_and_caste'];
    if(isset($_GET['eid'])){
-    $sql= mysqli_query($conn,"update victim set name='$victim_name',address='$victim_address',victim_age=' $victim_age',caste='$category_and_caste',caste_certificate=' $caste_certificate',aadhar_card='$aadhaar_card',charge_sheet='$charge_sheet' where id='$id'");
-   }else{
-    $in_ch=mysqli_query($conn,"insert into victim(caseid,charge_sheet,aadhar_card,caste,caste_certificate,victim_age,name,address)
-    values ('$id','$charge_sheet','$aadhaar_card','$category_and_caste','$caste_certificate','$victim_age','$victim_name','$victim_address')");  
-   }
-	if($in_ch==1) 
+    $id4=$_GET['eid'];
+    $sql= mysqli_query($conn,"update victim set name='$victim_name',address='$victim_address',victim_age=' $victim_age',caste='$category_and_caste',caste_certificate=' $caste_certificate',aadhar_card='$aadhaar_card',charge_sheet='$charge_sheet' where id='$id4'");
+    if($sql==1) 
   {   
-      //echo"<script>alert('hrllo')</script>";
+      echo"<script>alert('hrllo')</script>";
     //header("Location: views/form4.php?id=".$id);	
   }
   else  
@@ -65,6 +62,21 @@ if(isset($_POST['sub_mit']))
 	 echo 'error'; 
 	}  
 
+   }else{
+    $in_ch=mysqli_query($conn,"insert into victim(caseid,charge_sheet,aadhar_card,caste,caste_certificate,victim_age,name,address)
+    values ('$id','$charge_sheet','$aadhaar_card','$category_and_caste','$caste_certificate','$victim_age','$victim_name','$victim_address')"); 
+    if($in_ch==1) 
+  {   
+      echo"<script>alert('hllo')</script>";
+    //header("Location: views/form4.php?id=".$id);	
+  }
+  else  
+	{  
+	 echo 'error'; 
+	}  
+ 
+   }
+	
   }
 
 ?>
@@ -404,26 +416,20 @@ if(isset($_POST['sub_mit']))
                         <input type="Textbox" required class="form-control" name="category_and_caste"
                           value="<?php echo  $category_and_caste;?>" id="Exampleप्रवर्ग आणि जात fff3" placeholder="">
                       </div>
-                      <div class="form-group col-6">
-                        <label for="exampleदिनांक">पिडीत व्यक्तीचे वय</label>
-                        <input type="number" required class="form-control" name="victim_age"
-                          value="<?php echo $victim_age;?>" id="exampleदिनांक fff4" placeholder="">
-                      </div>
-
+                    
                     </div>
 
                     <div class="form-group d-flex " style="margin-left: -12px;">
                       <div class="form-group col-2">
                         <label for="Exampleउप विभागा चे नाव">जातीचा दाखला </label>
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" id="customRadio1" value="होय"
-                            name="caste_certificate">
+                          <input class="custom-control-input" type="radio" id="customRadio1" value="होय" <?php if($caste_certificate=='होय'){ echo 'checked'; } ?> name="caste_certificate">
                           <label for="customRadio1" class="custom-control-label">होय </label>
 
                         </div>
                         <div class="custom-control custom-radio">
                           <input class="custom-control-input" type="radio" id="customRadio2" value="नाही"
-                            name="caste_certificate">
+                            name="caste_certificate"  <?php if($caste_certificate=='नाही'){ echo 'checked'; } ?> >
                           <label for="customRadio2" class="custom-control-label">नाही </label>
                         </div>
                       </div>
@@ -431,12 +437,12 @@ if(isset($_POST['sub_mit']))
                         <label for="Exampleउप विभागा चे नाव">आधार कार्ड </label>
                         <div class="custom-control custom-radio">
                           <input class="custom-control-input" required type="radio" id="customRadio3" value="होय"
-                            name="aadhaar_card">
+                            name="aadhaar_card" <?php if($aadhaar_card=='होय'){ echo 'checked'; } ?>>
                           <label for="customRadio3" class="custom-control-label">होय</label>
                         </div>
                         <div class="custom-control custom-radio">
                           <input class="custom-control-input" type="radio" id="customRadio4" value="नाही"
-                            name="aadhaar_card">
+                            name="aadhaar_card" <?php if($aadhaar_card=='नाही'){ echo 'checked'; } ?>>
                           <label for="customRadio4" class="custom-control-label">नाही </label>
                         </div>
                       </div>
@@ -445,12 +451,12 @@ if(isset($_POST['sub_mit']))
                         <label for="Exampleगुन्हा नं.">चार्ज शीट </label>
                         <div class="custom-control custom-radio">
                           <input class="custom-control-input" required type="radio" id="customRadio7" value="होय"
-                            name="charge_sheet">
+                            name="charge_sheet" <?php if($charge_sheet=='होय'){ echo 'checked'; } ?>>
                           <label for="customRadio7" class="custom-control-label">होय</label>
                         </div>
                         <div class="custom-control custom-radio">
                           <input class="custom-control-input" required type="radio" id="customRadio8" value="नाही"
-                            name="charge_sheet">
+                            name="charge_sheet" <?php if($charge_sheet=='नाही'){ echo 'checked'; } ?>>
                           <label for="customRadio8" class="custom-control-label">नाही </label>
                         </div>
                       </div>
@@ -483,8 +489,6 @@ if(isset($_POST['sub_mit']))
                   <thead>
                     <tr>
                       <th>अनुक्रमांक</th>
-                      <th>तक्रार नोंदणी क्र.</th>
-                      <th>age</th>
                       <th>address</th>
                       <th>name</th>
                       <th>Action</th>
@@ -497,12 +501,9 @@ if(isset($_POST['sub_mit']))
                     ?>
                     <tr data-widget="expandable-table" aria-expanded="false">
                       <td><?php echo $count;?></td>
-                      <td><?php echo $arr['caseid'];?></td>
-                      <td><?php echo $arr['charge_sheet'];?></td>
-                      <td><?php echo $arr['aadhar_card'];?></td>
-                      <td><?php echo $arr['caste_certificate'];?></td>
-                      <td><?php echo $arr['victim_age'];?></td>
-                      <td><a href="fo.php?action=edit&eid=<?php echo $arr['id']; ?>" title=""
+                      <td><?php echo $arr['name'];?></td>
+                      <td><?php echo $arr['address'];?></td>
+                      <td><a href="fo.php?action=edit&eid=<?php echo $arr['id']; ?>&id=<?php echo $arr['caseid']; ?>" title=""
                           class="btn btn-success btn-xs delete_purchase">
                           <i class="fas fa-edit"></i>
                         </a></td>

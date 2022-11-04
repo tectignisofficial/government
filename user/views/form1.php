@@ -38,32 +38,50 @@ if(isset($_GET['id'])){
   }
 }
 
-if(isset($_POST['s_ubmit']) && ($_GET['id'])){
-  $id=$_GET['id'];
-  $book_no=$_POST['book_no']; 
- $date=$_POST['date'];  
- $year=$_POST['year'];
- $complaint_no=$_POST['complaint_no'];
- $district=$_POST['district']; 
- $police_station=$_POST['police_station']; 
- $section=$_POST['section']; 
- $complaint_filer_name=$_POST['complaint_filer_name'];
-//  $complaint_filer_address=$_POST['complaint_filer_address'];
- $checkbox1=$_POST['crime'];  
- $chk="";  
- foreach($checkbox1 as $chk1)  
- {  
-  $chk .= $chk1.",";  
- }  
-   $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',year='$year',type_of_offence='$chk' where id='$id'");
-   if($sql==1){
-       header("location:form2.php?eid=".$id);
+if(isset($_POST['s_ubmit']))  
+  {  
+   $book_no=$_POST['book_no']; 
+   $date=$_POST['date'];  
+   $year=$_POST['year'];
+   $complaint_no=$_POST['complaint_no'];
+   $district=$_POST['district']; 
+   $police_station=$_POST['police_station']; 
+   $section=$_POST['section']; 
+   $id1=$_POST['id1'];
+   $complaint_filer_name=$_POST['complaint_filer_name'];
+  //  $complaint_filer_address=$_POST['complaint_filer_address'];
+   $checkbox1=$_POST['crime'];  
+   $chk="";  
+   foreach($checkbox1 as $chk1)  
+	 {  
+		$chk .= $chk1.",";  
+	 }  
+	 
+	 $query=mysqli_query($conn,"select * from complaint_form where complaint_no='$complaint_no'");
+	
+	     if(isset($_GET['id'])!=''){
+   $in_ch=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',year='$year',complaint_filer_address='$complaint_filer_address',type_of_offence='$chk' where id='$id1'");
+   if($in_ch==1)  
+   {  
+     header("Location:form2.php?id=".$id1);
    }
-   else{
-echo mysqli_query($conn);
+   }else{
+    if(mysqli_num_rows($query)>0){
+      echo "<script>alert('Complaint number already exist');window.location.href='form1.php'</script>";
+  }else{
+        $sql=mysqli_query($conn,"insert into complaint_form(complaint_filer_address,complaint_filer_name,section,police_station,district,book_no,date,year,complaint_no,type_of_offence)
+        values ('$complaint_filer_address','$complaint_filer_name','$section','$police_station','$district','$book_no','$date','$year','$complaint_no','$chk')"); 
+        if($sql==1)  
+	{  
+    $last_id = mysqli_insert_id($conn);
+    
+    header("Location: form2.php?id=".$last_id);
+	}
+  } 
    }
-}
-
+   
+	
+} 
 ?>
 
 <!DOCTYPE html>
@@ -327,7 +345,7 @@ echo mysqli_query($conn);
                 
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form method="post" action="../api.php" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data">
                 
                   <div class="card-body">
                       <div class="col-12" style="text-align:center;">
@@ -344,6 +362,7 @@ echo mysqli_query($conn);
                       </div>
                     <div class=" d-flex form-group " style="margin-left: -12px;">
                     <div class="form-group col-6">
+                      <input type="hidden" name="id1" value='<?php echo $_GET['id'] ?>'>
                       <label for="exampleनोंद वही क्र.">नोंद वही क्र.</label>
                       <input type="Textbox" required class="form-control" value="<?php echo $book_no?>" name="book_no" id="exampleInputनोंद वही क्र."
                         placeholder="">

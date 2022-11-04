@@ -4,7 +4,7 @@ include("include.php");
 session_start();
 if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
-  header("location:index.php");
+  header("location:login.php");
 }
 $role='';
        $email=$_SESSION['use'];
@@ -48,7 +48,7 @@ $role='';
          $victim_name=$_POST['victim_name'];
          $victim_address=$_POST['victim_address'];
          $category_and_caste=$_POST['category_and_caste'];  
-         $victim_age=$_POST['victim_age'];
+        //  $victim_age=$_POST['victim_age'];
          $caste_certificate=$_POST['caste_certificate']; 
          $aadhaar_card=$_POST['aadhaar_card'];
          $charge_sheet=$_POST['charge_sheet'];
@@ -57,7 +57,7 @@ $role='';
         
         if($sql==1)
         {
-         header("Location:editform4.php?eid=".$caseid) ;
+        //  header("Location:editform4.php?eid=".$caseid) ;
         }
         else {
         echo 'error';
@@ -394,11 +394,11 @@ $role='';
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
                                                 <label for="">पिडीत व्यक्तीचे नाव </label>
-                                                <input type="text" required class="form-control" value="<?php echo $victim_name;?>" name="victim_name" id="fff" placeholder="">
+                                                <input type="text" class="form-control" value="<?php echo $victim_name;?>" name="victim_name" id="fff" placeholder="">
                                             </div>
                                             <div class="form-group col-6">
                                                 <label for="">पिडीत व्यक्तीचा पत्ता</label>
-                                                <input type="text" required class="form-control" value="<?php echo $victim_address;?>" name="victim_address" id="fff2" placeholder="">
+                                                <input type="text" class="form-control" value="<?php echo $victim_address;?>" name="victim_address" id="fff2" placeholder="">
                                             </div>
 
                                         </div>
@@ -408,15 +408,14 @@ $role='';
                                         <div class="d-flex form-group " style="margin-left: -12px;">
                                             <div class="form-group col-6">
                                                 <label for="Exampleप्रवर्ग आणि जात ">पिडीत व्यक्तीचे प्रवर्ग आणि जात</label>
-                                                <input type="Textbox" required class="form-control"
+                                                <input type="Textbox"  class="form-control"
                                                 name="category_and_caste" value="<?php echo  $category_and_caste;?>" id="Exampleप्रवर्ग आणि जात fff3" placeholder="">
                                             </div>
-                                            <div class="form-group col-6">
+                                            <!-- <div class="form-group col-6">
                                                 <label for="exampleदिनांक">पिडीत व्यक्तीचे वय</label>
-                                                <input type="number" required class="form-control"
+                                                <input type="number" class="form-control"
                                                     name="victim_age" value="<?php echo $victim_age;?>" id="exampleदिनांक fff4" placeholder="">
-                                            </div>
-
+                                            </div> -->
                                         </div>
 
                                         <div class="form-group d-flex " style="margin-left: -12px;">
@@ -470,9 +469,14 @@ $role='';
 <?php $eid=intval($_GET['eid']); ?>
                                         <div style="text-align: end;">
                                             <a href="addnewform3.php?eid=<?php echo $eid;?>" class="btn btn-primary bbbt">Add</a>
-                                            <button type="sumbit" name="sub_mit" class="btn btn-primary bbbt">नमूद करा
-                                            </button>
                                            
+                                            <?php
+                                            if(isset($_GET['id'])){
+                                            ?>
+                                                <button type="sumbit" name="sub_mit" class="btn btn-primary bbbt">नमूद करा
+                                            </button>
+                                            <?php } ?>
+                                            <a href="editform4.php?eid=<?php echo $eid;?>" class="btn btn-primary bbbt">Next</a>
                                         </div>
                                     </div>          
                                 </form>
@@ -486,7 +490,6 @@ $role='';
                       <th>गुन्हेगाराचे नाव</th>
                       <th>पोलीस स्टेशन</th>
                       <th>जिल्हा</th>
-                      <th>age</th>
                       <th>address</th>
                       <th>name</th>
                       <th>Action</th>
@@ -506,10 +509,9 @@ $role='';
                       <td><?php echo $arr['charge_sheet'];?></td>
                       <td><?php echo $arr['aadhar_card'];?></td>
                       <td><?php echo $arr['caste_certificate'];?></td>
-                      <td><?php echo $arr['victim_age'];?></td>
                       <td><?php echo $arr['address'];?></td>
                       <td><?php echo $arr['name'];?></td>
-                      <td><a href="editform3.php?action=edit&id=<?php echo $arr['id']; ?>" title="" class="btn btn-success btn-xs delete_purchase"><i class="fas fa-edit"></i></a></td>
+                      <td><a href="editform3.php?action=edit&id=<?php echo $arr['id']; ?>&eid=<?php echo $arr['caseid']; ?>" title="" class="btn btn-success btn-xs delete_purchase"><i class="fas fa-edit"></i></a></td>
                       
                     </tr>
                     <?php $count++;

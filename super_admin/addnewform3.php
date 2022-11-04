@@ -4,7 +4,7 @@ include("include.php");
 session_start();
 if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
-  header("location:index.php");
+  header("location:login.php");
 }
 $role='';
        $email=$_SESSION['use'];
@@ -326,11 +326,11 @@ if(isset($_POST['sub_mit']))
                                                 <input type="Textbox" required class="form-control"
                                                 name="category_and_caste" id="Exampleप्रवर्ग आणि जात fff3" placeholder="">
                                             </div>
-                                            <div class="form-group col-6">
+                                            <!-- <div class="form-group col-6">
                                                 <label for="exampleदिनांक">पिडीत व्यक्तीचे वय</label>
                                                 <input type="number" required class="form-control"
                                                     name="victim_age"  id="exampleदिनांक fff4" placeholder="">
-                                            </div>
+                                            </div> -->
 
                                         </div>
 

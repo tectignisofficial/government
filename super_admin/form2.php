@@ -5,7 +5,7 @@ session_start();
 
 if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
-  header("location:index.php");
+  header("location:login.php");
    }
    $role='';
    $email=$_SESSION['use'];
@@ -33,9 +33,9 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
          $id=$_POST['id'];
         //  $caseid=$_POST['caseid'];
          $criminal_name=$_POST['criminal_name'];
-         $criminal_address=$_POST['criminal_address'];
-         $criminal_age=$_POST['criminal_age'];
-         $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name',criminal_address='$criminal_address',age='$criminal_age' where id='$id'");
+        //  $criminal_address=$_POST['criminal_address'];
+        //  $criminal_age=$_POST['criminal_age'];
+         $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name' where id='$id'");
         
         if($sql==1)
         {
@@ -51,14 +51,14 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
     if(isset($_POST['su_bmit']))  
   {  
    $criminal_name=$_POST['criminal_name'];
-   $criminal_address=$_POST['criminal_address'];
-   $criminal_age=$_POST['criminal_age'];
+  //  $criminal_address=$_POST['criminal_address'];
+  //  $criminal_age=$_POST['criminal_age'];
    
 
    if(isset($_GET['eid'])){
     $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name',criminal_address='$criminal_address',age='$criminal_age' where id='$id'");
    }else{
-    $sql= mysqli_query($conn,"INSERT INTO criminal(`caseid`, `criminal_name`, `criminal_address`, `age`) VALUES ('$id','$criminal_name','$criminal_address','$criminal_age')");
+    $sql= mysqli_query($conn,"INSERT INTO criminal(`caseid`, `criminal_name`, `criminal_address`) VALUES ('$id','$criminal_name','$criminal_address')");
   }
     if($sql==1)
     {
@@ -411,7 +411,7 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
                       <td><?php echo $arr['criminal_name'];?></td>
                       <!-- <td><?php echo $arr['criminal_address'];?></td>
                       <td><?php echo $arr['age'];?></td> -->
-                      <td><a href="form2.php?action=edit&eid=<?php echo $arr['id']; ?>" title="" class="btn btn-success btn-xs delete_purchase">
+                      <td><a href="form2.php?action=edit&eid=<?php echo $arr['id']; ?>&id=<?php echo $arr['caseid']; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>
 		                        </a></td>
                     </tr>

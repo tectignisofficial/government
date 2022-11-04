@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
-  header("location:index.php");
+  header("location:login.php");
    }
    $role='';
    $email=$_SESSION['use'];
@@ -36,15 +36,14 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
    $id=$_POST['id'];
    $caseid=$_POST['caseid'];
    $criminal_name=$_POST['criminal_name'];
-   $criminal_address=$_POST['criminal_address'];
-   $criminal_age=$_POST['criminal_age'];
+  //  $criminal_address=$_POST['criminal_address'];
+  //  $criminal_age=$_POST['criminal_age'];
    
    
    $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name',criminal_address='$criminal_address',age='$criminal_age' where id='$id'");
   
   if($sql==1)
   {
-   header("Location:editform3.php?eid=".$caseid) ;
   }
   else {
   echo 'error';
@@ -347,7 +346,7 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
                            
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form method="post"  enctype="multipart/form-data" id="add_form">
+                                <form method="post" enctype="multipart/form-data" id="add_form">
                                     <div class="card-body">
                                     <div class="col-12" style="text-align:center;">
                                         <ul id="progressbar" style="display:flex"  ;>
@@ -379,17 +378,17 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
                                                 <input type="text" required class="form-control" name="criminal_name"
                                                     id="exampleदिनांक" value="<?php echo $criminal_name ?>" placeholder="">
                                             </div>
-                                            <div class="form-group col-6">
+                                            <!-- <div class="form-group col-6">
                                                 <label for="exampleदिनांक">आरोपीचा पत्ता</label>
                                                 <input type="varchar" required class="form-control"
                                                     name="criminal_address" value="<?php echo  $criminal_address ?>" id="exampleदिनांक" placeholder="">
-                                            </div>
+                                            </div> -->
 
                                         </div>
 
                                         
 
-                                        <div class="d-flex form-group " style="margin-left: -12px;">
+                                        <!-- <div class="d-flex form-group " style="margin-left: -12px;">
                                             
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">आरोपीचा वय</label>
@@ -397,18 +396,23 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
                                                     name="criminal_age" value="<?php echo $age ?>" id="exampleदिनांक fff4" placeholder="">
                                             </div>
 
-                                        </div> 
+                                        </div>  -->
 
                                       
                                         
 
                                         <!-- /.card-body -->
-                                        <?php $eid=intval($_GET['eid']);?>
+                                        <?php $eid1=intval($_GET['eid']);?>
                                                 <div style="text-align: end;">
-                                                <a href="addnewform.php?id=<?php echo $eid;?>" class="btn btn-primary bbbt">Add</a>
+                                                <a href="addnewform.php?id=<?php echo $eid1;?>" class="btn btn-primary bbbt">Add</a>
+                                                <?php
+                                            if(isset($_GET['id'])){
+                                            ?>
                                                 <button type="sumbit" name="su_bmit" class="btn btn-primary bbbt">नमूद करा
                                             </button>
-                                               
+                                            <?php } ?>
+                                            <a href="editform3.php?eid=<?php echo $eid1;?>" class="btn btn-primary bbbt">Next</a>
+                                              
                                                 </div>
                                             
         </div>    
@@ -424,8 +428,8 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
                       <th>अनुक्रमांक</th>
                       <th>criminal_name</th>
                       
-                      <th>criminal_address</th>
-                      <th>criminal_age</th>
+                      <!-- <th>criminal_address</th>
+                      <th>criminal_age</th> -->
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -438,12 +442,11 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
                     ?>
                     <tr data-widget="expandable-table" aria-expanded="false">
                       <td><?php echo $count;?></td>
-                      <td><?php echo $arr['caseid'];?></td>
                       <td><?php echo $arr['criminal_name'];?></td>
-                      <td><?php echo $arr['criminal_address'];?></td>
-                      <td><?php echo $arr['age'];?></td>
+                      <!-- <td><?php echo $arr['criminal_address'];?></td>
+                      <td><?php echo $arr['age'];?></td> -->
                       
-                      <td><a href="editform2.php?action=edit&id=<?php echo $arr['id']; ?>" title="" class="btn btn-success btn-xs delete_purchase">
+                      <td><a href="editform2.php?action=edit&id=<?php echo $arr['id']; ?>&eid=<?php echo $arr['caseid']; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>
 		                        </a></td>
                     </tr>

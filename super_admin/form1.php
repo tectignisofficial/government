@@ -3,7 +3,7 @@ session_start();
 include("include.php");
 if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
-  header("location:index.php");
+  header("location:login.php");
 }
 $role='';
        $email=$_SESSION['use'];

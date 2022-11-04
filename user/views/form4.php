@@ -15,13 +15,13 @@ $district='';
         }
 
         $image='';
+        $payStatus='';
         $discription='';
         $id=intval($_GET['id']);
         $sql=mysqli_query($conn,"select * from image where caseid='$id'");
         while($arr=mysqli_fetch_array($sql)){
         $image=$arr['image'];
         $discription=$arr['discription'];
-        $payStatus=$arr['payStatus'];
         }
       
 
@@ -35,7 +35,7 @@ if(isset($_POST['subm_it'])){
     $loc="file/".$file;
     move_uploaded_file($filedet,$loc);
     $loc1="../../super_admin/views/file/".$file;
-    move_uploaded_file($filedet,$loc1);
+    move_uploaded_file($filedet,$loc);
     if(isset($_GET['eid'])){
       $sql=mysqli_query($conn,"update image set discription='$discription',status='$payStatus' where caseid='$id'");
     }

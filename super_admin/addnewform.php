@@ -5,7 +5,7 @@ session_start();
 
 if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
-  header("location:index.php");
+  header("location:login.php");
    }
    $role='';
    $email=$_SESSION['use'];
@@ -25,7 +25,7 @@ $id=intval($_GET['id']);
    $aadhaar_card=$_POST['aadhaar_card'];
    $charge_sheet=$_POST['charge_sheet'];
 
-    $sql= mysqli_query($conn,"INSERT INTO criminal(`caseid`, `criminal_name`, `criminal_address`, `age`, `category_and_caste`, `caste_certificate`, `aadhaar_card`, `charge_sheet`) VALUES ('$id','$criminal_name','$criminal_address','$criminal_age',' $category_and_caste','$caste_certificate','$aadhaar_card','$charge_sheet')");
+    $sql= mysqli_query($conn,"INSERT INTO criminal(`caseid`, `criminal_name`) VALUES ('$id','$criminal_name')");
   
     if($sql==1)
     {
@@ -361,74 +361,8 @@ $id=intval($_GET['id']);
                                                 <input type="text" required class="form-control"  name="criminal_name"
                                                     id="exampleदिनांक" placeholder="">
                                             </div>
-                                            <div class="form-group col-6">
-                                                <label for="exampleदिनांक">आरोपीचा पत्ता</label>
-                                                <input type="varchar" value="<?php echo  $criminal_address ?>" required class="form-control"
-                                                    name="criminal_address" id="exampleदिनांक" placeholder="">
-                                            </div>
-
                                         </div>
 
-                                        
-
-                                        <div class="d-flex form-group " style="margin-left: -12px;">
-                                            <div class="form-group col-6">
-                                                <label for="Exampleप्रवर्ग आणि जात ">आरोपीचा प्रवर्ग आणि जात</label>
-                                                <input type="Textbox" required class="form-control"
-                                                name="category_and_caste"  id="Exampleप्रवर्ग आणि जात fff3" placeholder="">
-                                            </div>
-                                            <div class="form-group col-6">
-                                                <label for="exampleदिनांक">आरोपीचा वय</label>
-                                                <input type="number" required class="form-control" 
-                                                    name="criminal_age" id="exampleदिनांक fff4" placeholder="">
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="form-group d-flex " style="margin-left: -12px;">
-                                            <div class="form-group col-2">
-                                                <label for="Exampleउप विभागा चे नाव">जातीचा दाखला </label>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" required type="radio"
-                                                        id="customRadio1" value="होय" name="caste_certificate" >
-                                                    <label for="customRadio1" class="custom-control-label">होय </label>
-                                                </div>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" type="radio" id="customRadio2"
-                                                        value="नाही" name="caste_certificate" >
-                                                    <label for="customRadio2" class="custom-control-label">नाही </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-2">
-                                                <label for="Exampleउप विभागा चे नाव">आधार कार्ड </label>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" required type="radio"
-                                                        id="customRadio3" value="होय"  name="aadhaar_card">
-                                                    <label for="customRadio3" class="custom-control-label">होय</label>
-                                                </div>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" type="radio" id="customRadio4"
-                                                        value="नाही"  name="aadhaar_card">
-                                                    <label for="customRadio4" class="custom-control-label">नाही </label>
-                                                </div>
-                                            </div>
-                                
-                                            <div class="form-group col-2">
-                                                <label for="Exampleगुन्हा नं.">चार्ज शीट </label>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" required type="radio"
-                                                        id="customRadio7"  value="होय" name="charge_sheet">
-                                                    <label for="customRadio7" class="custom-control-label">होय</label>
-                                                </div>
-                                                <div class="custom-control custom-radio">
-                                                    <input class="custom-control-input" required type="radio"
-                                                        id="customRadio8" value="नाही" name="charge_sheet">
-                                                    <label for="customRadio8" class="custom-control-label">नाही </label>
-                                                </div>
-                                            </div>
-                                    
-                                        </div>
 
                                         
                                         <!-- /.card-body -->

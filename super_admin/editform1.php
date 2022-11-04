@@ -3,7 +3,7 @@ session_start();
 include("include.php");
 if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirect to Login Page
 {
-  header("location:index.php");
+  header("location:login.php");
 }
 $role='';
        $email=$_SESSION['use'];
@@ -362,7 +362,7 @@ echo mysqli_query($conn);
                     <div class=" d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">दिनांक</label>
-                        <input type="Date" required class="form-control" value="<?php echo  $date ?>" name="date" id="exampleदिनांक" placeholder="" readonly>
+                        <input type="text" required class="form-control" value="<?php echo  $date ?>" name="date" id="exampleदिनांक" placeholder="" readonly>
                       </div>
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">गुन्हा नं.</label>
@@ -453,11 +453,11 @@ echo mysqli_query($conn);
                         <input type="text" required class="form-control" value="<?php echo  $complaint_filer_name ?>" name="complaint_filer_name" id="exampleदिनांक"
                           placeholder="">
                       </div>
-                      <div class="form-group col-6">
+                      <!-- <div class="form-group col-6">
                         <label for="exampleदिनांक">फिर्यादी चे पत्ता</label>
                         <input type="varchar" required class="form-control " value="<?php echo  $complaint_filer_address ?>" name="complaint_filer_address"
                           id="exampleदिनांक" placeholder="">
-                      </div>
+                      </div> -->
                     </div>
                     <!-- /.card-body -->
                            
