@@ -173,8 +173,8 @@ echo $payStatus.' (FIR दाखला / प्रकरण मंजूर आ�
 echo $payStatus.' (FIR चौकशी दाखल)';
                       }else if($payStatus=='stage 3'){
 echo $payStatus.' (न्यायालयाचा निर्णय)';
-                      }else if($payStatus=='case completed'){
-echo $payStatus;
+                      }else if($payStatus=='Stage 4'){
+echo $payStatus, ' Documents pending';
                       }
                       ?>
                      
