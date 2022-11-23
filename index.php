@@ -273,16 +273,16 @@
         $sql=mysqli_query($conn,"select * from member_img where id='13'");
         while($fetchsql=mysqli_fetch_array($sql)){
         ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-              <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p>आयुक्त , समाज कल्याण, महाराष्ट्र राज्य</p>
-            </div>
-          </li>
+          <!--<li class="col-12 col-md-6 col-lg-3">-->
+          <!--  <div class="cnt-block equal-hight" style="height: 320px;">-->
+          <!--    <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"-->
+          <!--        alt=""></figure>-->
+          <!--    <h3><strong>-->
+          <!--    <?php echo $fetchsql['name'] ?>-->
+          <!--      </strong></h3>-->
+          <!--    <p>आयुक्त , समाज कल्याण, महाराष्ट्र राज्य</p>-->
+          <!--  </div>-->
+          <!--</li>-->
           <?php } ?>
           <?php
         $sql=mysqli_query($conn,"select * from member_img where id='10'");
@@ -300,6 +300,10 @@
             </div>
           </li>
           <?php } ?>
+        
+          </ul>
+          <ul class="row" style="justify-content: center;">
+             
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
               <figure><img src="assets/img/Team/11.jpg" class="img-responsive" alt=""></figure>
@@ -320,6 +324,23 @@
                   <?php echo $fetchsql['name'] ?>
                 </strong></h3>
               <p>सहाय्यक आयुक्त, समाज कल्याण रायगड, अलिबाग</p>
+
+            </div>
+          </li>
+          <?php } ?>
+          
+           <?php
+              $sql=mysqli_query($conn,"select * from member_img where id='14'");
+              while($fetchsql=mysqli_fetch_array($sql)){
+              ?>
+          <li class="col-12 col-md-6 col-lg-3">
+            <div class="cnt-block equal-hight" style="height: 320px;">
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
+              <p><?php echo $fetchsql['designation'] ?></p>
 
             </div>
           </li>
