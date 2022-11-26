@@ -357,7 +357,7 @@
 
 
     <!--==pdf==-->
-    <section>
+    <!-- <section>
       <div class="container">
         <div class="row">
 
@@ -418,7 +418,7 @@
 
         </div>
       </div>
-    </section>
+    </section> -->
     <!--==pdf==-->
 
 
@@ -435,57 +435,33 @@
         <div class="accordion-list">
           <ul>
             <li data-aos="fade-up">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                data-bs-target="#accordion-list-1">नोंद वही क्रं </a>
-              <!--<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
-              <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                <p>
-                 नोंद वही क्रमांक  
-                </p>
-              </div> -->
+              <a href="1989 अॅट्रोसिटी कायदा 1992.pdf" data-bs-toggle="collapse" class="collapse"
+                data-bs-target="#accordion-list-1">अनुसूचित जाती आणण अनुसूचित जमाती (अत्यािार प्रततबंधक) अचधतनयम, १९८९ (१९९२ यथाविद्यमान, मराठी आि त्ती)</a>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                data-bs-target="#accordion-list-2" class="collapsed">FIR </a>
-              <!-- <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
-              <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                <p>
-                  पिडीत व्यक्तीची माहिती 
-                </p>
-              </div> -->
+            <a data-bs-toggle="collapse" href="अनुसूचित जाति एवं अनुसूचित जनजाति (अत्याचार निवारण) अधिनियम 1989 (हिंदी आवृत्ती).pdf"
+                data-bs-target="#accordion-list-2" class="collapsed">अनुसूचित जाति एवं अनुसूचित जनजाति (अत्याचार निवारण) अधिनियम 1989 (हिंदी आवृत्ती)</a>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                data-bs-target="#accordion-list-3" class="collapsed">पिडीत व्यक्तींची माहिती</a>
-              <!--<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
-              <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                <p>
-                  अर्थसाहाय्य निधी रकमेच्या टप्प्याची माहिती
-                </p>
-              </div> -->
+               <a data-bs-toggle="collapse" href="Scheduled Caste and Scheduled Tribe (Prevention of Atrocities) Act, 1989 (English Article).pdf"
+                data-bs-target="#accordion-list-3" class="collapsed">Scheduled Caste and Scheduled Tribe (Prevention of Atrocities) Act, 1989 (English Article)</a>
             </li>
             <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                data-bs-target="#accordion-list-3" class="collapsed">आरोपींची माहिती</a>
-              <!--<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
-              <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                <p>
-                  अर्थसाहाय्य निधी रकमेच्या टप्प्याची माहिती
-                </p>
-              </div> -->
+              <a data-bs-toggle="collapse" href="2016 12 23 Atrocity.pdf"
+                data-bs-target="#accordion-list-3" class="collapsed">अत्यािारािे बळी ठरणाऱ्या अन सूचित जाती/अन सूचित जमातींच्या व्यकतींना निीन अत्यािार प्रततबंधक तनयमान्िये दे ण्यात येणाऱ्या नुकसान भरपाईबाबत.</a>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                data-bs-target="#accordion-list-4" class="collapsed">अर्थसहाय्य निधी रक्कमेच्या टप्प्यांची माहिती </a>
+             <a data-bs-toggle="collapse" href="201708011134427630.pdf"
+                data-bs-target="#accordion-list-4" class="collapsed">पीडितांना अथथसाय्यि पुनिथसन करण्यासाठी “मनोधैयथ योजने” च्या अथथस ाय्यच्या तनकषात सुधारणा करण्याबाबत. </a>
 
             </li>
 
             <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                data-bs-target="#accordion-list-4" class="collapsed">पिडीत व्यक्तीच्या आर्थिक निधीची माहिती </a>
+              <a data-bs-toggle="collapse" href="पीडितांना मोबदला व इतर सुविधा देण्यासाठी आकस्मिकता योजना तयार करण्याबाबत..pdf"
+                data-bs-target="#accordion-list-4" class="collapsed">पीडितांना मोबदला व इतर सुविधा देण्यासाठी आकस्मिकता योजना तयार करण्याबाबत</a>
 
             </li>
             <li data-aos="fade-up" data-aos-delay="300">
