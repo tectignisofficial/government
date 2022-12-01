@@ -435,8 +435,7 @@
         <div class="accordion-list">
           <ul>
             <li data-aos="fade-up">
-              <a href="1989 अॅट्रोसिटी कायदा 1992.pdf" data-bs-toggle="collapse" class="collapse"
-                data-bs-target="#accordion-list-1">अनुसूचित जाती आणण अनुसूचित जमाती (अत्यािार प्रततबंधक) अचधतनयम, १९८९ (१९९२ यथाविद्यमान, मराठी आि त्ती)</a>
+              <a href="1989 अॅट्रोसिटी कायदा 1992.pdf">अनुसूचित जाती आणण अनुसूचित जमाती (अत्यािार प्रततबंधक) अचधतनयम, १९८९ (१९९२ यथाविद्यमान, मराठी आि त्ती)</a>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="100">
