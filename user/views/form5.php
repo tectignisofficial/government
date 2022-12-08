@@ -23,7 +23,8 @@ $ifsc_code=$_POST['ifsc_code'];
 $sql=mysqli_query($conn,"insert into bank_detail(caseid,account_holder_name,account_no,bank_name,branch_name,ifsc_code) values('$id','$account_name','$account_no','$bank_name','$branch_name','$ifsc_code')");
 
 if($sql){
-    header("location:report/R5.php");
+  echo '<script>alert("Successfully Submitted");window.location.href="report/R5.php"</script>';
+    // header("location:report/R5.php");
 }
 else{
     mysqli_error($conn);
@@ -330,12 +331,12 @@ else{
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Account Holder Name</label>
                                                 <input type="text"  class="form-control" name="account_name"
-                                                    id="exampleदिनांक" placeholder="">
+                                                    id="exampleदिनांक" placeholder="" required>
                                             </div>
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Account Number</label>
-                                                <input type="varchar"  class="form-control"
-                                                    name="account_no" id="exampleदिनांक" placeholder="">
+                                                <input type="number"  class="form-control"
+                                                    name="account_no" id="exampleदिनांक" placeholder="" required>
                                             </div>
 
                                         </div>
@@ -343,12 +344,12 @@ else{
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Bank Name </label>
                                                 <input type="text"  class="form-control" name="bank_name"
-                                                    id="exampleदिनांक" placeholder="">
+                                                    id="exampleदिनांक" placeholder="" required>
                                             </div>
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">Branch Name</label>
                                                 <input type="varchar"  class="form-control"
-                                                    name="branch_name" id="exampleदिनांक" placeholder="">
+                                                    name="branch_name" id="exampleदिनांक" placeholder="" required>
                                             </div>
 
                                         </div>
@@ -356,7 +357,7 @@ else{
                                             <div class="form-group col-6">
                                                 <label for="exampleदिनांक">IFSC Code </label>
                                                 <input type="text"  class="form-control" name="ifsc_code"
-                                                    id="exampleदिनांक" placeholder="">
+                                                    id="exampleदिनांक" placeholder="" required>
                                             </div>
                                          
 
@@ -366,7 +367,7 @@ else{
 
                                         <div style="text-align: end;">
 
-                                            <button type="submit" name="su_bmit" onclick="return confirm('Update Successfully')" class="btn btn-primary">नमूद करा
+                                            <button type="submit" name="su_bmit" class="btn btn-primary">नमूद करा
                                             </button>
                                             <a href="form4.php?id=<?php echo $id;?>" class="btn btn-primary">मागे जा</a>
                                         </div>

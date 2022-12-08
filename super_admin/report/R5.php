@@ -408,32 +408,28 @@ if(isset($_POST['sub'])){
                             <th class="text-center" rowspan="2">गुन्हा न.</th>
                             <th class="text-center" rowspan="2">लावलेली कलमे </th>
                             <th class="text-center" rowspan="2">गुन्हयांचा प्रकार</th>
-                            <th class="text-center" colspan="2">फिर्यादी</th>
+                            <th class="text-center" colspan="1">फिर्यादी</th>
                             <!--					   <th class="text-center"rowspan="2">फार्यादी चे पता</th>-->
 
-                            <th class="text-center" colspan="3">आरोपीची माहिती</th>
-                            <th class="text-center" colspan="6">पिडीत व्यक्तीची माहिती</th>
+                            <th class="text-center" colspan="1">आरोपीची माहिती</th>
+                            <th class="text-center" colspan="5">पिडीत व्यक्तीची माहिती</th>
                             <th class="text-center" rowspan="2">शेरा</th>
                             <th class="text-center no" rowspan="2">Status</th>
                           </tr>
                           <tr>
                             <!--                    <th class="text-center" colspan="2">&nbsp;</th>-->
                             <th class="text-center">नाव</th>
-                            <th class="text-center">पत्ता</th>
+                            <!-- <th class="text-center">पत्ता</th> -->
                             <th class="text-center">नाव</th>
-                            <th class="text-center">पत्ता</th>
+                            <!-- <th class="text-center">पत्ता</th> -->
 
                             <th class="text-center">नाव</th>
                             <th class="text-center">पत्ता</th>
                             <th class="text-center">प्रवर्ग आणि जात</th>
-                            <th class="text-center">वय</th>
+                            <!-- <th class="text-center">वय</th> -->
                             <th class="text-center">जातीचा दाखला</th>
                             <th class="text-center">आधार कार्ड</th>
                             <th class="text-center">चार्ज शिट</th>
-
-
-
-
                           </tr>
 
 
@@ -467,13 +463,13 @@ if(isset($_POST['sub'])){
                             <td><?php echo $arr["section"]; ?></td>
                             <td><?php echo $arr["type_of_offence"]; ?></td>
                             <td><?php echo $arr["comp_name"]; ?></td>
-                            <td><?php echo $arr["comp_add"]; ?></td>
+                            <!-- <td><?php echo $arr["comp_add"]; ?></td> -->
                             <td><?php echo $arr["crname"]; ?></td>
-                            <td><?php echo $arr["cradd"]; ?></td>
+                            <!-- <td><?php echo $arr["cradd"]; ?></td> -->
                             <td><?php echo $arr["vname"]; ?></td>
                             <td><?php echo $arr["vaddress"]; ?></td>
                             <td><?php echo $arr["vcaste"]; ?></td>
-                            <td><?php echo $arr["vage"]; ?></td>
+                            <!-- <td><?php echo $arr["vage"]; ?></td> -->
                             <td><?php echo $arr["vcertificate"]; ?></td>
                             <td><?php echo $arr["vaadhar"]; ?></td>
                             <td><?php echo $arr["vcsheet"]; ?></td>
@@ -486,7 +482,7 @@ if(isset($_POST['sub'])){
 
                           <!--raigarh-->
                           <tr>
-                            <th class="text-center mb-4" colspan="26">Raigarh</th>
+                            <th class="text-center mb-4" colspan="26">Raigad</th>
                           </tr>
                           <?php 
                    $dat=$_POST['month'];
@@ -513,13 +509,13 @@ if(isset($_POST['sub'])){
                             <td><?php echo $arr["section"]; ?></td>
                             <td><?php echo $arr["type_of_offence"]; ?></td>
                             <td><?php echo $arr["comp_name"]; ?></td>
-                            <td><?php echo $arr["comp_add"]; ?></td>
+                            <!-- <td><?php echo $arr["comp_add"]; ?></td> -->
                             <td><?php echo $arr["crname"]; ?></td>
-                            <td><?php echo $arr["cradd"]; ?></td>
+                            <!-- <td><?php echo $arr["cradd"]; ?></td> -->
                             <td><?php echo $arr["vname"]; ?></td>
                             <td><?php echo $arr["vaddress"]; ?></td>
                             <td><?php echo $arr["vcaste"]; ?></td>
-                            <td><?php echo $arr["vage"]; ?></td>
+                            <!-- <td><?php echo $arr["vage"]; ?></td> -->
                             <td><?php echo $arr["vcertificate"]; ?></td>
                             <td><?php echo $arr["vaadhar"]; ?></td>
                             <td><?php echo $arr["vcsheet"]; ?></td>
@@ -597,9 +593,7 @@ if(isset($_POST['sub'])){
       var newWin = window.open();
       newWin.document.open();
       newWin.document.write(
-        '<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style> <link href="../dist/img/lo.png" rel="icon">
-  <link href="./dist/img/lo.png" rel="apple-touch-icon">
-</head><html><body style="text-align:center" onload="window.print()">' +
+        '<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style> <link href="../dist/img/lo.png" rel="icon"><link href="./dist/img/lo.png" rel="apple-touch-icon"></head><html><body style="text-align:center" onload="window.print()">' +
         divToPrint.innerHTML + '</body></html>');
       newWin.document.close();
       setTimeout(function () {

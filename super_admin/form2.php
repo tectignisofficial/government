@@ -51,12 +51,12 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
     if(isset($_POST['su_bmit']))  
   {  
    $criminal_name=$_POST['criminal_name'];
-  //  $criminal_address=$_POST['criminal_address'];
-  //  $criminal_age=$_POST['criminal_age'];
-   
-
    if(isset($_GET['eid'])){
-    $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name',criminal_address='$criminal_address',age='$criminal_age' where id='$id'");
+    $id3=$_GET['eid'];
+    $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name' where id='$id3'");
+    if($sql==1){
+      header("Location:form2.php?id=".$id);
+    }
    }else{
     $sql= mysqli_query($conn,"INSERT INTO criminal(`caseid`, `criminal_name`, `criminal_address`) VALUES ('$id','$criminal_name','$criminal_address')");
   }

@@ -54,8 +54,7 @@ if(isset($_POST['sub_mit']))
     $sql= mysqli_query($conn,"update victim set name='$victim_name',address='$victim_address',victim_age=' $victim_age',caste='$category_and_caste',caste_certificate=' $caste_certificate',aadhar_card='$aadhaar_card',charge_sheet='$charge_sheet' where id='$id4'");
     if($sql==1) 
   {   
-      echo"<script>alert('hrllo')</script>";
-    //header("Location: views/form4.php?id=".$id);	
+    header("Location:fo.php?id=".$id);	
   }
   else  
 	{  
@@ -65,15 +64,6 @@ if(isset($_POST['sub_mit']))
    }else{
     $in_ch=mysqli_query($conn,"insert into victim(caseid,charge_sheet,aadhar_card,caste,caste_certificate,victim_age,name,address)
     values ('$id','$charge_sheet','$aadhaar_card','$category_and_caste','$caste_certificate','$victim_age','$victim_name','$victim_address')"); 
-    if($in_ch==1) 
-  {   
-      echo"<script>alert('hllo')</script>";
-    //header("Location: views/form4.php?id=".$id);	
-  }
-  else  
-	{  
-	 echo 'error'; 
-	}  
  
    }
 	
@@ -159,9 +149,9 @@ if(isset($_POST['sub_mit']))
       }
     }
   </script>
- <link href="../dist/img/lo.png" rel="icon">
+  <link href="../dist/img/lo.png" rel="icon">
   <link href="./dist/img/lo.png" rel="apple-touch-icon">
- <link href="../dist/img/lo.png" rel="icon">
+  <link href="../dist/img/lo.png" rel="icon">
   <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
 
@@ -239,14 +229,14 @@ if(isset($_POST['sub_mit']))
 
             </li>
 
-           
+
             <li class="nav-item">
 
               <a href="form1.php" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                नोंदणी करा
-               
+                  नोंदणी करा
+
                   <!-- <span class="right badge badge-danger">New</span> -->
                 </p>
               </a>
@@ -299,7 +289,7 @@ if(isset($_POST['sub_mit']))
                 <i class=" nav-icon fas fa-landmark "></i>
                 <p>
                   बँक
-                  
+
                   <!-- <span class="right badge badge-danger">New</span> -->
                 </p>
               </a>
@@ -416,20 +406,21 @@ if(isset($_POST['sub_mit']))
                         <input type="Textbox" required class="form-control" name="category_and_caste"
                           value="<?php echo  $category_and_caste;?>" id="Exampleप्रवर्ग आणि जात fff3" placeholder="">
                       </div>
-                    
+
                     </div>
 
                     <div class="form-group d-flex " style="margin-left: -12px;">
                       <div class="form-group col-2">
                         <label for="Exampleउप विभागा चे नाव">जातीचा दाखला </label>
                         <div class="custom-control custom-radio">
-                          <input class="custom-control-input" type="radio" id="customRadio1" value="होय" <?php if($caste_certificate=='होय'){ echo 'checked'; } ?> name="caste_certificate">
+                          <input class="custom-control-input" type="radio" id="customRadio1" value="होय"
+                            <?php if($caste_certificate=='होय'){ echo 'checked'; } ?> name="caste_certificate">
                           <label for="customRadio1" class="custom-control-label">होय </label>
 
                         </div>
                         <div class="custom-control custom-radio">
                           <input class="custom-control-input" type="radio" id="customRadio2" value="नाही"
-                            name="caste_certificate"  <?php if($caste_certificate=='नाही'){ echo 'checked'; } ?> >
+                            name="caste_certificate" <?php if($caste_certificate=='नाही'){ echo 'checked'; } ?>>
                           <label for="customRadio2" class="custom-control-label">नाही </label>
                         </div>
                       </div>
@@ -463,15 +454,6 @@ if(isset($_POST['sub_mit']))
 
                     </div>
 
-
-
-
-
-
-
-
-
-
                     <!-- /.card-body -->
 
                     <div style="text-align: end;">
@@ -503,8 +485,8 @@ if(isset($_POST['sub_mit']))
                       <td><?php echo $count;?></td>
                       <td><?php echo $arr['name'];?></td>
                       <td><?php echo $arr['address'];?></td>
-                      <td><a href="fo.php?action=edit&eid=<?php echo $arr['id']; ?>&id=<?php echo $arr['caseid']; ?>" title=""
-                          class="btn btn-success btn-xs delete_purchase">
+                      <td><a href="fo.php?action=edit&eid=<?php echo $arr['id']; ?>&id=<?php echo $arr['caseid']; ?>"
+                          title="" class="btn btn-success btn-xs delete_purchase">
                           <i class="fas fa-edit"></i>
                         </a></td>
 

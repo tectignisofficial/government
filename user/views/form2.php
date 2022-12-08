@@ -16,7 +16,6 @@ $district='';
         }
 
         $criminal_name='';
-        // $criminal_address='';
         $age='';
         if(isset($_GET['eid'])){
           $eid=intval($_GET['eid']);
@@ -25,8 +24,6 @@ $district='';
             $id=$arr['id'];
             $caseid=$arr['caseid'];
        $criminal_name= $arr['criminal_name'];
-        // $criminal_address=$arr['criminal_address'];  
-        // $age=$arr['age'] ; 
        }
         }
 
@@ -35,19 +32,18 @@ $district='';
     if(isset($_POST['su_bmit']))  
   {  
    $criminal_name=$_POST['criminal_name'];
-  //  $criminal_address=$_POST['criminal_address'];
-  //  $criminal_age=$_POST['criminal_age'];
-
    if(isset($_GET['eid'])){
     $id3=$_GET['eid'];
     $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name' where id='$id3'");
+    if($sql==1){
+      header("Location:form2.php?id=".$id);
+    }
    }else{
     $sql= mysqli_query($conn,"INSERT INTO criminal(`caseid`, `criminal_name`) VALUES ('$id','$criminal_name')");
   }
     if($sql==1)
     {
-      echo 'hhjhbvcbvuyhbjvbvhguyghbcbv  hvjgvuhgv hgvv hjhvj ';
-     //header("Location:fo.php?id=".$id) ;
+    //  header("Location:fo.php?id=".$id) ;
     }
     else {
     echo 'error';
@@ -432,7 +428,7 @@ $district='';
                     while($arr=mysqli_fetch_array($sql)){
                     ?>
                     <tr >
-                      <td><?php echo $arr['caseid'];?></td>
+                      <td><?php echo $count;?></td>
                       <td><?php echo $arr['criminal_name'];?></td>
                       <td><a href="form2.php?action=edit&eid=<?php echo $arr['id']; ?>&id=<?php echo $arr['caseid']; ?>" title="" class="btn btn-success btn-xs delete_purchase">
 		                          <i class="fas fa-edit"></i>

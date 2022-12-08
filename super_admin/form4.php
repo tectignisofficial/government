@@ -390,7 +390,7 @@ if(isset($_POST['subm_it'])){
                         <option value="<?php echo $payStatus; ?>" disabled><?php echo $payStatus; ?></option>
                         <option value="stage 1" selected>stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत</option>
                         <option value="stage 2">stage 2 FIR चौकशी दाखल</option>
-                        <option value="stage 3">stage 3 न्यायालयाचा ननणणय</option>
+                        <option value="stage 3">stage 3 न्यायालयाचा निर्णय</option>
                         <option value="Stage 4">Stage 4 Documents pending</option>
                       </select>
                     </div>

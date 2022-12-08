@@ -85,7 +85,7 @@ if (mysqli_num_rows($complaints)>0){
 
     }
   </style>
- <link href="../../dist/img/lo.png" rel="icon">
+  <link href="../../dist/img/lo.png" rel="icon">
   <link href="../../dist/img/lo.png" rel="apple-touch-icon">
 </head>
 
@@ -103,8 +103,6 @@ if (mysqli_num_rows($complaints)>0){
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <!-- Navbar Search -->
-
-
         <!-- Messages Dropdown Menu -->
 
         <!-- Notifications Dropdown Menu -->
@@ -114,9 +112,6 @@ if (mysqli_num_rows($complaints)>0){
             <i class="fas fa-expand-arrows-alt"></i>
           </a>
         </li>
-
-
-
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -167,15 +162,15 @@ if (mysqli_num_rows($complaints)>0){
             </li>
             <li class="nav-item">
 
-<a href="../form1.php" class="nav-link ">
-  <i class="nav-icon fas fa-th"></i>
-  <p>
-  नोंदणी करा
- 
-    <!-- <span class="right badge badge-danger">New</span> -->
-  </p>
-</a>
-</li>
+              <a href="../form1.php" class="nav-link ">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  नोंदणी करा
+
+                  <!-- <span class="right badge badge-danger">New</span> -->
+                </p>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-chart-pie"></i>
@@ -224,7 +219,7 @@ if (mysqli_num_rows($complaints)>0){
                 <i class=" nav-icon fas fa-landmark "></i>
                 <p>
                   बँक
-                 
+
                   <!-- <span class="right badge badge-danger">New</span> -->
                 </p>
               </a>
@@ -277,7 +272,9 @@ if (mysqli_num_rows($complaints)>0){
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="/government-master/index.php" style="color: #869099; text-decoration:none" style="color: #869099; text-decoration:none">Home</a></li>
+                <li class="breadcrumb-item"><a href="/government-master/index.php"
+                    style="color: #869099; text-decoration:none" style="color: #869099; text-decoration:none">Home</a>
+                </li>
                 <li class="breadcrumb-item active">R5</li>
               </ol>
             </div>
@@ -304,8 +301,6 @@ if (mysqli_num_rows($complaints)>0){
                           <form method="post">
                             <div class="card-body">
                               <div class="row">
-                                <!-- Date -->
-
 
                                 <div class="form-group col-md-6">
                                   <label>Date range:</label>
@@ -358,7 +353,8 @@ if (mysqli_num_rows($complaints)>0){
                                 </div>
                               </div>
                               <div class="text-center" id="">
-                                <button type="submit" id="" name="sub" class="btn text-center btn-success">Submit</button>
+                                <button type="submit" id="" name="sub"
+                                  class="btn text-center btn-success">Submit</button>
                               </div>
                             </div>
                           </form>
@@ -398,7 +394,7 @@ if(isset($_POST['sub'])){
 
                   <div id='DivIdToPrint'>
                     <div class="card-header" style="margin-top:12px">
-                    <h2 class=' text-center fs-1 fw-bold '>प्रपत्र ४</h2>
+                      <h2 class=' text-center fs-1 fw-bold '>प्रपत्र ४</h2>
                       <h5 class=" text-center ">दाखल झालेल्या गुन्हयांप्रमाणे सहाय्य देण्यासाठी / मंजुरीसाठी गुन्हेनिहाय
                         अप्राप्त कागदपत्रांची माहिती माहे ( <?php $dat=$_POST['month']; echo $dat; ?> &
                         <?php $year=$_POST['year']; echo $year;  ?>), अखेर. </h5>
@@ -422,10 +418,10 @@ if(isset($_POST['sub'])){
                             <th class="text-center" rowspan="2">गुन्हा न.</th>
                             <th class="text-center" rowspan="2">लावलेली कलमे </th>
                             <th class="text-center" rowspan="2">गुन्हयांचा प्रकार</th>
-                            <th class="text-center" colspan="2">फिर्यादी</th>
+                            <th class="text-center" colspan="1">फिर्यादी</th>
                             <!--					   <th class="text-center"rowspan="2">फार्यादी चे पता</th>-->
 
-                            <th class="text-center" colspan="3">आरोपीची माहिती</th>
+                            <th class="text-center" colspan="1">आरोपीची माहिती</th>
                             <th class="text-center" colspan="6">पिडीत व्यक्तीची माहिती</th>
                             <th class="text-center" rowspan="2">शेरा</th>
                             <th class="text-center no" rowspan="2">Status</th>
@@ -481,13 +477,13 @@ if(isset($_POST['sub'])){
                             <td><?php echo $arr["section"]; ?></td>
                             <td><?php echo $arr["type_of_offence"]; ?></td>
                             <td><?php echo $arr["comp_name"]; ?></td>
-                            <td><?php echo $arr["comp_add"]; ?></td>
+                            <!-- <td><?php echo $arr["comp_add"]; ?></td> -->
                             <td><?php echo $arr["crname"]; ?></td>
-                            <td><?php echo $arr["cradd"]; ?></td>
+                            <!-- <td><?php echo $arr["cradd"]; ?></td> -->
                             <td><?php echo $arr["vname"]; ?></td>
                             <td><?php echo $arr["vaddress"]; ?></td>
                             <td><?php echo $arr["vcaste"]; ?></td>
-                            <td><?php echo $arr["vage"]; ?></td>
+                            <!-- <td><?php echo $arr["vage"]; ?></td> -->
                             <td><?php echo $arr["vcertificate"]; ?></td>
                             <td><?php echo $arr["vaadhar"]; ?></td>
                             <td><?php echo $arr["vcsheet"]; ?></td>
@@ -523,7 +519,8 @@ if(isset($_POST['sub'])){
       <strong> &copy; <?php echo date('Y'); ?></strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
-        Designd by <a href="https://tectignis.in/" target="_blank" style="color: #869099; text-decoration:none">Tectignis It Solutions</b></a>
+        Designd by <a href="https://tectignis.in/" target="_blank"
+          style="color: #869099; text-decoration:none">Tectignis It Solutions</b></a>
       </div>
     </footer>
     <!-- Control Sidebar -->
@@ -795,11 +792,17 @@ if(isset($_POST['sub'])){
       var newWin = window.open();
       newWin.document.open();
       newWin.document.write(
-        '<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style> <link href="../dist/img/lo.png" rel="icon">
-  <link href="./dist/img/lo.png" rel="apple-touch-icon">
- <link href="../dist/img/lo.png" rel="icon">
-  <link href="./dist/img/lo.png" rel="apple-touch-icon">
-</head><html><body style="text-align:center" onload="window.print()">' +
+        '<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style> <link href="../dist/img/lo.png" rel="icon"> <
+        link href = "./dist/img/lo.png"
+        rel = "apple-touch-icon" >
+        <
+        link href = "../dist/img/lo.png"
+        rel = "icon" >
+        <
+        link href = "./dist/img/lo.png"
+        rel = "apple-touch-icon" >
+        <
+        /head><html><body style="text-align:center" onload="window.print()">' +
         divToPrint.innerHTML + '</body></html>');
       newWin.document.close();
       setTimeout(function () {
