@@ -429,14 +429,14 @@ if(isset($_POST['sub'])){
                           <tr>
                             <!--                    <th class="text-center" colspan="2">&nbsp;</th>-->
                             <th class="text-center">नाव</th>
-                            <th class="text-center">पत्ता</th>
+                            <!-- <th class="text-center">पत्ता</th> -->
                             <th class="text-center">नाव</th>
-                            <th class="text-center">पत्ता</th>
+                            <!-- <th class="text-center">पत्ता</th> -->
 
                             <th class="text-center">नाव</th>
                             <th class="text-center">पत्ता</th>
                             <th class="text-center">प्रवर्ग आणि जात</th>
-                            <th class="text-center">वय</th>
+                            <!-- <th class="text-center">वय</th> -->
                             <th class="text-center">जातीचा दाखला</th>
                             <th class="text-center">आधार कार्ड</th>
                             <th class="text-center">चार्ज शिट</th>
