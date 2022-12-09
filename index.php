@@ -99,145 +99,116 @@
     </section>
 
     <section class="our-webcoderskull padding-lg">
-      <div class="container">
-        <div class="section-title">
-          <h2>अनुसूचित जाती / अनुसूचित जमाती अत्याचार प्रतिबंधक कायदयाअंतर्गत प्रकारणाची सद्यस्थिती व नुकसान भरपाई
-            ॲंड्रॉइड मोबाईल प्रणाली</h2>
-        </div>
+<div class="container">
+  <div class="section-title">
+    <h2>अनुसूचित जाती / अनुसूचित जमाती अत्याचार प्रतिबंधक कायदयाअंतर्गत प्रकारणाची सद्यस्थिती व नुकसान भरपाई
+      ॲंड्रॉइड मोबाईल प्रणाली</h2>
+  </div>
 
-        <!-- 1st Row -->
-        <ul class="row" style="justify-content: center;">
-          <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='1'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p> मुख्यमंत्री, महाराष्ट्र राज्य</p>
-            </div>
-          </li>
-          <?php } ?>
-          <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='2'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <!-- <h3><strong>मा.ना.श्री.देवेंद्र फडणवीस</strong></h3> -->
-              <p>उपमुख्यमंत्री, महाराष्ट्र राज्य</p>
+  <!-- 1st Row -->
+  <ul class="row" style="justify-content: center;">
+    <?php
+  $sql=mysqli_query($conn,"select * from member_img where id='1'");
+  while($fetchsql=mysqli_fetch_array($sql)){
+  ?>
+    <li class="col-12 col-md-6 col-lg-3">
+      <div class="cnt-block equal-hight" style="height: 320px;">
+        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+            alt=""></figure>
+        <h3><strong>
+            <?php echo $fetchsql['name'] ?>
+          </strong></h3>
+        <p> <?php echo $fetchsql['designation'] ?></p>
+      </div>
+    </li>
+    <?php } ?>
+    <?php
+  $sql=mysqli_query($conn,"select * from member_img where id='2'");
+  while($fetchsql=mysqli_fetch_array($sql)){
+  ?>
+    <li class="col-12 col-md-6 col-lg-3">
+      <div class="cnt-block equal-hight" style="height: 320px;">
+        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+            alt=""></figure>
+        <h3><strong>
+            <?php echo $fetchsql['name'] ?>
+          </strong></h3>
+        <!-- <h3><strong>मा.ना.श्री.देवेंद्र फडणवीस</strong></h3> -->
+        <p><?php echo $fetchsql['designation'] ?></p>
 
-            </div>
-          </li>
-          <?php } ?>
-        </ul>
+      </div>
+    </li>
+    <?php } ?>
+  </ul>
 
-        <ul class="row" style="justify-content: center;">
-        <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='3'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p>सामाजिक न्याय व विशेष सहाय्य विभाग मंत्री</p>
+  <ul class="row" style="justify-content: center;">
+  <?php
+  $sql=mysqli_query($conn,"select * from member_img where id='3'");
+  while($fetchsql=mysqli_fetch_array($sql)){
+  ?>
+    <li class="col-12 col-md-6 col-lg-3">
+      <div class="cnt-block equal-hight" style="height: 320px;">
+        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+            alt=""></figure>
+        <h3><strong>
+            <?php echo $fetchsql['name'] ?>
+          </strong></h3>
+        <p><?php echo $fetchsql['designation'] ?></p>
 
-            </div>
-          </li>
-          <?php } ?>
-          <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='5'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p>पालकमंत्री ,जिल्हा रायगड</p>
-            </div>
-          </li>
-          <?php } ?>
-        </ul>
+      </div>
+    </li>
+    <?php } ?>
+    <?php
+  $sql=mysqli_query($conn,"select * from member_img where id='5'");
+  while($fetchsql=mysqli_fetch_array($sql)){
+  ?>
+    <li class="col-12 col-md-6 col-lg-3">
+      <div class="cnt-block equal-hight" style="height: 320px;">
+        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+            alt=""></figure>
+        <h3><strong>
+            <?php echo $fetchsql['name'] ?>
+          </strong></h3>
+        <p><?php echo $fetchsql['designation'] ?></p>
+      </div>
+    </li>
+    <?php } ?>
+  </ul>
 
-        <!-- 2nd Row -->
-        <ul class="row"  style="justify-content: center;">
-          <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='9'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p>भा.प्र.से. आयुक्त , समाज कल्याण , महाराष्ट्र राज्य </p>
-            </div>
-          </li>
-          <?php } ?>
-          <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='10'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p>भा.प्र.से. जिल्हाधिकारी तथा जिल्हा दंडाधिकारी रायगड, अलिबाग</p>
+  <!-- 2nd Row -->
+  <ul class="row"  style="justify-content: center;">
+    <?php
+  $sql=mysqli_query($conn,"select * from member_img where id='9'");
+  while($fetchsql=mysqli_fetch_array($sql)){
+  ?>
+    <li class="col-12 col-md-6 col-lg-3">
+      <div class="cnt-block equal-hight" style="height: 320px;">
+        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+            alt=""></figure>
+        <h3><strong>
+            <?php echo $fetchsql['name'] ?>
+          </strong></h3>
+        <p><?php echo $fetchsql['designation'] ?></p>
+      </div>
+    </li>
+    <?php } ?>
+    <?php
+  $sql=mysqli_query($conn,"select * from member_img where id='10'");
+  while($fetchsql=mysqli_fetch_array($sql)){
+  ?>
+    <li class="col-12 col-md-6 col-lg-3">
+      <div class="cnt-block equal-hight" style="height: 320px;">
+        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+            alt=""></figure>
+        <h3><strong>
+            <?php echo $fetchsql['name'] ?>
+          </strong></h3>
+        <p><?php echo $fetchsql['designation'] ?></p>
 
-            </div>
-          </li>
-          <?php } ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="assets/img/Team/11.jpg" class="img-responsive" alt=""></figure>
-              <h3><strong>मा.श्रीमती.वंदना कोचुरे</strong></h3>
-              <p>प्रादेशिक उपायुक्त, समाज कल्याण, मुंबई विभाग</p>
-
-            </div>
-          </li>
-
-          </ul>
-          <ul class="row" style="justify-content: center;">
-             
-                <?php
-              $sql=mysqli_query($conn,"select * from member_img where id='12'");
-              while($fetchsql=mysqli_fetch_array($sql)){
-              ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p>सहाय्यक आयुक्त, समाज कल्याण रायगड, अलिबाग</p>
-
-            </div>
-          </li>
-          <?php } ?>
-          
-           <?php
+      </div>
+    </li>
+    <?php } ?>
+    <?php
               $sql=mysqli_query($conn,"select * from member_img where id='14'");
               while($fetchsql=mysqli_fetch_array($sql)){
               ?>
@@ -253,11 +224,44 @@
             </div>
           </li>
           <?php } ?>
-        </ul>
 
-      </div>
-    </section>
+    </ul>
+    <ul class="row" style="justify-content: center;">
+    <?php
+              $sql=mysqli_query($conn,"select * from member_img where id='7'");
+              while($fetchsql=mysqli_fetch_array($sql)){
+              ?>
+    <li class="col-12 col-md-6 col-lg-3">
+            <div class="cnt-block equal-hight" style="height: 320px;">
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
+              <p><?php echo $fetchsql['designation'] ?></p>
 
+            </div>
+          </li>
+    
+     <?php } ?>
+          <?php
+              $sql=mysqli_query($conn,"select * from member_img where id='12'");
+              while($fetchsql=mysqli_fetch_array($sql)){
+              ?>
+          <li class="col-12 col-md-6 col-lg-3">
+            <div class="cnt-block equal-hight" style="height: 320px;">
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
+                  alt=""></figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
+              <p><?php echo $fetchsql['designation'] ?></p>
+
+            </div>
+          </li>
+          <?php } ?>
+  </ul>
+
+</div>
+</section>
 
     <!--==pdf==-->
     <!-- <section>
