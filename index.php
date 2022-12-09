@@ -435,40 +435,38 @@
         <div class="accordion-list">
           <ul>
             <li data-aos="fade-up">
-              <a href="1989 अॅट्रोसिटी कायदा 1992.pdf">अनुसूचित जाती आणण अनुसूचित जमाती (अत्यािार प्रततबंधक) अचधतनयम, १९८९ (१९९२ यथाविद्यमान, मराठी आि त्ती)</a>
+              <a href="1989 अॅट्रोसिटी कायदा 1992.pdf"  target="_blank">अनुसूचित जाती आणि अनुसूचित जमाती (अत्याचार प्रतिबंधक) अचधतनयम, १९८९ (१९९२ यथाविद्यमान, मराठी आवृती)</a>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="100">
-            <a  href="अनुसूचित जाति एवं अनुसूचित जनजाति (अत्याचार निवारण) अधिनियम 1989 (हिंदी आवृत्ती).pdf">अनुसूचित जाति एवं अनुसूचित जनजाति (अत्याचार निवारण) अधिनियम 1989 (हिंदी आवृत्ती)</a>
+            <a  href="अनुसूचित जाति एवं अनुसूचित जनजाति (अत्याचार निवारण) अधिनियम 1989 (हिंदी आवृत्ती).pdf"  target="_blank" >अनुसूचित जाति एवं अनुसूचित जनजाति (अत्याचार निवारण) अधिनियम 1989 (हिंदी आवृत्ती)</a>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="200">
-               <a  href="Scheduled Caste and Scheduled Tribe (Prevention of Atrocities) Act, 1989 (English Article).pdf"
+               <a  href="Scheduled Caste and Scheduled Tribe (Prevention of Atrocities) Act, 1989 (English Article).pdf"  target="_blank"
                 >Scheduled Caste and Scheduled Tribe (Prevention of Atrocities) Act, 1989 (English Article)</a>
             </li>
             <li data-aos="fade-up" data-aos-delay="200">
-              <a  href="2016 12 23 Atrocity.pdf"
-                >अत्यािारािे बळी ठरणाऱ्या अन सूचित जाती/अन सूचित जमातींच्या व्यकतींना निीन अत्यािार प्रततबंधक तनयमान्िये दे ण्यात येणाऱ्या नुकसान भरपाईबाबत.</a>
+              <a  href="2016 12 23 Atrocity.pdf"  target="_blank"
+                >अत्याचाराचे बळी ठरणाऱ्या अन सूचित जाती/अनुसूचित जमातींच्या व्व्यक्तींना नवीन अत्यािार प्रततबंधक नियमान्वये दे ण्यात येणाऱ्या नुकसान भरपाईबाबत.</a>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="300">
-             <a  href="201708011134427630.pdf"
-                >पीडितांना अथथसाय्यि पुनिथसन करण्यासाठी “मनोधैयथ योजने” च्या अथथस ाय्यच्या तनकषात सुधारणा करण्याबाबत. </a>
+             <a  href="201708011134427630.pdf"  target="_blank"
+                >पीडितांना अर्थसहाय्य पुनर्वसन करण्यासाठी “मनोधैर्य योजने” च्या अर्थसहाय्यच्या निकषात सुधारणा करण्याबाबत. </a>
 
             </li>
 
             <li data-aos="fade-up" data-aos-delay="300">
-              <a  href="पीडितांना मोबदला व इतर सुविधा देण्यासाठी आकस्मिकता योजना तयार करण्याबाबत..pdf">पीडितांना मोबदला व इतर सुविधा देण्यासाठी आकस्मिकता योजना तयार करण्याबाबत</a>
+              <a  href="पीडितांना मोबदला व इतर सुविधा देण्यासाठी आकस्मिकता योजना तयार करण्याबाबत..pdf" target="_blank">पीडितांना मोबदला व इतर सुविधा देण्यासाठी आकस्मिकता योजना तयार करण्याबाबत</a>
 
             </li>
             <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                data-bs-target="#accordion-list-4" class="collapsed">अँप आज्ञावली द्वारे हि सर्व माहिती वरिष्ठ व अधिनस्त कार्यालय वेळोवेळी अद्यावत (Real / Time) करणे.</a>
+              <i class="bx bx-help-circle icon-help"></i> <span style="margin-left:35px;color:black;font-size:18px;font-weight:500;">अँप आज्ञावली द्वारे हि सर्व माहिती वरिष्ठ व अधिनस्त कार्यालय वेळोवेळी अद्यावत (Real / Time) करणे.</span>
 
             </li>
             <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
-                data-bs-target="#accordion-list-4" class="collapsed">विविध प्रशासकीय माहिती व अहवाल एका क्लीकवर जनरेट / डाउनलोड करता येईल.</a>
+              <i class="bx bx-help-circle icon-help"></i> <span style="margin-left:35px;color:black;font-size:18px;font-weight:500">विविध प्रशासकीय माहिती व अहवाल एका क्लीकवर जनरेट / डाउनलोड करता येईल.</span>
 
             </li>
 
