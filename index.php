@@ -83,22 +83,6 @@
 
     <section>
       <div class="container">
-        <!-- <div class="header clearfix">
-          <nav>
-            <ul class="nav nav-pills float-right">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="complaint_status.php">Complaint Status <span class="sr-only"></span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="change.html">Admin Login</a>
-              </li>
-            </ul>
-          </nav>
-          
-        </div> -->
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-8 col-sm-12 text-start">
             <div class="breadcrumb flat">
@@ -157,9 +141,8 @@
           <?php } ?>
         </ul>
 
-        <!-- 2nd Row -->
-        <ul class="row">
-          <?php
+        <ul class="row" style="justify-content: center;">
+        <?php
         $sql=mysqli_query($conn,"select * from member_img where id='3'");
         while($fetchsql=mysqli_fetch_array($sql)){
         ?>
@@ -175,22 +158,6 @@
             </div>
           </li>
           <?php } ?>
-          <!-- <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='4'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p>सामाजिक न्याय राज्य मंत्री</p>
-
-            </div>
-          </li>
-          <?php } ?> -->
           <?php
         $sql=mysqli_query($conn,"select * from member_img where id='5'");
         while($fetchsql=mysqli_fetch_array($sql)){
@@ -206,54 +173,10 @@
             </div>
           </li>
           <?php } ?>
-          <!-- <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='6'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p>अप्पर मुख्य सचिव, सामाजिक न्याय व विशेष सहाय्य विभाग</p>
+        </ul>
 
-            </div>
-          </li>
-          <?php } ?> -->
-          <!-- <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='7'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p>पालक सचिव , जिल्हा रायगड</p>
-
-            </div>
-            <?php } ?>
-          </li> -->
-          <!-- <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='8'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <li class="col-12 col-md-6 col-lg-3">
-            <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
-              <h3><strong>
-                  <?php echo $fetchsql['name'] ?>
-                </strong></h3>
-              <p>विभागीय आयुक्त (महसूल)कोकण विभाग , मुंबई </p>
-
-            </div>
-            <?php } ?> -->
-          </li>
+        <!-- 2nd Row -->
+        <ul class="row"  style="justify-content: center;">
           <?php
         $sql=mysqli_query($conn,"select * from member_img where id='9'");
         while($fetchsql=mysqli_fetch_array($sql)){
@@ -268,21 +191,6 @@
               <p>भा.प्र.से. आयुक्त , समाज कल्याण , महाराष्ट्र राज्य </p>
             </div>
           </li>
-          <?php } ?>
-          <?php
-        $sql=mysqli_query($conn,"select * from member_img where id='13'");
-        while($fetchsql=mysqli_fetch_array($sql)){
-        ?>
-          <!--<li class="col-12 col-md-6 col-lg-3">-->
-          <!--  <div class="cnt-block equal-hight" style="height: 320px;">-->
-          <!--    <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"-->
-          <!--        alt=""></figure>-->
-          <!--    <h3><strong>-->
-          <!--    <?php echo $fetchsql['name'] ?>-->
-          <!--      </strong></h3>-->
-          <!--    <p>आयुक्त , समाज कल्याण, महाराष्ट्र राज्य</p>-->
-          <!--  </div>-->
-          <!--</li>-->
           <?php } ?>
           <?php
         $sql=mysqli_query($conn,"select * from member_img where id='10'");
@@ -300,10 +208,6 @@
             </div>
           </li>
           <?php } ?>
-        
-          </ul>
-          <ul class="row" style="justify-content: center;">
-             
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
               <figure><img src="assets/img/Team/11.jpg" class="img-responsive" alt=""></figure>
@@ -312,6 +216,10 @@
 
             </div>
           </li>
+
+          </ul>
+          <ul class="row" style="justify-content: center;">
+             
                 <?php
               $sql=mysqli_query($conn,"select * from member_img where id='12'");
               while($fetchsql=mysqli_fetch_array($sql)){
@@ -347,11 +255,6 @@
           <?php } ?>
         </ul>
 
-        <!-- 3rd Row -->
-        <!-- <ul class="row" style="justify-content: center;">
-
-      
-        </ul> -->
       </div>
     </section>
 

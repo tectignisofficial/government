@@ -428,7 +428,7 @@ if(isset($_POST["filter"]) && ($_POST['district'])){
                     <th class='text-center'>जाळपोळ </th>
                     <th class='text-center'>इतर</th>
                      <th class='text-center'>एकूण</th>
-         >                </tr>
+             </tr>
               
                   <tr>
                     <th class='text-center'>१</th>
