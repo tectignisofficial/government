@@ -15,7 +15,7 @@ $role='';
        $payStatus='';
         $image='';
         $discription='';
-        $id=intval($_GET['id']);
+        $id=intval($_GET['eid']);
         $sql=mysqli_query($conn,"select * from image where caseid='$id'");
         while($arr=mysqli_fetch_array($sql)){
         $image=$arr['image'];
@@ -26,7 +26,7 @@ $role='';
         }
       
 
-$id=$_GET['id'];
+$id=$_GET['eid'];
 if(isset($_POST['subm_it'])){
     $file=$_FILES['files']['name'];    
     $discription=$_POST['discription'];
@@ -37,7 +37,7 @@ if(isset($_POST['subm_it'])){
     $loc1="file/".$file;
     move_uploaded_file($filedet,$loc1);
     if(isset($_GET['eid'])){
-      $sql=mysqli_query($conn,"update image set discription='$discription',status='$payStatus' where caseid='$eid'");
+      $sql=mysqli_query($conn,"update image set discription='$discription',status='$payStatus' where caseid='$id'");
     }
     else{
       $sql=mysqli_query($conn,"insert into image (caseid,image,discription,status) values('$id','$file','$discription','$payStatus')");

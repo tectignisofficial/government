@@ -20,6 +20,7 @@ $role='';
         $year='';
         $type_of_offence='';
         $complaint_filer_name='';
+        $district='';
         // $complaint_filer_address='';
 if(isset($_GET['id'])){
   $id=intval($_GET['id']);
@@ -28,7 +29,8 @@ if(isset($_GET['id'])){
   $book_no= $arr['book_no'];
    $date=$arr['date'];  
    $complaint_no=$arr['complaint_no'] ; 
-   $police_station=$arr['police_station'] ; 
+   $police_station=$arr['police_station'] ;
+   $district=$arr['district']; 
    $section=$arr['section'];
    $type_of_offence=explode(",", $arr['type_of_offence']);
    $complaint_filer_name=$arr['complaint_filer_name'];
@@ -78,11 +80,10 @@ echo mysqli_query($conn);
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 
   <!-- Google Font: Source Sans Pro -->
@@ -96,37 +97,50 @@ echo mysqli_query($conn);
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 
   <script>
-
     var citiesByState = {
-        "raigarh": ["अलिबाग पोलीस ठाणे", "पनवेल पोलीस ठाणे","मुरुड पोलीस ठाणे","पेण पोलीस ठाणे","उरण पोलीस ठाणे","कर्जत पोलीस ठाणे","खालापूर पोलीस ठाणे","माणगाव पोलीस ठाणे","रोहा पोलीस ठाणे","तळा पोलीस ठाणे","महड पोलीस ठाणे","म्हसळा पोलीस ठाणे","श्रीवर्धन पोलीस ठाणे","पोलादपूर पोलीस ठाणे","नेरळ पोलीस ठाणे","खोपोली पोलीस ठाणे","वडखळ पोलीस ठाणे","पोयनाड पोलीस ठाणे","मांडवा पोलीस ठाणे","रेवदंडा पोलीस ठाणे","पाली पोलीस ठाणे","महाड एम आय डी सी पोलीस ठाणे","महाड तालुका पोलीस ठाणे","महाड शहर पोलीस ठाणे","दिघी सागरी पोलीस ठाणे","गोरेगाव पोलीस ठाणे","नागोठणे पोलीस ठाणे","माथेरान पोलीस ठाणे"],
-        "navi mumbai": ["खारघर पोलीस ठाणे","कळंबोली पोलीस ठाणे","खांदेश्वर पोलीस ठाणे","पनवेल शहर पोलीस ठाणे","पनवेल तालुका पोलीस ठाणे","कामोठे पोलीस ठाणे","तळोजा पोलीस ठाणे"],
+      "raigarh": ["अलिबाग पोलीस ठाणे", "पनवेल पोलीस ठाणे", "मुरुड पोलीस ठाणे", "पेण पोलीस ठाणे", "उरण पोलीस ठाणे",
+        "कर्जत पोलीस ठाणे", "खालापूर पोलीस ठाणे", "माणगाव पोलीस ठाणे", "रोहा पोलीस ठाणे", "तळा पोलीस ठाणे",
+        "महड पोलीस ठाणे", "म्हसळा पोलीस ठाणे", "श्रीवर्धन पोलीस ठाणे", "पोलादपूर पोलीस ठाणे", "नेरळ पोलीस ठाणे",
+        "खोपोली पोलीस ठाणे", "वडखळ पोलीस ठाणे", "पोयनाड पोलीस ठाणे", "मांडवा पोलीस ठाणे", "रेवदंडा पोलीस ठाणे",
+        "पाली पोलीस ठाणे", "महाड एम आय डी सी पोलीस ठाणे", "महाड तालुका पोलीस ठाणे", "महाड शहर पोलीस ठाणे",
+        "दिघी सागरी पोलीस ठाणे", "गोरेगाव पोलीस ठाणे", "नागोठणे पोलीस ठाणे", "माथेरान पोलीस ठाणे"
+      ],
+      "navi mumbai": ["खारघर पोलीस ठाणे", "कळंबोली पोलीस ठाणे", "खांदेश्वर पोलीस ठाणे", "पनवेल शहर पोलीस ठाणे",
+        "पनवेल तालुका पोलीस ठाणे", "कामोठे पोलीस ठाणे", "तळोजा पोलीस ठाणे"
+      ],
 
-}
-function makeSubmenu(value) {
-if(value.length==0) document.getElementById("citySelect").innerHTML = "<option></option>";
-else {
-var citiesOptions = "";
-for(cityId in citiesByState[value]) {
-citiesOptions+="<option value="+citiesByState[value][cityId]+">"+citiesByState[value][cityId]+"</option>";
-}
-document.getElementById("citySelect").innerHTML = citiesOptions;
-}
-}
-function displaySelected() { var country = document.getElementById("countrySelect").value;
-var city = document.getElementById("citySelect").value;
-alert(country+"\n"+city);
-}
-function resetSelection() {
-document.getElementById("countrySelect").selectedIndex = 0;
-document.getElementById("citySelect").selectedIndex = 0;
-}
+    }
+
+    function makeSubmenu(value) {
+      if (value.length == 0) document.getElementById("citySelect").innerHTML = "<option></option>";
+      else {
+        var citiesOptions = "";
+        for (cityId in citiesByState[value]) {
+          citiesOptions += "<option value=" + citiesByState[value][cityId] + ">" + citiesByState[value][cityId] +
+            "</option>";
+        }
+        document.getElementById("citySelect").innerHTML = citiesOptions;
+      }
+    }
+
+    function displaySelected() {
+      var country = document.getElementById("countrySelect").value;
+      var city = document.getElementById("citySelect").value;
+      alert(country + "\n" + city);
+    }
+
+    function resetSelection() {
+      document.getElementById("countrySelect").selectedIndex = 0;
+      document.getElementById("citySelect").selectedIndex = 0;
+    }
   </script>
 
- <link href="dist/img/lo.png" rel="icon">
+  <link href="dist/img/lo.png" rel="icon">
   <link href="./dist/img/lo.png" rel="apple-touch-icon">
- <link href="dist/img/lo.png" rel="icon">
+  <link href="dist/img/lo.png" rel="icon">
   <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
+
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
@@ -151,7 +165,7 @@ document.getElementById("citySelect").selectedIndex = 0;
             <i class="fas fa-expand-arrows-alt"></i>
           </a>
         </li>
-        
+
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -163,7 +177,7 @@ document.getElementById("citySelect").selectedIndex = 0;
       <a href="index.php" class="brand-link">
         <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light" >Atrocity Raigad</span>
+        <span class="brand-text font-weight-light">Atrocity Raigad</span>
       </a>
 
       <!-- Sidebar -->
@@ -174,7 +188,8 @@ document.getElementById("citySelect").selectedIndex = 0;
             <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>-->
           <div class="info">
-            <a href="#" class="d-block" style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $role; ?></a>
+            <a href="#" class="d-block"
+              style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $role; ?></a>
           </div>
         </div>
 
@@ -190,25 +205,25 @@ document.getElementById("citySelect").selectedIndex = 0;
 
             <li class="nav-item menu-open">
               <a href="index.php" class="nav-link ">
-                 <i class="nav-icon fas fa-tachometer-alt"></i> 
-               
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+
                 <p>
-                    मुख्यपृष्ठ 
+                  मुख्यपृष्ठ
                   <!-- <i class="right fas fa-angle-left"></i> -->
                 </p>
               </a>
-           
+
             </li>
             <li class="nav-item">
 
-<a href="form1.php" class="nav-link ">
-  <i class="nav-icon fas fa-th"></i>
-  <p>
-  नोंदणी करा
-    <!-- <span class="right badge badge-danger">New</span> -->
-  </p>
-</a>
-</li>
+              <a href="form1.php" class="nav-link ">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  नोंदणी करा
+                  <!-- <span class="right badge badge-danger">New</span> -->
+                </p>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="#" class="nav-link ">
                 <i class="nav-icon fas fa-chart-pie"></i>
@@ -217,7 +232,7 @@ document.getElementById("citySelect").selectedIndex = 0;
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-               <ul class="nav nav-treeview">
+              <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="report/R1.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
@@ -256,7 +271,7 @@ document.getElementById("citySelect").selectedIndex = 0;
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
-                  वापरकर्ता                                                                                                                                                                                                                                
+                  वापरकर्ता
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
@@ -269,44 +284,33 @@ document.getElementById("citySelect").selectedIndex = 0;
                     </p>
                   </a>
                 </li>
-                
-              </ul>
-              <li class="nav-item">
-            <a href="report/r1opy.php" class="nav-link">
-            <i class=" nav-icon fas fa-landmark "></i>
-                    <p>
-                      बँक माहिती
-                    </p>
-      </a>
-            </li>
-            <!-- <li class="nav-item"> 
-            <a href="report/payment.php" class="nav-link">
-            <i class=" far fa-circle nav-icon"></i> 
-              <p>
-              पेमेंट
-              </p>
-            </a>
 
-            </li>-->
-              
-          
+              </ul>
+            <li class="nav-item">
+              <a href="report/r1opy.php" class="nav-link">
+                <i class=" nav-icon fas fa-landmark "></i>
+                <p>
+                  बँक माहिती
+                </p>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="member-img.php" class="nav-link">
-              <i class="nav-icon fa fa-image"></i>
+                <i class="nav-icon fa fa-image"></i>
                 <p>
                   सदस्य प्रतिमा
                 </p>
               </a>
-           
+
             </li>
             <li class="nav-item">
               <a href="logout.php" class="nav-link">
-              <i class=" nav-icon fas fa-sign-out-alt"></i> 
+                <i class=" nav-icon fas fa-sign-out-alt"></i>
                 <p>
-                     बाहेर पडा  
+                  बाहेर पडा
                 </p>
               </a>
-           
+
             </li>
           </ul>
         </nav>
@@ -329,7 +333,7 @@ document.getElementById("citySelect").selectedIndex = 0;
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a></li>
-                                            <li  class="active" id="account"><strong>/सरकारी प्रपत्र</strong></li>
+                <li class="active" id="account"><strong>/सरकारी प्रपत्र</strong></li>
                 <li class="breadcrumb-item active"></li>
               </ol>
             </div>
@@ -345,35 +349,34 @@ document.getElementById("citySelect").selectedIndex = 0;
             <div class="col-md-12">
               <!-- general form elements -->
               <div class="card card-primary">
-                
+
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form method="post" action="api.php" enctype="multipart/form-data">
-                
-                  <div class="card-body">
-                      <div class="col-12" style="text-align:center;">
-                      <ul id="progressbar" style="display:flex"  ;>
-                                            <li class="active" id="account"><strong>नोंदणी</strong></li>
-                                            <li id="personal"><strong>आरोपीची माहिती</strong></li>
-                                            
-                                            <li id="payment"><strong>पिडीत व्यक्तीची माहिती</strong></li>
-                                            <li id="confirm"><strong>इतर माहिती </strong></li>
-                                            <li id="confirm"><strong>बँक तपशील </strong></li>
-    
-                                        </ul>
 
-                      </div>
-            
-                      <div class=" d-flex form-group " style="margin-left: -12px;">
-                   <div class="form-group col-6">
-                      <label for="exampleनोंद वही क्र.">नोंद वही क्र.</label>
-                      <input type="Textbox" required class="form-control" va lue="<?php echo $book_no?>" name="book_no" id="exampleInputनोंद वही क्र."
-                        placeholder="">
+                  <div class="card-body">
+                    <div class="col-12" style="text-align:center;">
+                      <ul id="progressbar" style="display:flex" ;>
+                        <li class="active" id="account"><strong>नोंदणी</strong></li>
+                        <li id="personal"><strong>आरोपीची माहिती</strong></li>
+                        <li id="payment"><strong>पिडीत व्यक्तीची माहिती</strong></li>
+                        <li id="confirm"><strong>इतर माहिती </strong></li>
+                        <li id="confirm"><strong>बँक तपशील </strong></li>
+                      </ul>
                     </div>
-                      
+
+                    <div class=" d-flex form-group " style="margin-left: -12px;">
+                      <div class="form-group col-6">
+                        <label for="exampleनोंद वही क्र.">नोंद वही क्र.</label>
+                        <input type="hidden" name="id1" value='<?php echo $_GET['id'] ?>'>
+                        <input type="Textbox" required class="form-control" value="<?php echo $book_no?>"
+                          name="book_no" id="exampleInputनोंद वही क्र." placeholder="">
+                      </div>
+
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">वर्ष</label>
-                        <input required class="form-control " value="<?php echo  $year ?>" name="year" id="exampleदिनांक" placeholder="" type="number" min="1900" max="2099" step="1" >
+                        <input required class="form-control " value="<?php echo  $year ?>" name="year"
+                          id="exampleदिनांक" placeholder="" type="number" min="1900" max="2099" step="1">
                       </div>
 
                     </div>
@@ -381,41 +384,44 @@ document.getElementById("citySelect").selectedIndex = 0;
                     <div class=" d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">दिनांक</label>
-                        <input type="Date" required class="form-control" value="<?php echo  $date ?>" name="date" id="exampleदिनांक" placeholder="">
+                        <input type="Date" required class="form-control" value="<?php echo  $date ?>" name="date"
+                          id="exampleदिनांक" placeholder="">
                       </div>
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">गुन्हा नं.</label>
-                        <input type="varchar" required class="form-control " value="<?php echo  $complaint_no ?>" name="complaint_no" id="exampleदिनांक"
-                          placeholder="">
+                        <input type="varchar" required class="form-control " value="<?php echo  $complaint_no ?>"
+                          name="complaint_no" id="exampleदिनांक" placeholder="">
                       </div>
 
                     </div>
-                   
+
 
                     <div class="d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="Exampleउप विभागा चे नाव">जिल्हा</label>
-                        <select required name="district" class="form-control" id="countrySelect" size="1" onchange="makeSubmenu(this.value)">
-                        <option value="" disabled selected>District</option>
-                        <option  value="navi mumbai"> navi mumbai</option>
-                        <option value="raigarh">raigarh</option>
+                        <select required name="district" class="form-control" id="countrySelect" size="1"
+                          onchange="makeSubmenu(this.value)">
+                          <option value="" disabled selected>District</option>
+                          <option value="navi mumbai" <?php if($district=='navi mumbai'){ echo 'selected'; } ?>> navi mumbai</option>
+                          <option value="raigarh" <?php if($district=='raigarh'){ echo 'selected'; } ?>>raigarh</option>
                         </select>
-                       
+
                       </div>
                       <div class="form-group col-6" id="raigarh">
                         <label for="Exampleपोलीस ठाणे" class="form-label">पोलीस ठाणे</label>
-                        <select id="citySelect" size="1" required  name="police_station" class="form-control">
-                        <option value="" disabled selected>Police Station</option>
-                        <option></option>
-                        <option value="<?php if(isset($_GET['id'])){ echo $police_station; } ?>"><?php echo $police_station?></option>
+                        <select id="citySelect" size="1" required name="police_station" class="form-control">
+                          <option value="" disabled selected>Police Station</option>
+                          <option></option>
+                          <option value="<?php if(isset($_GET['id'])){ echo $police_station; } ?>" selected>
+                            <?php echo $police_station?></option>
                         </select>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="Exampleलावलेली कलमे">लावलेली कलमे</label>
-                      <input type="Textbox" required class="form-control" value="<?php echo  $section?>" name="section" id="Exampleलावलेली कलमे"
-                        placeholder="">
+                      <input type="Textbox" required class="form-control" value="<?php echo  $section?>" name="section"
+                        id="Exampleलावलेली कलमे" placeholder="">
                     </div>
 
 
@@ -426,32 +432,46 @@ document.getElementById("citySelect").selectedIndex = 0;
 
                         <div class="d-flex form-group ">
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime1" name="crime[]" value="खुन" <?php if(isset($_GET['id'])){if(in_array("खून,",$type_of_offence)) { ?> checked="checked" <?php } }?> >
+                            <input type="checkbox" id="crime1" name="crime[]" value="खुन"
+                              <?php if(isset($_GET['id'])){if(in_array("खून,",$type_of_offence)) { ?> checked="checked"
+                              <?php } }?>>
                             <label for="crime1">खून</label><br>
                           </div>
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime2" name="crime[]" value="बलात्कार" <?php if(isset($_GET['id'])){if(in_array("बलात्कार,",$type_of_offence)) { ?> checked="checked" <?php } }?> >
+                            <input type="checkbox" id="crime2" name="crime[]" value="बलात्कार"
+                              <?php if(isset($_GET['id'])){if(in_array("बलात्कार,",$type_of_offence)) { ?>
+                              checked="checked" <?php } }?>>
                             <label for="crime2">बलात्कार</label><br>
                           </div>
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime3" name="crime[]" value="विनयभंग" <?php if(isset($_GET['id'])){if(in_array("विनयभंग,",$type_of_offence)) { ?> checked="checked" <?php } }?> >
+                            <input type="checkbox" id="crime3" name="crime[]" value="विनयभंग"
+                              <?php if(isset($_GET['id'])){if(in_array("विनयभंग,",$type_of_offence)) { ?>
+                              checked="checked" <?php } }?>>
                             <label for="crime3"> विनयभंग</label><br>
                           </div>
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime4" name="crime[]" value="मारहाण" <?php if(isset($_GET['id'])){if(in_array("मारहाण,",$type_of_offence)) { ?> checked="checked" <?php } }?> >
+                            <input type="checkbox" id="crime4" name="crime[]" value="मारहाण"
+                              <?php if(isset($_GET['id'])){if(in_array("मारहाण,",$type_of_offence)) { ?>
+                              checked="checked" <?php } }?>>
                             <label for="crime4">मारहाण</label><br>
                           </div>
 
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime5" name="crime[]" value="शिवीगाळ" <?php if(isset($_GET['id'])){if(in_array("शिवीगाळ,",$type_of_offence)) { ?> checked="checked" <?php } }?> >
+                            <input type="checkbox" id="crime5" name="crime[]" value="शिवीगाळ"
+                              <?php if(isset($_GET['id'])){if(in_array("शिवीगाळ,",$type_of_offence)) { ?>
+                              checked="checked" <?php } }?>>
                             <label for="crime5"> शिवीगाळ</label><br>
                           </div>
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime7" name="crime[]" value="जाळपोळ" <?php if(isset($_GET['id'])){if(in_array("जाळपोळ,",$type_of_offence)) { ?> checked="checked" <?php } }?> >
+                            <input type="checkbox" id="crime7" name="crime[]" value="जाळपोळ"
+                              <?php if(isset($_GET['id'])){if(in_array("जाळपोळ,",$type_of_offence)) { ?>
+                              checked="checked" <?php } }?>>
                             <label for="crime7"> जाळपोळ</label><br>
                           </div>
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime8" name="crime[]" value="इतर" <?php if(isset($_GET['id'])){if(in_array("इतर,",$type_of_offence)) { ?> checked="checked" <?php } }?> >
+                            <input type="checkbox" id="crime8" name="crime[]" value="इतर"
+                              <?php if(isset($_GET['id'])){if(in_array("इतर,",$type_of_offence)) { ?> checked="checked"
+                              <?php } }?>>
                             <label for="crime8"> इतर</label><br>
                           </div>
 
@@ -461,8 +481,8 @@ document.getElementById("citySelect").selectedIndex = 0;
                     <div class="d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">फिर्यादी चे नाव </label>
-                        <input type="text" required class="form-control" value="<?php echo  $complaint_filer_name ?>" name="complaint_filer_name" id="exampleदिनांक"
-                          placeholder="">
+                        <input type="text" required class="form-control" value="<?php echo  $complaint_filer_name ?>"
+                          name="complaint_filer_name" id="exampleदिनांक" placeholder="">
                       </div>
                       <!-- <div class="form-group col-6">
                         <label for="exampleदिनांक">फिर्यादी चे पत्ता</label>
@@ -471,12 +491,12 @@ document.getElementById("citySelect").selectedIndex = 0;
                       </div> -->
                     </div>
                     <!-- /.card-body -->
-                           
+
                     <div style="text-align: end;">
 
-                                            <button type="submit" name="s_ubmit" class="btn btn-primary"> नमूद करा
-                                            </button>
-                                        </div>
+                      <button type="submit" name="s_ubmit" class="btn btn-primary"> नमूद करा
+                      </button>
+                    </div>
 
                 </form>
               </div>
@@ -509,7 +529,8 @@ document.getElementById("citySelect").selectedIndex = 0;
       <strong>&copy; <?php echo date('Y'); ?></strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
-        Designd by <a href="https://tectignis.in/" target="_blank" style="color: #869099; text-decoration:none">Tectignis It Solutions</b></a>
+        Designd by <a href="https://tectignis.in/" target="_blank"
+          style="color: #869099; text-decoration:none">Tectignis It Solutions</b></a>
       </div>
     </footer>
 
@@ -532,69 +553,69 @@ document.getElementById("citySelect").selectedIndex = 0;
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
   <!-- Page specific script -->
-  
+
   <script>
-        $(document).ready(function () {
+    $(document).ready(function () {
 
-            var current_fs, next_fs, previous_fs; //fieldsets
-            var opacity;
-            var current = 1;
-            var steps = $("fieldset").length;
+      var current_fs, next_fs, previous_fs; //fieldsets
+      var opacity;
+      var current = 1;
+      var steps = $("fieldset").length;
 
-            setProgressBar(current);
+      setProgressBar(current);
 
-            $(".next").click(function () {
+      $(".next").click(function () {
 
-                current_fs = $(this).parent();
-                next_fs = $(this).parent().next();
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
 
-                //Add Class Active
-                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+        //Add Class Active
+        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
-                //show the next fieldset
-                next_fs.show();
-                //hide the current fieldset with style
-                current_fs.animate({
-                    opacity: 0
-                }, {
-                    step: function (now) {
-                        // for making fielset appear animation
-                        opacity = 1 - now;
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({
+          opacity: 0
+        }, {
+          step: function (now) {
+            // for making fielset appear animation
+            opacity = 1 - now;
 
-                        current_fs.css({
-                            'display': 'none',
-                            'position': 'relative'
-                        });
-                        next_fs.css({
-                            'opacity': opacity
-                        });
-                    },
-                    duration: 500
-                });
-                setProgressBar(++current);
+            current_fs.css({
+              'display': 'none',
+              'position': 'relative'
             });
-
-            function setProgressBar(curStep) {
-                var percent = parseFloat(100 / steps) * curStep;
-                percent = percent.toFixed();
-                $(".progress-bar")
-                    .css("width", percent + "%")
-            }
-
-            $(".submit").click(function () {
-                return false;
-            })
-
+            next_fs.css({
+              'opacity': opacity
+            });
+          },
+          duration: 500
         });
-    </script>
+        setProgressBar(++current);
+      });
 
-     <script>
-     $(function() {
-  $('#colorselector').select(function(){
-    $('#navimumbai').show();
-  });
-});
-    </script> 
+      function setProgressBar(curStep) {
+        var percent = parseFloat(100 / steps) * curStep;
+        percent = percent.toFixed();
+        $(".progress-bar")
+          .css("width", percent + "%")
+      }
+
+      $(".submit").click(function () {
+        return false;
+      })
+
+    });
+  </script>
+
+  <script>
+    $(function () {
+      $('#colorselector').select(function () {
+        $('#navimumbai').show();
+      });
+    });
+  </script>
 </body>
 
 </html>

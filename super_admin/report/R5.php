@@ -500,7 +500,7 @@ if(isset($_POST['sub'])){
                     ?>
 
                           <tr>
-                          <td><?php echo $count; ?></td>
+                          <td><?php echo $count1; ?></td>
                             <td><?php echo $arr["book_no"]; ?></td>
                             <td><?php echo $arr["date"]; ?></td>
                             <td><?php echo $arr["district"]; ?></td>

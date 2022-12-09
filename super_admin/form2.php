@@ -407,7 +407,7 @@ if(!isset($_SESSION['id'])=='super admin') // If session is not set then redirec
                     while($arr=mysqli_fetch_array($sql)){
                     ?>
                     <tr >
-                      <td><?php echo $arr['caseid'];?></td>
+                      <td><?php echo $count;?></td>
                       <td><?php echo $arr['criminal_name'];?></td>
                       <!-- <td><?php echo $arr['criminal_address'];?></td>
                       <td><?php echo $arr['age'];?></td> -->
