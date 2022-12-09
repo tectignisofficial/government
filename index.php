@@ -99,123 +99,123 @@
     </section>
 
     <section class="our-webcoderskull padding-lg">
-<div class="container">
-  <div class="section-title">
-    <h2>अनुसूचित जाती / अनुसूचित जमाती अत्याचार प्रतिबंधक कायदयाअंतर्गत प्रकारणाची सद्यस्थिती व नुकसान भरपाई
-      ॲंड्रॉइड मोबाईल प्रणाली</h2>
-  </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>अनुसूचित जाती / अनुसूचित जमाती अत्याचार प्रतिबंधक कायदयाअंतर्गत प्रकारणाची सद्यस्थिती व नुकसान भरपाई
+            ॲंड्रॉइड मोबाईल प्रणाली</h2>
+        </div>
 
-  <!-- 1st Row -->
-  <ul class="row" style="justify-content: center;">
-    <?php
-  $sql=mysqli_query($conn,"select * from member_img where id='1'");
-  while($fetchsql=mysqli_fetch_array($sql)){
-  ?>
-    <li class="col-12 col-md-6 col-lg-3">
-      <div class="cnt-block equal-hight" style="height: 320px;">
-        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-            alt=""></figure>
-        <h3><strong>
-            <?php echo $fetchsql['name'] ?>
-          </strong></h3>
-        <p> <?php echo $fetchsql['designation'] ?></p>
-      </div>
-    </li>
-    <?php } ?>
-    <?php
-  $sql=mysqli_query($conn,"select * from member_img where id='2'");
-  while($fetchsql=mysqli_fetch_array($sql)){
-  ?>
-    <li class="col-12 col-md-6 col-lg-3">
-      <div class="cnt-block equal-hight" style="height: 320px;">
-        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-            alt=""></figure>
-        <h3><strong>
-            <?php echo $fetchsql['name'] ?>
-          </strong></h3>
-        <!-- <h3><strong>मा.ना.श्री.देवेंद्र फडणवीस</strong></h3> -->
-        <p><?php echo $fetchsql['designation'] ?></p>
+        <!-- 1st Row -->
+        <ul class="row" style="justify-content: center;">
+          <?php
+          $sql=mysqli_query($conn,"select * from member_img where id='1'");
+          while($fetchsql=mysqli_fetch_array($sql)){
+          ?>
+          <li class="col-12 col-md-6 col-lg-3">
+            <div class="cnt-block equal-hight" style="height: 320px;">
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt="">
+              </figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
+              <p> <?php echo $fetchsql['designation'] ?></p>
+            </div>
+          </li>
+          <?php } ?>
+          <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='2'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
+          <li class="col-12 col-md-6 col-lg-3">
+            <div class="cnt-block equal-hight" style="height: 320px;">
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt="">
+              </figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
+              <!-- <h3><strong>मा.ना.श्री.देवेंद्र फडणवीस</strong></h3> -->
+              <p><?php echo $fetchsql['designation'] ?></p>
 
-      </div>
-    </li>
-    <?php } ?>
-  </ul>
+            </div>
+          </li>
+          <?php } ?>
+        </ul>
 
-  <ul class="row" style="justify-content: center;">
-  <?php
-  $sql=mysqli_query($conn,"select * from member_img where id='3'");
-  while($fetchsql=mysqli_fetch_array($sql)){
-  ?>
-    <li class="col-12 col-md-6 col-lg-3">
-      <div class="cnt-block equal-hight" style="height: 320px;">
-        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-            alt=""></figure>
-        <h3><strong>
-            <?php echo $fetchsql['name'] ?>
-          </strong></h3>
-        <p><?php echo $fetchsql['designation'] ?></p>
+        <ul class="row" style="justify-content: center;">
+          <?php
+          $sql=mysqli_query($conn,"select * from member_img where id='3'");
+          while($fetchsql=mysqli_fetch_array($sql)){
+          ?>
+          <li class="col-12 col-md-6 col-lg-3">
+            <div class="cnt-block equal-hight" style="height: 320px;">
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt="">
+              </figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
+              <p><?php echo $fetchsql['designation'] ?></p>
 
-      </div>
-    </li>
-    <?php } ?>
-    <?php
-  $sql=mysqli_query($conn,"select * from member_img where id='5'");
-  while($fetchsql=mysqli_fetch_array($sql)){
-  ?>
-    <li class="col-12 col-md-6 col-lg-3">
-      <div class="cnt-block equal-hight" style="height: 320px;">
-        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-            alt=""></figure>
-        <h3><strong>
-            <?php echo $fetchsql['name'] ?>
-          </strong></h3>
-        <p><?php echo $fetchsql['designation'] ?></p>
-      </div>
-    </li>
-    <?php } ?>
-  </ul>
+            </div>
+          </li>
+          <?php } ?>
+          <?php
+      $sql=mysqli_query($conn,"select * from member_img where id='5'");
+      while($fetchsql=mysqli_fetch_array($sql)){
+      ?>
+          <li class="col-12 col-md-6 col-lg-3">
+            <div class="cnt-block equal-hight" style="height: 320px;">
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt="">
+              </figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
+              <p><?php echo $fetchsql['designation'] ?></p>
+            </div>
+          </li>
+          <?php } ?>
+        </ul>
 
-  <!-- 2nd Row -->
-  <ul class="row"  style="justify-content: center;">
-    <?php
-  $sql=mysqli_query($conn,"select * from member_img where id='9'");
-  while($fetchsql=mysqli_fetch_array($sql)){
-  ?>
-    <li class="col-12 col-md-6 col-lg-3">
-      <div class="cnt-block equal-hight" style="height: 320px;">
-        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-            alt=""></figure>
-        <h3><strong>
-            <?php echo $fetchsql['name'] ?>
-          </strong></h3>
-        <p><?php echo $fetchsql['designation'] ?></p>
-      </div>
-    </li>
-    <?php } ?>
-    <?php
-  $sql=mysqli_query($conn,"select * from member_img where id='10'");
-  while($fetchsql=mysqli_fetch_array($sql)){
-  ?>
-    <li class="col-12 col-md-6 col-lg-3">
-      <div class="cnt-block equal-hight" style="height: 320px;">
-        <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-            alt=""></figure>
-        <h3><strong>
-            <?php echo $fetchsql['name'] ?>
-          </strong></h3>
-        <p><?php echo $fetchsql['designation'] ?></p>
+        <!-- 2nd Row -->
+        <ul class="row" style="justify-content: center;">
+          <?php
+        $sql=mysqli_query($conn,"select * from member_img where id='9'");
+        while($fetchsql=mysqli_fetch_array($sql)){
+        ?>
+          <li class="col-12 col-md-6 col-lg-3">
+            <div class="cnt-block equal-hight" style="height: 320px;">
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt="">
+              </figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
+              <p><?php echo $fetchsql['designation'] ?></p>
+            </div>
+          </li>
+          <?php } ?>
+          <?php
+          $sql=mysqli_query($conn,"select * from member_img where id='10'");
+          while($fetchsql=mysqli_fetch_array($sql)){
+          ?>
+          <li class="col-12 col-md-6 col-lg-3">
+            <div class="cnt-block equal-hight" style="height: 320px;">
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt="">
+              </figure>
+              <h3><strong>
+                  <?php echo $fetchsql['name'] ?>
+                </strong></h3>
+              <p><?php echo $fetchsql['designation'] ?></p>
 
-      </div>
-    </li>
-    <?php } ?>
-    <?php
+            </div>
+          </li>
+          <?php } ?>
+          <?php
               $sql=mysqli_query($conn,"select * from member_img where id='14'");
               while($fetchsql=mysqli_fetch_array($sql)){
               ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt="">
+              </figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
                 </strong></h3>
@@ -225,31 +225,31 @@
           </li>
           <?php } ?>
 
-    </ul>
-    <ul class="row" style="justify-content: center;">
-    <?php
+        </ul>
+        <ul class="row" style="justify-content: center;">
+          <?php
               $sql=mysqli_query($conn,"select * from member_img where id='7'");
               while($fetchsql=mysqli_fetch_array($sql)){
               ?>
-    <li class="col-12 col-md-6 col-lg-3">
+          <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt="">
+              </figure>
               <h3><strong><?php echo $fetchsql['name'] ?></strong></h3>
               <p><?php echo $fetchsql['designation'] ?></p>
 
             </div>
           </li>
-    
-     <?php } ?>
+
+          <?php } ?>
           <?php
               $sql=mysqli_query($conn,"select * from member_img where id='12'");
               while($fetchsql=mysqli_fetch_array($sql)){
               ?>
           <li class="col-12 col-md-6 col-lg-3">
             <div class="cnt-block equal-hight" style="height: 320px;">
-              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive"
-                  alt=""></figure>
+              <figure><img src="super_admin/member/<?php echo $fetchsql['profile']; ?>" class="img-responsive" alt="">
+              </figure>
               <h3><strong>
                   <?php echo $fetchsql['name'] ?>
                 </strong></h3>
@@ -258,10 +258,10 @@
             </div>
           </li>
           <?php } ?>
-  </ul>
+        </ul>
 
-</div>
-</section>
+      </div>
+    </section>
 
     <!--==pdf==-->
     <!-- <section>
@@ -341,116 +341,62 @@
 
         <div class="accordion-list">
           <ul>
-            <li data-aos="fade-up">
-              <a href="1989 अॅट्रोसिटी कायदा 1992.pdf"  target="_blank">अनुसूचित जाती आणि अनुसूचित जमाती (अत्याचार प्रतिबंधक) अचधतनयम, १९८९ (१९९२ यथाविद्यमान, मराठी आवृती)</a>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="100">
-            <a  href="अनुसूचित जाति एवं अनुसूचित जनजाति (अत्याचार निवारण) अधिनियम 1989 (हिंदी आवृत्ती).pdf"  target="_blank" >अनुसूचित जाति एवं अनुसूचित जनजाति (अत्याचार निवारण) अधिनियम 1989 (हिंदी आवृत्ती)</a>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-               <a  href="Scheduled Caste and Scheduled Tribe (Prevention of Atrocities) Act, 1989 (English Article).pdf"  target="_blank"
-                >Scheduled Caste and Scheduled Tribe (Prevention of Atrocities) Act, 1989 (English Article)</a>
-            </li>
-            <li data-aos="fade-up" data-aos-delay="200">
-              <a  href="2016 12 23 Atrocity.pdf"  target="_blank"
-                >अत्याचाराचे बळी ठरणाऱ्या अन सूचित जाती/अनुसूचित जमातींच्या व्व्यक्तींना नवीन अत्यािार प्रततबंधक नियमान्वये दे ण्यात येणाऱ्या नुकसान भरपाईबाबत.</a>
-            </li>
-
             <li data-aos="fade-up" data-aos-delay="300">
-             <a  href="201708011134427630.pdf"  target="_blank"
-                >पीडितांना अर्थसहाय्य पुनर्वसन करण्यासाठी “मनोधैर्य योजने” च्या अर्थसहाय्यच्या निकषात सुधारणा करण्याबाबत. </a>
-
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <a  href="पीडितांना मोबदला व इतर सुविधा देण्यासाठी आकस्मिकता योजना तयार करण्याबाबत..pdf" target="_blank">पीडितांना मोबदला व इतर सुविधा देण्यासाठी आकस्मिकता योजना तयार करण्याबाबत</a>
-
+              <i class="bx bx-help-circle icon-help"></i> <span
+                style="margin-left:35px;color:black;font-size:18px;font-weight:500;">अँप आज्ञावली द्वारे हि सर्व माहिती
+                वरिष्ठ व अधिनस्त कार्यालय वेळोवेळी अद्यावत (Real / Time) करणे.</span>
             </li>
             <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <span style="margin-left:35px;color:black;font-size:18px;font-weight:500;">अँप आज्ञावली द्वारे हि सर्व माहिती वरिष्ठ व अधिनस्त कार्यालय वेळोवेळी अद्यावत (Real / Time) करणे.</span>
-
+              <i class="bx bx-help-circle icon-help"></i> <span
+                style="margin-left:35px;color:black;font-size:18px;font-weight:500">विविध प्रशासकीय माहिती व अहवाल एका
+                क्लीकवर जनरेट / डाउनलोड करता येईल.</span>
             </li>
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <span style="margin-left:35px;color:black;font-size:18px;font-weight:500">विविध प्रशासकीय माहिती व अहवाल एका क्लीकवर जनरेट / डाउनलोड करता येईल.</span>
-
-            </li>
-
-
-
           </ul>
         </div>
-
       </div>
     </section><!-- End Frequently Asked Questions Section -->
 
-    <!-- ======= Contact Section ======= -->
-    <!--
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+<!--pdf-->
+<section id="faq" class="faq section-bg " style="background:#9f9f9f;">
+<div class="accordion-list">
+          <ul>
+          <li data-aos="fade-up">
+              <a href="1989 अॅट्रोसिटी कायदा 1992.pdf" target="_blank">अनुसूचित जाती आणि अनुसूचित जमाती (अत्याचार
+                प्रतिबंधक) अचधतनयम, १९८९ (१९९२ यथाविद्यमान, मराठी आवृती)</a>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <a href="अनुसूचित जाति एवं अनुसूचित जनजाति (अत्याचार निवारण) अधिनियम 1989 (हिंदी आवृत्ती).pdf"
+                target="_blank">अनुसूचित जाति एवं अनुसूचित जनजाति (अत्याचार निवारण) अधिनियम 1989 (हिंदी आवृत्ती)</a>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <a href="Scheduled Caste and Scheduled Tribe (Prevention of Atrocities) Act, 1989 (English Article).pdf"
+                target="_blank">Scheduled Caste and Scheduled Tribe (Prevention of Atrocities) Act, 1989 (English
+                Article)</a>
+            </li>
+            <li data-aos="fade-up" data-aos-delay="200">
+              <a href="2016 12 23 Atrocity.pdf" target="_blank">अत्याचाराचे बळी ठरणाऱ्या अन सूचित जाती/अनुसूचित
+                जमातींच्या व्व्यक्तींना नवीन अत्यािार प्रततबंधक नियमान्वये दे ण्यात येणाऱ्या नुकसान भरपाईबाबत.</a>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <a href="201708011134427630.pdf" target="_blank">पीडितांना अर्थसहाय्य पुनर्वसन करण्यासाठी “मनोधैर्य योजने”
+                च्या अर्थसहाय्यच्या निकषात सुधारणा करण्याबाबत. </a>
+
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <a href="पीडितांना मोबदला व इतर सुविधा देण्यासाठी आकस्मिकता योजना तयार करण्याबाबत..pdf"
+                target="_blank">पीडितांना मोबदला व इतर सुविधा देण्यासाठी आकस्मिकता योजना तयार करण्याबाबत</a>
+
+            </li>
+          </ul>
         </div>
 
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="row">
-              <div class="col-lg-6 info">
-                <i class="bx bx-map"></i>
-                <h4>Address</h4>
-                <p>A108 Adam Street,<br>New York, NY 535022</p>
-              </div>
-              <div class="col-lg-6 info">
-                <i class="bx bx-phone"></i>
-                <h4>Call Us</h4>
-                <p>+1 5589 55488 55<br>+1 5589 22548 64</p>
-              </div>
-              <div class="col-lg-6 info">
-                <i class="bx bx-envelope"></i>
-                <h4>Email Us</h4>
-                <p>contact@example.com<br>info@example.com</p>
-              </div>
-              <div class="col-lg-6 info">
-                <i class="bx bx-time-five"></i>
-                <h4>Working Hours</h4>
-                <p>Mon - Fri: 9AM to 5PM<br>Sunday: 9AM to 1PM</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
-              <div class="form-group">
-                <input placeholder="Your Name" type="text" name="name" class="form-control" id="name" required>
-              </div>
-              <div class="form-group mt-3">
-                <input placeholder="Your Email" type="email" class="form-control" name="email" id="email" required>
-              </div>
-              <div class="form-group mt-3">
-                <input placeholder="Subject" type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea placeholder="Message" class="form-control" name="message" rows="5" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
--->
-
+</section>
+<!--pdf-->
     <!-- End Contact Section -->
 
   </main><!-- End #main -->
