@@ -123,8 +123,8 @@
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-array">जिल्हा</label>
                                                 <div class="mb-1">
-                                                    <select class="select2 form-select" id="select2-basic">
-                                                        <option selected>Select</option>
+                                                    <select class="select2 form-select" id="large-select">
+                                                        <option selected>निवडा</option>
                                                         <option>नवी मुंबई</option>
                                                         <option>रायगड</option>
                                                     </select>
@@ -135,7 +135,7 @@
                                                 <label class="form-label" for="select2-array">पोलीस ठाणे</label>
                                                 <div class="mb-1">
                                                     <select class="select2 form-select" id="select2-basic">
-                                                        <option selected>Select</option>
+                                                        <option selected>निवडा</option>
                                                         <option>1</option>
                                                         <option>2</option>
                                                     </select>
@@ -201,7 +201,7 @@
                                             </div>
 
                                             <div class="col-md-12 modal-footer">
-                                                <a href="form2.php" class="btn btn-primary">नमूद करा</a>
+                                                <a href="form2.php" class="btn btn-primary">नमूद जतन करा</a>
 
                                                 <a href="form2.php" class="btn btn-primary btn-next">
                                                 <span class="align-middle d-sm-inline-block d-none">पुढे जा</span>
