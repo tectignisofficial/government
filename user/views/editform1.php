@@ -79,10 +79,10 @@ echo mysqli_query($conn);
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 
 
@@ -95,25 +95,24 @@ echo mysqli_query($conn);
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 
   <script>
-      $(document).ready(function(){
+    $(document).ready(function () {
       $("#navi-mumbai").hide();
       $("#raigarh").hide();
-      let $district=$("#district").val();
-      if($district=='raigarh'){
+      let $district = $("#district").val();
+      if ($district == 'raigarh') {
         $("#raigarh").show();
 
       }
-      if($district=='navi mumbai'){
+      if ($district == 'navi mumbai') {
         $("#navi-mumbai").show();
 
       }
     })
-   
   </script>
 
- <link href="../dist/img/lo.png" rel="icon">
+  <link href="../dist/img/lo.png" rel="icon">
   <link href="./dist/img/lo.png" rel="apple-touch-icon">
- <link href="../dist/img/lo.png" rel="icon">
+  <link href="../dist/img/lo.png" rel="icon">
   <link href="./dist/img/lo.png" rel="apple-touch-icon">
 </head>
 
@@ -141,7 +140,7 @@ echo mysqli_query($conn);
             <i class="fas fa-expand-arrows-alt"></i>
           </a>
         </li>
-        
+
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -153,7 +152,7 @@ echo mysqli_query($conn);
       <a href="index.php" class="brand-link">
         <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light" >Atrocity Raigad</span>
+        <span class="brand-text font-weight-light">Atrocity Raigad</span>
       </a>
 
       <!-- Sidebar -->
@@ -164,7 +163,8 @@ echo mysqli_query($conn);
             <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>-->
           <div class="info">
-            <a href="#" class="d-block" style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $district; ?></a>
+            <a href="#" class="d-block"
+              style="text-transform:capitalize;font-size:20px;font-weight:500"><?php echo $district; ?></a>
           </div>
         </div>
 
@@ -183,8 +183,8 @@ echo mysqli_query($conn);
               <a href="form1.php" class="nav-link ">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                नोंदणी करा
-                  
+                  नोंदणी करा
+
                   <!-- <span class="right badge badge-danger">New</span> -->
                 </p>
               </a>
@@ -210,7 +210,7 @@ echo mysqli_query($conn);
                     <p>अहवाल २</p>
                   </a>
                 </li>
-                
+
                 <li class="nav-item">
                   <a href="report/R4.php" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
@@ -232,46 +232,22 @@ echo mysqli_query($conn);
               </ul>
             </li>
             <li class="nav-item">
-
-              <a href="#" class="nav-link ">
+              <a href="report/r1opy.php" class="nav-link">
                 <i class=" nav-icon fas fa-landmark "></i>
                 <p>
-                  बँक
-               
-                  <!-- <span class="right badge badge-danger">New</span> -->
+                  बँक माहिती
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-              <a href="report/r1opy.php" class="nav-link">
-              <i class="far fa-circle nav-icon"></i> 
-                <p>
-                बँक माहिती
-                </p>
-              </a>
-           
             </li>
-            <!-- <li class="nav-item"> 
-              <a href="report/payment.php" class="nav-link">
-              <i class=" far fa-circle nav-icon"></i> 
-                <p>
-                पेमेंट
-                </p>
-              </a>
-           
-            </li>-->
-                
-              </ul>
-            </li>
-            
+
             <li class="nav-item">
               <a href="../logout.php" class="nav-link">
-              <i class=" nav-icon fas fa-sign-out-alt"></i> 
+                <i class=" nav-icon fas fa-sign-out-alt"></i>
                 <p>
-                     बाहेर पडा  
+                  बाहेर पडा
                 </p>
               </a>
-           
+
             </li>
           </ul>
         </nav>
@@ -308,49 +284,51 @@ echo mysqli_query($conn);
             <div class="col-md-12">
               <!-- general form elements -->
               <div class="card card-primary">
-                
+
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form method="post" action="" enctype="multipart/form-data">
-                
-                  <div class="card-body">
-                      <div class="col-12" style="text-align:center;">
-                      <ul id="progressbar" style="display:flex"  ;>
-                                            <li class="active" id="account"><strong>नोंदणी</strong></li>
-                                            <li id="personal"><strong>आरोपीची माहिती</strong></li>
-                                            
-                                            <li id="payment"><strong>पिडीत व्यक्तीची माहिती</strong></li>
-                                            <li id="confirm"><strong>इतर माहिती </strong></li>
-                                            <li id="confirm"><strong>बँक तपशील </strong></li>
-    
-                                        </ul>
 
-                      </div>
-            
-                    
+                  <div class="card-body">
+                    <div class="col-12" style="text-align:center;">
+                      <ul id="progressbar" style="display:flex" ;>
+                        <li class="active" id="account"><strong>नोंदणी</strong></li>
+                        <li id="personal"><strong>आरोपीची माहिती</strong></li>
+
+                        <li id="payment"><strong>पिडीत व्यक्तीची माहिती</strong></li>
+                        <li id="confirm"><strong>इतर माहिती </strong></li>
+                        <li id="confirm"><strong>बँक तपशील </strong></li>
+
+                      </ul>
+
+                    </div>
+
+
 
                     <div class=" d-flex form-group " style="margin-left: -12px;">
-                    <div class="form-group">
-                      <label for="exampleनोंद वही क्र.">नोंद वही क्र.</label>
-                      <input type="Textbox" required class="form-control" value="<?php echo $book_no ?>" name="book_no" id="exampleInputनोंद वही क्र."
-                        placeholder="" readonly>
-                    </div>
-                      
+                      <div class="form-group">
+                        <label for="exampleनोंद वही क्र.">नोंद वही क्र.</label>
+                        <input type="Textbox" required class="form-control" value="<?php echo $book_no ?>"
+                          name="book_no" id="exampleInputनोंद वही क्र." placeholder="" readonly>
+                      </div>
+
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">वर्ष</label>
-                        <input required class="form-control " value="<?php echo  $year ?>" name="year" id="exampleदिनांक" placeholder="" type="number" min="1900" max="2099" step="1" >
+                        <input required class="form-control " value="<?php echo  $year ?>" name="year"
+                          id="exampleदिनांक" placeholder="" type="number" min="1900" max="2099" step="1">
                       </div>
                     </div>
 
                     <div class=" d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">दिनांक</label>
-                        <input type="Date" required class="form-control" value="<?php echo  $date ?>" name="date" id="exampleदिनांक" placeholder="" readonly>
+                        <input type="Date" required class="form-control" value="<?php echo  $date ?>" name="date"
+                          id="exampleदिनांक" placeholder="" readonly>
                       </div>
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">गुन्हा नं.</label>
-                        <input type="varchar" required class="form-control " value="<?php echo  $complaint_no ?>" name="complaint_no" id="exampleदिनांक"
-                          placeholder="" readonly> 
+                        <input type="varchar" required class="form-control " value="<?php echo  $complaint_no ?>"
+                          name="complaint_no" id="exampleदिनांक" placeholder="" readonly>
                       </div>
 
                     </div>
@@ -358,36 +336,38 @@ echo mysqli_query($conn);
                     <div class="d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="Exampleउप विभागा चे नाव">जिल्हा</label>
-                       
+
                         <?php 
                         $email=$_SESSION['use'];
                         $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
                         
                         while($res=mysqli_fetch_array($sql)){
                           ?>
-                          <input class="form-control " id="district" name="district" value="<?php echo $res['district']; ?>" readonly>
-                          <?php
+                        <input class="form-control " id="district" name="district"
+                          value="<?php echo $res['district']; ?>" readonly>
+                        <?php
                         }
                         ?>
-                          
-                       <!-- </select>-->
+
+                        <!-- </select>-->
                       </div>
-                      <div class="form-group col-6" id="raigarh" >
+                      <div class="form-group col-6" id="raigarh">
                         <label for="Exampleपोलीस ठाणे">पोलीस ठाणे</label>
-                        <input type="Dropdown" class="form-control " value="<?php echo  $police_station ?>" id="Exampleपोलीस ठाणे" placeholder="" readonly> 
-                        
+                        <input type="Dropdown" class="form-control " value="<?php echo  $police_station ?>"
+                          id="Exampleपोलीस ठाणे" placeholder="" readonly>
+
                       </div>
 
-                     
-                    </div>
-                      
 
-                   
+                    </div>
+
+
+
 
                     <div class="form-group">
                       <label for="Exampleलावलेली कलमे">लावलेली कलमे</label>
-                      <input type="Textbox" required class="form-control" value="<?php echo  $section ?>" name="section" id="Exampleलावलेली कलमे"
-                        placeholder="">
+                      <input type="Textbox" required class="form-control" value="<?php echo  $section ?>" name="section"
+                        id="Exampleलावलेली कलमे" placeholder="">
                     </div>
 
 
@@ -397,34 +377,41 @@ echo mysqli_query($conn);
                         <label for="exampleदिनांक">गुन्हयांचा प्रकार</label><br>
 
                         <div class="d-flex form-group ">
-                        
+
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime1" name="crime[]" value="खुन" <?php if(in_array("खून",$type_of_offence)) { ?> checked="checked" <?php } ?> >
+                            <input type="checkbox" id="crime1" name="crime[]" value="खुन"
+                              <?php if(in_array("खून",$type_of_offence)) { ?> checked="checked" <?php } ?>>
                             <label for="crime1">खून</label><br>
                           </div>
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime2" name="crime[]" value="बलात्कार" <?php if(in_array("बलात्कार",$type_of_offence)) { ?> checked="checked" <?php } ?> >
+                            <input type="checkbox" id="crime2" name="crime[]" value="बलात्कार"
+                              <?php if(in_array("बलात्कार",$type_of_offence)) { ?> checked="checked" <?php } ?>>
                             <label for="crime2">बलात्कार</label><br>
                           </div>
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime3" name="crime[]" value="विनयभंग" <?php if(in_array("विनयभंग",$type_of_offence)) { ?> checked="checked" <?php } ?> >
+                            <input type="checkbox" id="crime3" name="crime[]" value="विनयभंग"
+                              <?php if(in_array("विनयभंग",$type_of_offence)) { ?> checked="checked" <?php } ?>>
                             <label for="crime3"> विनयभंग</label><br>
                           </div>
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime4" name="crime[]" value="मारहाण" <?php if(in_array("मारहाण",$type_of_offence)) { ?> checked="checked" <?php } ?>>
+                            <input type="checkbox" id="crime4" name="crime[]" value="मारहाण"
+                              <?php if(in_array("मारहाण",$type_of_offence)) { ?> checked="checked" <?php } ?>>
                             <label for="crime4">मारहाण</label><br>
                           </div>
 
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime5" name="crime[]" value="शिवीगाळ" <?php if(in_array("शिवीगाळ",$type_of_offence)) { ?> checked="checked" <?php } ?> >
+                            <input type="checkbox" id="crime5" name="crime[]" value="शिवीगाळ"
+                              <?php if(in_array("शिवीगाळ",$type_of_offence)) { ?> checked="checked" <?php } ?>>
                             <label for="crime5"> शिवीगाळ</label><br>
                           </div>
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime7" name="crime[]" value="जाळपोळ" <?php if(in_array("जाळपोळ",$type_of_offence)) { ?> checked="checked" <?php } ?> > 
+                            <input type="checkbox" id="crime7" name="crime[]" value="जाळपोळ"
+                              <?php if(in_array("जाळपोळ",$type_of_offence)) { ?> checked="checked" <?php } ?>>
                             <label for="crime7"> जाळपोळ</label><br>
                           </div>
                           <div class="form-group col-3">
-                            <input type="checkbox" id="crime8" name="crime[]" value="इतर" <?php if(in_array("इतर",$type_of_offence)) { ?> checked="checked" <?php } ?> >
+                            <input type="checkbox" id="crime8" name="crime[]" value="इतर"
+                              <?php if(in_array("इतर",$type_of_offence)) { ?> checked="checked" <?php } ?>>
                             <label for="crime8"> इतर</label><br>
                           </div>
 
@@ -434,23 +421,24 @@ echo mysqli_query($conn);
                     <div class="d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">फिर्यादी चे नाव </label>
-                        <input type="text" required class="form-control" value="<?php echo  $complaint_filer_name ?>" name="complaint_filer_name" id="exampleदिनांक"
-                          placeholder="">
+                        <input type="text" required class="form-control" value="<?php echo  $complaint_filer_name ?>"
+                          name="complaint_filer_name" id="exampleदिनांक" placeholder="">
                       </div>
                       <div class="form-group col-6">
                         <label for="exampleदिनांक">फिर्यादी चे पत्ता</label>
-                        <input type="varchar" required class="form-control " value="<?php echo  $complaint_filer_address ?>" name="complaint_filer_address"
+                        <input type="varchar" required class="form-control "
+                          value="<?php echo  $complaint_filer_address ?>" name="complaint_filer_address"
                           id="exampleदिनांक" placeholder="">
                       </div>
                     </div>
                     <!-- /.card-body -->
-                           
+
                     <div style="text-align: end;">
 
-                                            <button type="submit" name="s_ubmit" class="btn btn-primary">नमूद करा
-                                            </button>
-                                            
-                                        </div>
+                      <button type="submit" name="s_ubmit" class="btn btn-primary">नमूद करा
+                      </button>
+
+                    </div>
 
                 </form>
               </div>
@@ -506,59 +494,59 @@ echo mysqli_query($conn);
   <script src="../dist/js/demo.js"></script>
   <!-- Page specific script -->
   <script>
-        $(document).ready(function () {
+    $(document).ready(function () {
 
-            var current_fs, next_fs, previous_fs; //fieldsets
-            var opacity;
-            var current = 1;
-            var steps = $("fieldset").length;
+      var current_fs, next_fs, previous_fs; //fieldsets
+      var opacity;
+      var current = 1;
+      var steps = $("fieldset").length;
 
-            setProgressBar(current);
+      setProgressBar(current);
 
-            $(".next").click(function () {
+      $(".next").click(function () {
 
-                current_fs = $(this).parent();
-                next_fs = $(this).parent().next();
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
 
-                //Add Class Active
-                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+        //Add Class Active
+        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 
-                //show the next fieldset
-                next_fs.show();
-                //hide the current fieldset with style
-                current_fs.animate({
-                    opacity: 0
-                }, {
-                    step: function (now) {
-                        // for making fielset appear animation
-                        opacity = 1 - now;
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({
+          opacity: 0
+        }, {
+          step: function (now) {
+            // for making fielset appear animation
+            opacity = 1 - now;
 
-                        current_fs.css({
-                            'display': 'none',
-                            'position': 'relative'
-                        });
-                        next_fs.css({
-                            'opacity': opacity
-                        });
-                    },
-                    duration: 500
-                });
-                setProgressBar(++current);
+            current_fs.css({
+              'display': 'none',
+              'position': 'relative'
             });
-
-            function setProgressBar(curStep) {
-                var percent = parseFloat(100 / steps) * curStep;
-                percent = percent.toFixed();
-                $(".progress-bar")
-                    .css("width", percent + "%")
-            }
-
-            $(".submit").click(function () {
-                return false;
-            })
-
+            next_fs.css({
+              'opacity': opacity
+            });
+          },
+          duration: 500
         });
-    </script>
+        setProgressBar(++current);
+      });
+
+      function setProgressBar(curStep) {
+        var percent = parseFloat(100 / steps) * curStep;
+        percent = percent.toFixed();
+        $(".progress-bar")
+          .css("width", percent + "%")
+      }
+
+      $(".submit").click(function () {
+        return false;
+      })
+
+    });
+  </script>
 </body>
 
 </html>

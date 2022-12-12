@@ -207,35 +207,12 @@ if(isset($_POST['subt3'])){
 
            
             <li class="nav-item">
-            <a href="#" class="nav-link active">
-              <i class=" nav-icon fas fa-landmark "></i>
-              <p>
-                बँक
-                
-                <!-- <span class="right badge badge-danger">New</span> -->
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-            <a href="r1opy.php" class="nav-link">
-            <i class="far fa-circle nav-icon"></i> 
-              <p>
-              बँक माहिती
-              </p>
-            </a>
-
-            </li>
-            <!-- <li class="nav-item"> 
-            <a href="payment.php" class="nav-link active">
-            <i class=" far fa-circle nav-icon"></i> 
-              <p>
-              पेमेंट
-              </p>
-            </a>
-
-            </li>-->
-              
-            </ul>
+              <a href="r1opy.php" class="nav-link">
+                <i class=" nav-icon fas fa-landmark "></i>
+                <p>
+                  बँक माहिती
+                </p>
+              </a> 
             </li>
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">

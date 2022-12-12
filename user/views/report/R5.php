@@ -215,35 +215,13 @@ if (mysqli_num_rows($complaints)>0){
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link ">
+              <a href="r1opy.php" class="nav-link">
                 <i class=" nav-icon fas fa-landmark "></i>
                 <p>
-                  बँक
-
-                  <!-- <span class="right badge badge-danger">New</span> -->
+                  बँक माहिती
                 </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="r1opy.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>
-                      बँक माहिती
-                    </p>
-                  </a>
-                </li>
-                <!-- <li class="nav-item"> 
-              <a href="payment.php" class="nav-link">
-              <i class=" far fa-circle nav-icon"></i> 
-                <p>
-                पेमेंट
-                </p>
-              </a>
-           
-            </li>-->
-              </ul>
-            </li>
-            <li class="nav-item">
+              </a> 
+            </li>            <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
                 <i class=" nav-icon fas fa-sign-out-alt"></i>
                 <p>

@@ -90,7 +90,7 @@ if (mysqli_num_rows($complaints)>0){
       }
     }
   </style>
- <link href="../../dist/img/lo.png" rel="icon">
+  <link href="../../dist/img/lo.png" rel="icon">
   <link href="../../dist/img/lo.png" rel="apple-touch-icon">
 </head>
 
@@ -172,14 +172,14 @@ if (mysqli_num_rows($complaints)>0){
             </li>
             <li class="nav-item">
 
-<a href="../form1.php" class="nav-link ">
-  <i class="nav-icon fas fa-th"></i>
-  <p>
-  नोंदणी करा
-    <!-- <span class="right badge badge-danger">New</span> -->
-  </p>
-</a>
-</li>
+              <a href="../form1.php" class="nav-link ">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  नोंदणी करा
+                  <!-- <span class="right badge badge-danger">New</span> -->
+                </p>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-chart-pie"></i>
@@ -224,32 +224,12 @@ if (mysqli_num_rows($complaints)>0){
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link ">
+              <a href="r1opy.php" class="nav-link">
                 <i class=" nav-icon fas fa-landmark "></i>
                 <p>
-                  बँक
-                  <!-- <span class="right badge badge-danger">New</span> -->
+                  बँक माहिती
                 </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="r1opy.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>
-                      बँक माहिती
-                    </p>
-                  </a>
-                </li>
-                <!-- <li class="nav-item"> 
-              <a href="payment.php" class="nav-link">
-              <i class=" far fa-circle nav-icon"></i> 
-                <p>
-                पेमेंट
-                </p>
-              </a>
-           
-            </li>-->
-              </ul>
+              </a> 
             </li>
             <li class="nav-item">
               <a href="../../logout.php" class="nav-link">
@@ -359,7 +339,8 @@ if (mysqli_num_rows($complaints)>0){
                                 </div>
                               </div>
                               <div class="text-center" id="">
-                                <button type="submit" id="" name="submit1" class="btn text-center btn-success">Submit</button>
+                                <button type="submit" id="" name="submit1"
+                                  class="btn text-center btn-success">Submit</button>
                               </div>
                             </div>
                           </form>
@@ -373,7 +354,7 @@ if (mysqli_num_rows($complaints)>0){
                   </div>
 
                 </div>
-<?php
+                <?php
 if(isset($_POST['submit1'])){
 ?>
                 <div class=" card" id="">
@@ -533,11 +514,11 @@ if(isset($_POST['submit1'])){
       var newWin = window.open();
       newWin.document.open();
       newWin.document.write(
-        '<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style> <link href="../dist/img/lo.png" rel="icon">
-  <link href="./dist/img/lo.png" rel="apple-touch-icon">
- <link href="../dist/img/lo.png" rel="icon">
-  <link href="./dist/img/lo.png" rel="apple-touch-icon">
-</head><html><body style="text-align:center" onload="window.print()">' +
+        '<head><style>.action-noe{display:none}table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px}</style> <link href="../dist/img/lo.png" rel="icon">\
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">\
+ <link href="../dist/img/lo.png" rel="icon">\
+  <link href="./dist/img/lo.png" rel="apple-touch-icon">\
+</head><html><body style="text-align:center" onload="window.print()">\' +
         divToPrint.innerHTML + '</body></html>');
       newWin.document.close();
       setTimeout(function () {
