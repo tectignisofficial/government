@@ -101,8 +101,8 @@
                   <label class="form-label" for="select2-basic" style="font-weight: 600;">Date range:</label>
 
                   <div class="form-group">
-                        <select class="form-control" name="month" required>
-                          <option>Select month</option>
+                        <select class="select2 form-select" id="select2-basic" name="month" required>
+                          <option selected>महिना निवडा</option>
                           <option value="january">January</option>
                           <option value="february">February</option>
                           <option value="march">March</option>
@@ -124,7 +124,7 @@
                 </div>
 
                                             <div class="col-md-12 modal-footer">
-                                                <button type="button" class="btn btn-primary">नमूद करा</button>
+                                                <button type="button" class="btn btn-primary">जतन करा</button>
                                             </div>
                                         </div>
                                     </form>

@@ -124,7 +124,7 @@
                 </div>
 
                                             <div class="col-md-12 modal-footer">
-                                                <button type="button" class="btn btn-primary">नमूद करा</button>
+                                                <button type="button" class="btn btn-primary">जतन करा</button>
                                             </div>
                                         </div>
                                     </form>
