@@ -116,7 +116,7 @@
                                             </div>
 
                                             <div class="form-group col-4">
-                                                <div class="row mb-1">
+                                                <div class="mb-1">
                                                     <div class="input-group mb-2" >
                                                         <span class="input-group-text" for="select2-array" id="basic-addon1">Status</span>
                                                         <select class="select2 form-select" id="select2-basic">
