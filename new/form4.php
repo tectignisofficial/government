@@ -45,7 +45,11 @@
 
 <style>
     .position-relative{
-        width:200px !important
+        width:70% !important
+    }
+
+    .status{
+        width:30% !important 
     }
 </style>
 </head>
@@ -118,7 +122,7 @@
                                             <div class="form-group col-4">
                                                 <div class="mb-1">
                                                     <div class="input-group mb-2" >
-                                                        <span class="input-group-text" for="select2-array" id="basic-addon1">Status</span>
+                                                        <span class="input-group-text status" for="select2-array" id="basic-addon1">Status</span>
                                                         <select class="select2 form-select" id="select2-basic">
                                                         <option selected>निवडा</option>
                                                         <option>रायगड</option>
