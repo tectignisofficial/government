@@ -11,7 +11,7 @@
     <meta name="keywords"
         content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Select - Vuexy - Bootstrap HTML admin template</title>
+    <title>Form3</title>
     <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
@@ -74,7 +74,7 @@
                                 पीडितांची माहिती</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a>
+                                    <li class="breadcrumb-item"><a href="index">मुख्यपृठ</a>
                                     </li>
                                     <li class="breadcrumb-item active">सरकारी प्रपत्र
                                     </li>
@@ -199,7 +199,7 @@
             </section>
             <!-- Select2 End -->
 
-            <section id="basic-datatable">
+            <!-- <section id="basic-datatable">
                 <div class="row">
                     <table class="datatables-basic table-hover table-responsive table table-bordered">
                         <thead>
@@ -226,7 +226,7 @@
                         </tbody>
                     </table>
                 </div>
-            </section>
+            </section> -->
 
         </div>
     </div>

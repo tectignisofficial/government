@@ -43,15 +43,15 @@
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
 
-<style>
-    .position-relative{
-        width:70% !important
-    }
+    <style>
+        .position-relative {
+            width: 70% !important
+        }
 
-    .status{
-        width:30% !important 
-    }
-</style>
+        .status {
+            width: 30% !important
+        }
+    </style>
 </head>
 <!-- END: Head-->
 
@@ -121,13 +121,24 @@
 
                                             <div class="form-group col-4">
                                                 <div class="mb-1">
-                                                    <div class="input-group mb-2" >
-                                                        <span class="input-group-text status" for="select2-array" id="basic-addon1">Status</span>
-                                                        <select class="select2 form-select" id="select2-basic">
-                                                        <option selected>निवडा</option>
-                                                        <option>रायगड</option>
-                                                        <option>नवी मुंबई</option>
-                                                    </select>
+                                                    <div class="input-group mb-2">
+                                                        <span class="input-group-text status" for="select2-array"
+                                                            id="basic-addon1">Status</span>
+                                                        <select class="select2 form-select" id="select2-basic"
+                                                            name="payStatus">
+                                                            <option value="" disabled=""></option>
+                                                            <option
+                                                                value="stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत"
+                                                                selected="">stage 1 FIR दाखला / प्रकरण मंजूर आहे /
+                                                                अनुदानाच्या प्रतीक्षेत</option>
+                                                            <option value="stage 2 FIR चौकशी दाखल">stage 2 FIR चौकशी
+                                                                दाखल</option>
+                                                            <option value="stage 3 न्यायालयाचा निर्णय">stage 3
+                                                                न्यायालयाचा निर्णय</option>
+                                                            <option value="Stage 4 Documents pending">Stage 4 Documents
+                                                                pending</option>
+                                                        </select>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>

@@ -368,7 +368,7 @@ echo mysqli_query($conn);
                     <div class=" d-flex form-group " style="margin-left: -12px;">
                       <div class="form-group col-6">
                         <label for="exampleनोंद वही क्र.">नोंद वही क्र.</label>
-                        <input type="hidden" name="id1" value='<?php echo $_GET['id'] ?>'>
+                        <input type="hidden" name="id1" value='<?php if(isset($_GET['id'])){ echo $_GET['id']; } ?>'>
                         <input type="Textbox" required class="form-control" value="<?php echo $book_no?>"
                           name="book_no" id="exampleInputनोंद वही क्र." placeholder="">
                       </div>

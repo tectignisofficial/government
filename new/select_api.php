@@ -1,0 +1,114 @@
+<?php
+//form1 start
+       $role='';
+       $email=$_SESSION['use'];
+       $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
+       while($res=mysqli_fetch_array($sql)){
+         $role=$res['role'];
+       }
+        $book_no='';
+        $date='';
+        $complaint_no='';
+        $police_station='';
+        $section='';
+        $year='';
+        $type_of_offence='';
+        $complaint_filer_name='';
+        $district='';
+if(isset($_GET['id'])){
+  $id=intval($_GET['id']);
+  $sql=mysqli_query($conn,"select * from complaint_form where id='$id'");
+   while($arr=mysqli_fetch_array($sql)){
+  $book_no= $arr['book_no'];
+   $date=$arr['date'];  
+   $complaint_no=$arr['complaint_no'] ; 
+   $police_station=$arr['police_station'] ;
+   $district=$arr['district']; 
+   $section=$arr['section'];
+   $type_of_offence=explode(",", $arr['type_of_offence']);
+   $complaint_filer_name=$arr['complaint_filer_name'];
+   $year=$arr['year'];
+  }
+}
+//form1 end
+
+//index start
+$currentDate=date('Y');
+if(isset($_POST['year'])){
+  $date = $_POST['year'];
+  $query1=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='शिवीगाळ,'");
+  
+  $query2=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='मारहाण,'");
+
+  $query3=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='जाळपोळ,'");
+
+  $query4=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='बलात्कार,'");
+
+  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='खुन,'");
+
+  $query5=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='विनयभंग,'");
+
+  $query6=mysqli_query($conn,"select * from complaint_form where year(date)='$date' and type_of_offence='इतर,'");
+
+  $query7=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत'");
+
+  $query8=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='stage 2 FIR चौकशी
+  दाखल'");
+
+  $query9=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='stage 3 न्यायालयाचा निर्णय'");
+
+  $query10=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$date' and status='Stage 4 Documents pending'");
+
+}else{
+  $query1=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='शिवीगाळ,'");
+
+  $query2=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='मारहाण,'");
+
+  $query3=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='जाळपोळ,'");
+
+  $query4=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='बलात्कार,'");
+
+  $query=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='खुन,'");
+
+  $query5=mysqli_query($conn,"select * from complaint_form where year(date)='$currentDate' and type_of_offence='विनयभंग,'");
+
+  $query6=mysqli_query($conn,"select * from complaint_form where  year(date)='$currentDate' and type_of_offence='इतर,'");
+
+  $query7=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत'");
+
+  $query8=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='stage 2 FIR चौकशी
+  दाखल'");
+
+  $query9=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='stage 3 न्यायालयाचा निर्णय'");
+
+  $query10=mysqli_query($conn,"select complaint_form.district as district,image.status as stage1 from image inner join complaint_form on complaint_form.id=image.caseid  where year(complaint_form.date)='$currentDate' and status='Stage 4 Documents pending'");
+}
+  $count1=mysqli_num_rows($query1);
+  $count2=mysqli_num_rows($query2);
+  $count3=mysqli_num_rows($query3);
+  $count4=mysqli_num_rows($query4);
+  $count=mysqli_num_rows($query);
+  $count5=mysqli_num_rows($query5);
+  $count6=mysqli_num_rows($query6);
+  $count7=mysqli_num_rows($query7);
+  $count8=mysqli_num_rows($query8);
+  $count9=mysqli_num_rows($query9);
+  $count10=mysqli_num_rows($query10);
+
+  //form2 start
+  $criminal_name='';
+  $criminal_address='';
+  $age='';
+  if(isset($_GET['id'])){
+    $eid=intval($_GET['id']);
+    $sql=mysqli_query($conn,"select * from criminal where id='$eid'");
+  while($arr=mysqli_fetch_array($sql)){
+      $id=$arr['id'];
+      $caseid=$arr['caseid'];
+ $criminal_name= $arr['criminal_name'];
+  $criminal_address=$arr['criminal_address'];  
+  $age=$arr['age'] ; 
+ }
+  }
+  //form2 end
+?>

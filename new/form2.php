@@ -1,3 +1,9 @@
+<?php
+session_start();
+require("include/config.php");
+require("select_api.php");
+$id=$_GET['id'];
+?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -81,7 +87,7 @@
                                 पीडितांची माहिती</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a>
+                                    <li class="breadcrumb-item"><a href="index">मुख्यपृठ</a>
                                     </li>
                                     <li class="breadcrumb-item active">सरकारी प्रपत्र
                                     </li>
@@ -101,25 +107,26 @@
                                     <h4 class="card-title">आरोपीची माहिती</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form  method="post" action="api.php">
                                         <div class="row">
                                             <!-- Basic -->
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">आरोपीचे नाव</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+                                                <input type="hidden" required class="" name="form_2_id" value="<?php echo $id;?>"
+                                                    id="exampleदिनांक" placeholder="">
+                                                <input type="text"  required class="form-control" value="<?php echo $criminal_name ?>" name="criminal_name" id="basicInput" />
                                             </div>
 
                                             <div class="d-flex justify-content-between">
-                                                <a href="form1.php" class="btn btn-outline-secondary btn-prev">
+                                                <a href="form1.php?id=<?php echo $id;?>" class="btn btn-outline-secondary btn-prev">
                                                     <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                     <span class="align-middle d-sm-inline-block d-none">मागे</span>
                                                 </a>
-                                                <a href="form3.php" class="btn btn-primary btn-next">
-                                                    <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
-                                                    <i data-feather="arrow-right"
+                                                
+                                                <button type="sumbit" name="form2su_bmit" class="btn btn-primary btn-next bbbt">नमूद करा <i data-feather="arrow-right"
                                                         class="align-middle ms-sm-25 ms-0"></i>
-                                                </a>
-                                                <a href="form3.php" class="btn btn-primary btn-next">
+                                            </button>
+                                                <a href="fo.php?id=<?php echo $id;?>" name="sub_mit" class="btn btn-primary btn-next">
                                                     <span class="align-middle d-sm-inline-block d-none">पुढे जा</span>
                                                     <i data-feather="arrow-right"
                                                         class="align-middle ms-sm-25 ms-0"></i>
@@ -135,7 +142,7 @@
                 <!-- Select2 End -->
             </div>
 
-            <section id="basic-datatable">
+            <!-- <section id="basic-datatable">
                 <div class="row">
                     <table class="datatables-basic table-hover table-responsive table table-bordered">
                         <thead>
@@ -158,7 +165,7 @@
                         </tbody>
                     </table>
                 </div>
-            </section>
+            </section> -->
 
         </div>
 
