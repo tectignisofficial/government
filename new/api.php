@@ -27,13 +27,13 @@ require("include/config.php");
         	if($in_ch==1)  
         	{  
             $last_id = mysqli_insert_id($conn);
-            header("Location: form2.php?id=".$last_id);
+            header("Location: form2.php?form2=".$last_id);
         	}
 	 }
   }else{
     $id=$_POST['id1'];
     $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',year='$year', type_of_offence='$chk' where id='$id'");
-    if($sql==1) { header("Location:form2.php?id=".$id); }
+    if($sql==1) { header("Location:form2.php?form2=".$id); }
   }
 } 
 
@@ -45,23 +45,69 @@ require("include/config.php");
   {  
    $criminal_name=$_POST['criminal_name'];
    $form_2_id=$_POST['form_2_id'];
-   if(isset($_GET['eid'])){
-    $id3=$_GET['eid'];
-    $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name' where id='$id3'");
-    if($sql==1){
-      header("Location:form2.php?id=".$id);
-    }
+   $sql=mysqli_query($conn,"select * from criminal where caseid='$form_2_id'");
+   if(mysqli_num_rows($sql)>0){
+    $sql= mysqli_query($conn,"update criminal set criminal_name='$criminal_name' where caseid='$form_2_id'");
    }else{
     $sql= mysqli_query($conn,"INSERT INTO criminal(`caseid`, `criminal_name`) VALUES ('$form_2_id','$criminal_name')");
   }
     if($sql==1)
     {
-     header("Location:form3?id=".$id) ;
+     header("Location:form3?form3=".$form_2_id) ;
     }
-    else {
-    echo 'error';
-     
-    }
+    else {  echo 'error'; }
   }
 //form2 end
+
+//form3 start
+if(isset($_POST['sub_mit']))  
+  {  
+   $victim_name=$_POST['victim_name']; //
+   $victim_address=$_POST['victim_address'];// 
+   $caste_certificate=$_POST['caste_certificate'];// 
+   $aadhaar_card=$_POST['aadhaar_card'];//
+   $charge_sheet=$_POST['charge_sheet'];//
+   $category_and_caste=$_POST['category_and_caste'];
+   $id4=$_POST['id'];
+   $sql=mysqli_query($conn,"select * from victim where caseid='$id4'");
+   if(mysqli_num_rows($sql)>0){
+    $sql= mysqli_query($conn,"update victim set name='$victim_name',address='$victim_address',victim_age=' $victim_age',caste='$category_and_caste',caste_certificate=' $caste_certificate',aadhar_card='$aadhaar_card',charge_sheet='$charge_sheet' where caseid='$id4'");
+   }else{
+    $sql=mysqli_query($conn,"insert into victim(caseid,charge_sheet,aadhar_card,caste,caste_certificate,name,address)
+    values ('$id4','$charge_sheet','$aadhaar_card','$category_and_caste','$caste_certificate','$victim_name','$victim_address')");  
+   }
+	if($sql==1) 
+  {   
+    header("Location:form4?form4=".$id4);	
+  }
+  else  
+	{  
+	 echo 'error'; 
+	}  
+}
+  //form3 end
+
+  //form4 start
+  if(isset($_POST['subm_it'])){
+    $file=$_FILES['files']['name'];    
+    $discription=$_POST['discription'];
+    $payStatus=$_POST['payStatus'];
+    $filedet=$_FILES['files']['tmp_name'];
+    $loc="file/".$file;
+    move_uploaded_file($filedet,$loc);
+    $loc1="file/".$file;
+    move_uploaded_file($filedet,$loc1);
+    if(isset($_GET['eid'])){
+      $sql=mysqli_query($conn,"update image set discription='$discription',status='$payStatus' where caseid='$id'");
+    }
+    else{
+      $sql=mysqli_query($conn,"insert into image (caseid,image,discription,status) values('$id','$file','$discription','$payStatus')");
+    }
+    if($sql==1){
+        header("location:form5.php?id=".$id);
+    }else{
+        mysqli_error($conn);
+    }
+ }
+//form4 end
 ?>

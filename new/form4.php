@@ -1,3 +1,9 @@
+<?php
+session_start();
+require("include/config.php");
+$id=$_GET['form4'];
+require("select_api.php");
+?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -114,6 +120,7 @@
                                                     <label for="myfile"
                                                         style="margin-bottom: 25px; font-weight: 600;">फाईल
                                                         निवडा:</label>
+                                                        <input type="hidden" required class="" name="id" value="<?php echo $id;?>">
                                                     <input type="file" name="files" style="margin-left: 15px;" multiple
                                                         value="<?php echo $image; ?> " />
                                                 </div>
@@ -145,7 +152,7 @@
 
                                             <div class="col-md-12 mb-1" style="font-weight: 600;">
                                                 <label class="form-label" for="select2-basic">शेरा</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+                                                <input type="text" required value="<?php echo $discription; ?>" class="form-control" name="discription" id="basicInput" />
                                             </div>
 
                                             <div class="d-flex justify-content-between">

@@ -97,18 +97,47 @@ if(isset($_POST['year'])){
 
   //form2 start
   $criminal_name='';
-  $criminal_address='';
-  $age='';
-  if(isset($_GET['id'])){
-    $eid=intval($_GET['id']);
-    $sql=mysqli_query($conn,"select * from criminal where id='$eid'");
+  if(isset($_GET['form2'])){
+    $sql=mysqli_query($conn,"select * from criminal where caseid='$id'");
   while($arr=mysqli_fetch_array($sql)){
-      $id=$arr['id'];
-      $caseid=$arr['caseid'];
- $criminal_name= $arr['criminal_name'];
-  $criminal_address=$arr['criminal_address'];  
-  $age=$arr['age'] ; 
- }
+  $criminal_name= $arr['criminal_name'];
+  }
   }
   //form2 end
+
+  //form3 start
+  $victim_name='';
+  $victim_address='';
+  $caste_certificate='';
+  $aadhaar_card='';
+  $bank_info='';
+  $charge_sheet='';
+  $category_and_caste='';
+  if(isset($_GET['form3'])){
+    $eid=intval($_GET['form3']);
+    $sql=mysqli_query($conn,"select * from victim where caseid='$eid'");
+  while($arr=mysqli_fetch_array($sql)){
+  $caseid=$arr['caseid'];
+  $victim_name= $arr['name'];
+  $victim_address=$arr['address'];  
+  $caste_certificate=$arr['caste_certificate'] ; 
+  $aadhaar_card=$arr['aadhar_card'] ; 
+  $bank_info=$arr['bank_detail'];
+  $charge_sheet=$arr['charge_sheet'];
+  $category_and_caste=$arr['caste'];
+}
+  }
+  //form3 end
+
+  //form4 start
+  $payStatus='';
+        $image='';
+        $discription='';
+        $id=intval($_GET['eid']);
+        $sql=mysqli_query($conn,"select * from image where caseid='$id'");
+        while($arr=mysqli_fetch_array($sql)){
+        $image=$arr['image'];
+        $discription=$arr['discription'];
+        }
+//form4 end
 ?>

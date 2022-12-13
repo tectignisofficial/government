@@ -1,3 +1,9 @@
+<?php
+session_start();
+require("include/config.php");
+$id=$_GET['form3'];
+require("select_api.php");
+?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -95,25 +101,33 @@
                                     <h4 class="card-title">पिडीत व्यक्तीची माहिती</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="post" action="api.php">
                                         <div class="row">
                                             <!-- Basic -->
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पिडीत व्यक्तीचे
                                                     नाव</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+                                                <input type="hidden" required class="" name="id"
+                                                    value="<?php echo $id;?>">
+                                                <input type="text" required class="form-control"
+                                                    value="<?php echo $victim_name;?>" name="victim_name"
+                                                    id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पिडीत व्यक्तीचा
                                                     पत्ता</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+                                                <input type="text" required class="form-control"
+                                                    value="<?php echo $victim_address;?>" name="victim_address"
+                                                    id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पिडीत व्यक्तीचे प्रवर्ग
                                                     आणि जात</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+                                                <input type="text" required class="form-control"
+                                                    name="category_and_caste" value="<?php echo  $category_and_caste;?>"
+                                                    id="basicInput" />
                                             </div>
 
                                             <div class="row mb-1 rowg" style="width:78%;">
@@ -122,15 +136,15 @@
                                                     <div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" required type="radio"
-                                                                name="inlineRadioOptions" id="inlineRadio1"
-                                                                value="होय" />
+                                                                name="caste_certificate" id="inlineRadio1" value="होय"
+                                                                <?php if($caste_certificate=='होय'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
                                                                 for="inlineRadio1">होय</label>
                                                         </div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" required type="radio"
-                                                                name="inlineRadioOptions" id="inlineRadio2"
-                                                                value="नाही" />
+                                                                name="caste_certificate" id="inlineRadio2" value="नाही"
+                                                                <?php if($caste_certificate=='नाही'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
                                                                 for="inlineRadio2">नाही</label>
                                                         </div>
@@ -141,15 +155,15 @@
                                                     <div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" required type="radio"
-                                                                name="inlineRadioOptions" id="inlineRadio1"
-                                                                value="होय" />
+                                                                name="aadhaar_card" id="inlineRadio1" value="होय"
+                                                                <?php if($aadhaar_card=='होय'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
                                                                 for="inlineRadio1">होय</label>
                                                         </div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" required type="radio"
-                                                                name="inlineRadioOptions" id="inlineRadio2"
-                                                                value="नाही" />
+                                                                name="aadhaar_card" id="inlineRadio2" value="नाही"
+                                                                <?php if($aadhaar_card=='नाही'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
                                                                 for="inlineRadio2">नाही</label>
                                                         </div>
@@ -160,15 +174,15 @@
                                                     <div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" required type="radio"
-                                                                name="inlineRadioOptions" id="inlineRadio1"
-                                                                value="होय" />
+                                                                name="charge_sheet" id="inlineRadio1" value="होय"
+                                                                <?php if($charge_sheet=='होय'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
                                                                 for="inlineRadio1">होय</label>
                                                         </div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" required type="radio"
-                                                                name="inlineRadioOptions" id="inlineRadio2"
-                                                                value="नाही" />
+                                                                name="charge_sheet" id="inlineRadio2" value="नाही"
+                                                                <?php if($charge_sheet=='नाही'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
                                                                 for="inlineRadio2">नाही</label>
                                                         </div>
@@ -177,18 +191,19 @@
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-between">
-                                            <a href="form2.php" class="btn btn-outline-secondary btn-prev">
+                                            <a href="form2?form2=<?= $id;?>" class="btn btn-outline-secondary btn-prev">
                                                 <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                 <span class="align-middle d-sm-inline-block d-none">मागे</span>
                                             </a>
-                                            <a href="form4.php" class="btn btn-primary btn-next">
+                                            <button type="submit" class="btn btn-primary btn-next" name="sub_mit">
                                                 <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
                                                 <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                                            </a>
-                                            <a href="form4.php" class="btn btn-primary btn-next">
-                                                <span class="align-middle d-sm-inline-block d-none">पुढे जा</span>
-                                                <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                                            </a>
+                                                </button>
+                                                <a href="form4?form4=<?= $id;?>" class="btn btn-primary btn-next">
+                                                    <span class="align-middle d-sm-inline-block d-none">पुढे जा</span>
+                                                    <i data-feather="arrow-right"
+                                                        class="align-middle ms-sm-25 ms-0"></i>
+                                                </a>
                                         </div>
                                 </div>
                                 </form>
