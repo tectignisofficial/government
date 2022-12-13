@@ -201,7 +201,7 @@
                                             </div>
 
                                             <div class="col-md-12 modal-footer">
-                                                <a href="form2.php" class="btn btn-primary">नमूद जतन करा</a>
+                                                <a href="form2.php" class="btn btn-primary">नमूद करा</a>
 
                                                 <a href="form2.php" class="btn btn-primary btn-next">
                                                 <span class="align-middle d-sm-inline-block d-none">पुढे जा</span>

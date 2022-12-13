@@ -43,7 +43,11 @@
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
 
-
+<style>
+    .position-relative{
+        width:200px !important
+    }
+</style>
 </head>
 <!-- END: Head-->
 
@@ -97,122 +101,54 @@
                                 <div class="card-body">
                                     <form>
                                         <div class="row">
-                                            <!-- Basic -->
-                                            <!-- <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">नोंद वही क्र.</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+
+                                            <div class="form-group col-8">
+                                                <div style="margin-bottom: 16px; font-weight: 600;">
+                                                    <label for="Exampleवघकिय  पुष्टी-३१ अहवाल">FIR</label>
+                                                </div>
+                                                <div>
+                                                    <label for="myfile"
+                                                        style="margin-bottom: 25px; font-weight: 600;">फाईल
+                                                        निवडा:</label>
+                                                    <input type="file" name="files" style="margin-left: 15px;" multiple
+                                                        value="<?php echo $image; ?> " />
+                                                </div>
                                             </div>
 
-                                            <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">वर्ष</label>
-                                                <input type="text" class="form-control" id="basicInput" />
-                                            </div>
-
-                                            <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">दिनांक</label>
-                                                <input type="text" id="fp-human-friendly"
-                                                    class="form-control flatpickr-human-friendly" />
-                                            </div>
-
-                                            <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">गुन्हा नं.</label>
-                                                <input type="text" class="form-control" id="basicInput" />
-                                            </div>
-
-                                            <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-array">जिल्हा</label>
-                                                <div class="mb-1">
-                                                    <select class="select2 form-select" id="select2-basic">
-                                                        <option selected>Select</option>
-                                                        <option>नवी मुंबई</option>
+                                            <div class="form-group col-4">
+                                                <div class="row mb-1">
+                                                    <div class="input-group mb-2" >
+                                                        <span class="input-group-text" for="select2-array" id="basic-addon1">Status</span>
+                                                        <select class="select2 form-select" id="select2-basic">
+                                                        <option selected>निवडा</option>
                                                         <option>रायगड</option>
+                                                        <option>नवी मुंबई</option>
                                                     </select>
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-array">पोलीस ठाणे</label>
-                                                <div class="mb-1">
-                                                    <select class="select2 form-select" id="select2-basic">
-                                                        <option selected>Select</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                    </select>
-                                                </div>
-                                            </div> -->
-
-                                            <div class="col-md-12 mb-1">
+                                            <div class="col-md-12 mb-1" style="font-weight: 600;">
                                                 <label class="form-label" for="select2-basic">शेरा</label>
                                                 <input type="text" class="form-control" id="basicInput" />
                                             </div>
 
-                                            <!-- <div class="col-md-12 mb-1">
-                                                <label class="form-label" for="select2-basic">गुन्हयांचा प्रकार</label>
-                                                <div>
-                                                    <div class="col-sm-2 form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" value="checked" />
-                                                        <label class="form-check-label"
-                                                            for="inlineCheckbox1">खून</label>
-                                                    </div>
-                                                    <div class="col-sm-2 form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" value="checked" />
-                                                        <label class="form-check-label"
-                                                            for="inlineCheckbox1">बलात्कार</label>
-                                                    </div>
-                                                    <div class="col-sm-2 form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" value="checked" />
-                                                        <label class="form-check-label"
-                                                            for="inlineCheckbox1">विनयभंग</label>
-                                                    </div>
-                                                    <div class="col-md-2 form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" value="checked" />
-                                                        <label class="form-check-label"
-                                                            for="inlineCheckbox1">मारहाण</label>
-                                                    </div>
-                                                    <div class="col-md-2 form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" value="checked" />
-                                                        <label class="form-check-label"
-                                                            for="inlineCheckbox1">शिवीगाळ</label>
-                                                    </div>
-                                                    <div class="col-md-1 form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" value="checked" />
-                                                        <label class="form-check-label"
-                                                            for="inlineCheckbox1">जाळपोळ</label>
-                                                    </div>
-                                                    <div class="col-md-1 form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" value="checked" />
-                                                        <label class="form-check-label"
-                                                            for="inlineCheckbox1">इतर</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">फिर्यादी चे नाव</label>
-                                                <input type="text" class="form-control" id="basicInput" />
-                                            </div> -->
-
                                             <div class="d-flex justify-content-between">
-                                            <a href="form3.php" class="btn btn-outline-secondary btn-prev">
-                                                <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-                                                <span class="align-middle d-sm-inline-block d-none">मागे</span>
-                                            </a>
-                                            <a href="form5.php" class="btn btn-primary btn-next">
-                                                <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
-                                                <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                                            </a>
-                                            <a href="form5.php" class="btn btn-primary btn-next">
-                                                <span class="align-middle d-sm-inline-block d-none">पुढे जा</span>
-                                                <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                                            </a>
-                                        </div>
+                                                <a href="form3.php" class="btn btn-outline-secondary btn-prev">
+                                                    <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
+                                                    <span class="align-middle d-sm-inline-block d-none">मागे</span>
+                                                </a>
+                                                <a href="form5.php" class="btn btn-primary btn-next">
+                                                    <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
+                                                    <i data-feather="arrow-right"
+                                                        class="align-middle ms-sm-25 ms-0"></i>
+                                                </a>
+                                                <a href="form5.php" class="btn btn-primary btn-next">
+                                                    <span class="align-middle d-sm-inline-block d-none">पुढे जा</span>
+                                                    <i data-feather="arrow-right"
+                                                        class="align-middle ms-sm-25 ms-0"></i>
+                                                </a>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
