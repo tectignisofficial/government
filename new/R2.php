@@ -91,35 +91,111 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" style="font-size:20px;vertical-align:middle">2020-01-01 to 2022-04-23 मध्ये घडलेल्या गुन्हयांची माहिती</h4>
+                                    <h4 class="card-title" style="font-size:20px;vertical-align:middle">२०२०-०१-०१ ते
+                                        २०२२-०४-२३ मध्ये घडलेल्या गुन्हयांची माहिती</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="POST">
                                         <div class="row">
                                             <!-- Basic -->
-                                            <div class="col-md-6 mb-1" style="font-weight: 600;">
+                                            <div class="col-md-4 mb-1">
+                                                        <div class="mb-1">
+                                                        <label class="form-label" style="font-weight: 600;" for="select2-array">जिल्हा</label>
+                                                            <select name="district" class="select2 form-select"
+                                                                id="countrySelect" size="1" required>
+                                                                <option value="" disabled selected>जिल्हा निवडा</option>
+                                                                <option value="नवी मुंबई">
+                                                                    नवी मुंबई</option>
+                                                                <option value="रायगड">
+                                                                    रायगड</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                            <div class="col-md-4 mb-1" style="font-weight: 600;">
                                                 <label class="form-label" for="select2-basic">From:</label>
-                                                <input type="text" id="fp-human-friendly"
-                                                                class="form-control flatpickr-human-friendly"
-                                                                placeholder="MM DD, YYYY" />
+                                                <input type="date" 
+                                                    class="form-control flatpickr-human-friendly"
+                                                    placeholder="MM DD, YYYY" id="myDate" name="" value="" required/>
                                             </div>
 
-                                            <div class="col-md-6 mb-1" style="font-weight: 600;">
+                                            <div class="col-md-4 mb-1" style="font-weight: 600;">
                                                 <label class="form-label" for="select2-basic">To:</label>
                                                 <input type="text" id="fp-human-friendly"
-                                                                class="form-control flatpickr-human-friendly"
-                                                                placeholder="MM DD, YYYY" />
+                                                    class="form-control flatpickr-human-friendly"
+                                                    placeholder="MM DD, YYYY" required/>
                                             </div>
 
-                                            <div class="col-md-12 modal-footer">
-                                                <a href="form2.php" class="btn btn-primary">जतन करा</a>
-
+                                            <div class="col-md-12 modal-footer" style="justify-content: center;">
+                                                <button type="submit" class="btn btn-primary" name="filter">जतन करा</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
+                        <?php
+if(isset($_POST["filter"])){ ?>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header d-block text-center">
+                                    <h4 class="card-title d-block">माहे $dat to $to, मध्ये घडलेल्या गुन्हयांची माहिती
+                                    </h4>
+                                    <br>
+                                    <h2 class="d-block fw-bold">प्रपत्र - २.</h2>
+                                    <br>
+                                    <h5>अनुसूचित जाती / जमाती. अत्याचार  प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण अधिनियम १९५५ अंतर्गत</h5>
+                                </div>
+                                <div class=" card-body table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2">अ.क्र.</th>
+                                                <th rowspan="2">जिल्ह्याचे नाव</th>
+                                                <th colspan="8" style="text-align: center;">गुन्हयांचे प्रकार</th>
+                                            </tr>
+                                            <tr>
+                                                <th>खून</th>
+                                                <th>बलात्कार</th>
+                                                <th>विनयभंग</th>
+                                                <th>मारहाण</th>
+                                                <th>शिवीगाळ</th>
+                                                <th>जाळपोळ</th>
+                                                <th>इतर</th>
+                                                <th>एकूण</th>
+                                            </tr>
+                                            <tr>
+                                                <th>१</th>
+                                                <th>२</th>
+                                                <th>३</th>
+                                                <th>४</th>
+                                                <th>५</th>
+                                                <th>६</th>
+                                                <th>७</th>
+                                                <th>८</th>
+                                                <th>९</th>
+                                                <th>१०</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    } <?php }?>
                     </div>
                 </section>
                 <!-- Select2 End -->
@@ -174,6 +250,12 @@
             selected: 2016
         });
     </script>
+    <script>
+function myFunction() {
+  var x = document.getElementById("myDate").required;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
 </body>
 <!-- END: Body-->
 

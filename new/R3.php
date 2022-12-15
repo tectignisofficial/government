@@ -98,7 +98,7 @@
                                         <div class="row">
                                             <!-- Basic -->
                                             <div class="form-group">
-                  <label class="form-label" for="select2-basic" style="font-weight: 600;">Date range:</label>
+                  <label class="form-label" for="select2-basic" style="font-weight: 600;">तारीख श्रेणी:</label>
 
                   <div class="form-group">
                         <select class="form-control" name="month" required>

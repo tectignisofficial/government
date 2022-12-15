@@ -73,9 +73,9 @@
                             <h2 class="content-header-title float-start mb-0"></h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a>
+                                    <li class="breadcrumb-item"><a href="#">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item active">अहवाल १
+                                    <li class="breadcrumb-item active">Intimation
                                     </li>
                                 </ol>
                             </div>
@@ -91,46 +91,129 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" style="font-size:20px;vertical-align:middle">January ,2020 मध्ये घडलेल्या गुन्हयांची माहिती</h4>
+                                    <h4 class="card-title" style="font-size:20px;vertical-align:middle">जानेवारी
+                                        ,2020 मध्ये घडलेल्या गुन्हयांची माहिती</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="post">
                                         <div class="row">
                                             <!-- Basic -->
                                             <div class="form-group">
-                  <label class="form-label" for="select2-basic" style="font-weight: 600;">Date range:</label>
+                                                <label class="form-label" for="select2-basic"
+                                                    style="font-weight: 600;">तारीख श्रेणी:</label>
 
-                  <div class="form-group">
-                        <select class="select2 form-select" id="select2-basic" name="month" required>
-                          <option selected>महिना निवडा</option>
-                          <option value="january">January</option>
-                          <option value="february">February</option>
-                          <option value="march">March</option>
-                          <option value="april">April </option>
-                          <option value="may">May</option>
-                          <option value="june">June </option>
-                          <option value="july">July </option>
-                          <option value="august">August </option>
-                          <option value="september">September </option>
-                          <option value="october">October</option>
-                          <option value="november">November</option>
-                          <option value="december">December</option>
-                        </select>
-                      </div>
-                  <!-- /.input group -->
-                   <div class="form-group" style="padding-top: 20px;" required>
-                       <input class="yearselect form-control"  id="year" name="year" value="2016">
-                      </div>
-                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-1">
+                                                        <div class="mb-1">
+                                                            <select name="district" class="select2 form-select"
+                                                                id="countrySelect" size="1" required>
+                                                                <option value="" disabled selected>जिल्हा निवडा</option>
+                                                                <option value="नवी मुंबई">
+                                                                    नवी मुंबई</option>
+                                                                <option value="रायगड">
+                                                                    रायगड</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-1">
+                                                        <div class="form-group">
+                                                            <select class="select2 form-select" id="select2-basic"
+                                                                name="month" required>
+                                                                <option value="" disabled selected>महिना निवडा</option>
+                                                                <option value="january">January</option>
+                                                                <option value="february">February</option>
+                                                                <option value="march">March</option>
+                                                                <option value="april">April </option>
+                                                                <option value="may">May</option>
+                                                                <option value="june">June </option>
+                                                                <option value="july">July </option>
+                                                                <option value="august">August </option>
+                                                                <option value="september">September </option>
+                                                                <option value="october">October</option>
+                                                                <option value="november">November</option>
+                                                                <option value="december">December</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-1">
+                                                        <div class="form-group" style="">
+                                                            <input class="yearselect form-control" id="year" name="year" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                             <div class="col-md-12 modal-footer">
-                                                <button type="button" class="btn btn-primary">जतन करा</button>
+                                                <button type="submit" class="btn btn-primary" name="filter">जतन करा</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
+
+                        <?php
+if(isset($_POST["filter"])){ ?>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header d-block text-center">
+                                    <h4 class="card-title d-block">माहे $dat ,$year मध्ये घडलेल्या गुन्हयांची माहिती
+                                    </h4><br>
+                                    <h2 class="d-block fw-bold">प्रपत्र - १.</h2><br>
+                                    <h5>अनुसूचित जाती / जमाती. अत्याचार प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण
+                                        अधिनियम १९५५ अंतर्गत</h5>
+                                </div>
+                                <div class=" card-body table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2">अ.क्र.</th>
+                                                <th rowspan="2">जिल्ह्याचे नाव</th>
+                                                <th colspan="8" style="text-align: center;">गुन्हयांचे प्रकार</th>
+                                            </tr>
+                                            <tr>
+                                                <th>खून</th>
+                                                <th>बलात्कार</th>
+                                                <th>विनयभंग</th>
+                                                <th>मारहाण</th>
+                                                <th>शिवीगाळ</th>
+                                                <th>जाळपोळ</th>
+                                                <th>इतर</th>
+                                                <th>एकूण</th>
+                                            </tr>
+                                            <tr>
+                                                <th>१</th>
+                                                <th>२</th>
+                                                <th>३</th>
+                                                <th>४</th>
+                                                <th>५</th>
+                                                <th>६</th>
+                                                <th>७</th>
+                                                <th>८</th>
+                                                <th>९</th>
+                                                <th>१०</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                     <?php }?>
                     </div>
                 </section>
                 <!-- Select2 End -->
@@ -178,12 +261,13 @@
         })
     </script>
 
-<script src="//code.jquery.com/jquery.min.js"></script>
-<script src="year-select.js"></script>
-<script>$('.yearselect').yearselect({
-  selected: 2016
-});
-</script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="year-select.js"></script>
+    <script>
+        $('.yearselect').yearselect({
+            selected: 2016
+        });
+    </script>
 </body>
 <!-- END: Body-->
 

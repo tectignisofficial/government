@@ -10,10 +10,10 @@
                 </ul>
             </div>
             <ul class="navbar-nav">
-            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"> <i
+            <!-- <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"> <i
                         class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc"
                         data-ticon="disc"></i></a>
-            </li>
+            </li> -->
             </ul>
             <ul class="nav navbar-nav align-items-center ms-auto">
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link"
@@ -24,11 +24,9 @@
                                 src="app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40"
                                 width="40"><span class="avatar-status-online"></span></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user"><a
-                            class="dropdown-item" href="page-profile.html"><i class="me-50" data-feather="user"></i>
-                            Profile</a><a
-                            class="dropdown-item" href="admin_login"><i class="me-50"
-                                data-feather="power"></i> Logout</a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
+                        <a class="dropdown-item" href="admin_login"><i class="me-50"
+                                data-feather="power"></i> बाहेर पडा</a>
                     </div>
                 </li>
             </ul>
