@@ -16,7 +16,7 @@ require("select_api.php");
     <meta name="keywords"
         content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Index  Page</title>
+    <title>Index Page</title>
     <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
@@ -50,8 +50,12 @@ require("select_api.php");
             margin-top: 10px !important;
         }
 
-        .select2-container--default .select2-selection--single .select2-selection__rendered{
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
             width: 210px;
+        }
+
+        .heading {
+            margin-top: 40px !important;
         }
     </style>
 
@@ -80,20 +84,20 @@ require("select_api.php");
             <div class="content-body">
                 <div class="content-header" style="text-align:left">
                     <div class="container-fluid">
-                        <div class="row mb-2">
+                        <div class="row">
                             <div class="col-sm-6">
                                 <h1 class="m-0">गुन्ह्यांचे प्रकार</h1>
                             </div><!-- /.col -->
 
-                            <div class="col-md-6 mb-1">
+                            <div class="col-sm-6">
                                 <form method="post" id="myForm">
                                     <div class="form-group text-right d-flex">
-                                        <label class="mr-4 mt-auto form-label" for="select2-array" style="width: 72px; margin-left: 199px;">वर्ष
+                                        <label class="mr-4 mt-auto form-label" for="select2-array"
+                                            style="width: 72px; margin-left: 199px;">वर्ष
                                             निवडा</label>
-                                            <div class="mb-1" style="width:152px;">
-                                                <!-- <div class="yearselect form-control"></div> -->
-                                            <input class="yearselect form-control" id="year" name="year" value="2022">
-                                                </div>
+                                        <div class="mb-1" style="width:152px;">
+                                            <input class="yearselect form-select" id="year" name="year" value="2022">
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -205,66 +209,68 @@ require("select_api.php");
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1 class="m-0">अर्थसहाय्य रक्कम निधी टप्पे</h1>
+                                <h1 class="m-0 heading">अर्थसहाय्य रक्कम निधी टप्पे</h1>
                             </div><!-- /.col -->
                             <!-- /.col -->
                         </div><!-- /.row -->
                     </div><!-- /.container-fluid -->
                 </div>
-                <div class="row">
-                    <div class="col-xl-3 col-md-3 col-sm-3">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <div class="avatar bg-light-info p-50 mb-1">
-                                    <div class="avatar-content">
-                                        <i data-feather="alert-octagon" class="font-medium-5"></i>
+                <section id="statistics-card">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-3 col-sm-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <div class="avatar bg-light-info p-50 mb-1">
+                                        <div class="avatar-content">
+                                            <i data-feather="alert-octagon" class="font-medium-5"></i>
+                                        </div>
                                     </div>
+                                    <h2 class="fw-bolder"><?= $count7 ?></h2>
+                                    <p class="card-text">अर्थसहाय्य रक्कम निधी टप्पा १</p>
                                 </div>
-                                <h2 class="fw-bolder"><?= $count7 ?></h2>
-                                <p class="card-text">अर्थसहाय्य रक्कम निधी टप्पा १</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-3 col-sm-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <div class="avatar bg-light-warning p-50 mb-1">
+                                        <div class="avatar-content">
+                                            <i data-feather="alert-octagon" class="font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="fw-bolder"><?= $count8 ?></h2>
+                                    <p class="card-text">अर्थसहाय्य रक्कम निधी टप्पा २</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-3 col-sm-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <div class="avatar bg-light-danger p-50 mb-1">
+                                        <div class="avatar-content">
+                                            <i data-feather="alert-octagon" class="font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="fw-bolder"><?= $count9 ?></h2>
+                                    <p class="card-text">अर्थसहाय्य रक्कम निधी टप्पा ३</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-3 col-sm-3">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <div class="avatar bg-light-danger p-50 mb-1">
+                                        <div class="avatar-content">
+                                            <i data-feather="alert-octagon" class="font-medium-5"></i>
+                                        </div>
+                                    </div>
+                                    <h2 class="fw-bolder"><?= $count10 ?></h2>
+                                    <p class="card-text">अर्थसहाय्य रक्कम निधी टप्पा ४</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-3 col-sm-3">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <div class="avatar bg-light-warning p-50 mb-1">
-                                    <div class="avatar-content">
-                                        <i data-feather="alert-octagon" class="font-medium-5"></i>
-                                    </div>
-                                </div>
-                                <h2 class="fw-bolder"><?= $count8 ?></h2>
-                                <p class="card-text">अर्थसहाय्य रक्कम निधी टप्पा २</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-3 col-sm-3">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <div class="avatar bg-light-danger p-50 mb-1">
-                                    <div class="avatar-content">
-                                        <i data-feather="alert-octagon" class="font-medium-5"></i>
-                                    </div>
-                                </div>
-                                <h2 class="fw-bolder"><?= $count9 ?></h2>
-                                <p class="card-text">अर्थसहाय्य रक्कम निधी टप्पा ३</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-3 col-sm-3">
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <div class="avatar bg-light-danger p-50 mb-1">
-                                    <div class="avatar-content">
-                                        <i data-feather="alert-octagon" class="font-medium-5"></i>
-                                    </div>
-                                </div>
-                                <h2 class="fw-bolder"><?= $count10 ?></h2>
-                                <p class="card-text">अर्थसहाय्य रक्कम निधी टप्पा  ४</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>
@@ -308,19 +314,19 @@ require("select_api.php");
         })
     </script>
     <script src="year-select.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('#year').on('change', function () {
-        this.form.submit();
-      });
-      var bla = $(this).val();
-        $('#txt_name').html(bla);
-    });
+    <script>
+        $(document).ready(function () {
+            $('#year').on('change', function () {
+                this.form.submit();
+            });
+            var bla = $(this).val();
+            $('#txt_name').html(bla);
+        });
 
-    $('.yearselect').yearselect({
-      selected: 2022
-    });
-  </script>
+        $('.yearselect').yearselect({
+            selected: 2022
+        });
+    </script>
 </body>
 <!-- END: Body-->
 

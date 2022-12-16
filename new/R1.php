@@ -137,7 +137,7 @@
                                                     </div>
                                                     <div class="col-md-4 mb-1">
                                                         <div class="form-group" style="">
-                                                            <input class="yearselect form-control" id="year" name="year" required>
+                                                            <input class="yearselect form-select" id="year" name="year" required>
                                                         </div>
                                                     </div>
                                                 </div>
