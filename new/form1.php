@@ -221,7 +221,7 @@ require("select_api.php");
                                             </div>
 
                                             <div class="col-md-12 mb-1">
-                                                <label class="form-label" for="select2-basic">गुन्हयांचा प्रकार</label>
+                                                <label class="form-label" for="select2-basic">गुन्हयांचे प्रकार</label>
                                                 <div class="row" style="margin-left:10px !important">
                                                     <div class="col-1 form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox" name="crime[]"
@@ -283,7 +283,7 @@ require("select_api.php");
                                             </div>
 
                                             <div class="col-md-6 mt-1">
-                                                <label class="form-label" for="select2-basic">फिर्यादी चे नाव</label>
+                                                <label class="form-label" for="select2-basic">फिर्यादीचे नाव</label>
                                                 <input type="text" required class="form-control"
                                                     value="<?php echo  $complaint_filer_name ?>"
                                                     name="complaint_filer_name" id="basicInput" />

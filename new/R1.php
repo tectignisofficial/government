@@ -73,9 +73,9 @@
                             <h2 class="content-header-title float-start mb-0"></h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a>
+                                    <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Intimation
+                                    <li class="breadcrumb-item active">अहवाल १
                                     </li>
                                 </ol>
                             </div>
@@ -143,7 +143,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-12 modal-footer">
+                                            <div class="col-md-12 modal-footer" style="justify-content: center;">
                                                 <button type="submit" class="btn btn-primary" name="filter">जतन करा</button>
                                             </div>
                                         </div>
@@ -157,17 +157,17 @@ if(isset($_POST["filter"])){ ?>
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header d-block text-center">
-                                    <h4 class="card-title d-block">माहे $dat ,$year मध्ये घडलेल्या गुन्हयांची माहिती
-                                    </h4><br>
-                                    <h2 class="d-block fw-bold">प्रपत्र - १.</h2><br>
-                                    <h5>अनुसूचित जाती / जमाती. अत्याचार प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण
-                                        अधिनियम १९५५ अंतर्गत</h5>
+                                <h1 class="d-block fw-bold">प्रपत्र - १.</h1><br>
+                                <h3>अनुसूचित जाती / जमाती. अत्याचार प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण
+                                        अधिनियम १९५५ अंतर्गत</h3><br>
+                                    <h4 class="card-title d-block fw-bolder">माहे $dat ,$year मध्ये घडलेल्या गुन्हयांची माहिती
+                                    </h4>                                   
                                 </div>
                                 <div class=" card-body table-responsive">
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th rowspan="2">अ.क्र.</th>
+                                                <th rowspan="2">क्र.</th>
                                                 <th rowspan="2">जिल्ह्याचे नाव</th>
                                                 <th colspan="8" style="text-align: center;">गुन्हयांचे प्रकार</th>
                                             </tr>

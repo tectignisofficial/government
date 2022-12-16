@@ -138,18 +138,18 @@ if(isset($_POST["filter"])){ ?>
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header d-block text-center">
-                                    <h4 class="card-title d-block">माहे $dat to $to, मध्ये घडलेल्या गुन्हयांची माहिती
-                                    </h4>
+                                <h1 class="d-block fw-bold">प्रपत्र - २.</h1>
                                     <br>
-                                    <h2 class="d-block fw-bold">प्रपत्र - २.</h2>
-                                    <br>
-                                    <h5>अनुसूचित जाती / जमाती. अत्याचार  प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण अधिनियम १९५५ अंतर्गत</h5>
+                                    <h3>अनुसूचित जाती / जमाती. अत्याचार  प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण अधिनियम १९५५ अंतर्गत</h2>                                  
+                                    <br>  
+                                    <h4 class="card-title d-block fw-bolder">माहे $dat to $to, मध्ये घडलेल्या गुन्हयांची माहिती
+                                    </h4>                                                                     
                                 </div>
                                 <div class=" card-body table-responsive">
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th rowspan="2">अ.क्र.</th>
+                                                <th rowspan="2">क्र.</th>
                                                 <th rowspan="2">जिल्ह्याचे नाव</th>
                                                 <th colspan="8" style="text-align: center;">गुन्हयांचे प्रकार</th>
                                             </tr>
@@ -195,7 +195,7 @@ if(isset($_POST["filter"])){ ?>
                             </div>
 
                         </div>
-                    } <?php }?>
+                    <?php }?>
                     </div>
                 </section>
                 <!-- Select2 End -->

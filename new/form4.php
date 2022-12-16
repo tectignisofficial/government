@@ -51,12 +51,12 @@ require("select_api.php");
 
     <style>
         .position-relative {
-            width: 70% !important
+            width: 100% !important
         }
 
-        .status {
+        /* .status {
             width: 30% !important
-        }
+        } */
     </style>
 </head>
 <!-- END: Head-->
@@ -129,14 +129,12 @@ require("select_api.php");
                                             <div class="form-group col-4">
                                                 <div class="mb-1">
                                                     <div class="input-group mb-2">
-                                                        <span class="input-group-text status" for="select2-array"
-                                                            id="basic-addon1">Status</span>
                                                         <select class="select2 form-select" id="select2-basic"
                                                             name="payStatus">
-                                                            <option value="" disabled=""></option>
+                                                            <option value="" disabled selected>Status</option>
                                                             <option
                                                                 value="stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत"
-                                                                selected="">stage 1 FIR दाखला / प्रकरण मंजूर आहे /
+                                                                ="">stage 1 FIR दाखला / प्रकरण मंजूर आहे /
                                                                 अनुदानाच्या प्रतीक्षेत</option>
                                                             <option value="stage 2 FIR चौकशी दाखल">stage 2 FIR चौकशी
                                                                 दाखल</option>

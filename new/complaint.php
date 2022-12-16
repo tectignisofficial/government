@@ -94,43 +94,113 @@
                                     <h4 class="card-title" style="font-size:20px;vertical-align:middle">अखेर</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="post">
                                         <div class="row">
                                             <!-- Basic -->
                                             <div class="form-group">
-                  <label class="form-label" for="select2-basic" style="font-weight: 600;">Date range:</label>
+                                                <label class="form-label" for="select2-basic"
+                                                    style="font-weight: 600;">तारीख श्रेणी:</label>
 
-                  <div class="form-group">
-                        <select class="form-control" name="month" required>
-                          <option>Select month</option>
-                          <option value="january">January</option>
-                          <option value="february">February</option>
-                          <option value="march">March</option>
-                          <option value="april">April </option>
-                          <option value="may">May</option>
-                          <option value="june">June </option>
-                          <option value="july">July </option>
-                          <option value="august">August </option>
-                          <option value="september">September </option>
-                          <option value="october">October</option>
-                          <option value="november">November</option>
-                          <option value="december">December</option>
-                        </select>
-                      </div>
-                  <!-- /.input group -->
-                   <div class="form-group" style="padding-top: 20px;" required>
-                       <input class="yearselect form-control"  id="year" name="year" value="2016">
-                      </div>
-                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 mb-1">
+                                                        <div class="mb-1">
+                                                            <select name="district" class="select2 form-select"
+                                                                id="countrySelect" size="1" required>
+                                                                <option value="" disabled selected>जिल्हा निवडा</option>
+                                                                <option value="नवी मुंबई">
+                                                                    नवी मुंबई</option>
+                                                                <option value="रायगड">
+                                                                    रायगड</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-1">
+                                                        <div class="form-group">
+                                                            <select class="select2 form-select" id="select2-basic"
+                                                                name="month" required>
+                                                                <option value="" disabled selected>महिना निवडा</option>
+                                                                <option value="january">January</option>
+                                                                <option value="february">February</option>
+                                                                <option value="march">March</option>
+                                                                <option value="april">April </option>
+                                                                <option value="may">May</option>
+                                                                <option value="june">June </option>
+                                                                <option value="july">July </option>
+                                                                <option value="august">August </option>
+                                                                <option value="september">September </option>
+                                                                <option value="october">October</option>
+                                                                <option value="november">November</option>
+                                                                <option value="december">December</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-1">
+                                                        <div class="form-group" style="">
+                                                            <input class="yearselect form-control" id="year" name="year"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                            <div class="col-md-12 modal-footer">
-                                                <button type="button" class="btn btn-primary">नमूद करा</button>
+                                            <div class="col-md-12 modal-footer" style="justify-content: center;">
+                                                <button type="submit" class="btn btn-primary" name="filter">जतन
+                                                    करा</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
+
+                        <?php
+if(isset($_POST["filter"])){ ?>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header d-block text-center">
+                                    <h1 class="d-block fw-bold">प्रलंबित प्रकरणे</h1><br>
+                                    <h4 class="card-title">दाखल झालेल्या गुन्हयांप्रमाणे सहाय्य देण्यासाठी / मंजुरीसाठी
+                                        गुन्हेनिहाय
+                                        अप्राप्त कागदपत्रांची माहिती माहे ($month & $year), अखेर.</h4><br>
+                                    <h5 class="d-block">तक्त यापुढील पृष्ठांमधील अनुक्रमांकाप्रमाणे
+                                    </h5><br>
+                                    <h4 class="card-title d-block fw-bolder">माहे $month $year अखेर
+                                    </h4>
+                                </div>
+                                <div class=" card-body table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2">क्र.</th>
+                                                <th rowspan="2">नोंद वही क्र.</th>
+                                                <th rowspan="2">दिनांक</th>
+                                                <th rowspan="2">जिल्हा</th>
+                                                <th rowspan="2">पोलीस ठाणे</th>
+                                                <th rowspan="2">गुन्हा न.</th>
+                                                <th rowspan="2">लावलेली कलमे</th>
+                                                <th rowspan="2">गुन्हयांचे प्रकार</th>
+                                                <th rowspan="2">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <?php }?>
                     </div>
                 </section>
                 <!-- Select2 End -->
@@ -178,12 +248,13 @@
         })
     </script>
 
-<script src="//code.jquery.com/jquery.min.js"></script>
-<script src="year-select.js"></script>
-<script>$('.yearselect').yearselect({
-  selected: 2016
-});
-</script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="year-select.js"></script>
+    <script>
+        $('.yearselect').yearselect({
+            selected: 2016
+        });
+    </script>
 </body>
 <!-- END: Body-->
 
