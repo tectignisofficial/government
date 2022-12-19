@@ -106,7 +106,6 @@ require("select_api.php");
                                             <!-- Basic -->
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">नोंद वही क्र.</label>
-                                                <input type="hidden" name="id1" value=''>
                                                 <input type="text" class="form-control bookno" value="<?= $form1sql['book_no'] ?>" name="book_no"
                                                     id="basicInput" readonly />
                                             </div>
@@ -131,40 +130,38 @@ require("select_api.php");
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">वर्ष</label>
-                                                <input type="text" class="form-control bookno" value="<?= $form1sql['book_no'] ?>" name="year"
+                                                <input type="text" class="form-control bookno" value="<?= $form1sql['year'] ?>" name="year"
                                                     id="basicInput" readonly />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">जिल्हा</label>
-                                                <input type="hidden" name="id1" value=''>
                                                 <input type="text" class="form-control district" value="<?= $form1sql['district'] ?>"
                                                     name="district" id="countrySelect" readonly />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पोलीस ठाणे</label>
-                                                <input type="hidden" name="id1" value=''>
-                                                <input type="text" class="form-control policestation" value="<?= $form1sql['book_no'] ?>"
+                                                <input type="text" class="form-control policestation" value="<?= $form1sql['police_station'] ?>"
                                                     name="police_station" id="citySelect" readonly />
                                             </div>
 
                                             <div class="col-md-12 mb-1">
                                                 <label class="form-label" for="select2-basic">लावलेली कलमे</label>
-                                                <input type="text" readonly class="form-control section" value="<?= $form1sql['book_no'] ?>"
+                                                <input type="text" readonly class="form-control section" value="<?= $form1sql['section'] ?>"
                                                     name="section" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-12 mb-1">
                                                 <label class="form-label" for="select2-basic">गुन्हयांचे प्रकार</label>
-                                                <input type="text" readonly class="form-control crime" value="<?= $form1sql['book_no'] ?>"
-                                                    name="crime" id="basicInput" />
+                                                <input type="text" readonly class="form-control type_of_offence" value="<?= $form1sql['type_of_offence'] ?>"
+                                                    name="type_of_offence" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-12 mt-1">
                                                 <label class="form-label" for="select2-basic">फिर्यादीचे नाव</label>
                                                 <input type="text" readonly class="form-control complaintfilername"
-                                                    value="<?= $form1sql['book_no'] ?>" name="complaint_filer_name" id="basicInput" />
+                                                    value="<?= $form1sql['complaint_filer_name'] ?>" name="complaint_filer_name" id="basicInput" />
                                             </div>
                                         </div>
                                     </form>
