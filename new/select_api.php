@@ -142,4 +142,13 @@ if(isset($_POST['year'])){
         }
       }
 //form4 end
+
+ //viewwebuser start
+$webresult = mysqli_query($conn,"select * from webuser");
+
+if(isset($_GET['webuserdelid'])){
+  $webuserdelid=$_GET['webuserdelid'];
+  $sql=mysqli_query($conn,"delete from webuser where id='$webuserdelid'");
+  }
+//viewwebuser end
 ?>

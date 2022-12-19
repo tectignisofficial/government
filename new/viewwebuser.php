@@ -1,16 +1,9 @@
+<?php
+session_start();
+require("include/config.php");
+require("select_api.php");
+?>
 <!DOCTYPE html>
-<!--
-Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-Author: PixInvent
-Website: http://www.pixinvent.com/
-Contact: hello@pixinvent.com
-Follow: www.twitter.com/pixinvents
-Like: www.facebook.com/pixinvents
-Purchase: https://1.envato.market/vuexy_admin
-Renew Support: https://1.envato.market/vuexy_admin
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
-
--->
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
@@ -67,9 +60,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <?php include("include/sidebar.php");?>
 
-
-
-
     <!-- BEGIN: Content-->
     <div class="app-content content ">
         <div class="content-overlay"></div>
@@ -108,12 +98,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="table-responsive">
                                     <table class="table table-bordered">
                                         <thead>
-                                            <!-- <tr>
-                                                <th style="width:10px;">Sr. No.</th>
-                                                <th>Branch</th>
-                                                <th>Address</th>
-                                                <th style="width:160px;">Action</th>
-                                            </tr> -->
                                             <tr>
                                                 <th style="width:9%;">अ. क्र.</th>
                                                 <th>नाव</th>
@@ -124,24 +108,22 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+											$i=1;
+											while($row = mysqli_fetch_array($webresult)) {
+											?>
                                             <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td><?php echo $i; ?></td>
+                                                <td><?php echo $row["name"]; ?></td>
+                                                <td><?php echo $row["email"]; ?></td>
+                                                <td><?php echo $row["role"]; ?></td>
+                                                <td><?php echo $row["district"]; ?></td>
                                                 <td>
-                                                    <button type="button"
-                                                        class="btn btn-icon rounded-circle btn-flat-primary btnmod1"
-                                                        data-bs-toggle="modal" data-bs-target="#editUser"><i
-                                                            data-feather="edit"></i></button>
-
-                                                    <a href="#"><button type="button"
-                                                            class="btn btn-icon rounded-circle btn-flat-danger"><i
-                                                                data-feather="trash"></i></button></a>
-
+                                                    <a href="editwebuser.php?eid=<?php echo $row['id'] ?>" title="Delete" alt="Delete" class="btn btn-icon rounded-circle btn-flat-primary btnmod1 ml-4 mr-3"><i data-feather="edit"></i></a>
+                                                    <a href="viewwebuser.php?action=delete&&webuserdelid=<?php echo $row['id'] ?>"  title="Delete" alt="Delete" class="btn btn-icon rounded-circle btn-flat-danger btnmod1"><i data-feather="trash"></i> </a>
                                                 </td>
                                             </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
