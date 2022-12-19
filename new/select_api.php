@@ -144,6 +144,7 @@ if(isset($_POST['year'])){
 //form4 end
 
 //submit&preview start
+if(isset($finalform)){
 $form1query=mysqli_query($conn,"select * from complaint_form where id='$finalform'");
 $form1sql=mysqli_fetch_array($form1query);
 
@@ -158,7 +159,7 @@ $form4sql=mysqli_fetch_array($form1query);
 
 $form5query=mysqli_query($conn,"select * from bank_detail where id='$finalform'");
 $form5sql=mysqli_fetch_array($form1query);
-
+}
 //submit&preview end
 
  //viewwebuser start

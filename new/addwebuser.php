@@ -1,3 +1,8 @@
+<?php
+session_start();
+require("include/config.php");
+require("select_api.php");
+?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -105,14 +110,14 @@
                                     <h4 class="card-title" style="color: white;">नविन संकेतस्थळ वापरकर्ता</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="post" action="api.php">
                                         <div class="row">
                                             <!-- Basic -->
                                             <div class="col-md-12 mb-1">
                                             <div class="row mb-1">
                                                     <label class="col-md-3 form-label" for="select2-basic">वापरकर्त्याची भूमिका</label>
                                                     <div class="col-md-9 inpt">
-                                                    <select class="select2 form-select" id="large-select">
+                                                    <select class="select2 form-select" id="large-select" name="role">
                                                     <option selected>निवडा</option>
                                                         <option>प्रशासक</option>
                                                         <option>व्यवस्थापक</option>
@@ -123,7 +128,7 @@
                                                 <div class="row mb-1">
                                                     <label class="col-md-3 form-label" for="select2-basic">जिल्हा</label>
                                                     <div class="col-md-9 inpt">
-                                                    <select class="select2 form-select" id="select2-basic">
+                                                    <select class="select2 form-select" id="select2-basic" name="district">
                                                         <option selected>निवडा</option>
                                                         <option>रायगड</option>
                                                         <option>नवी मुंबई</option>
@@ -133,25 +138,25 @@
                                                 <div class="row mb-1">
                                                     <label class="col-md-3 form-label" for="select2-basic">नाव</label>
                                                     <div class="col-md-9 inpt">
-                                                        <input type="text" class="form-control" id="basicInput" />
+                                                        <input type="text" class="form-control" id="basicInput" name="name"/>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-1">
                                                     <label class="col-md-3 form-label" for="select2-basic">ई-मेल</label>
                                                     <div class="col-md-9 inpt">
-                                                        <input type="text" class="form-control" id="basicInput" />
+                                                        <input type="email" class="form-control" id="basicInput" name="email"/>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-1">
                                                     <label class="col-md-3 form-label" for="select2-basic">पासवर्ड</label>
                                                     <div class="col-md-9 inpt">
-                                                        <input type="text" class="form-control" id="basicInput" />
+                                                        <input type="password" class="form-control" id="basicInput" name="password"/>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-12 modal-footer" style="margin-top: 0px;">
-                                                <button type="button" class="btn btn-primary">जतन करा</button>
+                                                <button type="submit" name="websave" class="btn btn-primary">जतन करा</button>
                                             </div>
                                         </div>
                                     </form>

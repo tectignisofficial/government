@@ -146,4 +146,24 @@ else{
 }
  }
  //Alert Update End
+
+ //webuser start
+ if(isset($_POST['websave']))
+{	 
+	 $name = $_POST['name'];
+	 $email = $_POST['email'];
+	 $role = $_POST['role'];
+   $district=$_POST['district'];
+	 $password = $_POST['password'];
+	 $secure_pass = password_hash($password, PASSWORD_BCRYPT);
+    $sql = "INSERT INTO webuser (name,role,district,email,password) VALUES ('$name','$role','$district','$email','$secure_pass')";
+	 if (mysqli_query($conn, $sql)) {
+		header("location:viewwebuser.php");
+	 } else {
+		echo "Error: " . $sql . "
+" . mysqli_error($conn);
+	 }
+	 mysqli_close($conn);
+}
+//webuser end
 ?>
