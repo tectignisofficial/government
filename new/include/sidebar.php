@@ -61,7 +61,7 @@
                         <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">अपूर्ण नोंदणी</span></a>
                         </li>
                     </ul> -->
-            <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span
+            <li><a class="d-flex align-items-center" href="#"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Add">अपूर्ण नोंदणी</span></a>
             </li>
             </li>

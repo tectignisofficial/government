@@ -136,7 +136,7 @@ require("select_api.php");
                                                 <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                 <span class="align-middle d-sm-inline-block d-none">मागे</span>
                                             </a>
-                                            <button type="submit" class="btn btn-primary" name="form5submit">नमूद करा</button>
+                                            <button type="submit" class="btn btn-primary" name="form5submit">नमूद करा & पहा</button>
                                             </div>
                                         </div>
                                     </form>

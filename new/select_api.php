@@ -148,17 +148,17 @@ if(isset($finalform)){
 $form1query=mysqli_query($conn,"select * from complaint_form where id='$finalform'");
 $form1sql=mysqli_fetch_array($form1query);
 
-$form2query=mysqli_query($conn,"select * from criminal where id='$finalform'");
-$form2sql=mysqli_fetch_array($form1query);
+$form2query=mysqli_query($conn,"select * from criminal where caseid='$finalform'");
+$form2sql=mysqli_fetch_array($form2query);
 
-$form3query=mysqli_query($conn,"select * from victim where id='$finalform'");
-$form3sql=mysqli_fetch_array($form1query);
+$form3query=mysqli_query($conn,"select * from victim where caseid='$finalform'");
+$form3sql=mysqli_fetch_array($form3query);
 
-$form4query=mysqli_query($conn,"select * from image where id='$finalform'");
-$form4sql=mysqli_fetch_array($form1query);
+$form4query=mysqli_query($conn,"select * from image where caseid='$finalform'");
+$form4sql=mysqli_fetch_array($form4query);
 
-$form5query=mysqli_query($conn,"select * from bank_detail where id='$finalform'");
-$form5sql=mysqli_fetch_array($form1query);
+$form5query=mysqli_query($conn,"select * from bank_detail where caseid='$finalform'");
+$form5sql=mysqli_fetch_array($form5query);
 }
 //submit&preview end
 

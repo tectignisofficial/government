@@ -106,8 +106,9 @@ require("select_api.php");
                                             <!-- Basic -->
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">नोंद वही क्र.</label>
-                                                <input type="text" class="form-control bookno" value="<?= $form1sql['book_no'] ?>" name="book_no"
-                                                    id="basicInput" readonly />
+                                                <input type="text" class="form-control bookno"
+                                                    value="<?= $form1sql['book_no'] ?>" name="book_no" id="basicInput"
+                                                    readonly />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
@@ -117,51 +118,58 @@ require("select_api.php");
                                                         <div class="input-group-text">कॉ.गु.र.नं.</div>
                                                     </div>
                                                     <input type="text" readonly class="form-control complaintno"
-                                                        value="<?= $form1sql['complaint_no'] ?>" name="complaint_no" id="inlineFormInputGroup"
-                                                        placeholder="">
+                                                        value="<?= $form1sql['complaint_no'] ?>" name="complaint_no"
+                                                        id="inlineFormInputGroup" placeholder="">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">दिनांक</label>
-                                                <input type="text" class="form-control bookno" value="<?= $form1sql['date'] ?>" name="date"
-                                                    id="basicInput" readonly />
+                                                <input type="text" class="form-control bookno"
+                                                    value="<?= $form1sql['date'] ?>" name="date" id="basicInput"
+                                                    readonly />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">वर्ष</label>
-                                                <input type="text" class="form-control bookno" value="<?= $form1sql['year'] ?>" name="year"
-                                                    id="basicInput" readonly />
+                                                <input type="text" class="form-control bookno"
+                                                    value="<?= $form1sql['year'] ?>" name="year" id="basicInput"
+                                                    readonly />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">जिल्हा</label>
-                                                <input type="text" class="form-control district" value="<?= $form1sql['district'] ?>"
-                                                    name="district" id="countrySelect" readonly />
+                                                <input type="text" class="form-control district"
+                                                    value="<?= $form1sql['district'] ?>" name="district"
+                                                    id="countrySelect" readonly />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पोलीस ठाणे</label>
-                                                <input type="text" class="form-control policestation" value="<?= $form1sql['police_station'] ?>"
-                                                    name="police_station" id="citySelect" readonly />
+                                                <input type="text" class="form-control policestation"
+                                                    value="<?= $form1sql['police_station'] ?>" name="police_station"
+                                                    id="citySelect" readonly />
                                             </div>
 
                                             <div class="col-md-12 mb-1">
                                                 <label class="form-label" for="select2-basic">लावलेली कलमे</label>
-                                                <input type="text" readonly class="form-control section" value="<?= $form1sql['section'] ?>"
-                                                    name="section" id="basicInput" />
+                                                <input type="text" readonly class="form-control section"
+                                                    value="<?= $form1sql['section'] ?>" name="section"
+                                                    id="basicInput" />
                                             </div>
 
                                             <div class="col-md-12 mb-1">
                                                 <label class="form-label" for="select2-basic">गुन्हयांचे प्रकार</label>
-                                                <input type="text" readonly class="form-control type_of_offence" value="<?= $form1sql['type_of_offence'] ?>"
-                                                    name="type_of_offence" id="basicInput" />
+                                                <input type="text" readonly class="form-control type_of_offence"
+                                                    value="<?= $form1sql['type_of_offence'] ?>" name="type_of_offence"
+                                                    id="basicInput" />
                                             </div>
 
                                             <div class="col-md-12 mt-1">
                                                 <label class="form-label" for="select2-basic">फिर्यादीचे नाव</label>
                                                 <input type="text" readonly class="form-control complaintfilername"
-                                                    value="<?= $form1sql['complaint_filer_name'] ?>" name="complaint_filer_name" id="basicInput" />
+                                                    value="<?= $form1sql['complaint_filer_name'] ?>"
+                                                    name="complaint_filer_name" id="basicInput" />
                                             </div>
                                         </div>
                                     </form>
@@ -174,15 +182,14 @@ require("select_api.php");
                                     <h4 class="card-title fw-bold">आरोपीची माहिती</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form method="post" action="api.php">
+                                    <form method="post">
                                         <div class="row">
                                             <!-- Basic -->
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">आरोपीचे नाव</label>
-                                                <input type="hidden" required class="" name="form_2_id" value=""
-                                                    id="exampleदिनांक" placeholder="">
-                                                <input type="text" readonly class="form-control" value=""
-                                                    name="criminal_name" id="basicInput" />
+                                                <input type="text" readonly class="form-control"
+                                                    value="<?= $form2sql['criminal_name'] ?>" name="criminal_name"
+                                                    id="basicInput" />
                                             </div>
                                         </div>
                                     </form>
@@ -201,23 +208,25 @@ require("select_api.php");
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पिडीत व्यक्तीचे
                                                     नाव</label>
-                                                <input type="hidden" required class="" name="id" value="">
-                                                <input type="text" readonly class="form-control" value=""
-                                                    name="victim_name" id="basicInput" />
+                                                <input type="text" readonly class="form-control"
+                                                    value="<?= $form3sql['name'] ?>" name="victim_name"
+                                                    id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पिडीत व्यक्तीचा
                                                     पत्ता</label>
-                                                <input type="text" readonly class="form-control" value=""
-                                                    name="victim_address" id="basicInput" />
+                                                <input type="text" readonly class="form-control"
+                                                    value="<?= $form3sql['address'] ?>" name="victim_address"
+                                                    id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पिडीत व्यक्तीचे प्रवर्ग
                                                     आणि जात</label>
                                                 <input type="text" readonly class="form-control"
-                                                    name="category_and_caste" value="" id="basicInput" />
+                                                    name="category_and_caste" value="<?= $form3sql['caste'] ?>"
+                                                    id="basicInput" />
                                             </div>
                                             <div class="col-md-6 mb-1">
                                                 <div class="row mb-1 rowg" style="width:78%;">
@@ -225,17 +234,21 @@ require("select_api.php");
                                                         <label class="form-label" for="select2-basic">जातीचा
                                                             दाखला</label>
                                                         <input type="text" readonly class="form-control"
-                                                            name="caste_certificate" value="" id="basicInput" />
+                                                            name="caste_certificate"
+                                                            value="<?= $form3sql['caste_certificate'] ?>"
+                                                            id="basicInput" />
                                                     </div>
                                                     <div class="col-md-4 mb-1">
                                                         <label class="form-label" for="select2-basic">आधार कार्ड</label>
                                                         <input type="text" readonly class="form-control"
-                                                            name="aadhaar_card" value="" id="basicInput" />
+                                                            name="aadhaar_card" value="<?= $form3sql['aadhar_card'] ?>"
+                                                            id="basicInput" />
                                                     </div>
                                                     <div class="col-md-4 mb-1">
                                                         <label class="form-label" for="select2-basic">चार्ज शीट</label>
                                                         <input type="text" readonly class="form-control"
-                                                            name="charge_sheet" value="" id="basicInput" />
+                                                            name="charge_sheet" value="<?= $form3sql['charge_sheet'] ?>"
+                                                            id="basicInput" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -261,23 +274,24 @@ require("select_api.php");
                                                     <label for="myfile"
                                                         style="margin-bottom: 25px; font-weight: 600;">फाईल
                                                         निवडा:</label>
-                                                    <input type="hidden" readonly class="" name="form4" value="">
+                                                    <embed src="file/<?php echo $row['image'];?>" width="50"
+                                                        height="50">
                                                     <input type="file" style="margin-left: 15px;" name="files" multiple
-                                                        value="<?php echo $image; ?>" />
+                                                        value="<?= $form4sql['image'] ?>" />
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">Status</label>
-                                                <input type="hidden" required class="" name="id" value="">
-                                                <input type="text" readonly class="form-control" value=""
-                                                    name="payStatus" id="basicInput" />
+                                                <input type="text" readonly class="form-control"
+                                                    value="<?= $form4sql['status'] ?>" name="payStatus"
+                                                    id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1" style="font-weight: 600;">
                                                 <label class="form-label" for="select2-basic">शेरा</label>
-                                                <input type="text" readonly value="" class="form-control"
-                                                    name="discription" id="basicInput" />
+                                                <input type="text" readonly value="<?= $form4sql['discription'] ?>"
+                                                    class="form-control" name="discription" id="basicInput" />
                                             </div>
                                         </div>
                                     </form>
@@ -296,39 +310,76 @@ require("select_api.php");
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">Account Holder
                                                     Name</label>
-                                                <input type="text" class="form-control" id="basicInput" readonly />
+                                                <input type="text" class="form-control" id="basicInput"
+                                                    name="account_holder_name"
+                                                    value="<?= $form5sql['account_holder_name'] ?>" readonly />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">Account Number</label>
-                                                <input type="text" class="form-control" id="basicInput" readonly />
+                                                <input type="text" class="form-control" id="basicInput"
+                                                    value="<?= $form5sql['account_no'] ?>" readonly />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">Bank Name</label>
-                                                <input type="text" class="form-control" id="basicInput" readonly />
+                                                <input type="text" class="form-control" id="basicInput"
+                                                    value="<?= $form5sql['bank_name'] ?>" readonly />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">Branch Name</label>
-                                                <input type="text" class="form-control" id="basicInput" readonly />
+                                                <input type="text" class="form-control" id="basicInput"
+                                                    value="<?= $form5sql['branch_name'] ?>" readonly />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">IFSC Code</label>
-                                                <input type="text" class="form-control" id="basicInput" readonly />
+                                                <input type="text" class="form-control" id="basicInput"
+                                                    value="<?= $form5sql['ifsc_code'] ?>" readonly />
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 text-center modal-footer" style="display: initial; margin-top: -28px; border-top: 0px;">
-                            <button type="submit" class="btn btn-primary me-1 mt-2" name="s_ubmit">Final Submit</button>
+                        <div class="col-12 text-center modal-footer"
+                            style="display: initial; margin-top: -28px; border-top: 0px;">
+                            <button type="button" class="btn btn-primary me-1 mt-2" name="s_ubmit" data-bs-toggle="modal" data-bs-target="#addNewAddressModal">Final Submit</button>
                             <button type="reset" class="btn btn-outline-secondary mt-2" data-bs-dismiss="modal"
                                 aria-label="Close">
                                 No
                             </button>
+                        </div>
+
+                        <div class="modal fade" id="addNewAddressModal" tabindex="-1"
+                            aria-labelledby="addNewAddressTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-transparent">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body pb-5 px-sm-4 mx-50">
+                                        <h1 class="address-title text-center mb-1" id="addNewAddressTitle"></h1>
+                                        <div class="modal-body">
+                                                            <h1>
+                                                            <?php
+                                                    $sql=mysqli_query($conn,"select * from final_alert");
+                                                    $row=mysqli_fetch_array($sql);
+                                                    echo $row['alert'];
+                                                    ?>
+                                                            </h1>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                                                        </div>
+
+
+                                        <!-- </form> -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
