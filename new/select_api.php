@@ -1,11 +1,11 @@
 <?php
 //form1 start
        $role='';
-       $email=$_SESSION['use'];
-       $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
-       while($res=mysqli_fetch_array($sql)){
-         $role=$res['role'];
-       }
+      //  $email=$_SESSION['use'];
+      //  $sql = mysqli_query($conn,"SELECT * FROM webuser WHERE email='$email'") ;
+      //  while($res=mysqli_fetch_array($sql)){
+      //    $role=$res['role'];
+      //  }
         $book_no='';
         $date='';
         $complaint_no='';
@@ -130,14 +130,14 @@ if(isset($_POST['year'])){
   //form3 end
 
   //form4 start
-  $payStatus='';
-        $image='';
-        $discription='';
-        $id=intval($_GET['eid']);
-        $sql=mysqli_query($conn,"select * from image where caseid='$id'");
-        while($arr=mysqli_fetch_array($sql)){
-        $image=$arr['image'];
-        $discription=$arr['discription'];
-        }
+  // $payStatus='';
+  //       $image='';
+  //       $discription='';
+  //       $id=intval($_GET['eid']);
+  //       $sql=mysqli_query($conn,"select * from image where caseid='$id'");
+  //       while($arr=mysqli_fetch_array($sql)){
+  //       $image=$arr['image'];
+  //       $discription=$arr['discription'];
+  //       }
 //form4 end
 ?>

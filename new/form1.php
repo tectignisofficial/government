@@ -47,6 +47,8 @@ require("select_api.php");
     <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/pickers/form-pickadate.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/modal-create-app.css">
+
 
 
     <script>
@@ -75,7 +77,8 @@ require("select_api.php");
                 var citiesOptions = "";
                 for (cityId in citiesByState[value]) {
                     citiesOptions += "<option value=" + citiesByState[value][cityId] + ">" + citiesByState[value][
-                            cityId] +
+                            cityId
+                        ] +
                         "</option>";
                 }
                 document.getElementById("citySelect").innerHTML = citiesOptions;
@@ -149,23 +152,11 @@ require("select_api.php");
                                             <!-- Basic -->
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">नोंद वही क्र.</label>
-                                                <input type="hidden" name="id1" value='<?php if(isset($_GET['id'])){ echo $_GET['id']; } ?>'>
-                                                <input type="text" required class="form-control"
-                                                    value="<?php echo $book_no?>" name="book_no" id="basicInput" />
-                                            </div>
-
-                                            <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">वर्ष</label>
-                                                <input type="number" required class="form-control "
-                                                    value="<?php echo  $year ?>" name="year" placeholder=""
-                                                    type="number" min="1900" max="2099" step="1" id="basicInput" />
-                                            </div>
-
-                                            <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">दिनांक</label>
-                                                <input type="text" id="fp-human-friendly"
-                                                    class="form-control flatpickr-human-friendly" required
-                                                    value="<?php echo  $date ?>" name="date" />
+                                                <input type="hidden" name="id1"
+                                                    value='<?php if(isset($_GET['id'])){ echo $_GET['id']; } ?>'>
+                                                <input type="text" class="form-control bookno"
+                                                    value="<?php echo $book_no?>" name="book_no" id="basicInput"
+                                                    required />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
@@ -174,9 +165,35 @@ require("select_api.php");
                                                     <div class="input-group-prepend">
                                                         <div class="input-group-text">कॉ.गु.र.नं.</div>
                                                     </div>
-                                                    <input type="text" required class="form-control "
+                                                    <input type="text" required class="form-control complaintno"
                                                         value="<?php echo  $complaint_no ?>" name="complaint_no"
-                                                        id="inlineFormInputGroup" placeholder="Username">
+                                                        id="inlineFormInputGroup" placeholder="">
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="col-md-6 mb-1">
+                                                <label class="form-label" for="select2-basic">वर्ष</label>
+                                                <input type="number" required class="form-control "
+                                                    value="<?php echo  $year ?>" name="year" placeholder=""
+                                                    type="number" min="1900" max="2099" step="1" id="basicInput" />
+                                            </div> -->
+
+
+                                            <div class="col-md-6 mb-1">
+                                                <label class="form-label" for="select2-basic">दिनांक</label>
+                                                <input type="text" id="fp-human-friendly"
+                                                    class="form-control flatpickr-human-friendly date" required
+                                                    value="<?php echo  $date ?>" name="date" />
+                                            </div>
+
+                                            <div class="col-md-6 mb-1">
+                                                <label class="form-label" for="select2-array">वर्ष</label>
+                                                <div class="mb-1">
+                                                    <select class="select2 form-select yearselect year"
+                                                        id="select2-basic" name="year" required>
+                                                        <option value="<?php echo $year ?>"><?php echo  $year ?>
+                                                        </option>
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -185,8 +202,9 @@ require("select_api.php");
                                                 <label class="form-label" for="select2-array">जिल्हा</label>
                                                 <div class="mb-1">
 
-                                                    <select required name="district" class="select2 form-select"
-                                                        id="countrySelect" size="1" onchange="makeSubmenu(this.value)">
+                                                    <select required name="district"
+                                                        class="select2 form-select district" id="countrySelect" size="1"
+                                                        onchange="makeSubmenu(this.value)">
                                                         <option value="" disabled selected>निवडा</option>
                                                         <option value="नवी मुंबई"
                                                             <?php if($district=='नवी मुंबई'){ echo 'selected'; } ?>>
@@ -203,7 +221,7 @@ require("select_api.php");
                                                 <div class="mb-1">
 
                                                     <select id="citySelect" size="1" required name="police_station"
-                                                        class="select2 form-select">
+                                                        class="select2 form-select policestation">
                                                         <option value="" disabled selected>निवडा</option>
                                                         <option></option>
                                                         <option
@@ -216,7 +234,7 @@ require("select_api.php");
 
                                             <div class="col-md-12 mb-1">
                                                 <label class="form-label" for="select2-basic">लावलेली कलमे</label>
-                                                <input type="text" required class="form-control"
+                                                <input type="text" required class="form-control section"
                                                     value="<?php echo  $section?>" name="section" id="basicInput" />
                                             </div>
 
@@ -224,8 +242,8 @@ require("select_api.php");
                                                 <label class="form-label" for="select2-basic">गुन्हयांचे प्रकार</label>
                                                 <div class="row" style="margin-left:10px !important">
                                                     <div class="col-1 form-check form-check-inline">
-                                                        <input class="form-check-input" type="checkbox" name="crime[]"
-                                                            value="खुन"
+                                                        <input class="form-check-input crime" type="checkbox"
+                                                            name="crime[]" value="खुन"
                                                             <?php if(isset($_GET['id'])){if(in_array("खून,",$type_of_offence)) { ?>
                                                             checked="checked" <?php } }?> id="inlineCheckbox1" />
                                                         <label class="form-check-label"
@@ -284,13 +302,14 @@ require("select_api.php");
 
                                             <div class="col-md-6 mt-1">
                                                 <label class="form-label" for="select2-basic">फिर्यादीचे नाव</label>
-                                                <input type="text" required class="form-control"
+                                                <input type="text" required class="form-control complaintfilername"
                                                     value="<?php echo  $complaint_filer_name ?>"
                                                     name="complaint_filer_name" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-12 modal-footer">
-                                                <button type="submit" name="s_ubmit" class="btn btn-primary">नमूद
+                                                <button type="button" name="s_ubmit" class="btn btn-primary modal1"
+                                                    data-bs-toggle="modal">नमूद
                                                     करा</button>
 
                                                 <!-- <a href="form2.php" class="btn btn-primary btn-next">
@@ -300,6 +319,144 @@ require("select_api.php");
                                                 </a> -->
                                             </div>
                                         </div>
+                                        <div class="modal fade" id="addNewAddressModal" tabindex="-1"
+                                            aria-labelledby="addNewAddressTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header bg-transparent">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body pb-5 px-sm-4 mx-50">
+                                                        <h1 class="address-title text-center mb-1"
+                                                            id="addNewAddressTitle">Add New Address</h1>
+                                                        <p class="address-subtitle text-center mb-2 pb-75"></p>
+
+                                                        <form method="POST" id="viewmodal" class="row gy-1 gx-2"
+                                                            action="api.php">
+                                                            <div class="row">
+                                                                <!-- Basic -->
+                                                                <div class="col-md-6 mb-1">
+                                                                    <label class="form-label" for="select2-basic">नोंद
+                                                                        वही क्र.</label>
+                                                                    <input type="hidden" name="id1" value="">
+                                                                    <input type="text" class="form-control bookno1"
+                                                                        value="" name="book_no" id="basicInput"
+                                                                        readonly />
+                                                                </div>
+
+                                                                <div class="col-md-6 mb-1">
+                                                                    <label class="sr-only"
+                                                                        for="inlineFormInputGroup">गुन्हा नं.</label>
+                                                                    <div class="input-group mb-2">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text">कॉ.गु.र.नं.
+                                                                            </div>
+                                                                        </div>
+                                                                        <input type="text" readonly
+                                                                            class="form-control complaintno1" value=""
+                                                                            name="complaint_no"
+                                                                            id="inlineFormInputGroup" placeholder="">
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- <div class="col-md-6 mb-1">
+                                                <label class="form-label" for="select2-basic">वर्ष</label>
+                                                <input type="number" required class="form-control "
+                                                    value="<?php echo  $year ?>" name="year" placeholder=""
+                                                    type="number" min="1900" max="2099" step="1" id="basicInput" />
+                                            </div> -->
+
+                                                                <div class="col-md-6 mb-1">
+                                                                    <label class="form-label"
+                                                                        for="select2-basic">दिनांक</label>
+                                                                    <input type="hidden" name="id1" value="">
+                                                                    <input type="text" class="form-control date1"
+                                                                        value="" name="date" id="basicInput"
+                                                                        readonly />
+                                                                </div>
+
+                                                                <div class="col-md-6 mb-1">
+                                                                    <label class="form-label"
+                                                                        for="select2-basic">वर्ष</label>
+                                                                    <input type="hidden" name="id1" value="">
+                                                                    <input type="text" class="form-control year1"
+                                                                        value="" name="year" id="basicInput"
+                                                                        readonly />
+                                                                </div>
+
+                                                                <!-- <div class="col-md-6 mb-1">
+                                                                    <label class="form-label"
+                                                                        for="select2-array">वर्ष</label>
+                                                                    <div class="mb-1">
+                                                                        <select
+                                                                            class="select2 form-select yearselect year"
+                                                                            id="select2-basic" name="year" required>
+                                                                            <option value="">
+                                                                                <?php echo  $year ?>
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div> -->
+
+                                                                <div class="col-md-6 mb-1">
+                                                                    <label class="form-label"
+                                                                        for="select2-basic">जिल्हा</label>
+                                                                    <input type="hidden" name="id1" value="">
+                                                                    <input type="text" class="form-control district1"
+                                                                        value="" name="district" id="basicInput"
+                                                                        readonly />
+                                                                </div>
+
+                                                                <div class="col-md-6 mb-1">
+                                                                    <label class="form-label" for="select2-basic">पोलीस
+                                                                        ठाणे</label>
+                                                                    <input type="hidden" name="id1" value="">
+                                                                    <input type="text" class="form-control policestation1"
+                                                                        value="" name="policestation" id="basicInput"
+                                                                        readonly />
+                                                                </div>
+
+                                                                <div class="col-md-12 mb-1">
+                                                                    <label class="form-label"
+                                                                        for="select2-basic">लावलेली कलमे</label>
+                                                                    <input type="text" readonly
+                                                                        class="form-control section1" value=""
+                                                                        name="section" id="basicInput" />
+                                                                </div>
+
+                                                                <div class="col-md-12 mb-1">
+                                                                    <label class="form-label"
+                                                                        for="select2-basic">गुन्हयांचे प्रकार</label>
+                                                                    <input type="text" readonly
+                                                                        class="form-control crime1" value=""
+                                                                        name="crime" id="basicInput" />
+                                                                </div>
+
+                                                                <div class="col-md-12 mb-1">
+                                                                    <label class="form-label"
+                                                                        for="select2-basic">फिर्यादीचे नाव</label>
+                                                                    <input type="text" readonly
+                                                                        class="form-control complaintfilername1" value=""
+                                                                        name="complaintfilername" id="basicInput" />
+                                                                </div>
+                                                            </div>
+                                                        </form>
+
+                                                        <div class="col-12 text-center modal-footer">
+                                                            <button type="submit" class="btn btn-primary me-1 mt-2"
+                                                                name="s_ubmit">Yes</button>
+                                                            <button type="reset" class="btn btn-outline-secondary mt-2"
+                                                                data-bs-dismiss="modal" aria-label="Close">
+                                                                No
+                                                            </button>
+                                                        </div>
+                                                        <!-- </form> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </form>
                                 </div>
                             </div>
@@ -307,6 +464,7 @@ require("select_api.php");
                     </div>
                 </section>
                 <!-- Select2 End -->
+
 
             </div>
         </div>
@@ -340,6 +498,9 @@ require("select_api.php");
     <script src="app-assets/js/scripts/forms/pickers/form-pickers.js"></script>
     <!-- END: Page JS-->
 
+    <script src="app-assets/js/scripts/pages/modal-add-new-address.js"></script>
+
+
     <script>
         $(window).on('load', function () {
             if (feather) {
@@ -349,6 +510,42 @@ require("select_api.php");
                 });
             }
         })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.modal1').click(function () {
+                let bookno = $('.bookno').val();
+                let complaintno = $('.complaintno').val();
+                let date = $('.date').val();
+                let year = $('.year').val();
+                let district = $('.district').val();
+                let policestation = $('.policestation').val();
+                let section = $('.section').val();
+                let crime = $('.crime').val();
+                let complaintfilername = $('.complaintfilername').val();
+                if (bookno == '' || complaintno == '' || date == '' || year == '' || district == '' ||
+                    policestation == '' || section == '' || crime == '' || complaintfilername == '') {
+                    alert('Please fill');
+                } else {
+                    $('#addNewAddressModal').modal('show');
+                    $('.bookno1').val(bookno);
+                    $('.complaintno1').val(complaintno);
+                    $('.date1').val(date);
+                    $('.year1').val(year);
+                    $('.district1').val(district);
+                    $('.policestation1').val(policestation);
+                    $('.section1').val(section);
+                    $('.crime1').val(crime);
+                    $('.complaintfilername1').val(complaintfilername);
+                }
+            })
+        })
+    </script>
+    <script src="year-select.js"></script>
+    <script>
+        $('.yearselect').yearselect({
+            selected: 2022
+        });
     </script>
 </body>
 <!-- END: Body-->

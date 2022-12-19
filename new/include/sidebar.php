@@ -1,8 +1,7 @@
 <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto"><a class="navbar-brand" href="index"><span
-                        class="brand-logo">
+            <li class="nav-item me-auto"><a class="navbar-brand" href="index"><span class="brand-logo">
                         <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                             <defs>
@@ -42,9 +41,9 @@
                 </a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse"> <i
                         class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>
-                        <!-- <i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc"
+                    <!-- <i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc"
                         data-ticon="disc"></i> -->
-                    </a>
+                </a>
             </li>
         </ul>
     </div>
@@ -53,34 +52,46 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
 
-            <li class=""><a class="d-flex align-items-center" href="index"><i
-                        data-feather="user"></i><span class="menu-item text-truncate"
-                        data-i18n="Select">मुख्यपृष्ठ</span></a>
+            <li class=""><a class="d-flex align-items-center" href="index"><i data-feather="user"></i><span
+                        class="menu-item text-truncate" data-i18n="Select">मुख्यपृष्ठ</span></a>
             </li>
             <li><a class="d-flex align-items-center" href="form1"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select">नोंदणी करा</span></a>
+                <!-- <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">अपूर्ण नोंदणी</span></a>
+                        </li>
+                    </ul> -->
+            <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span
+                        class="menu-item text-truncate" data-i18n="Add">अपूर्ण नोंदणी</span></a>
+            </li>
             </li>
             <li><a class="d-flex align-items-center" href="intimation"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select">अहवाल</span></a>
-                        <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="R1"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">अहवाल १</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="R2"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Preview">अहवाल २</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="R3"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Edit">अहवाल ३</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="R4"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">अहवाल ४</span></a>
-                        </li>
-                        <li><a class="d-flex align-items-center" href="complaint"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">प्रलंबित प्रकरणे</span></a>
-                        </li>
-                    </ul>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="R1"><i data-feather="circle"></i><span
+                                class="menu-item text-truncate" data-i18n="List">अहवाल १</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="R2"><i data-feather="circle"></i><span
+                                class="menu-item text-truncate" data-i18n="Preview">अहवाल २</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="R3"><i data-feather="circle"></i><span
+                                class="menu-item text-truncate" data-i18n="Edit">अहवाल ३</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="R4"><i data-feather="circle"></i><span
+                                class="menu-item text-truncate" data-i18n="Add">अहवाल ४</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="complaint"><i data-feather="circle"></i><span
+                                class="menu-item text-truncate" data-i18n="Add">प्रलंबित प्रकरणे</span></a>
+                    </li>
+                </ul>
             </li>
             <li><a class="d-flex align-items-center" href="#"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select">वापरकर्ता</span></a>
-                        <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="viewwebuser"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">संकेतस्थल वापरकर्ता</span></a>
-                        </li>
-                    </ul>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="viewwebuser"><i data-feather="circle"></i><span
+                                class="menu-item text-truncate" data-i18n="Add">संकेतस्थल वापरकर्ता</span></a>
+                    </li>
+                </ul>
             </li>
             <li><a class="d-flex align-items-center" href="#"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select"> बँक माहिती</span></a>
@@ -91,7 +102,7 @@
             <!-- <li><a class="d-flex align-items-center" href="admin_login"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select">बाहेर पडा</span></a>
             </li> -->
-            <li><a class="d-flex align-items-center" href="admin_login"><i data-feather="copy"></i><span
+            <li><a class="d-flex align-items-center" href="update"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select">Update</span></a>
             </li>
         </ul>

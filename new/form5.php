@@ -124,13 +124,12 @@
                                                 <input type="text" class="form-control" id="basicInput" />
                                             </div>
 
-                                            <div class="col-md-12 modal-footer">
-                                                <button type="button" class="btn btn-primary">नमूद करा</button>
-
+                                            <div class="col-md-12 modal-footer justify-content-between">                                            
                                                 <a href="form4.php" class="btn btn-outline-secondary btn-prev">
                                                 <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                 <span class="align-middle d-sm-inline-block d-none">मागे</span>
                                             </a>
+                                            <button type="button" class="btn btn-primary">नमूद करा</button>
                                             </div>
                                         </div>
                                     </form>

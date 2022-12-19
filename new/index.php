@@ -57,6 +57,11 @@ require("select_api.php");
         .heading {
             margin-top: 40px !important;
         }
+
+        .card{
+            font-size: 115%;
+            font-weight: 400;
+        }
     </style>
 
 </head>
@@ -96,7 +101,9 @@ require("select_api.php");
                                             style="width: 72px; margin-left: 199px;">वर्ष
                                             निवडा</label>
                                         <div class="mb-1" style="width:152px;">
-                                            <input class="yearselect form-select" id="year" name="year" value="2022">
+                                            <select class="select2 form-select yearselect" id="year"
+                                                                name="year" required>
+                                                            </select>
                                         </div>
                                     </div>
                                 </form>
@@ -109,7 +116,7 @@ require("select_api.php");
                     <!-- Stats Vertical Card -->
                     <div class="row">
                         <div class="col-xl-3 col-md-4 col-sm-6">
-                            <div class="card text-center bg-light-info">
+                            <div class="card text-center">
                                 <div class="card-body">
                                     <div class="avatar bg-light-info p-50 mb-1">
                                         <div class="avatar-content">
@@ -122,7 +129,7 @@ require("select_api.php");
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-4 col-sm-6">
-                            <div class="card text-center bg-light-success">
+                            <div class="card text-center">
                                 <div class="card-body">
                                     <div class="avatar bg-light-warning p-50 mb-1">
                                         <div class="avatar-content">
@@ -135,7 +142,7 @@ require("select_api.php");
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-4 col-sm-6">
-                            <div class="card text-center bg-light-warning">
+                            <div class="card text-center">
                                 <div class="card-body">
                                     <div class="avatar bg-light-danger p-50 mb-1">
                                         <div class="avatar-content">
@@ -148,7 +155,7 @@ require("select_api.php");
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-4 col-sm-6">
-                            <div class="card text-center bg-light-danger">
+                            <div class="card text-center">
                                 <div class="card-body">
                                     <div class="avatar bg-light-primary p-50 mb-1">
                                         <div class="avatar-content">

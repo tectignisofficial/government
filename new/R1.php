@@ -136,15 +136,18 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 mb-1">
-                                                        <div class="form-group" style="">
-                                                            <input class="yearselect form-select" id="year" name="year" required>
+                                                        <div class="form-group">
+                                                            <select class="select2 form-select yearselect"   id="select2"
+                                                                name="year" required>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-12 modal-footer" style="justify-content: center;">
-                                                <button type="submit" class="btn btn-primary" name="filter">जतन करा</button>
+                                                <button type="submit" class="btn btn-primary" name="filter">जतन
+                                                    करा</button>
                                             </div>
                                         </div>
                                     </form>
@@ -157,11 +160,12 @@ if(isset($_POST["filter"])){ ?>
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header d-block text-center">
-                                <h1 class="d-block fw-bold">प्रपत्र - १.</h1><br>
-                                <h3>अनुसूचित जाती / जमाती. अत्याचार प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण
+                                    <h1 class="d-block fw-bold">प्रपत्र - १.</h1><br>
+                                    <h3>अनुसूचित जाती / जमाती. अत्याचार प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण
                                         अधिनियम १९५५ अंतर्गत</h3><br>
-                                    <h4 class="card-title d-block fw-bolder">माहे $dat ,$year मध्ये घडलेल्या गुन्हयांची माहिती
-                                    </h4>                                   
+                                    <h4 class="card-title d-block fw-bolder">माहे $dat ,$year मध्ये घडलेल्या गुन्हयांची
+                                        माहिती
+                                    </h4>
                                 </div>
                                 <div class=" card-body table-responsive">
                                     <table class="table table-bordered">
@@ -213,7 +217,7 @@ if(isset($_POST["filter"])){ ?>
                             </div>
 
                         </div>
-                     <?php }?>
+                        <?php }?>
                     </div>
                 </section>
                 <!-- Select2 End -->

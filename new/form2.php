@@ -118,20 +118,21 @@ require("select_api.php");
                                                 <input type="text"  required class="form-control" value="<?= $criminal_name; ?>" name="criminal_name" id="basicInput" />
                                             </div>
 
-                                            <div class="d-flex justify-content-between">
-                                                <a href="form1.php?id=<?php echo $id;?>" class="btn btn-outline-secondary btn-prev">
+                                            <div class="d-flex" style="justify-content: end;">
+                                                <!-- <a href="form1.php?id=<?php echo $id;?>" class="btn btn-outline-secondary btn-prev">
                                                     <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                     <span class="align-middle d-sm-inline-block d-none">मागे</span>
-                                                </a>
+                                                </a> -->
                                                 
                                                 <button type="sumbit" name="form2su_bmit" class="btn btn-primary btn-next bbbt">नमूद करा <i data-feather="arrow-right"
                                                         class="align-middle ms-sm-25 ms-0"></i>
                                             </button>
-                                                <a href="form3.php?form3=<?php echo $id;?>" name="sub_mit" class="btn btn-primary btn-next">
+                                            
+                                                <!-- <a href="form3.php?form3=<?php echo $id;?>" name="sub_mit" class="btn btn-primary btn-next">
                                                     <span class="align-middle d-sm-inline-block d-none">पुढे जा</span>
                                                     <i data-feather="arrow-right"
                                                         class="align-middle ms-sm-25 ms-0"></i>
-                                                </a>
+                                                </a> -->
                                             </div>
                                         </div>
                                     </form>

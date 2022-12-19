@@ -110,4 +110,18 @@ if(isset($_POST['sub_mit']))
     }
  }
 //form4 end
+
+ //Alert Update Start
+ if(isset($_POST['update'])){
+  $alert=$_POST['alert'];
+
+  $sql=mysqli_query($conn,"UPDATE `final_alert` SET `alert`='$alert'");
+  if($sql){
+    echo "<script>alert('Successfully Submitted');window.location.href='update.php'</script>";
+}
+else{
+    echo "<script>alert('error')</script>";
+}
+ }
+ //Alert Update End
 ?>

@@ -158,13 +158,13 @@ require("select_api.php");
                                                     <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                     <span class="align-middle d-sm-inline-block d-none">मागे</span>
                                                 </a>
-                                                <a href="form5.php" class="btn btn-primary btn-next">
+                                                <!-- <a href="form5.php" class="btn btn-primary btn-next">
                                                     <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
                                                     <i data-feather="arrow-right"
                                                         class="align-middle ms-sm-25 ms-0"></i>
-                                                </a>
+                                                </a> -->
                                                 <a href="form5.php" class="btn btn-primary btn-next">
-                                                    <span class="align-middle d-sm-inline-block d-none">पुढे जा</span>
+                                                    <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
                                                     <i data-feather="arrow-right"
                                                         class="align-middle ms-sm-25 ms-0"></i>
                                                 </a>

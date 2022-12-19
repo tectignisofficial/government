@@ -195,12 +195,12 @@ require("select_api.php");
                                                 <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                 <span class="align-middle d-sm-inline-block d-none">मागे</span>
                                             </a>
-                                            <button type="submit" class="btn btn-primary btn-next" name="sub_mit">
+                                            <!-- <button type="submit" class="btn btn-primary btn-next" name="sub_mit">
                                                 <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
                                                 <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                                                </button>
+                                                </button> -->
                                                 <a href="form4?form4=<?= $id;?>" class="btn btn-primary btn-next">
-                                                    <span class="align-middle d-sm-inline-block d-none">पुढे जा</span>
+                                                    <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
                                                     <i data-feather="arrow-right"
                                                         class="align-middle ms-sm-25 ms-0"></i>
                                                 </a>
