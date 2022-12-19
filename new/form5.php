@@ -1,3 +1,9 @@
+<?php
+session_start();
+require("include/config.php");
+$form5=$_GET['form5'];
+require("select_api.php");
+?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -95,41 +101,42 @@
                                     <h4 class="card-title">बँक तपशील</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="post" action="api.php">
                                         <div class="row">
                                             <!-- Basic -->
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">Account Holder
                                                     Name</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+                                                    <input type="hidden" name="form5" value='<?= $form5 ?>'>
+                                                <input type="text" name="account_name" class="form-control" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">Account Number</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+                                                <input type="text" name="account_no" class="form-control" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">Bank Name</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+                                                <input type="text" name="bank_name" class="form-control" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">Branch Name</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+                                                <input type="text" name="branch_name" class="form-control" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">IFSC Code</label>
-                                                <input type="text" class="form-control" id="basicInput" />
+                                                <input type="text" name="ifsc_code" class="form-control" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-12 modal-footer justify-content-between">                                            
-                                                <a href="form4.php" class="btn btn-outline-secondary btn-prev">
+                                                <a href="form4?form4=<?= $form5 ?>" class="btn btn-outline-secondary btn-prev">
                                                 <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                 <span class="align-middle d-sm-inline-block d-none">मागे</span>
                                             </a>
-                                            <button type="button" class="btn btn-primary">नमूद करा</button>
+                                            <button type="submit" class="btn btn-primary" name="form5submit">नमूद करा</button>
                                             </div>
                                         </div>
                                     </form>

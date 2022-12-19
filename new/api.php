@@ -27,13 +27,13 @@ require("include/config.php");
         	if($in_ch==1)  
         	{  
             $last_id = mysqli_insert_id($conn);
-            header("Location: form2.php?form2=".$last_id);
+            header("Location: form2?form2=".$last_id);
         	}
 	 }
   }else{
     $id=$_POST['id1'];
     $sql=mysqli_query($conn,"update complaint_form set book_no='$book_no',date='$date',complaint_no='$complaint_no',district='$district',police_station='$police_station',section='$section',complaint_filer_name='$complaint_filer_name',year='$year', type_of_offence='$chk' where id='$id'");
-    if($sql==1) { header("Location:form2.php?form2=".$id); }
+    if($sql==1) { header("Location:form2?form2=".$id); }
   }
 } 
 
@@ -88,28 +88,50 @@ if(isset($_POST['sub_mit']))
   //form3 end
 
   //form4 start
-  if(isset($_POST['subm_it'])){
+  if(isset($_POST['form4submit'])){
     $file=$_FILES['files']['name'];    
     $discription=$_POST['discription'];
     $payStatus=$_POST['payStatus'];
     $filedet=$_FILES['files']['tmp_name'];
+    $form4=$_POST['form4'];
     $loc="file/".$file;
     move_uploaded_file($filedet,$loc);
     $loc1="file/".$file;
     move_uploaded_file($filedet,$loc1);
-    if(isset($_GET['eid'])){
-      $sql=mysqli_query($conn,"update image set discription='$discription',status='$payStatus' where caseid='$id'");
+    $sql=mysqli_query($conn,"select * from image where caseid='$form4'");
+    if(mysqli_num_rows($sql)>0){
+      $sql=mysqli_query($conn,"update image set discription='$discription',status='$payStatus' where caseid='$form4'");
     }
     else{
-      $sql=mysqli_query($conn,"insert into image (caseid,image,discription,status) values('$id','$file','$discription','$payStatus')");
+      $sql=mysqli_query($conn,"insert into image (caseid,image,discription,status) values('$form4','$file','$discription','$payStatus')");
     }
     if($sql==1){
-        header("location:form5.php?id=".$id);
+        header("location:form5?form5=".$form4);
     }else{
         mysqli_error($conn);
     }
  }
 //form4 end
+
+//form5 start
+if(isset($_POST['form5submit'])){
+  $form5=$_POST['form5'];
+  $account_name=$_POST['account_name'];
+  $account_no=$_POST['account_no'];
+  $bank_name=$_POST['bank_name'];
+  $branch_name=$_POST['branch_name'];
+  $ifsc_code=$_POST['ifsc_code'];
+  
+  $sql=mysqli_query($conn,"insert into bank_detail(caseid,account_holder_name,account_no,bank_name,branch_name,ifsc_code) values('$form5','$account_name','$account_no','$bank_name','$branch_name','$ifsc_code')");
+  
+  if($sql){
+    echo '<script>alert("Successfully Submitted");window.location.href="R1"</script>';
+  }
+  else{
+      mysqli_error($conn);
+  }
+  }
+  //form5 end
 
  //Alert Update Start
  if(isset($_POST['update'])){

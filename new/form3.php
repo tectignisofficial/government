@@ -1,7 +1,7 @@
 <?php
 session_start();
 require("include/config.php");
-$id=$_GET['form3'];
+$form3=$_GET['form3'];
 require("select_api.php");
 ?>
 <!DOCTYPE html>
@@ -36,11 +36,9 @@ require("select_api.php");
     <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/themes/bordered-layout.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
-
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
     <!-- END: Page CSS-->
-
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- END: Custom CSS-->
@@ -48,7 +46,6 @@ require("select_api.php");
     <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/pickers/form-pickadate.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
-
 
 </head>
 <!-- END: Head-->
@@ -61,7 +58,6 @@ require("select_api.php");
     <!-- BEGIN: Header-->
     <?php include("include/header.php");?>
     <!-- END: Header-->
-
 
     <!-- BEGIN: Sidebar Menu-->
     <?php include("include/sidebar.php");?>
@@ -91,7 +87,6 @@ require("select_api.php");
                 </div>
             </div>
             <div class="content-body">
-
                 <!-- Select2 Start  -->
                 <section class="basic-select2">
                     <div class="row">
@@ -108,7 +103,7 @@ require("select_api.php");
                                                 <label class="form-label" for="select2-basic">पिडीत व्यक्तीचे
                                                     नाव</label>
                                                 <input type="hidden" required class="" name="id"
-                                                    value="<?php echo $id;?>">
+                                                    value="<?php echo $form3;?>">
                                                 <input type="text" required class="form-control"
                                                     value="<?php echo $victim_name;?>" name="victim_name"
                                                     id="basicInput" />
@@ -191,19 +186,15 @@ require("select_api.php");
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-between">
-                                            <a href="form2?form2=<?= $id;?>" class="btn btn-outline-secondary btn-prev">
+                                            <a href="form2?form2=<?= $form3;?>" class="btn btn-outline-secondary btn-prev">
                                                 <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                 <span class="align-middle d-sm-inline-block d-none">मागे</span>
                                             </a>
-                                            <!-- <button type="submit" class="btn btn-primary btn-next" name="sub_mit">
+                                            <button type="submit" class="btn btn-primary btn-next" name="sub_mit">
                                                 <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
                                                 <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                                                </button> -->
-                                                <a href="form4?form4=<?= $id;?>" class="btn btn-primary btn-next">
-                                                    <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
-                                                    <i data-feather="arrow-right"
-                                                        class="align-middle ms-sm-25 ms-0"></i>
-                                                </a>
+                                                </button>
+
                                         </div>
                                 </div>
                                 </form>

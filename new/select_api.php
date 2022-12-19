@@ -98,7 +98,7 @@ if(isset($_POST['year'])){
   //form2 start
   $criminal_name='';
   if(isset($_GET['form2'])){
-    $sql=mysqli_query($conn,"select * from criminal where caseid='$id'");
+    $sql=mysqli_query($conn,"select * from criminal where caseid='$form2'");
   while($arr=mysqli_fetch_array($sql)){
   $criminal_name= $arr['criminal_name'];
   }
@@ -114,8 +114,8 @@ if(isset($_POST['year'])){
   $charge_sheet='';
   $category_and_caste='';
   if(isset($_GET['form3'])){
-    $eid=intval($_GET['form3']);
-    $sql=mysqli_query($conn,"select * from victim where caseid='$eid'");
+    $form3=intval($_GET['form3']);
+    $sql=mysqli_query($conn,"select * from victim where caseid='$form3'");
   while($arr=mysqli_fetch_array($sql)){
   $caseid=$arr['caseid'];
   $victim_name= $arr['name'];
@@ -129,15 +129,17 @@ if(isset($_POST['year'])){
   }
   //form3 end
 
-  //form4 start
-  // $payStatus='';
-  //       $image='';
-  //       $discription='';
-  //       $id=intval($_GET['eid']);
-  //       $sql=mysqli_query($conn,"select * from image where caseid='$id'");
-  //       while($arr=mysqli_fetch_array($sql)){
-  //       $image=$arr['image'];
-  //       $discription=$arr['discription'];
-  //       }
+  // form4 start
+  $payStatus='';
+        $image='';
+        $discription='';
+        if(isset($_GET['form4'])){
+        $form4=intval($_GET['form4']);
+        $sql=mysqli_query($conn,"select * from image where caseid='$form4'");
+        while($arr=mysqli_fetch_array($sql)){
+        $image=$arr['image'];
+        $discription=$arr['discription'];
+        }
+      }
 //form4 end
 ?>

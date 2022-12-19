@@ -1,7 +1,7 @@
 <?php
 session_start();
 require("include/config.php");
-$id=$_GET['form2'];
+$form2=$_GET['form2'];
 require("select_api.php");
 
 ?>
@@ -113,7 +113,7 @@ require("select_api.php");
                                             <!-- Basic -->
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">आरोपीचे नाव</label>
-                                                <input type="hidden" required class="" name="form_2_id" value="<?php echo $id;?>"
+                                                <input type="hidden" required class="" name="form_2_id" value="<?php echo $form2;?>"
                                                     id="exampleदिनांक" placeholder="">
                                                 <input type="text"  required class="form-control" value="<?= $criminal_name; ?>" name="criminal_name" id="basicInput" />
                                             </div>

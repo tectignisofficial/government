@@ -1,7 +1,7 @@
 <?php
 session_start();
 require("include/config.php");
-$id=$_GET['form4'];
+$form4=$_GET['form4'];
 require("select_api.php");
 ?>
 <!DOCTYPE html>
@@ -109,7 +109,7 @@ require("select_api.php");
                                     <h4 class="card-title">इतर माहिती</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="post" enctype="multipart/form-data" action="api.php">
                                         <div class="row">
 
                                             <div class="form-group col-8">
@@ -120,9 +120,8 @@ require("select_api.php");
                                                     <label for="myfile"
                                                         style="margin-bottom: 25px; font-weight: 600;">फाईल
                                                         निवडा:</label>
-                                                        <input type="hidden" required class="" name="id" value="<?php echo $id;?>">
-                                                    <input type="file" name="files" style="margin-left: 15px;" multiple
-                                                        value="<?php echo $image; ?> " />
+                                                        <input type="hidden" required class="" name="form4" value="<?php echo $form4;?>">
+                                                    <input type="file" style="margin-left: 15px;" name="files" multiple  value="<?php echo $image; ?>" />
                                                 </div>
                                             </div>
 
@@ -133,14 +132,16 @@ require("select_api.php");
                                                             name="payStatus">
                                                             <option value="" disabled selected>Status</option>
                                                             <option
-                                                                value="stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत"
-                                                                ="">stage 1 FIR दाखला / प्रकरण मंजूर आहे /
+                                                                value="stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत" <?php if($payStatus=='stage 1 FIR दाखला / प्रकरण मंजूर आहे /
+                                                                अनुदानाच्या प्रतीक्षेत'){ echo 'selected'; } ?> >stage 1 FIR दाखला / प्रकरण मंजूर आहे /
                                                                 अनुदानाच्या प्रतीक्षेत</option>
-                                                            <option value="stage 2 FIR चौकशी दाखल">stage 2 FIR चौकशी
+                                                            <option value="stage 2 FIR चौकशी दाखल" <?php if($payStatus=='stage 2 FIR चौकशी दाखल'){ echo 'selected'; } ?>>stage 2 FIR चौकशी
                                                                 दाखल</option>
-                                                            <option value="stage 3 न्यायालयाचा निर्णय">stage 3
+                                                            <option value="stage 3 न्यायालयाचा निर्णय" <?php if($payStatus=='stage 3
+                                                                न्यायालयाचा निर्णय'){ echo 'selected'; } ?> >stage 3
                                                                 न्यायालयाचा निर्णय</option>
-                                                            <option value="Stage 4 Documents pending">Stage 4 Documents
+                                                            <option value="Stage 4 Documents pending" <?php if($payStatus=='Stage 4 Documents
+                                                                pending'){ echo 'selected'; } ?> >Stage 4 Documents
                                                                 pending</option>
                                                         </select>
                                                         
@@ -154,20 +155,19 @@ require("select_api.php");
                                             </div>
 
                                             <div class="d-flex justify-content-between">
-                                                <a href="form3.php" class="btn btn-outline-secondary btn-prev">
+                                                <a href="form3?form3=<?php echo $form4;?>" class="btn btn-outline-secondary btn-prev">
                                                     <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                     <span class="align-middle d-sm-inline-block d-none">मागे</span>
                                                 </a>
-                                                <!-- <a href="form5.php" class="btn btn-primary btn-next">
+                                                <button type="submit" class="btn btn-primary btn-next" name="form4submit">
+                                                <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
+                                                <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
+                                                </button>
+                                                <!-- <a href="" class="btn btn-primary btn-next">
                                                     <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
                                                     <i data-feather="arrow-right"
                                                         class="align-middle ms-sm-25 ms-0"></i>
                                                 </a> -->
-                                                <a href="form5.php" class="btn btn-primary btn-next">
-                                                    <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
-                                                    <i data-feather="arrow-right"
-                                                        class="align-middle ms-sm-25 ms-0"></i>
-                                                </a>
                                             </div>
                                         </div>
                                     </form>
