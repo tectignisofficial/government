@@ -125,7 +125,7 @@ if(isset($_POST['form5submit'])){
   $sql=mysqli_query($conn,"insert into bank_detail(caseid,account_holder_name,account_no,bank_name,branch_name,ifsc_code) values('$form5','$account_name','$account_no','$bank_name','$branch_name','$ifsc_code')");
   
   if($sql){
-    echo '<script>alert("Successfully Submitted");window.location.href="R1"</script>';
+    echo '<script>alert("Successfully Submitted");window.location.href="submit&preview?formId='.$form5.'"</script>';
   }
   else{
       mysqli_error($conn);

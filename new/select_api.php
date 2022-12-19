@@ -143,12 +143,8 @@ if(isset($_POST['year'])){
       }
 //form4 end
 
- //viewwebuser start
-$webresult = mysqli_query($conn,"select * from webuser");
-
-if(isset($_GET['webuserdelid'])){
-  $webuserdelid=$_GET['webuserdelid'];
-  $sql=mysqli_query($conn,"delete from webuser where id='$webuserdelid'");
-  }
-//viewwebuser end
+//submit&preview start
+$form1query=mysqli_query($conn,"select * from complaint_form where id='$finalform'");
+$form1sql=mysqli_fetch_array($form1query);
+//submit&preview end
 ?>
