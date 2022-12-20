@@ -48,16 +48,16 @@ require("select_api.php");
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
 
-<style>
-    .form-label{
-        margin-left: 20px;
-    }
+    <style>
+        .form-label {
+            margin-left: 20px;
+        }
 
-    .inpt {
-    width: 44.66667%;
-    margin-left: -50px;
-}
-</style>
+        .inpt {
+            width: 44.66667%;
+            margin-left: -50px;
+        }
+    </style>
 
 
 </head>
@@ -114,49 +114,64 @@ require("select_api.php");
                                         <div class="row">
                                             <!-- Basic -->
                                             <div class="col-md-12 mb-1">
-                                            <div class="row mb-1">
-                                                    <label class="col-md-3 form-label" for="select2-basic">वापरकर्त्याची भूमिका</label>
+                                                <div class="row mb-1">
+                                                    <label class="col-md-3 form-label" for="select2-basic">वापरकर्त्याची
+                                                        भूमिका</label>
                                                     <div class="col-md-9 inpt">
-                                                    <select class="select2 form-select" id="large-select" name="role">
-                                                    <option selected>निवडा</option>
-                                                        <option>प्रशासक</option>
-                                                        <option>व्यवस्थापक</option>
-                                                        <option>विक्री व्यवस्थापक</option>
-                                                </select>
+                                                        <select class="select2 form-select" id="large-select"
+                                                            name="role">
+                                                            <option selected>निवडा</option>
+                                                            <option>प्रशासक</option>
+                                                            <option>व्यवस्थापक</option>
+                                                            <option>विक्री व्यवस्थापक</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-1">
-                                                    <label class="col-md-3 form-label" for="select2-basic">जिल्हा</label>
+                                                    <label class="col-md-3 form-label"
+                                                        for="select2-basic">जिल्हा</label>
                                                     <div class="col-md-9 inpt">
-                                                    <select class="select2 form-select" id="select2-basic" name="district">
-                                                        <option selected>निवडा</option>
-                                                        <option>रायगड</option>
-                                                        <option>नवी मुंबई</option>
-                                                    </select>
+                                                        <select class="select2 form-select" id="select2-basic"
+                                                            name="district">
+                                                            <option selected>निवडा</option>
+                                                            <option>रायगड</option>
+                                                            <option>नवी मुंबई</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="row mb-1">
                                                     <label class="col-md-3 form-label" for="select2-basic">नाव</label>
                                                     <div class="col-md-9 inpt">
-                                                        <input type="text" class="form-control" id="basicInput" name="name"/>
+                                                        <input type="text" class="form-control" id="basicInput"
+                                                            name="name" />
                                                     </div>
                                                 </div>
                                                 <div class="row mb-1">
                                                     <label class="col-md-3 form-label" for="select2-basic">ई-मेल</label>
                                                     <div class="col-md-9 inpt">
-                                                        <input type="email" class="form-control" id="basicInput" name="email"/>
+                                                        <input type="email" class="form-control" id="basicInput"
+                                                            name="email" />
                                                     </div>
                                                 </div>
                                                 <div class="row mb-1">
-                                                    <label class="col-md-3 form-label" for="select2-basic">पासवर्ड</label>
+                                                    <label class="col-md-3 form-label"
+                                                        for="select2-basic">पासवर्ड</label>
                                                     <div class="col-md-9 inpt">
-                                                        <input type="password" class="form-control" id="basicInput" name="password"/>
+                                                    <div
+                                                    class="input-group input-group-merge form-password-toggle">
+                                                    <input class="form-control form-control-merge" id="password"
+                                                        type="password" name="password" placeholder="············"
+                                                        aria-describedby="login-password" tabindex="2" /><span
+                                                        class="input-group-text cursor-pointer"><i
+                                                            data-feather="eye"></i></span>
+                                                </div>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-12 modal-footer" style="margin-top: 0px;">
-                                                <button type="submit" name="websave" class="btn btn-primary">जतन करा</button>
+                                                <button type="submit" name="websave" class="btn btn-primary">जतन
+                                                    करा</button>
                                             </div>
                                         </div>
                                     </form>

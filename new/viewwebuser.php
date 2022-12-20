@@ -119,11 +119,12 @@ require("select_api.php");
                                                 <td><?php echo $row["role"]; ?></td>
                                                 <td><?php echo $row["district"]; ?></td>
                                                 <td>
-                                                    <a href="editwebuser.php?eid=<?php echo $row['id'] ?>" title="Delete" alt="Delete" class="btn btn-icon rounded-circle btn-flat-primary btnmod1 ml-4 mr-3"><i data-feather="edit"></i></a>
-                                                    <a href="viewwebuser.php?action=delete&&webuserdelid=<?php echo $row['id'] ?>"  title="Delete" alt="Delete" class="btn btn-icon rounded-circle btn-flat-danger btnmod1"><i data-feather="trash"></i> </a>
+                                                <button type="button" class="btn btn-icon rounded-circle btn-flat-primary btnmod1" data-id="<?php echo $row['id'] ?>"><i data-feather="edit"></i></button>
+
+                                                    <button type="button" data-id='<?php echo $row['id'] ?>'  title="Delete" alt="Delete" class="btn btn-icon rounded-circle btn-flat-danger delbtn"><i data-feather="trash"></i> </button>
                                                 </td>
                                             </tr>
-                                            <?php } ?>
+                                            <?php $i++; } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -137,6 +138,18 @@ require("select_api.php");
     </div>
     <!-- END: Content-->
 
+    <div class="modal fade" id="editUser" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered modal-edit-user">
+                        <div class="modal-content">
+                            <div class="modal-header bg-transparent">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body body1 pb-5 px-sm-5 pt-50">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
@@ -177,6 +190,45 @@ require("select_api.php");
                 });
             }
         })
+    </script>
+       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+$(document).on("click",".delbtn",function(e){
+                e.preventDefault();
+                let delid = $(this).data('id');
+                swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover this  file!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            swal("Poof! Your  file has been deleted!", {
+                                icon: "success",
+                            });
+                            window.location.href = "viewwebuser.php?webuserdelid=" + delid;
+                        } else {
+                            // swal("Your imaginary file is safe!");
+                        }
+                    });
+            });
+
+            $(document).on('click','.btnmod1',function(){
+                let val=$(this).data('id');
+                $.ajax({
+                    url:'api.php',
+                    method:'post',
+                    data:{val:val},
+                   
+                    success: function (response) {
+                        $(".body1").html(response);
+                    }
+                });
+                $('#editUser').modal('show');
+
+            });
     </script>
 </body>
 <!-- END: Body-->
