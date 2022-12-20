@@ -3,7 +3,11 @@ session_start();
 require("include/config.php");
 $finalform=$_GET['formId'];
 require("select_api.php");
+
+$sql=mysqli_query($conn,"select * from final_alert");
+$row=mysqli_fetch_array($sql);
 ?>
+
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -271,13 +275,7 @@ require("select_api.php");
                                                     <label for="Exampleवघकिय  पुष्टी-३१ अहवाल">FIR</label>
                                                 </div>
                                                 <div>
-                                                    <label for="myfile"
-                                                        style="margin-bottom: 25px; font-weight: 600;">फाईल
-                                                        निवडा:</label>
-                                                    <embed src="file/<?php echo $row['image'];?>" width="50"
-                                                        height="50">
-                                                    <input type="file" style="margin-left: 15px;" name="files" multiple
-                                                        value="<?= $form4sql['image'] ?>" />
+                                                <embed src='file/<?= $form4sql['image'] ?>' width="400" height="150" /><br>
                                                 </div>
                                             </div>
 
@@ -345,15 +343,12 @@ require("select_api.php");
                         </div>
                         <div class="col-12 text-center modal-footer"
                             style="display: initial; margin-top: -28px; border-top: 0px;">
-                            <button type="button" class="btn btn-primary me-1 mt-2" name="s_ubmit" data-bs-toggle="modal" data-bs-target="#addNewAddressModal">Final Submit</button>
-                            <button type="reset" class="btn btn-outline-secondary mt-2" data-bs-dismiss="modal"
-                                aria-label="Close">
-                                No
-                            </button>
+                            <button type="button" class="btn btn-primary me-1 mt-2 submitbtn" name="s_ubmit"
+                                data-bs-toggle="modal" data-bs-target="#">Final Submit</button>
                         </div>
 
-                        <div class="modal fade" id="addNewAddressModal" tabindex="-1"
-                            aria-labelledby="addNewAddressTitle" aria-hidden="true">
+                        <!-- <div class="modal fade" id="Finalsubmit" tabindex="-1" aria-labelledby="addNewAddressTitle"
+                            aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header bg-transparent">
@@ -363,24 +358,52 @@ require("select_api.php");
                                     <div class="modal-body pb-5 px-sm-4 mx-50">
                                         <h1 class="address-title text-center mb-1" id="addNewAddressTitle"></h1>
                                         <div class="modal-body">
-                                                            <h1>
-                                                            <?php
+                                            <h1>
+                                                <?php
                                                     $sql=mysqli_query($conn,"select * from final_alert");
                                                     $row=mysqli_fetch_array($sql);
                                                     echo $row['alert'];
                                                     ?>
-                                                            </h1>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                                                        </div>
-
-
-                                        <!-- </form> -->
+                                            </h1>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" name="" data-bs-toggle="modal"
+                                                data-bs-target=#alertmodal>Yes</button>
+                                            <button type="button" class="btn btn-outline-secondary" aria-label="Close"
+                                                data-bs-dismiss="modal">No</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+
+                        <!-- <div class="modal fade" id="alertmodal" tabindex="-1" aria-labelledby="addNewAddressTitle"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-transparent">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body pb-5 px-sm-4 mx-50">
+                                        <h1 class="address-title text-center mb-1" id="addNewAddressTitle"></h1>
+                                        <div class="modal-body">
+                                            <h1>
+                                                <?php
+                                                    $sql=mysqli_query($conn,"select * from final_alert");
+                                                    $row=mysqli_fetch_array($sql);
+                                                    echo $row['alert'];
+                                                    ?>
+                                            </h1>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary"
+                                                data-bs-dismiss="modal">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
                 </section>
                 <!-- Select2 End -->
@@ -416,6 +439,8 @@ require("select_api.php");
     <script src="app-assets/js/scripts/forms/form-select2.js"></script>
     <script src="app-assets/js/scripts/forms/pickers/form-pickers.js"></script>
     <!-- END: Page JS-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
     <script>
         $(window).on('load', function () {
@@ -426,6 +451,29 @@ require("select_api.php");
                 });
             }
         })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.submitbtn').click(function (e) {
+                e.preventDefault();
+                let del_id = $(this).data('id');
+                swal({
+                        title: "Are you sure?",
+                        text: "Once submitted, you will not be able to change this information!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            swal("<?=  $row['alert']; ?>", {
+                                icon: "success",
+                            });
+                        }
+                    });
+            })
+        });
     </script>
 </body>
 <!-- END: Body-->
