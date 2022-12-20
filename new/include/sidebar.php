@@ -93,7 +93,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a class="d-flex align-items-center" href="#"><i data-feather="copy"></i><span
+            <li><a class="d-flex align-items-center" href="bankinfo"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select"> बँक माहिती</span></a>
             </li>
             <li><a class="d-flex align-items-center" href="member-img"><i data-feather="copy"></i><span

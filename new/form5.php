@@ -112,22 +112,22 @@ require("select_api.php");
                                             </div>
 
                                             <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">Account Number</label>
+                                                <label class="form-label" for="select2-basic">खाते क्रमांक</label>
                                                 <input type="text" name="account_no" class="form-control" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">Bank Name</label>
+                                                <label class="form-label" for="select2-basic">बँकेचे नाव</label>
                                                 <input type="text" name="bank_name" class="form-control" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">Branch Name</label>
+                                                <label class="form-label" for="select2-basic">शाखेचे नाव</label>
                                                 <input type="text" name="branch_name" class="form-control" id="basicInput" />
                                             </div>
 
                                             <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">IFSC Code</label>
+                                                <label class="form-label" for="select2-basic">IFSC कोड</label>
                                                 <input type="text" name="ifsc_code" class="form-control" id="basicInput" />
                                             </div>
 

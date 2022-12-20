@@ -150,7 +150,7 @@ require("select_api.php");
                                     <form method="post" action="api.php">
                                         <div class="row">
                                             <!-- Basic -->
-                                            <div class="col-md-6 mb-1">
+                                            <div class="col-md-3 mb-1">
                                                 <label class="form-label" for="select2-basic">नोंद वही क्र.</label>
                                                 <input type="hidden" name="id1"
                                                     value='<?php if(isset($_GET['id'])){ echo $_GET['id']; } ?>'>
@@ -159,8 +159,8 @@ require("select_api.php");
                                                     required />
                                             </div>
 
-                                            <div class="col-md-6 mb-1">
-                                                <label class="sr-only" for="inlineFormInputGroup">गुन्हा नं.</label>
+                                            <div class="col-md-3 mb-1">
+                                                <label class="form-label sr-only" for="inlineFormInputGroup">गुन्हा नं.</label>
                                                 <div class="input-group mb-2">
                                                     <div class="input-group-prepend">
                                                         <div class="input-group-text">कॉ.गु.र.नं.</div>
@@ -179,14 +179,14 @@ require("select_api.php");
                                             </div> -->
 
 
-                                            <div class="col-md-6 mb-1">
+                                            <div class="col-md-3 mb-1">
                                                 <label class="form-label" for="select2-basic">दिनांक</label>
                                                 <input type="text" id="fp-human-friendly"
                                                     class="form-control flatpickr-human-friendly date" required
                                                     value="<?php echo  $date ?>" name="date" />
                                             </div>
 
-                                            <div class="col-md-6 mb-1">
+                                            <div class="col-md-3 mb-1">
                                                 <label class="form-label" for="select2-array">वर्ष</label>
                                                 <div class="mb-1">
                                                     <select class="select2 form-select yearselect year"
@@ -346,7 +346,7 @@ require("select_api.php");
                                                                 </div>
 
                                                                 <div class="col-md-6 mb-1">
-                                                                    <label class="sr-only"
+                                                                    <label class="form-label sr-only"
                                                                         for="inlineFormInputGroup">गुन्हा नं.</label>
                                                                     <div class="input-group mb-2">
                                                                         <div class="input-group-prepend">

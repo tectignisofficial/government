@@ -109,7 +109,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <th style="width:9%;">अनुक्रमांक</th>
                                                 <th>नाव</th>
                                                 <th>पदाचे नाव</th>
-                                                <th style="width:14%;">कार्यवाही</th>
+                                                <th style="width:14%;">कृती</th>
                                             </tr>
                                         </thead>
                                         <tbody>
