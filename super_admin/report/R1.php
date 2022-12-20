@@ -300,7 +300,6 @@ $role='';
           <div class="row">
             <div class="col-12">
               <div class="container my-2">
-
                 <div class="card print-card">
                   <div class="container my-4">
                     <div class="row">
@@ -314,11 +313,8 @@ $role='';
                             <form method="post">
                               <div class="card-body">
                                 <!-- Date -->
-
-
                                 <div class="form-group">
                                   <label>Date range:</label>
-
                                   <div class="form-group">
                                     <select class="form-control" name="month" required>
                                       <option>select month</option>
@@ -342,36 +338,22 @@ $role='';
                                   </div>
                                 </div>
                                 <!-- /.form group -->
-
-
-
                                 <!-- Date and time range -->
-
                                 <div class="text-center" id="">
                                   <button type="submit" id="" name="filter"
                                     class="btn text-center btn-success">Submit</button>
                                 </div>
                               </div>
-
                           </div>
-
                           </form>
-
                         </div>
-
                       </div>
-
-
-
                     </div>
-
                   </div>
                 </div>
-
               </div>
               <?php
 if(isset($_POST["filter"])){ 
-
     $dat=$_POST['month'];
 $year=$_POST['year'];
    $sql=mysqli_query($conn,"select * from complaint_form where monthname(date) ='$dat' and year(date)='$year'");
@@ -393,8 +375,6 @@ $year=$_POST['year'];
                               <button type='button' class=btn btn-tool' id='pdf' style='background-color: #b70000 ; color:white;'>
                                 <i class='fas fa-file-pdf'></i>
                                 PDF                    </button>
-                                
-
                                  
                               <button type='button' class='btn btn-tool' onclick='export_data()' id='excel' style='    background-color: #137601;
     color: white;'>
@@ -411,11 +391,7 @@ $year=$_POST['year'];
              <h2 class=' text-center fs-1 fw-bold ''>प्रपत्र - १.</h2>
                 <br>
                 <h5 class=' text-center '>अनुसूचित जाती / जमाती. अत्याचार  प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण अधिनियम १९५५ अंतर्गत</h5>
-
                   <br>
-
-
-            
               </div>
               <!-- /.card-header -->
               <div class='card-body table-responsive p-10'>
@@ -436,9 +412,7 @@ $year=$_POST['year'];
                     <th class='text-center'>जाळपोळ </th>
                     <th class='text-center'>इतर</th>
                     <th class='text-center'>एकूण</th>
-           
                   </tr>
-              
                   <tr>
                     <th class='text-center'>१</th>
                     <th class='text-center'>२</th>
@@ -450,23 +424,13 @@ $year=$_POST['year'];
                     <th class='text-center'>८</th>
                     <th class='text-center'>९ </th>
                     <th class='text-center'>१० </th>
-           
                   </tr>
-              
-              
                   </thead>
                   <tbody>
                   ";
-                  
-       
-          
           echo "<tr><td class='text-center'>1</td>
           <td class='text-center'>Navi Mumbai</td>
           ";
-     
-      
-    
-    
    // }
         
     
@@ -545,8 +509,6 @@ if(isset($_POST["filter"])){
                 }
 ?>
               </tr>
-
-
 
               <?php 
 if(isset($_POST["filter"])){

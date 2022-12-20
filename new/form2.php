@@ -113,9 +113,9 @@ require("select_api.php");
                                             <!-- Basic -->
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">आरोपीचे नाव</label>
-                                                <input type="hidden" required class="" name="form_2_id" value="<?php echo $form2;?>"
+                                                <input type="hidden"  class="" name="form_2_id" value="<?php echo $form2;?>"
                                                     id="exampleदिनांक" placeholder="">
-                                                <input type="text"  required class="form-control" value="<?= $criminal_name; ?>" name="criminal_name" id="basicInput" />
+                                                <input type="text"   class="form-control" value="<?= $criminal_name; ?>" name="criminal_name" id="basicInput" />
                                             </div>
 
                                             <div class="d-flex" style="justify-content: end;">

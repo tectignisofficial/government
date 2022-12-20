@@ -1,3 +1,8 @@
+<?php
+session_start();
+require("include/config.php");
+require("select_api.php");
+?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -56,7 +61,6 @@
     <?php include("include/header.php");?>
     <!-- END: Header-->
 
-
     <!-- BEGIN: Sidebar Menu-->
     <?php include("include/sidebar.php");?>
     <!-- END: Sidebar Menu-->
@@ -84,7 +88,6 @@
                 </div>
             </div>
             <div class="content-body">
-
                 <!-- Select2 Start  -->
                 <section class="basic-select2">
                     <div class="row">
@@ -112,6 +115,8 @@
                                                                     नवी मुंबई</option>
                                                                 <option value="रायगड">
                                                                     रायगड</option>
+                                                                    <option value="दोन्ही">
+                                                                    दोन्ही</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -137,7 +142,7 @@
                                                     </div>
                                                     <div class="col-md-4 mb-1">
                                                         <div class="form-group">
-                                                            <select class="select2 form-select yearselect"   id="select2"
+                                                            <select class="select2 form-select yearselect" id="select2"
                                                                 name="year" required>
                                                             </select>
                                                         </div>
@@ -156,14 +161,23 @@
                         </div>
 
                         <?php
-if(isset($_POST["filter"])){ ?>
+if(isset($_POST["filter"])){ 
+    $district=$_POST['district'];
+    $dat=$_POST['month'];
+    $year=$_POST['year'];
+       $sql=mysqli_query($conn,"select * from complaint_form where monthname(date) ='$dat' and year(date)='$year' and district='$district'");
+        if(mysqli_num_rows($sql)==0){
+          echo "<div style='text-align:center;font-size:40px;vertical-align:middle;color:red;'>No RECORD FOUND</div>";
+        }else{
+    ?>
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header d-block text-center">
                                     <h1 class="d-block fw-bold">प्रपत्र - १.</h1><br>
                                     <h3>अनुसूचित जाती / जमाती. अत्याचार प्रतिबंधन अधिनियम १९८९ आणि नागरी हक्क संरक्षण
                                         अधिनियम १९५५ अंतर्गत</h3><br>
-                                    <h4 class="card-title d-block fw-bolder">माहे $dat ,$year मध्ये घडलेल्या गुन्हयांची
+                                    <h4 class="card-title d-block fw-bolder">माहे <?= $dat.' , '.$year?> मध्ये घडलेल्या
+                                        गुन्हयांची
                                         माहिती
                                     </h4>
                                 </div>
@@ -200,16 +214,154 @@ if(isset($_POST["filter"])){ ?>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <?php
+                                                if($district=='दोन्ही'){ ?>
+                                                <td class='text-center'>1</td>
+                                                <td class='text-center'><?= $district; ?></td>
+                                                <?php 
+                                                if(isset($_POST["filter"])){
+                                                $query1=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date)='$dat' and year(date)='$year' and type_of_offence='खून,'");
+                                                $count1=mysqli_num_rows($query1);
+                                                if($dat=='select month'){
+                                                echo "<div style='display:none></div>";
+                                                }else{
+                                                echo "<td class=text-center>". $count1."</td>";}
+                                                }
+
+                                                if(isset($_POST["filter"])){
+                                                $query2=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='बलात्कार,'");
+                                                $count2=mysqli_num_rows($query2);
+                                                if($dat=='select month'){
+                                                    echo "<div style='display:none> </div>";
+                                                }else{
+                                                echo "<td class=text-center>". $count2."</td>";}
+                                                }
+
+                                                    if(isset($_POST["filter"])){
+                                                    $query3=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='विनयभंग,'");
+                                                    $count3=mysqli_num_rows($query3);
+                                                    if($dat=='select month'){
+                                                        echo "<div style='display:none></div>";
+                                                    }else{
+                                                    echo "<td class=text-center>". $count3."</td>";}
+                                                    }
+
+                                                    if(isset($_POST["filter"])){
+                                                        $query4=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='मारहाण,'");
+                                                        $count4=mysqli_num_rows($query4);
+                                                        if($dat=='select month'){
+                                                        echo "<div style='display:none></div>";
+                                                        }else{
+                                                        echo "<td class=text-center>". $count4."</td>";}
+                                                        }
+
+                                                        if(isset($_POST["filter"])){
+                                                        $query5=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='शिवीगाळ,'");
+                                                        $count5=mysqli_num_rows($query5);
+                                                        if($dat=='select month'){
+                                                            echo "<div style='display:none></div>";
+                                                        }else{
+                                                        echo "<td class=text-center>". $count5."</td>";}
+                                                        }
+                                                            if(isset($_POST["filter"])){
+                                                            $query7=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='जाळपोळ,'");
+                                                            $count7=mysqli_num_rows($query7);   
+                                                            if($dat=='select month'){
+                                                                echo "<div style='display:none></div>";
+                                                            }else{             
+                                                            echo "<td class=text-center>". $count7."</td>";}
+                                                            }
+
+                                                            if(isset($_POST["filter"])){
+                                                                $query8=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and district='$district' and type_of_offence='इतर,'");
+                                                                $count8=mysqli_num_rows($query8); 
+                                                                if($dat=='select month'){
+                                                                echo "<div style='display:none></div>";
+                                                                }else{    
+                                                                echo "<td class=text-center>". $count8."</td>";}
+                                                                }
+                                                                
+                                                                if(isset($_POST["filter"])){ 
+                                                            $arr=array($count1,$count2,$count3,$count4,$count5,$count7,$count8);
+                                                                if($dat=='' && $to==''){
+                                                                echo "<div style='display:none></div>";
+                                                                }else{  
+                                                                echo "<td class=text-center>". array_sum($arr)."</td>";}
+                                                                } ?>
+
+                                                <?php } else{ ?>
+                                                <td class='text-center'>1</td>
+                                                <td class='text-center'><?= $district; ?></td>
+                                                <?php 
+                                                if(isset($_POST["filter"])){
+                                                $query1=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date)='$dat' and year(date)='$year' and type_of_offence='खून,'");
+                                                $count1=mysqli_num_rows($query1);
+                                                if($dat=='select month'){
+                                                echo "<div style='display:none></div>";
+                                                }else{
+                                                echo "<td class=text-center>". $count1."</td>";}
+                                                }
+
+                                                if(isset($_POST["filter"])){
+                                                $query2=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='बलात्कार,'");
+                                                $count2=mysqli_num_rows($query2);
+                                                if($dat=='select month'){
+                                                    echo "<div style='display:none> </div>";
+                                                }else{
+                                                echo "<td class=text-center>". $count2."</td>";}
+                                                }
+
+                                                    if(isset($_POST["filter"])){
+                                                    $query3=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='विनयभंग,'");
+                                                    $count3=mysqli_num_rows($query3);
+                                                    if($dat=='select month'){
+                                                        echo "<div style='display:none></div>";
+                                                    }else{
+                                                    echo "<td class=text-center>". $count3."</td>";}
+                                                    }
+
+                                                    if(isset($_POST["filter"])){
+                                                        $query4=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='मारहाण,'");
+                                                        $count4=mysqli_num_rows($query4);
+                                                        if($dat=='select month'){
+                                                        echo "<div style='display:none></div>";
+                                                        }else{
+                                                        echo "<td class=text-center>". $count4."</td>";}
+                                                        }
+
+                                                        if(isset($_POST["filter"])){
+                                                        $query5=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='शिवीगाळ,'");
+                                                        $count5=mysqli_num_rows($query5);
+                                                        if($dat=='select month'){
+                                                            echo "<div style='display:none></div>";
+                                                        }else{
+                                                        echo "<td class=text-center>". $count5."</td>";}
+                                                        }
+                                                            if(isset($_POST["filter"])){
+                                                            $query7=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='जाळपोळ,'");
+                                                            $count7=mysqli_num_rows($query7);   
+                                                            if($dat=='select month'){
+                                                                echo "<div style='display:none></div>";
+                                                            }else{             
+                                                            echo "<td class=text-center>". $count7."</td>";}
+                                                            }
+
+                                                            if(isset($_POST["filter"])){
+                                                                $query8=mysqli_query($conn,"select type_of_offence from complaint_form where monthname(date) ='$dat' and year(date)='$year' and type_of_offence='इतर,'");
+                                                                $count8=mysqli_num_rows($query8); 
+                                                                if($dat=='select month'){
+                                                                echo "<div style='display:none></div>";
+                                                                }else{    
+                                                                echo "<td class=text-center>". $count8."</td>";}
+                                                                }
+                                                                
+                                                                if(isset($_POST["filter"])){ 
+                                                            $arr=array($count1,$count2,$count3,$count4,$count5,$count7,$count8);
+                                                                if($dat=='' && $to==''){
+                                                                echo "<div style='display:none></div>";
+                                                                }else{  
+                                                                echo "<td class=text-center>". array_sum($arr)."</td>";}
+                                                                } } ?>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -217,7 +369,7 @@ if(isset($_POST["filter"])){ ?>
                             </div>
 
                         </div>
-                        <?php }?>
+                        <?php } }?>
                     </div>
                 </section>
                 <!-- Select2 End -->

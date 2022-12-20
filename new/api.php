@@ -15,8 +15,7 @@ require("include/config.php");
    $complaint_filer_name=$_POST['complaint_filer_name'];
    $checkbox1=$_POST['crime'];  
    $chk="";  
-   foreach($checkbox1 as $chk1)  
-	 { $chk .= $chk1.",";  }  
+   foreach($checkbox1 as $chk1) { $chk .= $chk1.",";  }  
    if($_POST['id1'] == ''){
 	  $query=mysqli_query($conn,"select * from complaint_form where complaint_no='$complaint_no'");
 	 if(mysqli_num_rows($query)>0){
