@@ -184,7 +184,19 @@ require("include/config.php");
                                                                     <label class="form-label"
                                                                         for="exampleFormControlTextarea1">Final Modal
                                                                         Submit
-                                                                        Alert</label>
+                                                                        Alert 1</label>
+                                                                    <textarea class="form-control"
+                                                                        id="exampleFormControlTextarea1" rows="3" name="alert" id="alert"
+                                                                        value="<?php echo $row['alert_1']; ?>"
+                                                                        placeholder="Alert"><?php echo $row['alert_1']; ?></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="mb-1">
+                                                                    <label class="form-label"
+                                                                        for="exampleFormControlTextarea1">Final Modal
+                                                                        Submit
+                                                                        Alert 2</label>
                                                                     <textarea class="form-control"
                                                                         id="exampleFormControlTextarea1" rows="3" name="alert" id="alert"
                                                                         value="<?php echo $row['alert']; ?>"

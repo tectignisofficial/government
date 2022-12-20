@@ -100,12 +100,12 @@
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
                             <h2 class="content-header-title float-start mb-0">
-                                बँक माहिती
+                            पूर्ण नोंदणी
                             </h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.php">मुख्यपृठ</a>
-                                    <li class="breadcrumb-item active">बँक माहिती</li>
+                                    <li class="breadcrumb-item active">पूर्ण नोंदणी</li>
                                 </ol>
                             </div>
                         </div>
@@ -117,76 +117,52 @@
                     <div class="col-12 ">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">पिडीत व्यक्तीचा बँक खात्याचा तपशिल</h4>
-                                <!-- <div class="col-md-6 col-12 mb-1">
-                                    <div class="input-group" style="width: 50%; float: right;">
-                                        <button class="btn btn-outline-primary" type="button">
-                                            <i data-feather="search"></i>
-                                        </button>
-                                        <input type="text" class="form-control" placeholder=""
-                                            aria-label="Amount" />
-                                    </div>
-                                </div> -->
+                                <h4 class="card-title">पूर्ण नोंदणी यादी</h4>
                             </div>
 
                             <div class="card-body">
-
-                                <table id="example1"
-                                    class="table table-bordered table-striped table-responsive table-hover">
+                                <table id="example1" 
+                                class="table table-bordered table-striped table-responsive table-hover" style="display: inline-table;">
                                     <thead>
                                         <tr>
-                                            <th rowspan="2">अ. क्र.</th>
-                                            <th rowspan="2">नोंद वही क्र.</th>
-                                            <th rowspan="2">दिनांक</th>
-                                            <th rowspan="2">जिल्हा</th>
-                                            <th rowspan="2">पोलीस ठाणे</th>
-                                            <th rowspan="2">गुन्हा न.</th>
-                                            <th rowspan="2">पिडीत व्यक्तीचे नाव</th>
-                                            <th colspan="5" style="text-align: center;">बँक माहिती</th>
-                                            <th rowspan="2">कृती</th>
-                                        </tr>
-                                        <tr>
-                                            <th>नाव</th>
-                                            <th>खाते क्रमांक</th>
-                                            <th>बँकेचे नाव</th>
-                                            <th>शाखेचे नाव</th>
-                                            <th>IFSC कोड</th>
+                                            <th style="width:9%;">अनुक्रमांक</th>
+                                            <th>नोंद वही क्र.</th>
+                                            <th>गुन्हा नं.</th>
+                                            <th>दिनांक</th>
+                                            <th>वर्ष</th>
+                                            <th>जिल्हा</th>
+                                            <th>पोलीस ठाणे</th>
+                                            <th>फिर्यादीचे नाव</th>
+                                            <th>कृती</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>1</td>
+                                            <td>xyz</td>
+                                            <td>xyz</td>
+                                            <td>xyz</td>
+                                            <td>xyz</td>
+                                            <td>xyz</td>
+                                            <td>xyz</td>
+                                            <td>xyz</td>
                                             <td>
                                                 <button type="button"
                                                     class="btn btn-icon rounded-circle btn-flat-primary btnmod1"
                                                     data-bs-toggle="modal" data-bs-target="#editUser"><i
                                                         data-feather="edit"></i></button>
 
-                                                <a href="" title="Delete" alt="Delete"
+                                                        <a href="" title="Delete" alt="Delete"
                                                     class="btn btn-icon rounded-circle btn-flat-danger btnmod1"><i
                                                         data-feather="trash"></i> </a>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

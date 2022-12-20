@@ -57,13 +57,12 @@
             </li>
             <li><a class="d-flex align-items-center" href="form1"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select">नोंदणी करा</span></a>
-                <!-- <ul class="menu-content">
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Add">अपूर्ण नोंदणी</span></a>
-                        </li>
-                    </ul> -->
-            <li><a class="d-flex align-items-center" href="#"><i data-feather="copy"></i><span
-                        class="menu-item text-truncate" data-i18n="Add">अपूर्ण नोंदणी</span></a>
             </li>
+            <li><a class="d-flex align-items-center" href="complete"><i data-feather="copy"></i><span
+                        class="menu-item text-truncate" data-i18n="select">पूर्ण नोंदणी</span></a>
+            </li>
+            <li><a class="d-flex align-items-center" href="incomplete"><i data-feather="copy"></i><span
+                        class="menu-item text-truncate" data-i18n="select">अपूर्ण नोंदणी</span></a>
             </li>
             <li><a class="d-flex align-items-center" href="intimation"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select">अहवाल</span></a>
