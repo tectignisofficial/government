@@ -186,7 +186,7 @@ require("include/config.php");
                                                                         Submit
                                                                         Alert 1</label>
                                                                     <textarea class="form-control"
-                                                                        id="exampleFormControlTextarea1" rows="3" name="alert" id="alert"
+                                                                        id="exampleFormControlTextarea1" rows="3" name="alert_1" id="alert_1"
                                                                         value="<?php echo $row['alert_1']; ?>"
                                                                         placeholder="Alert"><?php echo $row['alert_1']; ?></textarea>
                                                                 </div>
@@ -198,9 +198,9 @@ require("include/config.php");
                                                                         Submit
                                                                         Alert 2</label>
                                                                     <textarea class="form-control"
-                                                                        id="exampleFormControlTextarea1" rows="3" name="alert" id="alert"
-                                                                        value="<?php echo $row['alert']; ?>"
-                                                                        placeholder="Alert"><?php echo $row['alert']; ?></textarea>
+                                                                        id="exampleFormControlTextarea1" rows="3" name="alert_2" id="alert_2"
+                                                                        value="<?php echo $row['alert_2']; ?>"
+                                                                        placeholder="Alert"><?php echo $row['alert_2']; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-12">

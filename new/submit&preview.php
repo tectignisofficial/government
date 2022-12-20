@@ -467,9 +467,11 @@ $row=mysqli_fetch_array($sql);
                     })
                     .then((willDelete) => {
                         if (willDelete) {
-                            swal("<?=  $row['alert']; ?>", {
+                            swal("<?=  $row['alert_1']; ?>", {
                                 icon: "success",
                             });
+                        }else{
+                            window.location.href='form5?form5=<?= $finalform; ?>';
                         }
                     });
             })

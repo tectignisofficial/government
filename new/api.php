@@ -132,9 +132,10 @@ if(isset($_POST['form5submit'])){
 
  //Alert Update Start
  if(isset($_POST['update'])){
-  $alert=$_POST['alert'];
+  $alert_1=$_POST['alert_1'];
+  $alert_2=$_POST['alert_2'];
 
-  $sql=mysqli_query($conn,"UPDATE `final_alert` SET `alert`='$alert'");
+  $sql=mysqli_query($conn,"UPDATE `final_alert` SET `alert_1`='$alert_1', `alert_2`='$alert_2'");
   if($sql){
     echo "<script>alert('Successfully Submitted');window.location.href='update.php'</script>";
 }
