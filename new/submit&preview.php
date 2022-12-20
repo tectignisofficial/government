@@ -460,7 +460,7 @@ $row=mysqli_fetch_array($sql);
                 let del_id = $(this).data('id');
                 swal({
                         title: "<?=  $row['alert_2']; ?>",
-                        text: "Once submitted, you will not be able to change this information!",
+                        text: "",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
