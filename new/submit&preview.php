@@ -470,6 +470,7 @@ $row=mysqli_fetch_array($sql);
                             swal("<?=  $row['alert_1']; ?>", {
                                 icon: "success",
                             });
+                            window.location.href='R1';
                         }else{
                             window.location.href='form5?form5=<?= $finalform; ?>';
                         }
