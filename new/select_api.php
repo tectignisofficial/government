@@ -170,4 +170,23 @@ $form5sql=mysqli_fetch_array($form5query);
    $sql=mysqli_query($conn,"delete from webuser where id='$webuserdelid'");
    }
  //viewwebuser end
+
+ //editwebuser start
+ if(isset($_POST['editwebsave']))
+{	 
+  $eid=$_POST['valId'];
+	 $name = $_POST['name'];
+	 $email = $_POST['email'];
+	 $role = $_POST['role'];
+   $district=$_POST['district'];
+   if(isset($eid)){
+     $eid=intval($_POST['valId']);
+    $sql="update webuser set name='$name',email='$email',role='$role',district='$district' where id='$eid'";
+    $query=mysqli_query($conn, $sql);
+    if($query){  header("location:viewwebuser.php"); }
+    else{ echo mysqli_error($conn); }
+   }	 
+	 mysqli_close($conn);
+}
+ //edit webuser end
 ?>

@@ -173,9 +173,9 @@ if(isset($_POST['val'])){
   $sql=mysqli_query($conn,"select * from webuser");
   $arr=mysqli_fetch_array($sql);
   echo '<div class="text-center mb-2">
-  <h1 class="mb-1">Edit वापरकर्त्यांची यादी</h1>
+  <h1 class="mb-1">सुधारणे वापरकर्त्यांची यादी</h1>
 </div>
-<form id="editUserForm" method="post" class="row gy-1 pt-75">
+<form id="editUserForm" action="viewwebuser.php" method="post" class="row gy-1 pt-75">
 <div class="row">
 <!-- Basic -->
 <div class="col-md-12 mb-1">
@@ -183,12 +183,13 @@ if(isset($_POST['val'])){
         <label class="col-md-3 form-label" for="select2-basic">वापरकर्त्याची
             भूमिका</label>
         <div class="col-md-9 inpt">
+        <input type="hidden" name="valId" value="'.$val.'">
             <select class="select2 form-select" id="large-select"
                 name="role">
-                <option selected>निवडा</option>
-                <option>प्रशासक</option>
-                <option>व्यवस्थापक</option>
-                <option>विक्री व्यवस्थापक</option>
+                <option ></option>
+                <option '; if($arr['role']=='प्रशासक'){ echo 'selected'; } echo '>प्रशासक</option>
+                <option '; if($arr['role']=='व्यवस्थापक'){ echo 'selected'; } echo '>व्यवस्थापक</option>
+                <option '; if($arr['role']=='विक्री व्यवस्थापक'){ echo 'selected'; } echo '>विक्री व्यवस्थापक</option>
             </select>
         </div>
     </div>
@@ -198,9 +199,9 @@ if(isset($_POST['val'])){
         <div class="col-md-9 inpt">
             <select class="select2 form-select" id="select2-basic"
                 name="district">
-                <option selected>निवडा</option>
-                <option>रायगड</option>
-                <option>नवी मुंबई</option>
+                <option >निवडा</option>
+                <option '; if($arr['district']=='रायगड'){ echo 'selected'; } echo '>रायगड</option>
+                <option '; if($arr['district']=='नवी मुंबई'){ echo 'selected'; } echo '>नवी मुंबई</option>
             </select>
         </div>
     </div>
@@ -208,22 +209,21 @@ if(isset($_POST['val'])){
         <label class="col-md-3 form-label" for="select2-basic">नाव</label>
         <div class="col-md-9 inpt">
             <input type="text" class="form-control" id="basicInput"
-                name="name" />
+                name="name" value='.$arr['name'].'>
         </div>
     </div>
     <div class="row mb-1">
         <label class="col-md-3 form-label" for="select2-basic">ई-मेल</label>
         <div class="col-md-9 inpt">
             <input type="email" class="form-control" id="basicInput"
-                name="email" />
+                name="email" value='.$arr['email'].' />
         </div>
     </div>
-    <div class="row mb-1">
+    <!--<div class="row mb-1">
         <label class="col-md-3 form-label"
             for="select2-basic">पासवर्ड</label>
         <div class="col-md-9 inpt">
-        <div
-        class="input-group input-group-merge form-password-toggle">
+        <div class="input-group input-group-merge form-password-toggle">
         <input class="form-control form-control-merge" id="password"
             type="password" name="password" placeholder="············"
             aria-describedby="login-password" tabindex="2" /><span
@@ -231,11 +231,11 @@ if(isset($_POST['val'])){
                 data-feather="eye"></i></span>
     </div>
         </div>
-    </div>
+    </div>-->
 </div>
 
 <div class="col-md-12 modal-footer" style="margin-top: 0px;">
-    <button type="submit" name="websave" class="btn btn-primary">जतन
+    <button type="submit" name="editwebsave" class="btn btn-primary">जतन
         करा</button>
 </div>
 </div>

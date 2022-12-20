@@ -104,7 +104,7 @@ require("select_api.php");
                                                 <th>ई-मेल</th>
                                                 <th>वापरकर्त्याची भूमिका</th>
                                                 <th>जिल्हा</th>
-                                                <th style="width:14%;">कार्यवाही</th>
+                                                <th style="width:14%;">कृती</th>
                                             </tr>
                                         </thead>
                                         <tbody>
