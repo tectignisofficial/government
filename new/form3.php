@@ -102,17 +102,18 @@ require("select_api.php");
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पिडीत व्यक्तीचे
                                                     नाव</label>
-                                                <input type="hidden" required class="" name="id"
+                                                <input type="hidden"  class="" name="id"
                                                     value="<?php echo $form3;?>">
-                                                <input type="text" required class="form-control"
+                                                <input type="text"  class="form-control"
                                                     value="<?php echo $victim_name;?>" name="victim_name"
-                                                    id="basicInput" />
+                                                    id="victimname" />
+                                                    <span class="spanVictimName"></span>
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पिडीत व्यक्तीचा
                                                     पत्ता</label>
-                                                <input type="text" required class="form-control"
+                                                <input type="text"  class="form-control"
                                                     value="<?php echo $victim_address;?>" name="victim_address"
                                                     id="basicInput" />
                                             </div>
@@ -120,9 +121,10 @@ require("select_api.php");
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">पिडीत व्यक्तीचे प्रवर्ग
                                                     आणि जात</label>
-                                                <input type="text" required class="form-control"
+                                                <input type="text"  class="form-control"
                                                     name="category_and_caste" value="<?php echo  $category_and_caste;?>"
-                                                    id="basicInput" />
+                                                    id="victimcaste" />
+                                                    <span class="spanVictimcaste"></span>
                                             </div>
 
                                             <div class="row mb-1 rowg" style="width:78%;">
@@ -130,14 +132,14 @@ require("select_api.php");
                                                     <label class="form-label" for="select2-basic">जातीचा दाखला</label>
                                                     <div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
-                                                            <input class="form-check-input" required type="radio"
+                                                            <input class="form-check-input"  type="radio"
                                                                 name="caste_certificate" id="inlineRadio1" value="होय"
                                                                 <?php if($caste_certificate=='होय'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
                                                                 for="inlineRadio1">होय</label>
                                                         </div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
-                                                            <input class="form-check-input" required type="radio"
+                                                            <input class="form-check-input"  type="radio"
                                                                 name="caste_certificate" id="inlineRadio2" value="नाही"
                                                                 <?php if($caste_certificate=='नाही'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
@@ -149,14 +151,14 @@ require("select_api.php");
                                                     <label class="form-label" for="select2-basic">आधार कार्ड</label>
                                                     <div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
-                                                            <input class="form-check-input" required type="radio"
+                                                            <input class="form-check-input"  type="radio"
                                                                 name="aadhaar_card" id="inlineRadio1" value="होय"
                                                                 <?php if($aadhaar_card=='होय'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
                                                                 for="inlineRadio1">होय</label>
                                                         </div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
-                                                            <input class="form-check-input" required type="radio"
+                                                            <input class="form-check-input"  type="radio"
                                                                 name="aadhaar_card" id="inlineRadio2" value="नाही"
                                                                 <?php if($aadhaar_card=='नाही'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
@@ -168,14 +170,14 @@ require("select_api.php");
                                                     <label class="form-label" for="select2-basic">चार्ज शीट</label>
                                                     <div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
-                                                            <input class="form-check-input" required type="radio"
+                                                            <input class="form-check-input"  type="radio"
                                                                 name="charge_sheet" id="inlineRadio1" value="होय"
                                                                 <?php if($charge_sheet=='होय'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
                                                                 for="inlineRadio1">होय</label>
                                                         </div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
-                                                            <input class="form-check-input" required type="radio"
+                                                            <input class="form-check-input"  type="radio"
                                                                 name="charge_sheet" id="inlineRadio2" value="नाही"
                                                                 <?php if($charge_sheet=='नाही'){ echo 'checked'; } ?> />
                                                             <label class="form-check-label"
@@ -190,7 +192,7 @@ require("select_api.php");
                                                 <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                                                 <span class="align-middle d-sm-inline-block d-none">मागे</span>
                                             </a>
-                                            <button type="submit" class="btn btn-primary btn-next" name="sub_mit">
+                                            <button type="submit" class="btn btn-primary btn-next" name="sub_mit" id="form3submit">
                                                 <span class="align-middle d-sm-inline-block d-none">नमूद करा</span>
                                                 <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
                                                 </button>
@@ -265,7 +267,7 @@ require("select_api.php");
     <script src="app-assets/js/scripts/forms/form-select2.js"></script>
     <script src="app-assets/js/scripts/forms/pickers/form-pickers.js"></script>
     <!-- END: Page JS-->
-
+<script src="valid.js"></script>
     <script>
         $(window).on('load', function () {
             if (feather) {

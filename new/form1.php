@@ -76,9 +76,7 @@ require("select_api.php");
             else {
                 var citiesOptions = "";
                 for (cityId in citiesByState[value]) {
-                    citiesOptions += "<option value=" + citiesByState[value][cityId] + ">" + citiesByState[value][
-                            cityId
-                        ] +
+                    citiesOptions += "<option value=" + citiesByState[value][cityId] + ">" + citiesByState[value][cityId] +
                         "</option>";
                 }
                 document.getElementById("citySelect").innerHTML = citiesOptions;
@@ -154,7 +152,7 @@ require("select_api.php");
                                                 <label class="form-label" for="select2-basic">नोंद वही क्र.</label>
                                                 <input type="hidden" name="id1"
                                                     value='<?php if(isset($_GET['id'])){ echo $_GET['id']; } ?>'>
-                                                <input type="text" class="form-control bookno"
+                                                <input type="number" class="form-control bookno"
                                                     value="<?php echo $book_no?>" name="book_no" id="basicInput"
                                                     required />
                                             </div>
@@ -167,8 +165,10 @@ require("select_api.php");
                                                     </div>
                                                     <input type="text" required class="form-control complaintno"
                                                         value="<?php echo  $complaint_no ?>" name="complaint_no"
-                                                        id="inlineFormInputGroup" placeholder="">
+                                                        id="complaint_no" placeholder="">
+                                                        <span class="complaint_no mt-1"></span>
                                                 </div>
+                                                
                                             </div>
 
                                             <!-- <div class="col-md-6 mb-1">
@@ -236,6 +236,7 @@ require("select_api.php");
                                                 <label class="form-label" for="select2-basic">लावलेली कलमे</label>
                                                 <input type="text" required class="form-control section"
                                                     value="<?php echo  $section?>" name="section" id="basicInput" />
+                                                    
                                             </div>
 
                                             <div class="col-md-12 mb-1">
@@ -243,7 +244,7 @@ require("select_api.php");
                                                 <div class="row" style="margin-left:10px !important">
                                                     <div class="col-1 form-check form-check-inline">
                                                         <input class="form-check-input crime" type="checkbox"
-                                                            name="crime[]" value="खुन"
+                                                            name="crime" value="खुन"
                                                             <?php if(isset($_GET['id'])){if(in_array("खून,",$type_of_offence)) { ?>
                                                             checked="checked" <?php } }?> id="inlineCheckbox1" />
                                                         <label class="form-check-label"
@@ -251,7 +252,7 @@ require("select_api.php");
                                                     </div>
                                                     <div class="col-1 form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" name="crime[]" value="बलात्कार"
+                                                            id="inlineCheckbox1" name="crime" value="बलात्कार"
                                                             <?php if(isset($_GET['id'])){if(in_array("बलात्कार,",$type_of_offence)) { ?>
                                                             checked="checked" <?php } }?> />
                                                         <label class="form-check-label"
@@ -259,7 +260,7 @@ require("select_api.php");
                                                     </div>
                                                     <div class="col-1 form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" name="crime[]" value="विनयभंग"
+                                                            id="inlineCheckbox1" name="crime" value="विनयभंग"
                                                             <?php if(isset($_GET['id'])){if(in_array("विनयभंग,",$type_of_offence)) { ?>
                                                             checked="checked" <?php } }?> />
                                                         <label class="form-check-label"
@@ -267,7 +268,7 @@ require("select_api.php");
                                                     </div>
                                                     <div class="col-1 form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" name="crime[]" value="मारहाण"
+                                                            id="inlineCheckbox1" name="crime" value="मारहाण"
                                                             <?php if(isset($_GET['id'])){if(in_array("मारहाण,",$type_of_offence)) { ?>
                                                             checked="checked" <?php } }?> />
                                                         <label class="form-check-label"
@@ -275,7 +276,7 @@ require("select_api.php");
                                                     </div>
                                                     <div class="col-1 form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" name="crime[]" value="शिवीगाळ"
+                                                            id="inlineCheckbox1" name="crime" value="शिवीगाळ"
                                                             <?php if(isset($_GET['id'])){if(in_array("शिवीगाळ,",$type_of_offence)) { ?>
                                                             checked="checked" <?php } }?> />
                                                         <label class="form-check-label"
@@ -283,7 +284,7 @@ require("select_api.php");
                                                     </div>
                                                     <div class="col-1 form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" name="crime[]" value="जाळपोळ"
+                                                            id="inlineCheckbox1" name="crime" value="जाळपोळ"
                                                             <?php if(isset($_GET['id'])){if(in_array("जाळपोळ,",$type_of_offence)) { ?>
                                                             checked="checked" <?php } }?> />
                                                         <label class="form-check-label"
@@ -291,7 +292,7 @@ require("select_api.php");
                                                     </div>
                                                     <div class="col-1 form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox"
-                                                            id="inlineCheckbox1" name="crime[]" value="इतर"
+                                                            id="inlineCheckbox1" name="crime" value="इतर"
                                                             <?php if(isset($_GET['id'])){if(in_array("इतर,",$type_of_offence)) { ?>
                                                             checked="checked" <?php } }?> />
                                                         <label class="form-check-label"
@@ -305,10 +306,11 @@ require("select_api.php");
                                                 <input type="text" required class="form-control complaintfilername"
                                                     value="<?php echo  $complaint_filer_name ?>"
                                                     name="complaint_filer_name" id="basicInput" />
+                                                    <span class="spancomplaintfilername"></span>
                                             </div>
 
                                             <div class="col-md-12 modal-footer">
-                                                <button type="button" name="s_ubmit" class="btn btn-primary modal1"
+                                                <button type="button" id='formsub' name="s_ubmit" class="btn btn-primary modal1"
                                                     data-bs-toggle="modal">नमूद
                                                     करा</button>
 
@@ -360,13 +362,6 @@ require("select_api.php");
                                                                     </div>
                                                                 </div>
 
-                                                                <!-- <div class="col-md-6 mb-1">
-                                                <label class="form-label" for="select2-basic">वर्ष</label>
-                                                <input type="number" required class="form-control "
-                                                    value="<?php echo  $year ?>" name="year" placeholder=""
-                                                    type="number" min="1900" max="2099" step="1" id="basicInput" />
-                                            </div> -->
-
                                                                 <div class="col-md-6 mb-1">
                                                                     <label class="form-label"
                                                                         for="select2-basic">दिनांक</label>
@@ -384,20 +379,6 @@ require("select_api.php");
                                                                         value="" name="year" id="basicInput"
                                                                         readonly />
                                                                 </div>
-
-                                                                <!-- <div class="col-md-6 mb-1">
-                                                                    <label class="form-label"
-                                                                        for="select2-array">वर्ष</label>
-                                                                    <div class="mb-1">
-                                                                        <select
-                                                                            class="select2 form-select yearselect year"
-                                                                            id="select2-basic" name="year" required>
-                                                                            <option value="">
-                                                                                <?php echo  $year ?>
-                                                                            </option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div> -->
 
                                                                 <div class="col-md-6 mb-1">
                                                                     <label class="form-label"
@@ -478,11 +459,10 @@ require("select_api.php");
     <?php include("include/footer.php");?>
     <!-- END: Footer-->
 
-
     <!-- BEGIN: Vendor JS-->
     <script src="app-assets/vendors/js/vendors.min.js"></script>
     <!-- BEGIN Vendor JS-->
-
+<script src="valid.js"></script>
     <!-- BEGIN: Page Vendor JS-->
     <script src="app-assets/vendors/js/forms/select/select2.full.min.js"></script>
     <!-- END: Page Vendor JS-->
@@ -535,7 +515,15 @@ require("select_api.php");
                     $('.district1').val(district);
                     $('.policestation1').val(policestation);
                     $('.section1').val(section);
-                    $('.crime1').val(crime);
+
+            let test = new Array();
+            $("input[name='crime']:checked").each(function() {
+                test.push($(this).val());
+            });
+ 
+            // alert("My favourite programming languages are: " + test);
+        
+                    $('.crime1').val(test);
                     $('.complaintfilername1').val(complaintfilername);
                 }
             })

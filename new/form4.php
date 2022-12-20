@@ -120,7 +120,7 @@ require("select_api.php");
                                                     <label for="myfile"
                                                         style="margin-bottom: 25px; font-weight: 600;">फाईल
                                                         निवडा:</label>
-                                                        <input type="hidden" required class="" name="form4" value="<?php echo $form4;?>">
+                                                        <input type="hidden"  class="" name="form4" value="<?php echo $form4;?>">
                                                     <input type="file" style="margin-left: 15px;" name="files" multiple  value="<?php echo $image; ?>" />
                                                 </div>
                                             </div>
@@ -151,7 +151,7 @@ require("select_api.php");
 
                                             <div class="col-md-12 mb-1" style="font-weight: 600;">
                                                 <label class="form-label" for="select2-basic">शेरा</label>
-                                                <input type="text" required value="<?php echo $discription; ?>" class="form-control" name="discription" id="basicInput" />
+                                                <input type="text"  value="<?php echo $discription; ?>" class="form-control" name="discription" id="basicInput" />
                                             </div>
 
                                             <div class="d-flex justify-content-between">
@@ -220,6 +220,7 @@ require("select_api.php");
             }
         })
     </script>
+    <script src="valid.js"></script>
 </body>
 <!-- END: Body-->
 

@@ -6,21 +6,18 @@ require("include/config.php");
   if(isset($_POST['s_ubmit']))  
   {  
    $book_no=$_POST['book_no']; 
-   $date=$_POST['date']; 
+   $date=$_POST['date'] ?? null; 
    $year=$_POST['year']; 
    $complaint_no=$_POST['complaint_no'];
    $district=$_POST['district']; 
    $police_station=$_POST['police_station']; 
    $section=$_POST['section']; 
    $complaint_filer_name=$_POST['complaint_filer_name'];
-   $checkbox1=$_POST['crime'];  
-   $chk="";  
-   foreach($checkbox1 as $chk1)  
-	 { $chk .= $chk1.",";  }  
+   $chk=$_POST['crime'] ?? null;  
    if($_POST['id1'] == ''){
-	  $query=mysqli_query($conn,"select * from complaint_form where complaint_no='$complaint_no'");
+	  $query=mysqli_query($conn,"select * from complaint_form where complaint_no='$complaint_no' and district='$district' and police_station='$police_station'");
 	 if(mysqli_num_rows($query)>0){
-	     echo "<script>alert('Complaint number already exist');window.location.href='form1.php'</script>";
+	     echo "<script>alert('Complaint number already exist IN this district and police station');window.location.href='form1.php'</script>";
 	 }else{
            $in_ch=mysqli_query($conn,"insert into complaint_form(complaint_filer_name,section,police_station,district,book_no,date,complaint_no,type_of_offence,year)
         	values ('$complaint_filer_name','$section','$police_station','$district','$book_no','$date','$complaint_no','$chk','$year')");  
