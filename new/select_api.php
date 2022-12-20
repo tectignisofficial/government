@@ -143,6 +143,25 @@ if(isset($_POST['year'])){
       }
 //form4 end
 
+  // form5 start
+  $bank_name='';
+        $account_no='';
+        $account_holder_name='';
+        $branch_name='';
+        $ifsc_code='';
+        if(isset($_GET['form4'])){
+        $form4=intval($_GET['form4']);
+        $sql=mysqli_query($conn,"select * from bank_detail where caseid='$form5'");
+        while($arr=mysqli_fetch_array($sql)){
+        $bank_name=$arr['bank_name'];
+        $account_no=$arr['account_no'];
+        $account_holder_name=$arr['account_holder_name'];
+        $branch_name=$arr['branch_name'];
+        $ifsc_code=$arr['ifsc_code'];
+        }
+      }
+//form5 end
+
 //submit&preview start
 if(isset($finalform)){
 $form1query=mysqli_query($conn,"select * from complaint_form where id='$finalform'");

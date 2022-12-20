@@ -1,3 +1,9 @@
+<?php
+session_start();
+require("include/config.php");
+$form2=$_GET['form2'];
+require("select_api.php");
+?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -22,7 +28,6 @@
     <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- END: Page CSS-->
-
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css" />
@@ -71,8 +76,6 @@
             font-size: 1rem;
             border-radius: 0.358rem;
             transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background 0s, border 0s;
-
-
         }
     </style>
 
@@ -137,15 +140,36 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                         $bank_detail = mysqli_query($conn,"select *,complaint_form.id as cid from complaint_form inner join bank_detail  on complaint_form.id=bank_detail.caseid inner join image on complaint_form.id=image.caseid inner join victim on victim.caseid=complaint_form.id inner join criminal on complaint_form.id=criminal.caseid");
+					 
+                                         if(mysqli_num_rows($bank_detail)>0){
+                                           $i=1;
+                                             while($row = mysqli_fetch_array($bank_detail)) {
+                                                $criminal_name=$row['criminal_name'];
+                                                $charge_sheet=$row['charge_sheet'];
+                                                $aadhar_card=$row['aadhar_card'];
+                                                $caste_certificate=$row['caste_certificate'];
+                                                $caste=$row['caste'];
+                                                $name=$row['name'];
+                                                $address=$row['address'];
+                                                $status=$row['status'];
+                                                $bank_name=$row['bank_name'];
+                                                $account_no=$row['account_no'];
+                                                $account_holder_name=$row['account_holder_name'];
+                                                $branch_name=$row['branch_name'];
+                                                $ifsc_code=$row['ifsc_code'];
+
+                                                if($criminal_name!='' || $charge_sheet!='' || $aadhar_card!='' || $caste_certificate!='' || $caste!='' || $name!='' || $address!='' || $status!='' || $bank_name!='' || $account_no!='' || $account_holder_name!='' || $branch_name!='' || $ifsc_code=''){     ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>xyz</td>
-                                            <td>xyz</td>
-                                            <td>xyz</td>
-                                            <td>xyz</td>
-                                            <td>xyz</td>
-                                            <td>xyz</td>
-                                            <td>xyz</td>
+                                            <td><?= $i; ?></td>
+                                            <td><?= $row['cid'] ?></td>
+                                            <td><?= $row['complaint_no'] ?></td>
+                                            <td><?= $row['date'] ?></td>
+                                            <td><?= $row['year'] ?></td>
+                                            <td><?= $row['district'] ?></td>
+                                            <td><?= $row['police_station'] ?></td>
+                                            <td><?= $row['complaint_filer_name'] ?></td>
                                             <td>
                                                 <button type="button"
                                                     class="btn btn-icon rounded-circle btn-flat-primary btnmod1"
@@ -157,6 +181,10 @@
                                                         data-feather="trash"></i> </a>
                                             </td>
                                         </tr>
+                                        <?php
+											$i++;
+                                                               } } }
+											?>
                                     </tbody>
                                 </table>
                             </div>

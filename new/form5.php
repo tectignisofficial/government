@@ -108,7 +108,7 @@ require("select_api.php");
                                                 <label class="form-label" for="select2-basic">Account Holder
                                                     Name</label>
                                                     <input type="hidden" name="form5" value='<?= $form5 ?>'>
-                                                <input type="text" name="account_name" class="form-control" id="basicInput" />
+                                                <input type="text" name="account_name" class="form-control" id="basicInput" value='<?= $account_holder_name; ?>'/>
                                             </div>
 
                                             <div class="col-md-6 mb-1">
