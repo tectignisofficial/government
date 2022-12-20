@@ -113,22 +113,22 @@ require("select_api.php");
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">खाते क्रमांक</label>
-                                                <input type="number" name="account_no" class="form-control" id="basicInput" />
+                                                <input type="number" name="account_no" class="form-control" id="basicInput" value='<?= $account_no; ?>'/>
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">बँकेचे नाव</label>
-                                                <input type="text" name="bank_name" class="form-control" id="basicInput" />
+                                                <input type="text" name="bank_name" class="form-control" id="basicInput" value='<?= $bank_name; ?>'/>
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">शाखेचे नाव</label>
-                                                <input type="text" name="branch_name" class="form-control" id="basicInput" />
+                                                <input type="text" name="branch_name" class="form-control" id="basicInput" value='<?= $branch_name; ?>'/>
                                             </div>
 
                                             <div class="col-md-6 mb-1">
                                                 <label class="form-label" for="select2-basic">IFSC कोड</label>
-                                                <input type="text" name="ifsc_code" class="form-control" id="basicInput" />
+                                                <input type="text" name="ifsc_code" class="form-control" id="basicInput" value='<?= $ifsc_code; ?>'/>
                                             </div>
 
                                             <div class="col-md-12 modal-footer justify-content-between">                                            

@@ -109,7 +109,6 @@ if(isset($_POST['sub_mit']))
     }
  }
 //form4 end
-
 //form5 start
 if(isset($_POST['form5submit'])){
   $form5=$_POST['form5'];
@@ -119,7 +118,13 @@ if(isset($_POST['form5submit'])){
   $branch_name=$_POST['branch_name'];
   $ifsc_code=$_POST['ifsc_code'];
   
+  $sql=mysqli_query($conn,"select * from bank_detail where caseid='$form5'");
+    if(mysqli_num_rows($sql)>0){
+      $sql=mysqli_query($conn,"UPDATE `bank_detail` SET `bank_name`='$bank_name',`account_no`='$account_no',`account_holder_name`='$account_name',`branch_name`='$branch_name',`ifsc_code`='$ifsc_code' WHERE caseid='$form5'");
+    }
+    else{
   $sql=mysqli_query($conn,"insert into bank_detail(caseid,account_holder_name,account_no,bank_name,branch_name,ifsc_code) values('$form5','$account_name','$account_no','$bank_name','$branch_name','$ifsc_code')");
+    }
   
   if($sql){
     echo '<script>alert("Successfully Submitted");window.location.href="submit&preview?formId='.$form5.'"</script>';
