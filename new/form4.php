@@ -220,6 +220,7 @@ require("select_api.php");
             }
         })
     </script>
+    <script src="valid.js"></script>
 </body>
 <!-- END: Body-->
 

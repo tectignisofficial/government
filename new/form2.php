@@ -115,16 +115,12 @@ require("select_api.php");
                                                 <label class="form-label" for="select2-basic">आरोपीचे नाव</label>
                                                 <input type="hidden"  class="" name="form_2_id" value="<?php echo $form2;?>"
                                                     id="exampleदिनांक" placeholder="">
-                                                <input type="text"   class="form-control" value="<?= $criminal_name; ?>" name="criminal_name" id="basicInput" />
+                                                <input type="text"   class="form-control criminal_name" value="<?= $criminal_name; ?>" name="criminal_name" id="basicInput" />
+                                                <span class="spancriminal_name"></span>
                                             </div>
 
                                             <div class="d-flex" style="justify-content: end;">
-                                                <!-- <a href="form1.php?id=<?php echo $id;?>" class="btn btn-outline-secondary btn-prev">
-                                                    <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-                                                    <span class="align-middle d-sm-inline-block d-none">मागे</span>
-                                                </a> -->
-                                                
-                                                <button type="sumbit" name="form2su_bmit" class="btn btn-primary btn-next bbbt">नमूद करा <i data-feather="arrow-right"
+                                                <button type="sumbit" name="form2su_bmit" class="btn btn-primary btn-next bbbt" id="form2submit">नमूद करा <i data-feather="arrow-right"
                                                         class="align-middle ms-sm-25 ms-0"></i>
                                             </button>
                                             
@@ -210,7 +206,7 @@ require("select_api.php");
     <script src="app-assets/js/core/app.js"></script>
     <!-- END: Theme JS-->
     <script src="app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
-
+    <script src="valid.js"></script>
     <!-- BEGIN: Page JS-->
     <script src="app-assets/js/scripts/forms/form-select2.js"></script>
     <script src="app-assets/js/scripts/forms/pickers/form-pickers.js"></script>
