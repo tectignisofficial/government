@@ -1,3 +1,7 @@
+<?php 
+require("include/config.php");
+
+?>
 <!DOCTYPE html>
 <!--
 Template Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
@@ -109,14 +113,20 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <th style="width:9%;">अनुक्रमांक</th>
                                                 <th>नाव</th>
                                                 <th>पदाचे नाव</th>
+                                                <th>प्रतिमा</th>
                                                 <th style="width:14%;">कृती</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php 
+                                                $sql=mysqli_query($conn,"select * from member_img");
+                                                $count=1;
+                                                while($row=mysqli_fetch_array($sql)) { ?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>xyz</td>
-                                                <td>xyz</td>
+                                                <td><?php echo $count; ?></td>
+                                                <td><?php echo $row['name']; ?></td>
+                                                <td><?php echo $row['designation']; ?></td>
+                                                <td><img src="member/<?php echo $row['profile'];?>" width="50" height="50"></td>
                                                 <td>
                                                     <button type="button"
                                                         class="btn btn-icon rounded-circle btn-flat-primary btnmod1"
@@ -124,6 +134,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                             data-feather="edit"></i></button>
                                                 </td>
                                             </tr>
+                                            <?php $count++; } ?>
                                         </tbody>
                                     </table>
                                 </div>

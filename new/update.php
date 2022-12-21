@@ -111,14 +111,19 @@ require("include/config.php");
                                             <div id="accordionMarginOne" class="accordion-collapse collapse"
                                                 aria-labelledby="headingMarginOne" data-bs-parent="#accordionMargin">
                                                 <div class="accordion-body">
-                                                    <form class="form form-vertical">
+                                                    <form class="form form-vertical" method="POST" action="api.php">
+                                                        <?php
+                                                        $sql=mysqli_query($conn, "select * from stages");
+                                                        $count=1;
+                                                        $row=mysqli_fetch_array($sql);
+                                                        ?>
                                                         <div class="row">
                                                             <div class="col-12">
                                                                 <div class="mb-1">
                                                                     <label class="form-label"
                                                                         for="first-name-vertical">Stage 1</label>
                                                                     <input type="text" id="first-name-vertical"
-                                                                        class="form-control" name="fname"
+                                                                        class="form-control" name="stage_1" value="<?php echo $row['stage_1']; ?>"
                                                                         placeholder="Stage 1" />
                                                                 </div>
                                                             </div>
@@ -127,7 +132,7 @@ require("include/config.php");
                                                                     <label class="form-label"
                                                                         for="email-id-vertical">Stage 2</label>
                                                                     <input type="text" id="email-id-vertical"
-                                                                        class="form-control" name="email-id"
+                                                                        class="form-control" name="stage_2" value="<?php echo $row['stage_2']?>"
                                                                         placeholder="Stage 2" />
                                                                 </div>
                                                             </div>
@@ -136,7 +141,7 @@ require("include/config.php");
                                                                     <label class="form-label"
                                                                         for="contact-info-vertical">Stage 3</label>
                                                                     <input type="text" id="contact-info-vertical"
-                                                                        class="form-control" name="contact"
+                                                                        class="form-control" name="stage_3" value="<?php echo $row['stage_3']?>"
                                                                         placeholder="Stage 3" />
                                                                 </div>
                                                             </div>
@@ -145,15 +150,13 @@ require("include/config.php");
                                                                     <label class="form-label"
                                                                         for="password-vertical">Stage 4</label>
                                                                     <input type="text" id="password-vertical"
-                                                                        class="form-control" name="contact"
+                                                                        class="form-control" name="stage_4" value="<?php echo $row['stage_4']?>"
                                                                         placeholder="Stage 4" />
                                                                 </div>
                                                             </div>
                                                             <div class="col-12">
                                                                 <button type="Submit"
-                                                                    class="btn btn-primary me-1">Update</button>
-                                                                <button type="reset"
-                                                                    class="btn btn-outline-secondary">Reset</button>
+                                                                    class="btn btn-primary me-1" name="update">Update</button>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -219,20 +222,33 @@ require("include/config.php");
                                                 <button class="accordion-button collapsed" type="button"
                                                     data-bs-toggle="collapse" data-bs-target="#accordionMarginThree"
                                                     aria-expanded="false" aria-controls="accordionMarginThree">
-                                                   Complaint Form
+                                                    Complaint Form
                                                 </button>
                                             </h2>
                                             <div id="accordionMarginThree" class="accordion-collapse collapse"
                                                 aria-labelledby="headingMarginThree" data-bs-parent="#accordionMargin">
                                                 <div class="accordion-body">
-                                                    Tart gummies dragée lollipop fruitcake pastry oat cake. Cookie jelly
-                                                    jelly macaroon icing jelly beans
-                                                    soufflé cake sweet. Macaroon sesame snaps cheesecake tart cake sugar
-                                                    plum. Dessert jelly-o sweet
-                                                    muffin chocolate candy pie tootsie roll marzipan. Carrot cake
-                                                    marshmallow pastry. Bonbon biscuit
-                                                    pastry topping toffee dessert gummies. Topping apple pie pie
-                                                    croissant cotton candy dessert tiramisu.
+                                                    <form class="form form-vertical" method="" action="api.php">
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="mb-1">
+                                                                    <label class="form-label"
+                                                                        for="exampleFormControlTextarea1">Modal</label>
+                                                                    <textarea class="form-control"
+                                                                        id="exampleFormControlTextarea1" rows="3" name="alert_1" id="alert_1"
+                                                                        value=""
+                                                                        placeholder="Modal"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <button type="Submit" class="btn btn-primary me-1"
+                                                                    name="update" id="">Update</button>
+                                                                <!-- <button type="reset" class="btn btn-outline-secondary">Reset</button> -->
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
                                                 </div>
                                             </div>
                                         </div>

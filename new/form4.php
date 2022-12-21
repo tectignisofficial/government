@@ -128,10 +128,15 @@ require("select_api.php");
                                             <div class="form-group col-4">
                                                 <div class="mb-1">
                                                     <div class="input-group mb-2">
+                                                        <?php
+                                                        $query=mysqli_query($conn,"select * from stages");
+                                                        $count=1;
+                                                        $sql=mysqli_fetch_array($query);
+                                                        ?>
                                                         <select class="select2 form-select" id="select2-basic"
                                                             name="payStatus">
                                                             <option value="" disabled selected>Status</option>
-                                                            <option
+                                                            <!-- <option
                                                                 value="stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत" <?php if($payStatus=='stage 1 FIR दाखला / प्रकरण मंजूर आहे /
                                                                 अनुदानाच्या प्रतीक्षेत'){ echo 'selected'; } ?> >stage 1 FIR दाखला / प्रकरण मंजूर आहे /
                                                                 अनुदानाच्या प्रतीक्षेत</option>
@@ -142,7 +147,12 @@ require("select_api.php");
                                                                 न्यायालयाचा निर्णय</option>
                                                             <option value="Stage 4 Documents pending" <?php if($payStatus=='Stage 4 Documents
                                                                 pending'){ echo 'selected'; } ?> >Stage 4 Documents
-                                                                pending</option>
+                                                                pending</option> -->
+
+                                                                <option>Stage 1 <?php echo $sql['stage_1']; ?></option>
+                                                                <option>Stage 2 <?php echo $sql['stage_2']; ?></option>
+                                                                <option>Stage 3 <?php echo $sql['stage_3']; ?></option>
+                                                                <option>Stage 4 <?php echo $sql['stage_4']; ?></option>
                                                         </select>
                                                         
                                                     </div>

@@ -150,6 +150,23 @@ else{
  }
  //Alert Update End
 
+ //Stages Update Start
+ if(isset($_POST['update'])){
+  $stage_1=$_POST['stage_1'];
+  $stage_2=$_POST['stage_2'];
+  $stage_3=$_POST['stage_3'];
+  $stage_4=$_POST['stage_4'];
+
+  $sql=mysqli_query($conn,"UPDATE `stages` SET `stage_1`='$stage_1', `stage_2`='$stage_2', `stage_3`='$stage_3', `stage_4`='$stage_4'");
+  if($sql){
+    echo "<script>alert('Successfully Submitted');window.location.href='update.php'</script>";
+}
+else{
+    echo "<script>alert('error')</script>";
+}
+ }
+ //Stages Update End
+
  //webuser start
  if(isset($_POST['websave']))
 {	 
