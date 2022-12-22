@@ -98,9 +98,9 @@
             <li><a class="d-flex align-items-center" href="member-img"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select">सदस्य प्रतिमा</span></a>
             </li>
-            <!-- <li><a class="d-flex align-items-center" href="admin_login"><i data-feather="copy"></i><span
-                        class="menu-item text-truncate" data-i18n="Select">बाहेर पडा</span></a>
-            </li> -->
+            <li><a class="d-flex align-items-center" href="pdf_uploding"><i data-feather="copy"></i><span
+                        class="menu-item text-truncate" data-i18n="Select">PDF uploading</span></a>
+            </li>
             <li><a class="d-flex align-items-center" href="update"><i data-feather="copy"></i><span
                         class="menu-item text-truncate" data-i18n="Select">Update</span></a>
             </li>

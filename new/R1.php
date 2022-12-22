@@ -142,9 +142,8 @@ require("select_api.php");
                                                     </div>
                                                     <div class="col-md-4 mb-1">
                                                         <div class="form-group">
-                                                            <select class="select2 form-select yearselect" id="select2"
+                                                            <input class="select2 form-select yearselect" id="select2"
                                                                 name="year" required>
-                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>

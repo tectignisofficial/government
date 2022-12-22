@@ -1,5 +1,6 @@
 <?php 
 require("include/config.php");
+$id=$_GET['id'];
 
 ?>
 <!DOCTYPE html>
@@ -118,7 +119,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php 
+                                            <?php 
                                                 $sql=mysqli_query($conn,"select * from member_img");
                                                 $count=1;
                                                 while($row=mysqli_fetch_array($sql)) { ?>
@@ -126,7 +127,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <td><?php echo $count; ?></td>
                                                 <td><?php echo $row['name']; ?></td>
                                                 <td><?php echo $row['designation']; ?></td>
-                                                <td><img src="member/<?php echo $row['profile'];?>" width="50" height="50"></td>
+                                                <td><img src="member/<?php echo $row['profile'];?>" width="50"
+                                                        height="50"></td>
                                                 <td>
                                                     <button type="button"
                                                         class="btn btn-icon rounded-circle btn-flat-primary btnmod1"
@@ -137,6 +139,75 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <?php $count++; } ?>
                                         </tbody>
                                     </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="addNewAddressTitle"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-transparent">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body pb-5 px-sm-4 mx-50">
+                                        <h1 class="address-title text-center mb-1" id="addNewAddressTitle">सदस्य प्रतिमा
+                                        </h1>
+                                        <p class="address-subtitle text-center mb-2 pb-75"></p>
+                                        <?php
+                                                        $sql=mysqli_query($conn,"SELECT * FROM `member_img` WHERE id='$id'");
+                                                        $count=1;
+                                                        $row=mysqli_fetch_array($sql)
+                                                        ?>
+
+                                        <form method="POST" id="viewmodal" class="row gy-1 gx-2" action="api.php">
+
+
+                                            <div class="row">
+                                                <!-- Basic -->
+                                                <div class="col-md-12 mb-1">
+                                                    <label class="form-label" for="select2-basic">नाव</label>
+                                                    <input type="text" class="form-control bookno1"
+                                                        value="<?php echo $row['name']; ?>" name="name"
+                                                        id="basicInput" />
+                                                </div>
+
+                                                <div class="col-md-12 mb-1">
+                                                    <label class="form-label" for="select2-basic">पदाचे नाव</label>
+                                                    <input type="text" class="form-control date1"
+                                                        value="<?php echo $row['designation']; ?>" name="designation"
+                                                        id="basicInput" />
+                                                </div>
+
+                                                <div class="col-md-12 mb-1">
+                                                    <label class="form-label" for="select2-basic">प्रतिमा</label>
+                                                    <div class="" style="margin-bottom: 10px;">
+                                                        <img src="member/<?php echo $row['profile']; ?>" width="90"
+                                                            height="90" name="profile">
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <div class="col-lg-6 col-md-12 mb-1 mb-sm-0">
+                                                            <label for="formFile"
+                                                                class="form-label"><?php echo $row['profile']; ?></label>
+                                                            <input class="form-control" type="file" id="formFile" name="profile"/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php $count++;  ?>
+                                        </form>
+
+                                        <div class="col-12 text-center modal-footer">
+                                            <button type="submit" class="btn btn-primary me-1 mt-2"
+                                                name="update">Update</button>
+                                            <button type="reset" class="btn btn-outline-secondary mt-2"
+                                                data-bs-dismiss="modal" aria-label="Close">
+                                                No
+                                            </button>
+                                        </div>
+                                        <!-- </form> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>

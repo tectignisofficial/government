@@ -1,3 +1,7 @@
+<?php 
+require("include/config.php");
+
+?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -20,6 +24,13 @@
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/select/select2.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css" />
+        <link rel="stylesheet" type="text/css"
+        href="app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css" />
+        <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css" />
+        <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css" />
+
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -116,7 +127,7 @@
                                                     </div>
                                                     <div class="col-md-3 mb-1">
                                                         <div class="form-group">
-                                                            <select class="select2 form-select" id="select2-basic"
+                                                            <select class="select2 form-select" id="monthSelect"
                                                                 name="month" required>
                                                                 <option value="" disabled selected>महिना निवडा</option>
                                                                 <option value="january">January</option>
@@ -136,26 +147,24 @@
                                                     </div>
                                                     <div class="col-md-3 mb-1">
                                                         <div class="form-group" style="">
-                                                            <input class="yearselect form-select" id="year" name="year"
-                                                                required>
+                                                            <input class="yearselect form-select" id="select2"
+                                                                name="year" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3 mb-1">
                                                         <div class="mb-1">
+                                                            <?php
+                                                        $query=mysqli_query($conn,"select * from stages");
+                                                        $count=1;
+                                                        $sql=mysqli_fetch_array($query);
+                                                        ?>
                                                             <select class="select2 form-select" id="select2-basic"
-                                                                name="payStatus" required>
+                                                                name="payStatus">
                                                                 <option value="" disabled selected>Status</option>
-                                                                <option
-                                                                    value="stage 1 FIR दाखला / प्रकरण मंजूर आहे / अनुदानाच्या प्रतीक्षेत"="">
-                                                                    stage 1 FIR दाखला / प्रकरण मंजूर आहे /
-                                                                    अनुदानाच्या प्रतीक्षेत</option>
-                                                                <option value="stage 2 FIR चौकशी दाखल">stage 2 FIR चौकशी
-                                                                    दाखल</option>
-                                                                <option value="stage 3 न्यायालयाचा निर्णय">stage 3
-                                                                    न्यायालयाचा निर्णय</option>
-                                                                <option value="Stage 4 Documents pending">Stage 4
-                                                                    Documents
-                                                                    pending</option>
+                                                                <option>Stage 1 <?php echo $sql['stage_1']; ?></option>
+                                                                <option>Stage 2 <?php echo $sql['stage_2']; ?></option>
+                                                                <option>Stage 3 <?php echo $sql['stage_3']; ?></option>
+                                                                <option>Stage 4 <?php echo $sql['stage_4']; ?></option>
                                                             </select>
 
 
@@ -176,69 +185,81 @@
 
                         <?php
 if(isset($_POST["filter"])){ ?>
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header d-block text-center">
-                                    <h1 class="d-block fw-bold">प्रपत्र - ४.</h1><br>
-                                    <h4 class="card-title">दाखल झालेल्या गुन्हयांप्रमाणे सहाय्य देण्यासाठी / मंजुरीसाठी गुन्हेनिहाय अप्राप्त कागदपत्रांची माहिती माहे ($month & $year), अखेर.</h4><br>
-                                    <h5 class="d-block">तक्त यापुढील पृष्ठांमधील अनुक्रमांकाप्रमाणे
-                                    </h5><br>
-                                    <h4 class="card-title d-block fw-bolder">माहे $month $year अखेर
-                                    </h4>
+                        <div class="row" id="basic-table">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header d-block text-center">
+                                        <h1 class="d-block fw-bold">प्रपत्र - ४.</h1><br>
+                                        <h4 class="card-title">दाखल झालेल्या गुन्हयांप्रमाणे सहाय्य देण्यासाठी /
+                                            मंजुरीसाठी
+                                            गुन्हेनिहाय अप्राप्त कागदपत्रांची माहिती माहे ($month & $year), अखेर.</h4>
+                                        <br>
+                                        <h5 class="d-block">तक्त यापुढील पृष्ठांमधील अनुक्रमांकाप्रमाणे
+                                        </h5><br>
+                                        <h4 class="card-title d-block fw-bolder">माहे $month $year अखेर
+                                        </h4>
+                                    </div>
+                                    <div class=" card-body table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2">क्र.</th>
+                                                    <th rowspan="2">नोंद वही क्र.</th>
+                                                    <th rowspan="2">दिनांक</th>
+                                                    <th rowspan="2">जिल्हा</th>
+                                                    <th rowspan="2">पोलीस ठाणे</th>
+                                                    <th rowspan="2">गुन्हा न.</th>
+                                                    <th rowspan="2">लावलेली कलमे</th>
+                                                    <th rowspan="2">गुन्हयांचे प्रकार</th>
+                                                    <th rowspan="2">फिर्यादीचे नाव</th>
+                                                    <th rowspan="2">आरोपीचे नाव</th>
+                                                    <th colspan="6" style="text-align: center;">पिडीत व्यक्तीची माहिती
+                                                    </th>
+                                                    <th rowspan="2">शेरा</th>
+                                                    <th rowspan="2">Status</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>नाव</th>
+                                                    <th>पत्ता</th>
+                                                    <th>प्रवर्ग आणि जात</th>
+                                                    <th>जातीचा दाखला</th>
+                                                    <th>आधार कार्ड</th>
+                                                    <th>चार्ज शिट</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                         $sql=mysqli_query($conn,"select * from  complaint_form");
+                        $count=1;
+                         while($row=mysqli_fetch_array($sql)){ 
+                         ?>
+                                                <tr>
+                                                    <td><?php echo $count;?></td>
+                                                    <td><?php echo $row['book_no'];?></td>
+                                                    <td><?php echo $row['date'];?></td>
+                                                    <td><?php echo $row['district'];?></td>
+                                                    <td><?php echo $row['police_station'];?></td>
+                                                    <td><?php echo $row['complaint_no'];?></td>
+                                                    <td><?php echo $row['section'];?></td>
+                                                    <td><?php echo $row['type_of_offence'];?></td>
+                                                    <td><?php echo $row['book_no'];?></td>
+                                                    <td><?php echo $row['book_no'];?></td>
+                                                    <td><?php echo $row['name'];?></td>
+                                                    <td><?php echo $row['address'];?></td>
+                                                    <td><?php echo $row['caste'];?></td>
+                                                    <td><?php echo $row['caste_certificate'];?></td>
+                                                    <td><?php echo $row['aadhar_card'];?></td>
+                                                    <td><?php echo $row['charge_sheet'];?></td>
+                                                    <td><?php echo $row['book_no'];?></td>
+                                                    <td><?php echo $row['status'];?></td>
+                                                </tr>
+                                                <?php $count++; }?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                                <div class=" card-body table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th rowspan="2">क्र.</th>
-                                                <th rowspan="2">नोंद वही क्र.</th>
-                                                <th rowspan="2">दिनांक</th>
-                                                <th rowspan="2">जिल्हा</th>
-                                                <th rowspan="2">पोलीस ठाणे</th>
-                                                <th rowspan="2">गुन्हा न.</th>
-                                                <th rowspan="2">लावलेली कलमे</th>
-                                                <th rowspan="2">गुन्हयांचे प्रकार</th>
-                                                <th rowspan="2">फिर्यादीचे नाव</th>
-                                                <th rowspan="2">आरोपीचे नाव</th>
-                                                <th colspan="6" style="text-align: center;">पिडीत व्यक्तीची माहिती</th>
-                                                <th rowspan="2">शेरा</th>
-                                                <th rowspan="2">Status</th>
-                                            </tr>
-                                            <tr>
-                                                <th>नाव</th>
-                                                <th>पत्ता</th>
-                                                <th>प्रवर्ग आणि जात</th>
-                                                <th>जातीचा दाखला</th>
-                                                <th>आधार कार्ड</th>
-                                                <th>चार्ज शिट</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
 
+                            </div>
                         </div>
                         <?php }?>
                     </div>
@@ -276,6 +297,32 @@ if(isset($_POST["filter"])){ ?>
     <script src="app-assets/js/scripts/forms/form-select2.js"></script>
     <script src="app-assets/js/scripts/forms/pickers/form-pickers.js"></script>
     <!-- END: Page JS-->
+
+    <script src="app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/responsive.bootstrap5.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/datatables.checkboxes.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/jszip.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/dataTables.rowGroup.min.js"></script>
+    <script src="app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": true,
+                "autoWidth": false,
+                "buttons": ["print", "pdf", "excel"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+        });
+    </script>
 
     <script>
         $(window).on('load', function () {

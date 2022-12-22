@@ -167,6 +167,22 @@ else{
  }
  //Stages Update End
 
+ //member-img Update Start
+ if(isset($_POST['update'])){
+  $name=$_POST['name'];
+  $designation=$_POST['designation'];
+  $profile=$_POST['profile'];
+
+  $sql=mysqli_query($conn,"UPDATE `member_img` SET `name`='$name', `designation`='$designation', `profile`='$profile'");
+  if($sql){
+    echo "<script>alert('Successfully Updated');window.location.href='update.php'</script>";
+}
+else{
+    echo "<script>alert('error')</script>";
+}
+ }
+ //member-img Update End
+
  //webuser start
  if(isset($_POST['websave']))
 {	 

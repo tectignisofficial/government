@@ -331,14 +331,14 @@ require("select_api.php");
                                                     </div>
                                                     <div class="modal-body pb-5 px-sm-4 mx-50">
                                                         <h1 class="address-title text-center mb-1"
-                                                            id="addNewAddressTitle">Add New Address</h1>
+                                                            id="addNewAddressTitle">नोंदणी</h1>
                                                         <p class="address-subtitle text-center mb-2 pb-75"></p>
 
                                                         <form method="POST" id="viewmodal" class="row gy-1 gx-2"
                                                             action="api.php">
                                                             <div class="row">
                                                                 <!-- Basic -->
-                                                                <div class="col-md-6 mb-1">
+                                                                <div class="col-md-3 mb-1">
                                                                     <label class="form-label" for="select2-basic">नोंद
                                                                         वही क्र.</label>
                                                                     <input type="hidden" name="id1" value="">
@@ -347,7 +347,7 @@ require("select_api.php");
                                                                         readonly />
                                                                 </div>
 
-                                                                <div class="col-md-6 mb-1">
+                                                                <div class="col-md-3 mb-1">
                                                                     <label class="form-label sr-only"
                                                                         for="inlineFormInputGroup">गुन्हा नं.</label>
                                                                     <div class="input-group mb-2">
@@ -362,7 +362,7 @@ require("select_api.php");
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="col-md-6 mb-1">
+                                                                <div class="col-md-3 mb-1">
                                                                     <label class="form-label"
                                                                         for="select2-basic">दिनांक</label>
                                                                     <input type="hidden" name="id1" value="">
@@ -371,7 +371,7 @@ require("select_api.php");
                                                                         readonly />
                                                                 </div>
 
-                                                                <div class="col-md-6 mb-1">
+                                                                <div class="col-md-3 mb-1">
                                                                     <label class="form-label"
                                                                         for="select2-basic">वर्ष</label>
                                                                     <input type="hidden" name="id1" value="">
