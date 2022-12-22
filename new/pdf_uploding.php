@@ -95,8 +95,8 @@
                                         <thead>
                                             <tr>
                                                 <th style="width:10px;">Sr. No.</th>
-                                                <th>Branch</th>
-                                                <th>Address</th>
+                                                <th></th>
+                                                <th></th>
                                                 <th style="width:160px;">Action</th>
                                             </tr>
                                         </thead>

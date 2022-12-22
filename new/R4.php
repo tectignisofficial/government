@@ -52,8 +52,31 @@ require("include/config.php");
     <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/pickers/form-flat-pickr.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/pickers/form-pickadate.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">\
 
+    <style>
+        .dt-button {
+            border: 1px solid !important;
+            background-color: transparent;
+            margin: 1%;
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1;
+            color: #6e6b7b;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 0.786rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 0.358rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background 0s, border 0s;
+
+
+        }
+    </style>
 
 </head>
 <!-- END: Head-->
@@ -200,7 +223,7 @@ if(isset($_POST["filter"])){ ?>
                                         </h4>
                                     </div>
                                     <div class=" card-body table-responsive">
-                                        <table class="table table-bordered">
+                                        <table class="table table-bordered" id="example1">
                                             <thead>
                                                 <tr>
                                                     <th rowspan="2">क्र.</th>
@@ -229,7 +252,7 @@ if(isset($_POST["filter"])){ ?>
                                             </thead>
                                             <tbody>
                                                 <?php
-                         $sql=mysqli_query($conn,"select * from  complaint_form");
+                         $sql=mysqli_query($conn,"select * from complaint_form inner join victim on complaint_form.id=caseid;");
                         $count=1;
                          while($row=mysqli_fetch_array($sql)){ 
                          ?>
@@ -242,15 +265,15 @@ if(isset($_POST["filter"])){ ?>
                                                     <td><?php echo $row['complaint_no'];?></td>
                                                     <td><?php echo $row['section'];?></td>
                                                     <td><?php echo $row['type_of_offence'];?></td>
-                                                    <td><?php echo $row['book_no'];?></td>
-                                                    <td><?php echo $row['book_no'];?></td>
+                                                    <td><?php echo $row['complaint_filer_name'];?></td>
+                                                    <td><?php echo $row['criminal_name'];?></td>
                                                     <td><?php echo $row['name'];?></td>
                                                     <td><?php echo $row['address'];?></td>
                                                     <td><?php echo $row['caste'];?></td>
                                                     <td><?php echo $row['caste_certificate'];?></td>
                                                     <td><?php echo $row['aadhar_card'];?></td>
                                                     <td><?php echo $row['charge_sheet'];?></td>
-                                                    <td><?php echo $row['book_no'];?></td>
+                                                    <td><?php echo $row['discription'];?></td>
                                                     <td><?php echo $row['status'];?></td>
                                                 </tr>
                                                 <?php $count++; }?>
