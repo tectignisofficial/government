@@ -192,13 +192,14 @@
                                             <div class="mb-1 row">
                                                 <label for="colFormLabel" class="col-sm-3 col-form-label">FIR फाईल निवडा:</label>
                                                 <div class="col-sm-3">
-                                                    <input class="form-control" type="file" id="customFile1" required="">
+                                                    <input class="form-control" type="file" id="customFile1" required="" accept="application/pdf">
                                                 </div>
                                             </div>
                                             <div class="mb-1 row">
                                                 <label for="शेरा" class="col-sm-3 col-form-label">शेरा</label>
                                                 <div class="col-sm-9">
-                                                    <input class="form-control" type="text" id="शेरा" required="">
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="15" placeholder=""></textarea>
+                                                   <!-- <input class="form-control" type="text" id="शेरा" required="">-->
                                                 </div>
                                             </div>
                                             <div class="col-md-12 modal-footer justify-content-between">                                            
