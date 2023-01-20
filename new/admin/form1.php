@@ -1,3 +1,10 @@
+<?php
+include("config.php");
+$sel = "SELECT * FROM form1";
+$qy = mysqli_query($con,$sel);
+$ft = mysqli_fetch_assoc($qy);
+
+?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -165,7 +172,7 @@
                         <div class="row breadcrumbs-top">
                             <div class="col-12">
                                 <h2 class="content-header-title float-start mb-0">अनुसूचित जाती/जमाती अत्याचार ग्रस्त
-                                    पीडितांची माहिती</h2>
+                                    पीडितांची माहिती  <?php echo $ft['id']; ?></h2>
                                 <div class="breadcrumb-wrapper">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="">मुख्यपृठ</a>
