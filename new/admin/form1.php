@@ -172,7 +172,7 @@ $ft = mysqli_fetch_assoc($qy);
                         <div class="row breadcrumbs-top">
                             <div class="col-12">
                                 <h2 class="content-header-title float-start mb-0">अनुसूचित जाती/जमाती अत्याचार ग्रस्त
-                                    पीडितांची माहिती  <?php echo $ft['ids']; ?></h2>
+                                    पीडितांची माहिती   </h2>
                                 <div class="breadcrumb-wrapper">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="">मुख्यपृठ</a>
@@ -270,32 +270,36 @@ $ft = mysqli_fetch_assoc($qy);
                                                     <label class="form-label" for="गुन्हयांचे प्रकार">गुन्हयांचे प्रकार</label>
                                                     <div class="demo-inline-spacing">
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck1" checked="">
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck1" >
                                                             <label class="form-check-label" for="colorCheck1">खून</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck2" checked="">
-                                                            <label class="form-check-label" for="colorCheck2">बलात्कार</label>
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck2" >
+                                                            <label class="form-check-label" for="colorCheck2">खूनाचा प्रयत्न</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck3" checked="">
-                                                            <label class="form-check-label" for="colorCheck3">विनयभंग</label>
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck3"  >
+                                                            <label class="form-check-label" for="colorCheck3">बलात्कार</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck5" checked="">
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck4"  >
+                                                            <label class="form-check-label" for="colorCheck4">विनयभंग</label>
+                                                        </div>
+                                                        <div class="form-check form-check-primary">
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck5" >
                                                             <label class="form-check-label" for="colorCheck5">मारहाण</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck4" checked="">
-                                                            <label class="form-check-label" for="colorCheck4">शिवीगाळ</label>
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck6" >
+                                                            <label class="form-check-label" for="colorCheck6">शिवीगाळ</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck6" checked="">
-                                                            <label class="form-check-label" for="colorCheck6">जाळपोळ</label>
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck7"  >
+                                                            <label class="form-check-label" for="colorCheck7">जाळपोळ</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck6" checked="">
-                                                            <label class="form-check-label" for="colorCheck6">इतर</label>
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck8"  >
+                                                            <label class="form-check-label" for="colorCheck8">इतर</label>
                                                         </div>
                                                     </div>
                                                 </div>
