@@ -87,7 +87,7 @@
           <div class="col-lg-8 col-sm-12 text-start">
             <div class="breadcrumb flat">
               <a href="index.php" class="active">Home</a>
-              <a href="complaint_status.php">Complaint Status </a>
+              <a href="complaint_status.php">Complaint Status</a>
               <a href="change.html">Admin Login</a>
             </div>
           </div>
