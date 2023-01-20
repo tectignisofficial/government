@@ -1,8 +1,8 @@
 <?php
 include("config.php");
-$sel = "SELECT * FROM form1";
+/*$sel = "SELECT * FROM form1";
 $qy = mysqli_query($con,$sel);
-$ft = mysqli_fetch_assoc($qy);
+$ft = mysqli_fetch_assoc($qy);*/
 
 ?>
 <!DOCTYPE html>
