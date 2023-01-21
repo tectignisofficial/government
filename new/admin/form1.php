@@ -57,7 +57,7 @@ $ft = mysqli_fetch_assoc($qy);*/
     <script>
     $(document).ready(function() { //alert("outchange");
         $( "#district_dropdown" ).change(function() { 
-            alert("change");
+            //alert("change");
     	var district_id = $( "#district_dropdown" ).val();
     	$("#district_dropdown option[value='0']").remove();
 
@@ -67,17 +67,18 @@ $ft = mysqli_fetch_assoc($qy);*/
          async: false,
          success:
          function(msg) {
-           // alert(msg);
+             alert(msg);//alert(jQuery.parseJSON(msg.value));
          	$('#police_dropdown').find('option').remove().end();
-         	var police_id =  jQuery.parseJSON(msg);
+            
+         	var police_id = jQuery.parseJSON(msg);
             alert("police_id");
-         	for(var i = 0 ; i < police_id.length ; i++)
+         	for(var i=0;i<police_id.length;i++)
          	{ //alert(i);
          		$('#police_dropdown').append('<option value="'+police_id[i].police_station_id+'">'+police_id[i].police_station_name+'</option>');
          	}
        	 }
         });
-    	//$('#city').find('option').remove().end();
+    	//$('#city').find('option').remove().end(); 
     	//$('#city').append('<option value="0">Please choose a Region/State</option>');
 
 	});
@@ -333,8 +334,8 @@ window.onclick = function(event) {
   <p>लावलेली कलमे : <?php echo $fetche['clause']?></p>
   <p>गुन्हयांचे प्रकार : <?php echo $fetche['crime_type']?></p>
   <p>फिर्यादीचे नाव : <?php echo $fetche['prosecutor_name']?></p>
- <p><a href="form1.php?edit=1&regid=<?php echo $_GET['regid'] ?>"> <button id="edit" style="background:blue; color:white">Edit</button></a>
- <a href="form2.php?regid=<?php echo $_GET['regid'] ?>"> <button id="yes" style="background:green; color:white">Yes</button>
+ <p><a href="form1.php?edit=1&regid=<?php echo $$_GET['regid'] ?>"> <button id="edit" style="background:blue; color:white">Edit</button></a>
+ <a href="form2.php?regid"> <button id="yes" style="background:green; color:white">Yes</button>
 
 </p>
 </div>
@@ -420,14 +421,14 @@ window.onclick = function(event) {
                                                     <option value="0">Select Police Station</option>
                                                        
                                                     
-                                                           <option value="खारघर">खारघर पोलीस ठाणे</option>
+                                                           <!--<option value="खारघर">खारघर पोलीस ठाणे</option>
                                                             <option value="कळंबोली">कळंबोली पोलीस ठाणे</option>
                                                             <option value="खांदेश्वर">खांदेश्वर पोलीस ठाणे</option>
                                                             <option value="पनवेल शहर">पनवेल शहर पोलीस ठाणे</option>
                                                             <option value="पनवेल तालुका">पनवेल तालुका पोलीस ठाणे</option>
                                                             <option value="कामोठे">कामोठे पोलीस ठाणे</option>
                                                             <option value="तळोजा">तळोजा तालुका पोलीस ठाणे</option>
-                                                        
+                                                        -->
                                                     </select>
                                                 </div>
                                             </div>
@@ -628,14 +629,14 @@ window.onclick = function(event) {
                                                     <option value="0">Select Police Station</option>
                                                        
                                                     
-                                                           <option value="खारघर">खारघर पोलीस ठाणे</option>
+                                                       <!--    <option value="खारघर">खारघर पोलीस ठाणे</option>
                                                             <option value="कळंबोली">कळंबोली पोलीस ठाणे</option>
                                                             <option value="खांदेश्वर">खांदेश्वर पोलीस ठाणे</option>
                                                             <option value="पनवेल शहर">पनवेल शहर पोलीस ठाणे</option>
                                                             <option value="पनवेल तालुका">पनवेल तालुका पोलीस ठाणे</option>
                                                             <option value="कामोठे">कामोठे पोलीस ठाणे</option>
                                                             <option value="तळोजा">तळोजा तालुका पोलीस ठाणे</option>
-                                                        
+                                                        -->
                                                     </select>
                                                 </div>
                                             </div>
