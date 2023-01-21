@@ -44,6 +44,9 @@ $ft = mysqli_fetch_assoc($qy);*/
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
+     
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- END: Custom CSS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -80,6 +83,76 @@ $ft = mysqli_fetch_assoc($qy);*/
 	});
 });
     </script>
+    <style>
+         /* The Modal (background) */
+         .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 20%;
+  top: 0;
+  width: 50%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+ /*background-color: rgb(0,0,0); /* Fallback color */
+ /* background-color: rgba(0,0,0,0.4);  Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 
+        </style>
+        <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+//document.getElementById("myBtn").onclick = function() {
+  function disp()
+    {
+    document.getElementById("myModal").style.display = "block";
+
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+            </script>
 </head>
 <!-- END: Head-->
 
@@ -198,6 +271,7 @@ $ft = mysqli_fetch_assoc($qy);*/
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow">   
         </div>
+        
         <div class="content-wrapper container-xxl p-0">
             <div class="content-header row">
                 <div class="content-header row">
@@ -222,6 +296,50 @@ $ft = mysqli_fetch_assoc($qy);*/
             <div class="content-body row">
                 <!-- Basic multiple Column Form section start -->
                 <section id="multiple-column-form">
+                <!--<button id="myBtn" >Open Modal</button>-->
+                <?php
+                $status = $_GET['status'];
+                $regid = $_GET['regid'];
+                if($_GET['status'] == 'success')
+                {
+                ?>
+                <div id="myModal" class="modal" style="display:block">
+                    
+
+<!-- Modal content -->
+<div class="modal-content">
+
+  <!--<span class="close">&times;</span>-->
+  <p><strong>Are You Sure To Submit Form?</strong></p>
+  <?php
+         $sele = "SELECT * FROM form1 WHERE register_no = '".$_GET['regid']."' ";
+         $querye = mysqli_query($conn,$sele);
+         $fetche = mysqli_fetch_array($querye);
+
+         $seled = "SELECT * FROM district WHERE district_id = '".$fetche['district']."' ";
+         $queryed = mysqli_query($conn,$seled);
+         $fetched = mysqli_fetch_array($queryed);
+
+         $selep = "SELECT * FROM police_station WHERE police_station_id = '".$fetche['police_station']."' ";
+         $queryep = mysqli_query($conn,$selep);
+         $fetchep = mysqli_fetch_array($queryep);
+  ?>
+  <p>नोंद वही क्र. : <?php echo $fetche['register_no']?></p>
+  <p>गुन्हा नं. : <?php echo $fetche['crime_no']?></p>
+  <p>दिनांक  : <?php echo $fetche['date']?></p>
+  <p>वर्ष : <?php echo $fetche['year']?></p>
+  <p>जिल्हा : <?php echo $fetched['district_name']?></p>
+  <p>पोलीस ठाणे : <?php echo $fetchep['police_station_name']?></p>
+  <p>लावलेली कलमे : <?php echo $fetche['clause']?></p>
+  <p>गुन्हयांचे प्रकार : <?php echo $fetche['crime_type']?></p>
+  <p>फिर्यादीचे नाव : <?php echo $fetche['prosecutor_name']?></p>
+ <p><a href="form1.php?edit=1&regid=<?php echo $_GET['regid'] ?>"> <button id="edit" style="background:blue; color:white">Edit</button></a>
+ <a href="form2.php?regid=<?php echo $_GET['regid'] ?>"> <button id="yes" style="background:green; color:white">Yes</button>
+
+</p>
+</div>
+<?php } ?>
+</div>
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -229,7 +347,225 @@ $ft = mysqli_fetch_assoc($qy);*/
                                     <h4 class="card-title">नोंदणी</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form" method="POST" action="register.php">
+                                        <?php
+                                        if($_GET['edit']==1)
+                                        {
+                                             $sel = "SELECT * FROM form1 WHERE register_no = '".$regid."' ";
+                                            $query = mysqli_query($conn,$sel);
+                                            $fetch = mysqli_fetch_array($query);
+                                            ?>
+                                        <div class="row">
+                                            <div class="col-md-3 col-6">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="first-no-column">नोंद वही क्र.</label>
+                                                    <input type="number" id="register1" name="register" value="<?php echo $fetch['register_no'] ?>" disabled class="form-control"  />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-6">
+                                                <div class ="mb-1">
+                                                    <label class="form-label" for="last-no-column">गुन्हा नं.</label> 
+                                                    <div class="input-group mb-2">
+                                                        <span class="input-group-text">कॉ.गु.र.नं.</span>
+                                                        <input type="text" class="form-control" value="<?php echo $fetch['crime_no'] ?>" disabled id="crime" name="crime" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-6">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="date-column">दिनांक</label>
+                                                    <input type="date" id="date-column" class="form-control" placeholder="" value="<?php echo $fetch['date'] ?>" name="date_column" />
+                                                </div>
+                                            </div> 
+                                            <div class="col-md-3 col-6">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="year-floating">वर्ष</label>
+                                                        <select class="select2 form-select" id="year" value="<?php echo $fetch['year'] ?>" name="year">
+                                                            <optgroup>
+                                                                <option value="2020">2020</option>
+                                                                <option value="2021">2021</option>
+                                                                <option value="2022">2022</option>
+                                                                <option value="2023">2023</option>
+                                                            </optgroup>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="जिल्हा-id-column">जिल्हा</label>
+                                                    <?php
+                                                      echo  $sel_dis = "SELECT * FROM district WHERE district_id = '".$fetch['district']."' ";
+                                                        $query_dis = mysqli_query($conn,$sel_dis);
+                                                        $fetch_dis = mysqli_fetch_array($query_dis);
+                                                    ?>
+                                                           <select class="select2 form-select" id="district_dropdown" name="district_dropdown">
+                                                           <option value="<?php echo $$fetch_dis['district_id'] ?>"><?php echo $fetch_dis['district_name'] ?></option>
+                                                   <?php   
+                                                    $selsql=mysqli_query($conn,"select * from district");
+                                                         while($arr=mysqli_fetch_assoc($selsql)){
+                                                            ?> 
+
+                                                            <option value="<?php echo $arr['district_id'] ?>"><?php echo $arr['district_name'] ?></option>
+                                                            <?php
+                                                         }
+                                                        ?>
+                                                            <!--<option value="नवी मुंबई">नवी मुंबई</option>
+                                                            <option value="रायगड">रायगड</option>-->
+                                                    </select>y
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="पोलीस ठाणे-id-column">पोलीस ठाणे</label>
+                                                    <select class="select2 form-select" id="police_dropdown" name="police_dropdown">
+                                                    <option value="0">Select Police Station</option>
+                                                       
+                                                    
+                                                           <option value="खारघर">खारघर पोलीस ठाणे</option>
+                                                            <option value="कळंबोली">कळंबोली पोलीस ठाणे</option>
+                                                            <option value="खांदेश्वर">खांदेश्वर पोलीस ठाणे</option>
+                                                            <option value="पनवेल शहर">पनवेल शहर पोलीस ठाणे</option>
+                                                            <option value="पनवेल तालुका">पनवेल तालुका पोलीस ठाणे</option>
+                                                            <option value="कामोठे">कामोठे पोलीस ठाणे</option>
+                                                            <option value="तळोजा">तळोजा तालुका पोलीस ठाणे</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="लावलेली कलमे">लावलेली कलमे</label>
+                                                    <textarea class="form-control" id="clause" name="clause" rows="3" placeholder=""><?php echo $fetch['clause'] ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-12">
+                                                <div class="mb-1">  
+                                                    <?php
+                                                    $crime_types = explode(",",$fetch['crime_type']);
+                                                    ?>
+                                                    <label class="form-label" for="गुन्हयांचे प्रकार">गुन्हयांचे प्रकार</label>
+                                                    <div class="demo-inline-spacing">
+                                                        <div class="form-check form-check-primary">
+                                                            <?php 
+                                                            $arr_crime = array($fetch['crime_type']);
+                                                           // foreach($arr_crime as $cri_type){
+                                                                 if(in_array("खून",$crime_types)){
+                                                            ?>
+                                                            <input type="checkbox" class="form-check-input" checked id="colorCheck1" name="crime_type[]" value="खून">
+                                                            <?php } else {
+                                                                ?>
+                                                                <input type="checkbox" class="form-check-input" id="colorCheck1" name="crime_type[]" value="खून">
+                                                               <?php 
+                                                            } ?>
+                                                            <label class="form-check-label" for="colorCheck1" >खून</label>
+                                                        </div>
+                                                        <div class="form-check form-check-primary">
+                                                            <?php
+                                                            //foreach($arr_crime as $cri_type){
+                                                                if(in_array("खूनाचा प्रयत्न",$crime_types)){
+                                                           ?>
+                                                            <input type="checkbox" checked class="form-check-input" id="colorCheck2" name="crime_type[]" value="खूनाचा प्रयत्न">
+                                                            <?php } else {
+                                                                ?>
+                                                                <input type="checkbox" class="form-check-input" id="colorCheck2" name="crime_type[]" value="खूनाचा प्रयत्न">
+                                                                <?php
+                                                            } ?>
+                                                            <label class="form-check-label" for="colorCheck2" >खूनाचा प्रयत्न</label>
+                                                        </div>
+                                                        <div class="form-check form-check-primary">
+                                                        <?php
+                                                            foreach($arr_crime as $cri_type){
+                                                                if(in_array("बलात्कार",$crime_types)){
+                                                           ?>
+                                                            <input type="checkbox" chcked class="form-check-input" id="colorCheck3" name="crime_type[]"  value="बलात्कार">
+                                                            <?php } else {
+                                                                ?>
+                                                                <input type="checkbox" class="form-check-input" id="colorCheck3" name="crime_type[]"  value="बलात्कार">
+                                                                <?php } ?>
+                                                            <label class="form-check-label" for="colorCheck3" >बलात्कार</label>
+                                                        </div>
+                                                        <div class="form-check form-check-primary">
+                                                        <?php 
+                                                                 if(in_array("विनयभंग",$crime_types)){
+                                                            ?>
+                                                            <input type="checkbox" class="form-check-input" checked id="colorCheck4"  name="crime_type[]" value="विनयभंग">
+                                                            <?php }else{
+                                                                ?>
+                                                            <input type="checkbox" class="form-check-input"   id="colorCheck4"  name="crime_type[]" value="विनयभंग">
+                                                                <?php
+                                                            } ?>
+                                                            <label class="form-check-label" for="colorCheck4" >विनयभंग</label>
+                                                        </div>
+                                                        <div class="form-check form-check-primary">
+                                                        <?php 
+                                                                 if(in_array("मारहाण",$crime_types)){
+                                                            ?>
+                                                            <input type="checkbox" checked class="form-check-input" id="colorCheck5" name="crime_type[]" value="मारहाण">
+                                                            <?php }else{
+                                                                ?>
+                                                            <input type="checkbox"   class="form-check-input" id="colorCheck5" name="crime_type[]" value="मारहाण">
+                                                                <?php } ?> 
+                                                            <label class="form-check-label" for="colorCheck5">मारहाण</label>
+                                                        </div>
+                                                        <div class="form-check form-check-primary">
+                                                        <?php 
+                                                                 if(in_array("शिवीगाळ",$crime_types)){
+                                                            ?>
+                                                            <input type="checkbox" checked class="form-check-input" id="colorCheck6" name="crime_type[]" value="शिवीगाळ">
+                                                            <?php } else {
+                                                                ?>
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck6" name="crime_type[]" value="शिवीगाळ">
+                                                                <?php
+                                                            } ?>
+                                                            <label class="form-check-label" for="colorCheck6">शिवीगाळ</label>
+                                                        </div>
+                                                        <div class="form-check form-check-primary">
+                                                        <?php 
+                                                                 if(in_array("जाळपोळ",$crime_types)){
+                                                            ?>
+                                                            <input type="checkbox" checked class="form-check-input" id="colorCheck7"  name="crime_type[]" value="जाळपोळ">
+                                                            <?php } else {
+                                                                ?>
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck7"  name="crime_type[]" value="जाळपोळ">
+                                                                <?php
+                                                            } ?>
+                                                            <label class="form-check-label" for="colorCheck7">जाळपोळ</label>
+                                                        </div>
+                                                        <div class="form-check form-check-primary">
+                                                        <?php 
+                                                                 if(in_array("इतर",$crime_types)){
+                                                            ?>
+                                                            <input type="checkbox" checked class="form-check-input" id="colorCheck8" name="crime_type[]" value="इतर" >
+                                                            <?php
+                                                                 } else {
+                                                                    ?>
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck8" name="crime_type[]" value="इतर" >
+                                                                    <?php
+                                                                 }
+                                                            ?>
+                                                            <label class="form-check-label" for="colorCheck8">इतर</label>
+                                                        </div>
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-12">
+                                                <div class="mb-1">
+                                                    <label class="form-label" for="फिर्यादीचे नाव">फिर्यादीचे नाव</label>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1"  name="prosecutor_name" rows="3" cols="15" placeholder=""><?php echo $fetch['prosecutor_name'] ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 modal-footer">
+                                             <input type="submit"  onclick="disp()" name="submit" class="btn btn-primary modal1 waves-effect waves-float waves-light" data-bs-toggle="modal" value="नमूद करा" onclick="disp()">
+                                                <!--<a href="form2.php"><button type="button" id="formsub" name="submit" class="btn btn-primary modal1 waves-effect waves-float waves-light" data-bs-toggle="modal">नमूद
+                                                    करा</button></a>-->
+                                            </div>
+                                        </div>
+                                            <?php
+                                        } else {
+                                        ?>
+
+
+                                    <form class="form" method="POST" action="register.php"  enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-md-3 col-6">
                                                 <div class="mb-1">
@@ -249,7 +585,7 @@ $ft = mysqli_fetch_assoc($qy);*/
                                             <div class="col-md-3 col-6">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="date-column">दिनांक</label>
-                                                    <input type="date" id="date-column" class="form-control" placeholder="" name="date-column" />
+                                                    <input type="date" id="date-column" class="form-control" placeholder="" name="date_column" />
                                                 </div>
                                             </div> 
                                             <div class="col-md-3 col-6">
@@ -292,14 +628,14 @@ $ft = mysqli_fetch_assoc($qy);*/
                                                     <option value="0">Select Police Station</option>
                                                        
                                                     
-                                                          <!--  <option value="खारघर">खारघर पोलीस ठाणे</option>
+                                                           <option value="खारघर">खारघर पोलीस ठाणे</option>
                                                             <option value="कळंबोली">कळंबोली पोलीस ठाणे</option>
                                                             <option value="खांदेश्वर">खांदेश्वर पोलीस ठाणे</option>
                                                             <option value="पनवेल शहर">पनवेल शहर पोलीस ठाणे</option>
                                                             <option value="पनवेल तालुका">पनवेल तालुका पोलीस ठाणे</option>
                                                             <option value="कामोठे">कामोठे पोलीस ठाणे</option>
                                                             <option value="तळोजा">तळोजा तालुका पोलीस ठाणे</option>
-                                                        -->
+                                                        
                                                     </select>
                                                 </div>
                                             </div>
@@ -314,35 +650,35 @@ $ft = mysqli_fetch_assoc($qy);*/
                                                     <label class="form-label" for="गुन्हयांचे प्रकार">गुन्हयांचे प्रकार</label>
                                                     <div class="demo-inline-spacing">
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck1" name="crime_type" value="खून">
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck1" name="crime_type[]" value="खून">
                                                             <label class="form-check-label" for="colorCheck1" >खून</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck2" name="crime_type" value="खूनाचा प्रयत्न">
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck2" name="crime_type[]" value="खूनाचा प्रयत्न">
                                                             <label class="form-check-label" for="colorCheck2" >खूनाचा प्रयत्न</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck3" name="crime_type"  value="बलात्कार">
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck3" name="crime_type[]"  value="बलात्कार">
                                                             <label class="form-check-label" for="colorCheck3" >बलात्कार</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck4"  name="crime_type" value="विनयभंग">
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck4"  name="crime_type[]" value="विनयभंग">
                                                             <label class="form-check-label" for="colorCheck4" >विनयभंग</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck5" name="crime_type" value="मारहाण">
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck5" name="crime_type[]" value="मारहाण">
                                                             <label class="form-check-label" for="colorCheck5">मारहाण</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck6" name="crime_type" value="शिवीगाळ">
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck6" name="crime_type[]" value="शिवीगाळ">
                                                             <label class="form-check-label" for="colorCheck6">शिवीगाळ</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck7"  name="crime_type" value="जाळपोळ">
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck7"  name="crime_type[]" value="जाळपोळ">
                                                             <label class="form-check-label" for="colorCheck7">जाळपोळ</label>
                                                         </div>
                                                         <div class="form-check form-check-primary">
-                                                            <input type="checkbox" class="form-check-input" id="colorCheck8" name="crime_type" value="इतर" >
+                                                            <input type="checkbox" class="form-check-input" id="colorCheck8" name="crime_type[]" value="इतर" >
                                                             <label class="form-check-label" for="colorCheck8">इतर</label>
                                                         </div>
                                                     </div>
@@ -355,12 +691,13 @@ $ft = mysqli_fetch_assoc($qy);*/
                                                 </div>
                                             </div>
                                             <div class="col-md-12 modal-footer">
-                                             <input type="submit" id="formsub" name="submit" class="btn btn-primary modal1 waves-effect waves-float waves-light" data-bs-toggle="modal" value="नमूद करा">
+                                             <input type="submit"  onclick="disp()" name="submit" class="btn btn-primary modal1 waves-effect waves-float waves-light" data-bs-toggle="modal" value="नमूद करा" onclick="disp()">
                                                 <!--<a href="form2.php"><button type="button" id="formsub" name="submit" class="btn btn-primary modal1 waves-effect waves-float waves-light" data-bs-toggle="modal">नमूद
                                                     करा</button></a>-->
                                             </div>
                                         </div>
                                     </form>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
