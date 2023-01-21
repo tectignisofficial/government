@@ -187,24 +187,24 @@
                                     <h4 class="card-title">पिडीत व्यक्तीची माहिती</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form">
+                                    <form class="form" method="POST" action="register_form3.php?regid=<?php echo $_GET['regid'] ?>">
                                         <div class="row">
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="पिडीत व्यक्तीचे नाव">पिडीत व्यक्तीचे नाव</label>
-                                                    <input type="text" id="पिडीत व्यक्तीचे नाव" class="form-control" placeholder="" name="" />
+                                                    <input type="text" id="पिडीत व्यक्तीचे नाव" name="victim_name" class="form-control" placeholder="" name="" />
                                                 </div>
-                                            </div>
+                                            </div>   
                                             <div class="col-md-6 col-12">
                                                 <div class ="mb-1">
                                                     <label class="form-label" for="पिडीत व्यक्तीचा पत्ता">पिडीत व्यक्तीचा पत्ता</label>
-                                                <input type="text" id="पिडीत व्यक्तीचा पत्ता" class="form-control" placeholder="" name="" />
+                                                <input type="text" id="पिडीत व्यक्तीचा पत्ता" name="victim_address" class="form-control" placeholder="" name="" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="पिडीत व्यक्तीचे प्रवर्ग आणि जात">पिडीत व्यक्तीचे प्रवर्ग आणि जात</label>
-                                                    <input type="text" id="पिडीत व्यक्तीचे प्रवर्ग आणि जात" class="form-control" placeholder="" name="" />
+                                                    <input type="text" id="पिडीत व्यक्तीचे प्रवर्ग आणि जात" name="victim_caste" class="form-control" placeholder="" name="" />
                                                 </div>
                                             </div>
                                             <div class="row mb-1 rowg" style="width:78%;">
@@ -213,11 +213,11 @@
                                                     <div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="caste_certificate" id="inlineRadio1" value="होय">
-                                                            <label class="form-check-label" for="inlineRadio1">होय</label>
+                                                            <label class="form-check-label" for="inlineRadio1" value="1">होय</label>
                                                         </div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="caste_certificate" id="inlineRadio2" value="नाही">
-                                                            <label class="form-check-label" for="inlineRadio2">नाही</label>
+                                                            <label class="form-check-label" for="inlineRadio2" value="0">नाही</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -226,11 +226,11 @@
                                                     <div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="aadhaar_card" id="inlineRadio1" value="होय">
-                                                            <label class="form-check-label" for="inlineRadio1">होय</label>
+                                                            <label class="form-check-label" for="inlineRadio1" value="1">होय</label>
                                                         </div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="aadhaar_card" id="inlineRadio2" value="नाही">
-                                                            <label class="form-check-label" for="inlineRadio2">नाही</label>
+                                                            <label class="form-check-label" for="inlineRadio2" value="0">नाही</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -239,11 +239,11 @@
                                                     <div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="charge_sheet" id="inlineRadio1" value="होय">
-                                                            <label class="form-check-label" for="inlineRadio1">होय</label>
+                                                            <label class="form-check-label" for="inlineRadio1" value="1">होय</label>
                                                         </div>
                                                         <div class="col-md-12 mb-1 form-check form-check-inline">
-                                                            <input class="form-check-input" type="radio" name="charge_sheet" id="inlineRadio2" value="नाही">
-                                                            <label class="form-check-label" for="inlineRadio2">नाही</label>
+                                                            <input class="form-check-input" type="radio"  name="charge_sheet" id="inlineRadio2" value="नाही">
+                                                            <label class="form-check-label" for="inlineRadio2" value="0">नाही</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -259,8 +259,10 @@
                                              <a href="payment.html"><button type="button" class="btn btn-primary btn-next waves-effect waves-float waves-light" id="formsub" name="submit">
                                                 <span class="align-middle d-sm-inline-block d-none">Add </span>
                                                 <i data-feather='plus'></i></button></a>
-                                            <a href="form4.php"><button type="button" id="formsub" name="submit"  class="btn btn-primary btn-next waves-effect waves-float waves-light" >
-                                                <span class="align-middle d-sm-inline-block d-none">नमूद करा </span>
+                                            <!--<a href="form4.php"><button type="button" id="formsub" name="submit"  class="btn btn-primary btn-next waves-effect waves-float waves-light" >
+                                                <span class="align-middle d-sm-inline-block d-none">नमूद करा </span>-->
+                                                 <input type="submit" id="formsub" name="submit" value="नमूद करा" class="btn btn-primary btn-next waves-effect waves-float waves-light" >
+                                                <span class="align-middle d-sm-inline-block d-none"> </span>
                                                 <i data-feather='arrow-right'></i></button></a> 
                                             </div>
                                             <!-- <div class="col-md-12 modal-footer">

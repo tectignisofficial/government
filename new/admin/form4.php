@@ -187,18 +187,18 @@
                                     <h4 class="card-title">इतर माहिती</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form">
+                                    <form class="form" method="POST" action="register_form4.php?regid=<?php echo $_GET['regid'] ?>" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="mb-1 row">
                                                 <label for="colFormLabel" class="col-sm-3 col-form-label">FIR फाईल निवडा:</label>
                                                 <div class="col-sm-3">
-                                                    <input class="form-control" type="file" id="customFile1" required="" accept="application/pdf">
+                                                    <input class="form-control" type="file" id="file" name="file" required="" accept="application/pdf">
                                                 </div>
                                             </div>
                                             <div class="mb-1 row">
                                                 <label for="शेरा" class="col-sm-3 col-form-label">शेरा</label>
                                                 <div class="col-sm-9">
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="15" placeholder=""></textarea>
+                                                <textarea class="form-control" name="mark" id="exampleFormControlTextarea1" rows="3" cols="15" placeholder=""></textarea>
                                                    <!-- <input class="form-control" type="text" id="शेरा" required="">-->
                                                 </div>
                                             </div>
@@ -206,9 +206,12 @@
                                                 <a href="form3.html" class="btn btn-outline-secondary btn-prev waves-effect">
                                                     <i data-feather='arrow-left'></i><span class="align-middle d-sm-inline-block d-none">मागे</span>
                                             </a>
-                                            <a href="form5.php"><button type="submit" class="btn btn-primary btn-next waves-effect waves-float waves-light" name="sub_mit" id="form3submit">
+                                            <!--<a href="form5.php"><button type="submit" class="btn btn-primary btn-next waves-effect waves-float waves-light" name="sub_mit" id="form3submit">
                                                 <span class="align-middle d-sm-inline-block d-none">नमूद करा </span>
-                                                <i data-feather='arrow-right'></i></button></a> 
+                                                <i data-feather='arrow-right'></i></button></a> -->
+                                                 <input type="submit" value="नमूद करा" class="btn btn-primary btn-next waves-effect waves-float waves-light" name="submit" id="form3submit">
+                                                <span class="align-middle d-sm-inline-block d-none"> </span>
+                                                <i data-feather='arrow-right'></i> 
                                             </div>
                                         </div>
                                     </form>

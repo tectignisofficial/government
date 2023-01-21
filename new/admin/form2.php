@@ -187,17 +187,18 @@
                                     <h4 class="card-title">आरोपीची माहिती</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form">
+                                    <form class="form" method="POST" action="register_form2.php?regid=<?php echo $_GET['regid'] ?>">
                                         <div class="row">
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="आरोपीचे नाव">आरोपीचे नाव</label>
-                                                    <input type="text" id="आरोपीचे नाव" class="form-control" placeholder="" name="" />
+                                                    <input type="text" id="आरोपीचे नाव" name="crime_person" class="form-control" placeholder="" name="" />
                                                 </div>
                                             </div>
                                             <div class="col-md-12 modal-footer">
-                                                <a href="form3.php"><button type="button" id="formsub" name="submit" class="btn btn-primary modal1 waves-effect waves-float waves-light" data-bs-toggle="modal">नमूद
-                                                    करा <i data-feather='arrow-right'></i></button></a>
+                                                <!--<a href="form3.php"><button type="button" id="formsub" name="submit" class="btn btn-primary modal1 waves-effect waves-float waves-light" data-bs-toggle="modal">नमूद
+                                                    करा <i data-feather='arrow-right'></i></button></a>-->
+                                                     <input type="submit" id="formsub" name="submit" value="नमूद करा" class="btn btn-primary modal1 waves-effect waves-float waves-light" data-bs-toggle="modal"> <i data-feather='arrow-right'></i></button></a>
                                             </div>
                                         </div>
                                     </form>
