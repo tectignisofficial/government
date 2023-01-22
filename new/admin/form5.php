@@ -189,44 +189,45 @@
                                     <h4 class="card-title">बँक तपशील</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form">
+                                    <form class="form" method="POST" action="register_form5.php?regid=<?php echo $_GET['regid'] ?>">
                                         <div class="row">
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="AccountHolderName">Account Holder Name</label>
-                                                    <input type="text" id="AccountHolderName" class="form-control" placeholder="" name="" />
+                                                    <input type="text" id="AccountHolderName" class="form-control" placeholder="" name="acc_hold" />
                                                 </div>
-                                            </div>
+                                            </div> 
                                             <div class="col-md-6 col-12">
                                                 <div class ="mb-1">
                                                     <label class="form-label" for="खातेक्रमांक">खाते क्रमांक</label>
-                                                    <input type="text" id="खाते क्रमांक" class="form-control" placeholder="" name="" />
+                                                    <input type="text" id="खाते क्रमांक" name="acc_no" class="form-control" placeholder="" name="" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="बँकेचेनाव">बँकेचे नाव</label>
-                                                    <input type="text" id="बँकेचेनाव" class="form-control" placeholder="" name="" />
+                                                    <input type="text" id="बँकेचेनाव" name="bank_name" class="form-control" placeholder="" name="" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class ="mb-1">
                                                     <label class="form-label" for="शाखेचेनाव">शाखेचे नाव</label>
-                                                    <input type="text" id="शाखेचेनाव" class="form-control" placeholder="" name="" />
+                                                    <input type="text" id="शाखेचेनाव"  name="branch" class="form-control" placeholder="" name="" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
                                                 <div class="mb-1">
                                                     <label class="form-label" for="IFSCकोड">IFSC कोड</label>
-                                                    <input type="text" id="IFSCकोड" class="form-control" placeholder="" name="" />
+                                                    <input type="text" id="IFSCकोड" name="ifsc" class="form-control" placeholder="" name="" />
                                                 </div>
                                             </div>
                                             <div class="col-md-12 modal-footer justify-content-between">                                            
                                                 <a href="form4.html" class="btn btn-outline-secondary btn-prev waves-effect">
                                                     <i data-feather='arrow-left'></i><span class="align-middle d-sm-inline-block d-none">मागे</span>
                                             </a>
-                                            <button type="submit" class="btn btn-primary waves-effect waves-float waves-light" name="form5submit">नमूद करा & पहा</button>
-                                            </div>
+                                            <input type="submit" class="btn btn-primary waves-effect waves-float waves-light" name="form5submit" value="नमूद करा & पहा">
+                                            <!--<button type="submit" class="btn btn-primary waves-effect waves-float waves-light" name="form5submit">नमूद करा & पहा</button>
+--> </div>
                                         </div>
                                     </form>
                                 </div>

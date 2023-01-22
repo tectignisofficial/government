@@ -1,7 +1,7 @@
 <?php
 include("config.php");
-echo $district_id = $_GET["district_id"];
-echo "SELECT * FROM police_station where district_id = $district_id";
+ $district_id = $_GET["district_id"];
+//echo "SELECT * FROM police_station where district_id = $district_id";
   $result = mysqli_query($conn,"SELECT * FROM police_station where district_id = $district_id");
 ?>
 <option value="">Select Police Station</option>
