@@ -95,8 +95,32 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td></td>
+                                            
+                                                <?php 
+                                                include('config.php');
+                                                $sr=1;
+                                              $sel = "SELECT * FROM form1";
+                                              $sql = mysqli_query($conn,$sel);
+                                              while($fetch = mysqli_fetch_assoc($sql))
+                                              {
+                                                $seld = "SELECT * FROM district WHERE district_id = '".$fetch['district']."' ";
+                                                $sqld = mysqli_query($conn,$seld);
+                                                $fetchd = mysqli_fetch_assoc($sqld);
+
+                                                $selp = "SELECT * FROM police_station WHERE police_station_id = '".$fetch['police_station']."' ";
+                                                $sqlp = mysqli_query($conn,$selp);
+                                                $fetchp = mysqli_fetch_assoc($sqlp);
+                                                ?><tr>
+                                                    <td></td>
+                                                    <td><?php echo $sr++ ?></td>
+                                                    <td><?php echo $fetch['register_no'] ?></td>
+                                                    <td><?php echo $fetch['crime_no'] ?></td>
+                                                    <td><?php echo $fetch['date'] ?></td>
+                                                    <td><?php echo $fetchd['district_name'] ?></td>
+                                                    <td><?php echo $fetchp['police_station_name'] ?></td>
+                                                    <td><?php echo $fetch['prosecutor_name'] ?></td>
+                                               
+                                               <!-- <td></td>
                                                 <td>1</td>
                                                 <td>1</td>
                                                 <td>05/2020</td>
@@ -104,25 +128,15 @@
                                                 <td>नवी मुंबई</td>
                                                 <td>कळंबोली</td>
                                                 <td>1) सचिन सुनिल गायकवाड 2) श्री. शुभम गणेश म्हात्रे  3) सारंग किसन म्हात्रे</td>
-                                                <td>
+--> <td>
                                                     <button type="button" class="btn btn-icon rounded-circle btn-flat-primary btnmod1 waves-effect" data-bs-toggle="modal" data-bs-target="#editUser"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
                                                     <a href="" title="Delete" alt="Delete" class="btn btn-icon rounded-circle btn-flat-danger btnmod1 waves-effect"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> </a>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td>2</td>
-                                                <td>2</td>
-                                                <td>06/2020</td>
-                                                <td>2022-12-22 06:58:47</td>
-                                                <td>नवी मुंबई</td>
-                                                <td>कळंबोली</td>
-                                                <td>1) सारंग किसन म्हात्रे</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon rounded-circle btn-flat-primary btnmod1 waves-effect" data-bs-toggle="modal" data-bs-target="#editUser"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
-                                                    <a href="" title="Delete" alt="Delete" class="btn btn-icon rounded-circle btn-flat-danger btnmod1 waves-effect"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> </a>
-                                                </td>
-                                            </tr>
+                                              <?php
+                                              }
+                                                
+                                                ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
