@@ -1,10 +1,10 @@
-<?php
+<!-- <php
 include("config.php");
 /*$sel = "SELECT * FROM form1";
 $qy = mysqli_query($con,$sel);
 $ft = mysqli_fetch_assoc($qy);*/
 
-?>
+?> -->
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -394,7 +394,7 @@ window.onclick = function(event) {
                                                 <div class="mb-1">
                                                     <label class="form-label" for="जिल्हा-id-column">जिल्हा</label>
                                                     <?php
-                                                      echo  $sel_dis = "SELECT * FROM district WHERE district_id = '".$fetch['district']."' ";
+                                                        $sel_dis = "SELECT * FROM district WHERE district_id = '".$fetch['district']."' ";
                                                         $query_dis = mysqli_query($conn,$sel_dis);
                                                         $fetch_dis = mysqli_fetch_array($query_dis);
                                                     ?>
@@ -411,7 +411,7 @@ window.onclick = function(event) {
                                                         ?>
                                                             <!--<option value="नवी मुंबई">नवी मुंबई</option>
                                                             <option value="रायगड">रायगड</option>-->
-                                                    </select>y
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-12">
